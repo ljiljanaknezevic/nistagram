@@ -40,6 +40,16 @@ services:
       - '8081:8081'
     links: 
       - postgresdb
+  search-service:
+    restart: always
+    build:
+      context: ./search-service
+    env_file:
+      - .env
+    ports:
+      - '8083:8083'
+    links:
+      - postgresdb
 
 volumes:
   database_data:
