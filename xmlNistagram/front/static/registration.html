@@ -1,0 +1,113 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+
+
+    <!-- fontovi -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+          crossorigin="anonymous">
+
+    <taglib uri="http://coverity.com/security" prefix="cov" />
+    <script src="../scripts/customAjax.js"></script>
+    <script src="../scripts/registration.js"></script>
+
+
+    <!--za bootstrap-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+
+
+
+    <style type="text/css">
+        .btn-info {
+            color: #fff;
+            background-color: #5bc0de !important;
+            border-color: #46b8da !important;
+        }
+
+        .container_1 {
+            height: 100vh;
+            width: 207.4vh;
+            background: url('../images/medicine-generic-banner.jpg') no-repeat center center/cover;
+            color: black;
+        }
+
+        .btn_1 {
+            display: inline-block;
+            margin-top: 1.5rem;
+            color: #fff;
+            background: #a85432;
+            padding: 0.5rem 2rem;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .btn_1:hover {
+            background: #853b1e;
+        }
+
+        .a_a {
+            color: #853b1e;
+        }
+
+        .invalid_1 {
+            color: rgb(165, 11, 11);
+            padding: 0;
+            margin: 0;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+
+<body >
+<div class="container_1" >
+    <div style="padding:10px 100px 50px 0px;" class="row">
+        <div class="col-sm-12 col-md-8 col-lg-6 offset-sm-0 offset-md-2 offset-lg-4">
+            <form class="border rounded px-2 py-1 text-center">
+
+                <h5 style="font-weight: bold" >REGISTRATION</h5>
+
+                <label>Please fill out the registration, our support will get back to you shortly.
+                    Already have an account? Go to <a href= "index.html"><b>Log in</b></a> </label>
+
+
+                <div class="form-group">
+                    <input type="text" class="form-control form-control-sm not-pass" id="id_username" placeholder="Username" autofocus>
+                    <p id="errorUsername"></p>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control form-control-sm not-pass" id="id_email" placeholder="Email" autofocus>
+                    <p id = "errorEmail"></p>
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control form-control-sm not-pass" id="id_name" placeholder="Full name" autofocus>
+                    <p id = "errorName"></p>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control form-control-sm not-pass" id="id_password" placeholder="Password">
+                    <p id = "errorPassword"></p>
+                </div>
+                <div class="form-group">
+                    <input type="password" class="form-control form-control-sm not-pass" id="id_password_repeat" placeholder="Repeat your password">
+                    <p id = "errorPasswordRepeat"></p>
+                </div>
+                <button type="button" class="btn btn-info" id="id_button" >REGISTER</button>
+            </form>
+            <p class="invalid_1" id="id_p_log"></p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+
+</html>

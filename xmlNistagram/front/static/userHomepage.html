@@ -1,0 +1,128 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"  />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="../scripts/customAjax.js"></script>
+<script src="../scripts/userHomePage.js"></script>    
+<script src="../scripts/jwt.js"></script>     
+<title>User Homepage</title>
+        <style>
+        ul {
+            
+         width: 100%;
+          
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+          background-color: #5bc0de;
+        }
+        
+        li {
+          float: left;
+        }
+        
+        li a, .dropbtn {
+          display: inline-block;
+          color: white;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+        }
+        
+        li a:hover, .dropdown:hover .dropbtn {
+          background-color:  black;;
+        }
+        
+        li.dropdown {
+          display: inline-block;
+        }
+        
+        .dropdown-content {
+          display: none;
+          position: fixed;
+          background-color: #f9f9f9;
+          min-width: 160px;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          z-index: 1;
+        }
+            .container_1 {
+            height: 100vh;
+            width: 207.4vh;
+            background: url('../images/medicine-generic-banner.jpg') no-repeat center center/cover;
+            color: black;
+        }
+        .dropdown-content a {
+          color: black;
+          padding: 12px 16px;
+          text-decoration: none;
+          display: block;
+          text-align: left;
+        }
+         .btn-confirm {
+              color: #fff;
+              background-color: #5bc0de !important;
+              border-color: #46b8da !important;
+            }
+        
+        .dropdown-content a:hover {background-color: #f1f1f1;}
+        
+        .dropdown:hover .dropdown-content {
+          display: block;
+        }
+        .a_a {
+            color: #853b1e;
+        }
+        
+        .invalid_1 {
+            color: rgb(165, 11, 11);
+            padding: 0;
+            margin: 0;
+            font-size: 0.8rem;
+        }
+        
+        .btn_1 {
+            display: inline-block;
+            margin-top: 1.5rem;
+            color: #fff;
+            background: #a85432;
+            padding: 0.5rem 2rem;
+            border: none;
+            border-radius: 5px;
+        }
+        
+        .btn_1:hover {
+            background: #853b1e;
+        }
+        div.container4 {
+            height: 10em;
+            position: relative }
+        div.container4 h2 {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-right: -50%;
+            transform: translate(-50%, -50%) }
+        </style>
+        </head>
+        <body>
+        <div class="container_1">
+        <ul style="background:skyblue">
+         <li><a href=""><i class="home icon" style="color:white"></i></a></li>
+         
+         
+          <li class="dropdown" style="float:right;">
+            <a href="javascript:void(0)" class="dropbtn">Profile</a>
+            <div class="dropdown-content" style="right:0;">
+              <a id = "editProfile" href="#"><i class="user icon"></i> Edit profile </a>
+              <a id = "logout" href="#"><i class = "sign-out icon"></i> Log out</a>
+            </div>
+            
+          </li>
+        </ul>
+            <div id = "showData" class="container4" style = "color : white"></div>
+        </div>
+        </body>
+        </html>

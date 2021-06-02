@@ -1,0 +1,45 @@
+version: '3.8'
+services:
+  service1:
+    restart: always
+    build:
+      context: ./service1
+    ports:
+      - '3000:3000'
+    links:
+      - mongo
+  nginx:
+    restart: always
+    build:
+      context: ./ngnix
+    ports:
+      - '80:80'
+  mongo:
+    container_name: mongo
+    image: mongo
+    volumes:
+      - ./data:/data/db
+    ports:
+      - '27018:27017'
+  postgresdb:
+    image: postgres
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - "5433:5432"
+    volumes:
+      - database_data:/var/lib/postgresql/data
+  user-service:
+    restart: always
+    build:
+      context: ./user-service
+    env_file:
+      - .env
+    ports:
+      - '8081:8081'
+    links: 
+      - postgresdb
+
+volumes:
+  database_data:
