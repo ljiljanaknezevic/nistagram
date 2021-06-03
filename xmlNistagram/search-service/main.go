@@ -64,6 +64,7 @@ func InitialUserMigration() {
 	connection := GetUserDatabase()
 	defer CloseUserDatabase(connection)
 	connection.AutoMigrate(model.User{})
+	connection.AutoMigrate(model.Follower{})
 }
 
 //closes database connection
@@ -80,8 +81,9 @@ func CreateRouter() {
 
 //initialize all routes
 func InitializeRoute(handler *handler.SearchHandler) {
-	router.HandleFunc("/searchUserByUsername/{username}", handler.GetUserByUsername).Methods("GET")
+	router.HandleFunc("/searchUserByUsername/{username}/{loggingUsername}", handler.GetUserByUsername).Methods("GET")
 	//router.HandleFunc("/getAllUsers", handler.GetAllUsers).Methods("GET")
+	router.HandleFunc("/searchUserByUsernameForUnregistredUser/{username}", handler.GetUserByUsernameForUnregistredUser).Methods("GET")
 
 	router.Methods("OPTIONS").HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Access-Control-Allow-Origin", "")

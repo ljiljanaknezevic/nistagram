@@ -16,3 +16,7 @@ func (service *SearchService) GetAllUsers() []model.User{
 	users:= service.Repo.GetAllUsers()
 	return users
 }
+func (service *SearchService) GetAllUsersExceptLogging(username string) []model.User{
+	users:= service.Repo.GetAllUsersExceptLogging(username)
+	return users
+}

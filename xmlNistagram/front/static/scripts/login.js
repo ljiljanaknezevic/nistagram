@@ -79,7 +79,7 @@ if(validateEmail(input_email.val()) && validatePassword(input_password.val())) {
       data: JSON.stringify({ email: email, password: password }),
       success: function(jwt, status, xhr){
 	        if(xhr.status == 200){
-	        localStorage.setItem('email', email);
+	        localStorage.setItem('email', jwt.email);
 	        localStorage.setItem('jwt', jwt.token);
 	        localStorage.setItem('role', jwt.role)
 	        authentification();

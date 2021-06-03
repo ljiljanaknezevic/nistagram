@@ -3,7 +3,7 @@ $(document).ready(function(e) {
         console.log("usao u klik")
         var username= $("#userSearch").val();
         customAjax({
-            url: 'http://localhost:80/search-service/searchUserByUsername/' + username,
+            url: 'http://localhost:80/search-service/searchUserByUsernameForUnregistredUser/' + username,
             method: 'GET',
             success: function (data) {
                 showProfile(data);
@@ -21,7 +21,7 @@ let showProfile = function(user) {
     console.log(json)
     var pomocna ="";
     pomocna +=`<div style="margin-top: 50px" 
-        class="ui container"><div class="ui link cards">`;
+        ><div class="ui link cards">`;
     for( i in json)
     {
         var pom = '';

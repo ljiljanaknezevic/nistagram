@@ -15,6 +15,12 @@ func (repo *SearchRepository) GetUserByUsername(username string) model.User {
 }
 func (repo *SearchRepository) GetAllUsers() []model.User{
 	var users []model.User
-	repo.Database.Find(&users)
+	repo.Database.Preload("Followers").Find(&users)
+	return users
+}
+
+func (repo *SearchRepository) GetAllUsersExceptLogging(username string) []model.User{
+	var users []model.User
+	repo.Database.Where("email != ?", username).Preload("Followers").Find(&users)
 	return users
 }

@@ -103,7 +103,7 @@ $(document).ready(function(e){
     p_log = $('#id_p_log');
 
     button_register.on('click', function(e){
-
+        var isPrivate = document.getElementById("isPrivate").checked;
         var name=input_name.val();
         var username=input_username.val();
         var email = input_email.val();
@@ -113,7 +113,9 @@ $(document).ready(function(e){
             name:name,
             username:username,
             email:email,
-            password:password});
+            password:password,
+            isPrivate:isPrivate
+        });
 
         customAjax({
             url: 'http://localhost:80/user-service/confirmRegistration',

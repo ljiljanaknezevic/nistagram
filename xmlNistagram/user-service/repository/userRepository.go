@@ -17,7 +17,7 @@ func (repo *UserRepository) CreateUser(user *model.User) error {
 	return nil
 }
 func (repo *UserRepository) UpdateUser(user *model.User) error {
-	result := repo.Database.Save(user)
+	result := repo.Database.Preload("Followers").Save(user)
 	fmt.Println(result.RowsAffected)
 	return nil
 }
@@ -36,7 +36,7 @@ func (repo *UserRepository) GetUserByEmail(email string) bool {
 
 func (repo *UserRepository) GetUserByEmailAddress(email string) model.User {
 	var user model.User
-	repo.Database.Where("email = ? ", email).First(&user)
+	repo.Database.Where("email = ? ", email).Preload("Followers").First(&user)
 	return user
 }
 

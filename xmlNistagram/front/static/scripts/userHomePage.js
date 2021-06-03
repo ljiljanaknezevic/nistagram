@@ -19,6 +19,22 @@ $(document).ready(function(e){
 		localStorage.removeItem('jwt')		
 		location.href = "/";
 		});
+
+    $("#search").click(function () {
+        console.log("usao u klik")
+        var username= $("#userSearch").val();
+        customAjax({
+            url: 'http://localhost:80/search-service/searchUserByUsername/' + username + '/' + localStorage.getItem("email"),
+            method: 'GET',
+            success: function (data) {
+                showProfile(data);
+            },
+            error: function () {
+            }
+
+        });
+
+    });
 });
 
 let editProfile = function(user) {
@@ -30,6 +46,13 @@ let editProfile = function(user) {
     } else {
         gender = `<input type="radio"  name="gender" value="male" checked="checked"> Male
                <input type="radio"  name="gender" value="female"> Female`;
+    }
+
+    var isPrivate = ``;
+    if (json.isPrivate) {
+        isPrivate = `<input type="checkbox" name="private" id="isPrivate" checked="checked">`
+    } else {
+        isPrivate = `<input type="checkbox" name="private" id="isPrivate">`
     }
     $("#showData").html(`<table class="ui large table" style="width:50%; margin-left:auto; 
                margin-right:auto; margin-top: 40px;">
@@ -80,7 +103,13 @@ let editProfile = function(user) {
                     + gender +
                     `</td>
                         </tr>
-                           
+                     <tr>
+                     <td>Private profile</td>
+                   <td><div class="ui toggle checkbox ">` + isPrivate +`
+                        <label></label>
+                    </div></td>
+                 </tr>
+                     
                            </tbody>
                            <tfoot class="full-width">
                <tr>
@@ -103,6 +132,7 @@ let editProfile = function(user) {
         let website=$('#txtWebsite').val()
         let biography=$('#txtBiography').val()
         let gender = $("input:radio[name=gender]:checked").val();
+        let isPrivate = document.getElementById("isPrivate").checked;
         console.log(website)
 
         obj = JSON.stringify({
@@ -113,7 +143,8 @@ let editProfile = function(user) {
         birthday:birthday,
         website :website,
         biography:biography,
-        gender:gender
+        gender:gender,
+        isPrivate:isPrivate
         });
         console.log(obj)
         
@@ -134,3 +165,69 @@ let editProfile = function(user) {
 });
                         
 }
+
+let showProfile = function(user) {
+    var json = JSON.parse(user);
+    var pomocna ="";
+    pomocna +=`<div style="margin-top: 50px" ><div class="ui link cards">`;
+    for( i in json) {
+
+        var pom = '';
+        if (json[i].gender == "female") {
+            pom += "<img src=\"https://avataaars.io/?avatarStyle=Transparent&topType=LongHairStraightStrand&accessoriesType=Blank&hairColor=BrownDark&facialHairType=Blank&clotheType=BlazerShirt&eyeType=Happy&eyebrowType=Default&mouthType=Smile&skinColor=Light\">";
+        } else {
+            pom += "<img src='https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairShortFlat&accessoriesType=Blank&hairColor=BrownDark&facialHairType=BeardLight&facialHairColor=BrownDark&clotheType=BlazerShirt&eyeType=Happy&eyebrowType=Default&mouthType=Smile&skinColor=Light'\n" +
+                "/>"
+        }
+        pomocna += `<br><div class="ui card">
+  <div class="image">` + pom + `
+  </div>
+  <div class="content">
+    <a class="header">` + json[i].username + `</a>
+    <div class="meta">
+      <span class="date">Birthday: ` + json[i].birthday + `</span>
+    </div>
+    <div class="description">
+     Biography:  ` + ((json[i].biography != '') ? json[i].biography : `-`) + `
+    </div>
+     <div class="description">Website:   
+     <a href="` + ((json[i].website != '') ? json[i].website : `-`) + `">
+     My website
+    </a>
+    </div>
+  </div>
+  <div class="extra content">
+    <button class="ui teal button" name = "follow" id = ` + json[i].username + `>Follow</button>
+    <div class="right floated author">` + json[i].name + `
+    </div>
+  </div>
+</div>`;
+        customAjax({
+            url: 'http://localhost:80/user-service/alreadyFollow/' + json[i].username + "/" + localStorage.getItem("email"),
+            method: 'GET',
+            success: function () {
+                document.getElementById(json[i].username).disabled = false
+            },
+            error: function () {
+                document.getElementById(json[i].username).disabled = true
+            }
+        })
+
+    }
+    pomocna+=`</div></div>`;
+    $("#showData").html(pomocna);
+
+    $("button[name=follow]").click(function () {
+                customAjax({
+                    url: 'http://localhost:80/user-service/follow/' + this.id + "/" + localStorage.getItem("email"),
+                    method: 'POST',
+                    success: function (data) {
+                        document.getElementById(json[i].username).disabled = true
+                    },
+                    error: function () {
+                    }
+                })
+    })
+
+}
+

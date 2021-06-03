@@ -16,9 +16,16 @@ type User struct {
 	Username    string `gorm:"unique" json:"username"`
 	Website     string `json:"website"`
 	Biography   string `json:"biography"`
+	IsPrivate   bool   `json:"isPrivate"`
+	Followers   []Follower `gorm:"many2many:user_followers; json:"followers"`
 }
 
 type Authentication struct {
 	Email    string `json:"email"`
 	Password string `json:"password"`
+}
+
+type Follower struct {
+	gorm.Model
+	Username   string `gorm:"unique" json:"username"`
 }

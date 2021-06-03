@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
+	"strings"
 	"user-service-mod/model"
 	"user-service-mod/service"
 
@@ -38,7 +39,7 @@ func (handler *UserHandler) ChangePassword(w http.ResponseWriter, r *http.Reques
 	}
 	var user model.User
 	user = handler.Service.GetUserByEmailAddress(changePassword.Email)
-	if (model.User{}) == user {
+	if user.Username == "" {
 		var err model.Error
 		err = model.SetError(err, "User with that email doesn't exist.")
 
@@ -65,7 +66,7 @@ func (handler *UserHandler) ChangeUserData(w http.ResponseWriter, r *http.Reques
 	}
 	var user model.User
 	user = handler.Service.GetUserByEmailAddress(userChange.Email)
-	if (model.User{}) == user {
+	if user.Username == "" {
 		var err model.Error
 		err = model.SetError(err, "User with that email doesn't exist.")
 
@@ -81,6 +82,7 @@ func (handler *UserHandler) ChangeUserData(w http.ResponseWriter, r *http.Reques
 	user.Birhtday = userChange.Birhtday
 	user.Website = userChange.Website
 	user.Gender = userChange.Gender
+	user.IsPrivate = userChange.IsPrivate
 	handler.Service.UpdateUser(&user)
 	w.WriteHeader(http.StatusOK)
 	w.Header().Set("Content-Type", "application/json")
@@ -236,4 +238,35 @@ func (handler *UserHandler) GetUserByEmailAddress(w http.ResponseWriter, r *http
 	w.WriteHeader(http.StatusOK)
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(user)
+}
+
+func (handler *UserHandler) Follow(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	email := vars["email"]
+	followerUsername := vars["followerUsername"]
+	var user model.User
+	user = handler.Service.GetUserByEmailAddress(email)
+	var follower model.Follower
+	follower.Username = followerUsername
+	user.Followers = append(user.Followers, follower)
+	handler.Service.UpdateUser(&user)
+
+	w.WriteHeader(http.StatusOK)
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(user)
+}
+
+func (handler *UserHandler) AlreadyFollow(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	email := vars["email"]
+	followerUsername := vars["followerUsername"]
+	var user model.User
+	user = handler.Service.GetUserByEmailAddress(email)
+	for _, element := range user.Followers {
+		if strings.Compare(element.Username,followerUsername) == 0  {
+			w.WriteHeader(http.StatusBadRequest)
+		}
+
+	}
+	w.WriteHeader(http.StatusOK)
 }
