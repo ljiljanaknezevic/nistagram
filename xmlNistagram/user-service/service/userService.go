@@ -29,6 +29,10 @@ func (service *UserService) UpdateUser(user *model.User) error {
 	service.Repo.UpdateUser(user)
 	return nil
 }
+func (service *UserService) DeleteFromWaitingList(ID uint) error {
+	service.Repo.DeleteFromWaitingList(ID)
+	return nil
+}
 
 func (service *UserService) UserExists(email string, username string) (bool, error) {
 	exists := service.Repo.UserExists(email, username)
@@ -53,6 +57,10 @@ func (service *UserService) UserForLogin(email string) model.User {
 
 func (service *UserService) GetUserByEmailAddress(email string) model.User {
 	user := service.Repo.GetUserByEmailAddress(email)
+	return user
+}
+func (service *UserService) GetUserByUsername(username string) model.User {
+	user := service.Repo.GetUserByUsername(username)
 	return user
 }
 

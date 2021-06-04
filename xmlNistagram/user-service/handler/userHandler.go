@@ -244,16 +244,66 @@ func (handler *UserHandler) Follow(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	email := vars["email"]
 	followerUsername := vars["followerUsername"]
+	var followerUser model.User
+	followerUser = handler.Service.GetUserByUsername(followerUsername)
 	var user model.User
 	user = handler.Service.GetUserByEmailAddress(email)
+
+	if followerUser.IsPrivate {
+		var waitingFollower model.WaitingFollower
+		waitingFollower.Username = user.Username
+		followerUser.WaitingFollowers = append(followerUser.WaitingFollowers,waitingFollower)
+		handler.Service.UpdateUser(&followerUser)
+	}else {
+		var follower model.Follower
+		follower.Username = user.Username
+		followerUser.Followers = append(followerUser.Followers, follower)
+		handler.Service.UpdateUser(&followerUser)
+		var following model.Following
+		following.Username = followerUsername
+		user.Following= append(user.Following,following)
+		handler.Service.UpdateUser(&user)
+	}
+
+	w.WriteHeader(http.StatusOK)
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(user)
+}
+func (handler *UserHandler) AcceptRequest(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	email := vars["email"]
+	followerUsername := vars["followerUsername"]
+	var requestingUser model.User
+	requestingUser = handler.Service.GetUserByUsername(followerUsername)
+	var user model.User
+	user = handler.Service.GetUserByEmailAddress(email)
+
+
+	var following model.Following
+	following.Username = user.Username
+	requestingUser.Following= append(requestingUser.Following,following)
+	handler.Service.UpdateUser(&requestingUser)
+
 	var follower model.Follower
 	follower.Username = followerUsername
 	user.Followers = append(user.Followers, follower)
 	handler.Service.UpdateUser(&user)
 
+
+	var waitingFollower model.WaitingFollower
+	waitingFollower.Username = followerUsername
+
+	handler.Service.DeleteFromWaitingList(1)
+	handler.Service.UpdateUser(&user)
+
+
+
+
+
 	w.WriteHeader(http.StatusOK)
-	w.Header().Set("Content-Type", "application/json")
-	json.NewEncoder(w).Encode(user)
+}
+func RemoveIndex(s []model.WaitingFollower, index int) []model.WaitingFollower {
+	return append(s[:index], s[index+1:]...)
 }
 
 func (handler *UserHandler) AlreadyFollow(w http.ResponseWriter, r *http.Request) {
@@ -262,11 +312,25 @@ func (handler *UserHandler) AlreadyFollow(w http.ResponseWriter, r *http.Request
 	followerUsername := vars["followerUsername"]
 	var user model.User
 	user = handler.Service.GetUserByEmailAddress(email)
-	for _, element := range user.Followers {
+	for _, element := range user.Following {
 		if strings.Compare(element.Username,followerUsername) == 0  {
 			w.WriteHeader(http.StatusBadRequest)
 		}
 
 	}
 	w.WriteHeader(http.StatusOK)
+}
+func (handler *UserHandler) GetAllFromWaitingList(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	email := vars["email"]
+	var user model.User
+	user = handler.Service.GetUserByEmailAddress(email)
+	var result []model.User
+	for _,elem:= range user.WaitingFollowers{
+		result=append(result, handler.Service.GetUserByUsername(elem.Username))
+	}
+	w.WriteHeader(http.StatusOK)
+	w.Header().Set("Content-Type", "application/json")
+
+	json.NewEncoder(w).Encode(result)
 }

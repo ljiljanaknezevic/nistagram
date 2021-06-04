@@ -18,6 +18,8 @@ type User struct {
 	Biography   string `json:"biography"`
 	IsPrivate   bool   `json:"isPrivate"`
 	Followers   []Follower `gorm:"many2many:user_followers; json:"followers"`
+	WaitingFollowers   []WaitingFollower `gorm:"many2many:user_waitingFollowers; json:"waitingFollowers"`
+	Following   []Following `gorm:"many2many:user_following; json:"following"`
 }
 
 type Authentication struct {
@@ -27,5 +29,13 @@ type Authentication struct {
 
 type Follower struct {
 	gorm.Model
-	Username   string `gorm:"unique" json:"username"`
+	Username   string `json:"username"`
+}
+type WaitingFollower struct {
+	gorm.Model
+	Username   string `json:"username"`
+}
+type Following struct {
+	gorm.Model
+	Username   string `json:"username"`
 }

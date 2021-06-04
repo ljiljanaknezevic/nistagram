@@ -66,6 +66,8 @@ func InitialMigration() {
 	defer CloseDatabase(connection)
 	connection.AutoMigrate(model.User{})
 	connection.AutoMigrate(model.Follower{})
+	connection.AutoMigrate(model.WaitingFollower{})
+	connection.AutoMigrate(model.Following{})
 }
 
 //closes database connection
@@ -132,15 +134,18 @@ func InitializeRoute(handler *handler.UserHandler) {
 	router.HandleFunc("/confirmRegistration", handler.SendConfirmation).Methods("POST")
 	router.HandleFunc("/sendEmailForAccountRecovery", handler.SendEmailForAccountRecovery).Methods("POST")
 	router.HandleFunc("/changePassword", handler.ChangePassword).Methods("POST")
+	router.HandleFunc("/getAllRequests/{email}", handler.GetAllFromWaitingList).Methods("GET")
 	router.HandleFunc("/getByEmail/{email}", handler.GetUserByEmailAddress).Methods("GET")
 	router.HandleFunc("/changeUserData", handler.ChangeUserData).Methods("POST")
 	router.HandleFunc("/follow/{followerUsername}/{email}", handler.Follow).Methods("POST")
+	//router.HandleFunc("/declineRequest/{followerUsername}/{email}", handler.DeclineRequest).Methods("POST")
+	router.HandleFunc("/acceptRequest/{followerUsername}/{email}", handler.AcceptRequest).Methods("POST")
 	router.HandleFunc("/alreadyFollow/{followerUsername}/{email}", handler.AlreadyFollow).Methods("GET")
-	router.Methods("OPTIONS").HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+	/*router.Methods("OPTIONS").HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Access-Control-Allow-Origin", "")
 		w.Header().Set("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE")
 		w.Header().Set("Access-Control-Allow-Headers", "Accept, Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, Access-Control-Request-Headers, Access-Control-Request-Method, Connection, Host, Origin, User-Agent, Referer, Cache-Control, X-header")
-	})
+	})*/
 }
 
 //start the server

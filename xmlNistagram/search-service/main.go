@@ -65,6 +65,8 @@ func InitialUserMigration() {
 	defer CloseUserDatabase(connection)
 	connection.AutoMigrate(model.User{})
 	connection.AutoMigrate(model.Follower{})
+	connection.AutoMigrate(model.WaitingFollower{})
+	connection.AutoMigrate(model.Following{})
 }
 
 //closes database connection

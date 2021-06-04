@@ -1,5 +1,38 @@
 $(document).ready(function(e){
-	var email = localStorage.getItem('email')
+    var email = localStorage.getItem('email')
+    $(window).on('load', function () {
+        customAjax({
+            url: 'http://localhost:80/user-service/getByEmail/' + email,
+            method: 'GET',
+            success: function(data){
+                var json = JSON.parse(data);
+                if(json.isPrivate){
+                    $("#requestForFollow").html(`<a  id="requests"><i class="bell icon"  style="color:white"></i></a>`);
+                    $("#requests").click(function () {
+                        customAjax({
+                            url: 'http://localhost:80/user-service/getAllRequests/' + email,
+                            method: 'GET',
+                            success: function(data){
+                                showRequests(data)
+                            },
+                            error: function(){
+                            }
+
+                        });
+
+
+                    });
+                }
+
+
+
+            },
+            error: function(){
+            }
+    });
+    });
+
+
 	
 	  $("#editProfile").click(function () {
           console.log("usao u klik")
@@ -179,6 +212,10 @@ let showProfile = function(user) {
             pom += "<img src='https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairShortFlat&accessoriesType=Blank&hairColor=BrownDark&facialHairType=BeardLight&facialHairColor=BrownDark&clotheType=BlazerShirt&eyeType=Happy&eyebrowType=Default&mouthType=Smile&skinColor=Light'\n" +
                 "/>"
         }
+        var pom1 = '';
+        if (json[i].isPrivate == true) {
+            pom1 += "<i class=\"lock icon\"></i>";
+        }
         pomocna += `<br><div class="ui card">
   <div class="image">` + pom + `
   </div>
@@ -198,6 +235,7 @@ let showProfile = function(user) {
   </div>
   <div class="extra content">
     <button class="ui teal button" name = "follow" id = ` + json[i].username + `>Follow</button>
+    `+pom1+`
     <div class="right floated author">` + json[i].name + `
     </div>
   </div>
@@ -228,6 +266,65 @@ let showProfile = function(user) {
                     }
                 })
     })
+
+}
+let showRequests = function(user) {
+    var json = JSON.parse(user);
+    var pomocna ="";
+    pomocna +=`<div style="margin-top: 50px" ><div class="ui cards">`;
+    for( i in json) {
+        var pom = '';
+        if (json[i].gender == "female") {
+            pom += "<img class=\"right floated mini ui image\"  src=\"https://avataaars.io/?avatarStyle=Transparent&topType=LongHairStraightStrand&accessoriesType=Blank&hairColor=BrownDark&facialHairType=Blank&clotheType=BlazerShirt&eyeType=Happy&eyebrowType=Default&mouthType=Smile&skinColor=Light\">";
+        } else {
+            pom += "<img class=\"right floated mini ui image\"  src='https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairShortFlat&accessoriesType=Blank&hairColor=BrownDark&facialHairType=BeardLight&facialHairColor=BrownDark&clotheType=BlazerShirt&eyeType=Happy&eyebrowType=Default&mouthType=Smile&skinColor=Light'\n" +
+                "/>"
+        }
+    pomocna += `<br><div class="ui card">
+  <div class="content">` + pom + ` 
+    <a class="header">` + json[i].username + `</a>
+    <div class="meta">
+      <span class="date"> ` + json[i].name + `</span>
+    </div>
+  </div>
+  <div class="extra content">
+   <div class="ui two buttons">
+  
+        <button class="ui basic green button" name="approve" id="`+json[i].username+`">Approve</button>
+        <button class="ui basic red button" name="decline" id="`+json[i].username+`">Decline</button>
+      </div>
+  </div>
+</div>`;
+
+
+    }
+    pomocna+=`</div></div>`;
+    $("#showData").html(pomocna);
+    $("button[name=approve]").click(function () {
+        customAjax({
+            url: 'http://localhost:80/user-service/acceptRequest/' + this.id + "/" + localStorage.getItem("email"),
+            method: 'POST',
+            success: function () {
+                location.href="userHomePage.html";
+            },
+            error: function () {
+            }
+        })
+    })
+    $("button[name=decline]").click(function () {
+
+        customAjax({
+            url: 'http://localhost:80/user-service/declineRequest/' + this.id + "/" + localStorage.getItem("email"),
+            method: 'POST',
+            success: function () {
+                location.href="userHomePage.html";
+            },
+            error: function () {
+            }
+        })
+    })
+
+
 
 }
 
