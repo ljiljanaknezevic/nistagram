@@ -37,6 +37,12 @@ func (repo *UserRepository) GetUserByEmail(email string) bool {
 	repo.Database.Where("email = ? ", email).Find(&model.User{}).Count(&count)
 	return count != 0
 }
+func (repo *UserRepository) GetWaitingUser(username string) model.WaitingFollower {
+	var user model.WaitingFollower
+	repo.Database.Where("username = ? ", username).First(&user)
+	return user
+}
+
 
 func (repo *UserRepository) GetUserByEmailAddress(email string) model.User {
 	var user model.User

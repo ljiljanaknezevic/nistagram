@@ -7,7 +7,8 @@ $(document).ready(function(e){
             success: function(data){
                 var json = JSON.parse(data);
                 if(json.isPrivate){
-                    $("#requestForFollow").html(`<a  id="requests"><i class="bell icon"  style="color:white"></i></a>`);
+                    $("#requestsForFollowing").html(`<a  id="requests"><i class="user plus icon"  style="color:white"></i></a>`);
+                    $("#notifications").html(`<a  id="followers"><i class="bell icon"  style="color:white"></i></a>`);
                     $("#requests").click(function () {
                         customAjax({
                             url: 'http://localhost:80/user-service/getAllRequests/' + email,
@@ -17,14 +18,22 @@ $(document).ready(function(e){
                             },
                             error: function(){
                             }
-
                         });
-
-
                     });
                 }
-
-
+                $("#notifications").html(`<a  id="followers"><i class="bell icon"  style="color:white"></i></a>`);
+                $("#followers").click(function () {
+                    customAjax({
+                        url: 'http://localhost:80/user-service/getAllFollowers/' + email,
+                        method: 'GET',
+                        success: function(data){
+                            console.log(data)
+                            showFollowers(data)
+                        },
+                        error: function(){
+                        }
+                    });
+                });
 
             },
             error: function(){
@@ -54,7 +63,6 @@ $(document).ready(function(e){
 		});
 
     $("#search").click(function () {
-        console.log("usao u klik")
         var username= $("#userSearch").val();
         customAjax({
             url: 'http://localhost:80/search-service/searchUserByUsername/' + username + '/' + localStorage.getItem("email"),
@@ -234,7 +242,7 @@ let showProfile = function(user) {
     </div>
   </div>
   <div class="extra content">
-    <button class="ui teal button" name = "follow" id = ` + json[i].username + `>Follow</button>
+    <button class="ui teal button" name = "follow" id = ` + json[i].username + `><i class = "user icon"></i></button>
     `+pom1+`
     <div class="right floated author">` + json[i].name + `
     </div>
@@ -244,9 +252,11 @@ let showProfile = function(user) {
             url: 'http://localhost:80/user-service/alreadyFollow/' + json[i].username + "/" + localStorage.getItem("email"),
             method: 'GET',
             success: function () {
+                document.getElementById(json[i].username).innerText = "Follow"
                 document.getElementById(json[i].username).disabled = false
             },
             error: function () {
+                document.getElementById(json[i].username).innerText = "Followed"
                 document.getElementById(json[i].username).disabled = true
             }
         })
@@ -256,11 +266,13 @@ let showProfile = function(user) {
     $("#showData").html(pomocna);
 
     $("button[name=follow]").click(function () {
+        id = this.id
                 customAjax({
                     url: 'http://localhost:80/user-service/follow/' + this.id + "/" + localStorage.getItem("email"),
                     method: 'POST',
                     success: function (data) {
-                        document.getElementById(json[i].username).disabled = true
+                        document.getElementById(id).innerText = "Followed"
+                        document.getElementById(id).disabled = true
                     },
                     error: function () {
                     }
@@ -312,7 +324,6 @@ let showRequests = function(user) {
         })
     })
     $("button[name=decline]").click(function () {
-
         customAjax({
             url: 'http://localhost:80/user-service/declineRequest/' + this.id + "/" + localStorage.getItem("email"),
             method: 'POST',
@@ -324,6 +335,66 @@ let showRequests = function(user) {
         })
     })
 
+
+
+}
+
+let showFollowers = function(user) {
+    var json = JSON.parse(user);
+    console.log(json)
+    var pomocna ="";
+    pomocna +=`<div style="margin-top: 50px" ><div class="ui celled list">`;
+    for( i in json) {
+        var pom = '';
+        if (json[i].gender == "female") {
+            pom += "<img class=\"ui avatar image\"  src=\"https://avataaars.io/?avatarStyle=Transparent&topType=LongHairStraightStrand&accessoriesType=Blank&hairColor=BrownDark&facialHairType=Blank&clotheType=BlazerShirt&eyeType=Happy&eyebrowType=Default&mouthType=Smile&skinColor=Light\">";
+        } else {
+            pom += "<img class=\"ui avatar image\"  src='https://avataaars.io/?avatarStyle=Transparent&topType=ShortHairShortFlat&accessoriesType=Blank&hairColor=BrownDark&facialHairType=BeardLight&facialHairColor=BrownDark&clotheType=BlazerShirt&eyeType=Happy&eyebrowType=Default&mouthType=Smile&skinColor=Light'\n" +
+                "/>"
+        }
+        pomocna += `<div class="item">
+         ` + pom + ` 
+    <div class="content">
+      <div class="header">` +json[i].username + `</div> 
+      <div class="description"> Started following you.
+        <button class="ui teal active button" name="followBack" id="`+json[i].username+`"><i class="user icon"></i>
+  </button>
+      </div>
+       
+    </div>
+  </div>
+`;
+        customAjax({
+            url: 'http://localhost:80/user-service/alreadyFollow/' + json[i].username + "/" + localStorage.getItem("email"),
+            method: 'GET',
+            success: function () {
+                document.getElementById(json[i].username).innerText = "Follow back"
+                document.getElementById(json[i].username).disabled = false
+            },
+            error: function () {
+                document.getElementById(json[i].username).innerText = "Followed"
+                document.getElementById(json[i].username).disabled = true
+            }
+        })
+
+
+    }
+    pomocna+=`</div></div>`;
+    $("#showData").html(pomocna);
+
+
+    $("button[name=followBack]").click(function () {
+        id = this.id
+        customAjax({
+            url: 'http://localhost:80/user-service/follow/' + this.id + "/" + localStorage.getItem("email"),
+            method: 'POST',
+            success: function (data) {
+                document.getElementById(id).disabled = true
+            },
+            error: function () {
+            }
+        })
+    })
 
 
 }

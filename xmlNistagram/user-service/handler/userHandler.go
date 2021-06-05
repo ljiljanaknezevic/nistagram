@@ -242,10 +242,10 @@ func (handler *UserHandler) GetUserByEmailAddress(w http.ResponseWriter, r *http
 
 func (handler *UserHandler) Follow(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
-	email := vars["email"]
-	followerUsername := vars["followerUsername"]
+	email := vars["email"] //maja
+	followerUsername := vars["followerUsername"] //dragana
 	var followerUser model.User
-	followerUser = handler.Service.GetUserByUsername(followerUsername)
+	followerUser = handler.Service.GetUserByUsername(followerUsername) //dragana
 	var user model.User
 	user = handler.Service.GetUserByEmailAddress(email)
 
@@ -259,6 +259,7 @@ func (handler *UserHandler) Follow(w http.ResponseWriter, r *http.Request) {
 		follower.Username = user.Username
 		followerUser.Followers = append(followerUser.Followers, follower)
 		handler.Service.UpdateUser(&followerUser)
+
 		var following model.Following
 		following.Username = followerUsername
 		user.Following= append(user.Following,following)
@@ -292,16 +293,33 @@ func (handler *UserHandler) AcceptRequest(w http.ResponseWriter, r *http.Request
 
 	var waitingFollower model.WaitingFollower
 	waitingFollower.Username = followerUsername
-
-	handler.Service.DeleteFromWaitingList(1)
+	for _,element := range user.WaitingFollowers{
+		if element.Username == followerUsername {
+			handler.Service.DeleteFromWaitingList(element.ID)
+		}
+	}
 	handler.Service.UpdateUser(&user)
-
-
-
-
-
 	w.WriteHeader(http.StatusOK)
 }
+
+func (handler *UserHandler) DeclineRequest(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	email := vars["email"]
+	followerUsername := vars["followerUsername"]
+	var user model.User
+	user = handler.Service.GetUserByEmailAddress(email)
+
+	var waitingFollower model.WaitingFollower
+	waitingFollower.Username = followerUsername
+	for _,element := range user.WaitingFollowers{
+		if element.Username == followerUsername {
+			handler.Service.DeleteFromWaitingList(element.ID)
+		}
+	}
+	handler.Service.UpdateUser(&user)
+	w.WriteHeader(http.StatusOK)
+}
+
 func RemoveIndex(s []model.WaitingFollower, index int) []model.WaitingFollower {
 	return append(s[:index], s[index+1:]...)
 }
@@ -312,8 +330,16 @@ func (handler *UserHandler) AlreadyFollow(w http.ResponseWriter, r *http.Request
 	followerUsername := vars["followerUsername"]
 	var user model.User
 	user = handler.Service.GetUserByEmailAddress(email)
+	var waitingUser model.User
+	waitingUser = handler.Service.GetUserByUsername(followerUsername)
 	for _, element := range user.Following {
 		if strings.Compare(element.Username,followerUsername) == 0  {
+			w.WriteHeader(http.StatusBadRequest)
+		}
+
+	}
+	for _, element := range waitingUser.WaitingFollowers {
+		if strings.Compare(element.Username,user.Username) == 0  {
 			w.WriteHeader(http.StatusBadRequest)
 		}
 
@@ -327,6 +353,21 @@ func (handler *UserHandler) GetAllFromWaitingList(w http.ResponseWriter, r *http
 	user = handler.Service.GetUserByEmailAddress(email)
 	var result []model.User
 	for _,elem:= range user.WaitingFollowers{
+		result=append(result, handler.Service.GetUserByUsername(elem.Username))
+	}
+	w.WriteHeader(http.StatusOK)
+	w.Header().Set("Content-Type", "application/json")
+
+	json.NewEncoder(w).Encode(result)
+}
+
+func (handler *UserHandler) GetAllFollowers(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	email := vars["email"]
+	var user model.User
+	user = handler.Service.GetUserByEmailAddress(email)
+	var result []model.User
+	for _,elem:= range user.Followers{
 		result=append(result, handler.Service.GetUserByUsername(elem.Username))
 	}
 	w.WriteHeader(http.StatusOK)

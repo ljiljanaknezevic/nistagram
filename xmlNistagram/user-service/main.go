@@ -138,9 +138,10 @@ func InitializeRoute(handler *handler.UserHandler) {
 	router.HandleFunc("/getByEmail/{email}", handler.GetUserByEmailAddress).Methods("GET")
 	router.HandleFunc("/changeUserData", handler.ChangeUserData).Methods("POST")
 	router.HandleFunc("/follow/{followerUsername}/{email}", handler.Follow).Methods("POST")
-	//router.HandleFunc("/declineRequest/{followerUsername}/{email}", handler.DeclineRequest).Methods("POST")
+	router.HandleFunc("/declineRequest/{followerUsername}/{email}", handler.DeclineRequest).Methods("POST")
 	router.HandleFunc("/acceptRequest/{followerUsername}/{email}", handler.AcceptRequest).Methods("POST")
 	router.HandleFunc("/alreadyFollow/{followerUsername}/{email}", handler.AlreadyFollow).Methods("GET")
+	router.HandleFunc("/getAllFollowers/{email}", handler.GetAllFollowers).Methods("GET")
 	/*router.Methods("OPTIONS").HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Access-Control-Allow-Origin", "")
 		w.Header().Set("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE")
