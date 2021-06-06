@@ -1,6 +1,91 @@
+var file;
+function readURL(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+        file=input.files[0];
+
+        reader.onload = function(e) {
+            $('#blah').attr('src', e.target.result);
+        }
+        reader.readAsDataURL(input.files[0]); // convert to base64 string
+    }
+
+}
 $(document).ready(function(e){
     var email = localStorage.getItem('email')
-    $(window).on('load', function () {
+
+    $("#addPost").click(function () {
+        $("#showData").html(
+            `<form  class="ui large form" 
+                             style="width:80%; margin-left:auto; 
+                             margin-right:auto; margin-top: 20px;">         
+                          <form method="post" enctype="multipart/form-data">
+                            <div class="field">
+                                <label for="file">Choose image:</label>
+                                <input type="file" id="file" name="file"  multiple required onchange="readURL(this);" accept=".jpg, .jpeg, .png"  >
+                            </div>
+                            <div class=" two fields">
+                                <div class="field">
+                                    <img id="blah" height="500px" alt="your image" />
+                                </div>
+                                <div class="field">
+                                    <label for="description">Description:</label>
+                                    <textarea type="text"  id="description" placeholder="Description" rows = "15"/>
+                                    
+                                    <label for="tags">Tags:</label>
+                                    <input type="text"  id="tags" placeholder="@tag" />
+
+                                    <label for="location">Location:</label>
+                                    <input type="text"  id="location" placeholder="place for location" />
+                                </div>
+                            </div>
+                            <div class="ui grid">
+                            <div class="two wide column"></div>
+                            <div class="two wide column"></div>
+                            <div class="two wide column"></div>
+                            <div class="two wide column"></div>
+                            <div class="two wide column"></div>
+                            <div class="two wide column"></div>
+                            <div class="two wide column"></div>
+                            <div class="two wide column right">  
+                            <button type="button" style = "text-align: center" class="ui primary button" id="save_post" >ADD POST</button>
+                            </div>
+                            </div>
+                          </form>
+                      </form>`
+        );
+        //var image=$('#blah').attr('src');
+
+
+        $('#save_post').click(function () {
+            //apartment.images=image;
+            var image = $('#blah').attr('src');
+
+            var formData = new FormData();
+            formData.append("file", file);
+
+            var description = $('#description').val();
+            var tags = $('#tags').val();
+            var username = localStorage.getItem('email');
+
+
+            customAjax({
+                url: 'http://localhost:80/post-service/savePost',
+                method: 'POST',
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function () {
+                    alert("Sucess saved post")
+                },
+                error: function (e) {
+                    alert('greska')
+                    // p_log.text('Error');
+                }
+            });
+        });
+    });
+        $(window).on('load', function () {
         customAjax({
             url: 'http://localhost:80/user-service/getByEmail/' + email,
             method: 'GET',
