@@ -106,7 +106,7 @@ $(document).ready(function(e){
                             </div>
                             <div class=" two fields">
                                 <div class="field">
-                                    <img id="blah" height="500px" alt="your image" />
+                                    <img id="blah" height="350px" alt="your image" />
                                 </div>
                                 <div class="field">
                                     <label for="location">Location:</label>
@@ -147,11 +147,12 @@ $(document).ready(function(e){
             var description = $('#description').val();
             var tags = $('#tags').val();
             var location=$('#location').val();
-            var username = localStorage.getItem('email');
+            var email = localStorage.getItem('email');
 
             formData.append("description", description)
             formData.append("tags", tags)
             formData.append("location", location)
+            formData.append("email", email)
             customAjax({
                 url: 'http://localhost:80/post-service/savePost',
                 method: 'POST',

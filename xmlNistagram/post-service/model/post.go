@@ -7,7 +7,7 @@ import (
 type Post struct {
 	gorm.Model
 	Description string `json:"description"`
-	Username    string `gorm: "unique" json:"username"`
+	Email       string  `json:"email"`
 	Tags        string `json:"tags"`
 	ImageID     uint   `json:imageID`
 	Location    string `json:location`

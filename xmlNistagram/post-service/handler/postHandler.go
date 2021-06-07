@@ -59,6 +59,11 @@ func (handler *PostHandler) SavePost(w http.ResponseWriter, r *http.Request) {
 	fmt.Println(r.PostFormValue("tags"))
 
 	var post model.Post
+	post.Description = r.PostFormValue("description")
+	post.Location = r.PostFormValue("location")
+	post.Tags = r.PostFormValue("tags")
+	post.ImageID = fileId
+	post.Email = r.PostFormValue("email")
 	handler.Service.SavePost(&post)
 	jsonResponse(w, http.StatusCreated, "File uploaded successfully!.")
 
