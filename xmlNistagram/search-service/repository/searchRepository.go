@@ -24,10 +24,20 @@ func (repo *SearchRepository) GetAllUsersExceptLogging(username string) []model.
 	repo.Database.Where("email != ?", username).Preload("Following").Preload("WaitingFollowers").Preload("Followers").Find(&users)
 	return users
 }
+func (repo *SearchRepository) GetUserByEmailAddress(email string) model.User {
+	var user model.User
+	repo.Database.Where("email = ? ", email).Preload("Following").Preload("WaitingFollowers").Preload("Followers").First(&user)
+	return user
+}
 
 func (repo *SearchRepository) GetAllPosts() []model.Post{
 	var posts []model.Post
 	repo.Database.Find(&posts)
+	return posts
+}
+func (repo *SearchRepository) GetPostsForSearchedUser(email string) []model.Post{
+	var posts []model.Post
+	repo.Database.Where("email = ?",email).Find(&posts)
 	return posts
 }
 

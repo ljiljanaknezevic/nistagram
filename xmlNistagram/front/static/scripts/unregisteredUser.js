@@ -15,6 +15,20 @@ $(document).ready(function(e) {
         });
 
     });
+    $("#searchLocation").click(function () {
+        var location = $("#locationSearch").val();
+        console.log(location)
+        customAjax({
+            url: 'http://localhost:80/search-service/searchPostByLocationUnregistered/' + location,
+            method: 'GET',
+            success: function (data) {
+                showPosts(data);
+            },
+            error: function () {
+            }
+
+        });
+    })
 })
 let showProfile = function(user) {
     var json = JSON.parse(user);
@@ -58,5 +72,78 @@ let showProfile = function(user) {
     pomocna+=`</div></div>`;
     $("#showData").html(pomocna);
     }
+
+
+var pomocna
+
+let showPosts = function(posts) {
+    var json = JSON.parse(posts);
+    var jsonParse;
+    console.log(json)
+    var slika
+    pomocna=""
+    pomocna +=`<div style="margin-top: 50px" ><div class="ui cards">`;
+
+    for( i in json) {
+
+        slika = ""
+        customAjax({
+            url: 'http://localhost:80/search-service/getMedia/' + json[i].ImageID,
+            method: 'GET',
+            async:false,
+            success: function (data) {
+                customAjax({
+                    url: 'http://localhost:80/user-service/getByEmail/' + json[i].email,
+                    method: 'GET',
+                    async:false,
+                    success: function (user) {
+                        jsonParse = JSON.parse(user);
+                        console.log(jsonParse.username)
+                    },
+                    error: function () {
+
+                    }
+                })
+                slika = data
+                console.log(slika)
+                console.log("slka slika slika" + slika)
+
+                pom1 = `<img id="output" height="150px" alt="slika" src ="`+'data:image/png;base64,'+ slika + ` ">`;
+                pomocna += `<br><div class="ui card">
+
+  <div class="content">
+     <div class="left floated meta">` + jsonParse.username + `</div>
+     <div class="right floated meta">` + json[i].CreatedAt.split("T")[0] + `</div>
+     
+    
+  </div>
+  
+   <div class="image">
+    ` + pom1 + `
+  </div>
+  <div class="content">
+  <div class="description">
+      `+ json[i].description+`
+    </div>
+  </div>
+  
+  
+</div>`;
+
+            },
+            error: function () {
+
+            }
+        })
+
+
+    }
+
+    pomocna+=`</div></div>`;
+    $("#showData").html(pomocna);
+
+
+
+}
 
 

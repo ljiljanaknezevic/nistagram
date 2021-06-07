@@ -20,9 +20,17 @@ func (service *SearchService) GetAllUsersExceptLogging(username string) []model.
 	users:= service.Repo.GetAllUsersExceptLogging(username)
 	return users
 }
+func (service *SearchService) GetUserByEmailAddress(email string) model.User {
+	user := service.Repo.GetUserByEmailAddress(email)
+	return user
+}
 
 func (service *SearchService) GetAllPosts() []model.Post{
 	posts:= service.Repo.GetAllPosts()
+	return posts
+}
+func (service *SearchService) GetPostsForSearchedUser(email string) []model.Post{
+	posts:= service.Repo.GetPostsForSearchedUser(email)
 	return posts
 }
 func (service *SearchService) FindFileById(id uint) model.File{
