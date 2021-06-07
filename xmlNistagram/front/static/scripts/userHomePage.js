@@ -1,9 +1,15 @@
 var file;
 var pomocnaP;
+<<<<<<< HEAD
 let jsonObjekat;
 //var loggedUser = new Object();
 
+=======
+  let jsonObjekat;
+  let slika
+>>>>>>> b5b533da882f08539d788922b364af7cbccb66a6
 function readURL(input) {
+
     if (input.files && input.files[0]) {
         var reader = new FileReader();
         file=input.files[0];
@@ -17,6 +23,11 @@ function readURL(input) {
 
 }
 $(document).ready(function(e){
+<<<<<<< HEAD
+=======
+
+    var email = localStorage.getItem('email')
+>>>>>>> b5b533da882f08539d788922b364af7cbccb66a6
 
     var email = localStorage.getItem('email')
   
@@ -143,8 +154,6 @@ $(document).ready(function(e){
                       </form>`
         );
 
-      
-
         $('#save_post').click(function () {
             var formData = new FormData();
             formData.append("file", file);
@@ -268,6 +277,23 @@ $(document).ready(function(e){
         });
 
     });
+
+    $("#searchLocation").click(function () {
+        var location= $("#locationSearch").val();
+        console.log(location)
+        customAjax({
+            url: 'http://localhost:80/search-service/searchPostByLocation/' + location + "/" + localStorage.getItem("email"),
+            method: 'GET',
+            success: function (data) {
+                showPosts(data);
+            },
+            error: function () {
+            }
+
+        });
+
+    });
+
 });
 
 
@@ -486,10 +512,17 @@ let editProfile = function(user) {
 });
                         
 }
-
+function sleep(milliseconds) {
+    const date = Date.now();
+    let currentDate = null;
+    do {
+        currentDate = Date.now();
+    } while (currentDate - date < milliseconds);
+}
 let showProfile = function(user) {
     var json = JSON.parse(user);
     var pomocna ="";
+
     pomocna +=`<div style="margin-top: 50px" ><div class="ui link cards">`;
     for( i in json) {
 
@@ -504,11 +537,11 @@ let showProfile = function(user) {
         if (json[i].isPrivate == true) {
             pom1 += "<i class=\"lock icon\"></i>";
         }
-        pomocna += `<br><div class="ui card">
+        pomocna += `<br><div class="ui card" >
   <div class="image">` + pom + `
   </div>
   <div class="content">
-    <a class="header">` + json[i].username + `</a>
+    <a class="header" name="profile" id="`+json[i].email+`">` + json[i].username + `</a>
     <div class="meta">
       <span class="date">Birthday: ` + json[i].birthday + `</span>
     </div>
@@ -528,6 +561,7 @@ let showProfile = function(user) {
     </div>
   </div>
 </div>`;
+
         customAjax({
             url: 'http://localhost:80/user-service/alreadyFollow/' + json[i].username + "/" + localStorage.getItem("email"),
             method: 'GET',
@@ -542,8 +576,26 @@ let showProfile = function(user) {
         })
 
     }
+
     pomocna+=`</div></div>`;
+
     $("#showData").html(pomocna);
+
+    $("a[name=profile]").click(function () {
+        console.log("Usao u profile")
+        id = this.id
+       console.log(id)
+        customAjax({
+            url: 'http://localhost:80/search-service/getPostsForSearchedUser/' + this.id +"/"+ localStorage.getItem("email"),
+            method: 'GET',
+            success: function (data) {
+                showPostsForSearchedUser(data)
+            },
+            error: function () {
+                alert("Locked")
+            }
+        })
+    })
 
     $("button[name=follow]").click(function () {
         id = this.id
@@ -679,6 +731,140 @@ let showFollowers = function(user) {
 
 }
 
+var pomocna
+let showPosts = function(posts) {
+    var json = JSON.parse(posts);
+    var jsonParse;
+    console.log(json)
+    var slika
+    pomocna=""
+    pomocna +=`<div style="margin-top: 50px" ><div class="ui cards">`;
+
+    for( i in json) {
+
+        slika = ""
+        customAjax({
+            url: 'http://localhost:80/search-service/getMedia/' + json[i].ImageID,
+            method: 'GET',
+            async:false,
+            success: function (data) {
+                customAjax({
+                    url: 'http://localhost:80/user-service/getByEmail/' + json[i].email,
+                    method: 'GET',
+                    async:false,
+                    success: function (user) {
+                        jsonParse = JSON.parse(user);
+                        console.log(jsonParse.username)
+                    },
+                    error: function () {
+
+                    }
+                })
+                slika = data
+                console.log(slika)
+                console.log("slka slika slika" + slika)
+
+                pom1 = `<img id="output" height="150px" alt="slika" src ="`+'data:image/png;base64,'+ slika + ` ">`;
+                pomocna += `<br><div class="ui card">
+
+  <div class="content">
+     <div class="left floated meta">` + jsonParse.username + `</div>
+     <div class="right floated meta">` + json[i].CreatedAt.split("T")[0] + `</div>
+    
+  </div>
+   <div class="image">
+    ` + pom1 + `
+  </div>
+  <div class="content">
+  <div class="description">
+      `+ json[i].description+`
+    </div>
+  </div>
+  
+  
+  <div class="extra content">
+    <div class="ui large transparent left icon input">
+      <i class="heart outline icon"></i>
+      <input type="text" placeholder="Add Comment...">
+    </div>
+  </div>
+</div>`;
+
+            },
+            error: function () {
+
+            }
+        })
+
+
+    }
+
+    pomocna+=`</div></div>`;
+    $("#showData").html(pomocna);
+
+
+
+}
+
+
+let showPostsForSearchedUser = function(posts) {
+    var json = JSON.parse(posts)
+    console.log(json)
+    var slika
+    result=""
+    result +=`<div style="margin-top: 50px" ><div class="ui cards">`;
+
+    for( i in json) {
+
+        slika = ""
+        customAjax({
+            url: 'http://localhost:80/search-service/getMedia/' + json[i].ImageID,
+            method: 'GET',
+            async:false,
+            success: function (data) {
+
+                slika = data
+                console.log(slika)
+                console.log("slka slika slika" + slika)
+
+                pom1 = `<img id="output" height="150px" alt="slika" src ="`+'data:image/png;base64,'+ slika + ` ">`;
+                result += `<br><div class="ui card">
+
+  <div class="content">
+     <div class="right floated meta">` + json[i].CreatedAt.split("T")[0] + `</div>  
+  </div>
+   <div class="image">
+    ` + pom1 + `
+  </div>
+  <div class="content">
+  <div class="description">
+      `+ json[i].description+`
+    </div>
+  </div> 
+  <div class="extra content">
+    <div class="ui large transparent left icon input">
+      <i class="heart outline icon"></i>
+      <input type="text" placeholder="Add Comment...">
+    </div>
+  </div>
+</div>`;
+
+            },
+            error: function () {
+
+
+            }
+        })
+
+
+    }
+
+    result+=`</div></div>`;
+    $("#showData").html(result);
+
+
+
+}
 
 
 

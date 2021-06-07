@@ -83,15 +83,19 @@ func CreateRouter() {
 
 //initialize all routes
 func InitializeRoute(handler *handler.SearchHandler) {
-	router.HandleFunc("/searchUserByUsername/{username}/{loggingUsername}", handler.GetUserByUsername).Methods("GET")
-	//router.HandleFunc("/getAllUsers", handler.GetAllUsers).Methods("GET")
-	router.HandleFunc("/searchUserByUsernameForUnregistredUser/{username}", handler.GetUserByUsernameForUnregistredUser).Methods("GET")
+		router.HandleFunc("/searchUserByUsername/{username}/{loggingUsername}", handler.GetUserByUsername).Methods("GET")
+		//router.HandleFunc("/getAllUsers", handler.GetAllUsers).Methods("GET")
+		router.HandleFunc("/searchUserByUsernameForUnregistredUser/{username}", handler.GetUserByUsernameForUnregistredUser).Methods("GET")
+		router.HandleFunc("/searchPostByLocation/{location}/{email}", handler.SearchPostsByLocation).Methods("GET")
+		router.HandleFunc("/searchPostByLocationUnregistered/{location}", handler.SearchPostsByLocationUnregistered).Methods("GET")
+		router.HandleFunc("/getPostsForSearchedUser/{id}/{email}", handler.GetPostsForSearchedUser).Methods("GET")
+		router.HandleFunc("/getMedia/{id}", handler.MediaForFront).Methods("GET")
 
 	router.Methods("OPTIONS").HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		w.Header().Set("Access-Control-Allow-Origin", "")
-		w.Header().Set("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE")
-		w.Header().Set("Access-Control-Allow-Headers", "Accept, Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, Access-Control-Request-Headers, Access-Control-Request-Method, Connection, Host, Origin, User-Agent, Referer, Cache-Control, X-header")
-	})
+			w.Header().Set("Access-Control-Allow-Origin", "")
+			w.Header().Set("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE")
+			w.Header().Set("Access-Control-Allow-Headers", "Accept, Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, Access-Control-Request-Headers, Access-Control-Request-Method, Connection, Host, Origin, User-Agent, Referer, Cache-Control, X-header")
+		})
 }
 
 //start the server
