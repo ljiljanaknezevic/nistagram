@@ -22,3 +22,9 @@ func (service *PostService) SaveFile(file *model.File) error {
 func (service *PostService) FindFileIdByPath(path string) uint {
 	return service.FileRepo.FindIdByPath(path)
 }
+func (service *PostService) FindFilePathById(imageID uint) string {
+	return service.FileRepo.FindFilePathById(imageID)
+}
+func (service *PostService) GetAllPostsByEmail(email string) []model.Post {
+	return service.Repo.GetAllPostsByEmail(email)
+}

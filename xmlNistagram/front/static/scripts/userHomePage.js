@@ -1,12 +1,15 @@
 var file;
 var pomocnaP;
-  let jsonObjekat;
+let jsonObjekat;
+//var loggedUser = new Object();
+
 function readURL(input) {
     if (input.files && input.files[0]) {
         var reader = new FileReader();
         file=input.files[0];
 
         reader.onload = function(e) {
+            console.log(e.target.result)
             $('#blah').attr('src', e.target.result);
         }
         reader.readAsDataURL(input.files[0]); // convert to base64 string
@@ -14,8 +17,9 @@ function readURL(input) {
 
 }
 $(document).ready(function(e){
-    var email = localStorage.getItem('email')
 
+    var email = localStorage.getItem('email')
+  
     $("#addPost").click(function () {
 
 
@@ -161,7 +165,15 @@ $(document).ready(function(e){
                 contentType: false,
                 success: function () {
                     alert("Sucess saved post")
-                    location.href = "userHomePage.html";
+                     customAjax({
+                        url: 'http://localhost:80/user-service/getByEmail/' + email,
+                        method: 'GET',
+                        success: function(data){
+                            myProfile(data)
+                        },
+                        error: function(){
+                        }
+                    });
                 },
                 error: function (e) {
                     alert('Error uploading new post.')
@@ -212,10 +224,20 @@ $(document).ready(function(e){
     });
     });
 
-
+    $("#myProfile").click(function () {
+   
+		  customAjax({
+		      url: 'http://localhost:80/user-service/getByEmail/' + email,
+		      method: 'GET',
+		      success: function(data){
+                myProfile(data)
+		      },
+		      error: function(){
+		      }
+        });
+	});  
 	
 	  $("#editProfile").click(function () {
-          console.log("usao u klik")
 		  customAjax({
 		      url: 'http://localhost:80/user-service/getByEmail/' + email,
 		      method: 'GET',
@@ -224,8 +246,7 @@ $(document).ready(function(e){
 		      },
 		      error: function(){
 		      }
-	
-	 });
+        });
 	  });  
 	
 	$('#logout').click(function(){
@@ -248,6 +269,94 @@ $(document).ready(function(e){
 
     });
 });
+
+
+let myProfile = function(user){
+    var json = JSON.parse(user);
+    var email = json.email
+
+    customAjax({
+        url: 'http://localhost:80/post-service/getAllPostsByEmail/' + email,
+        method: 'GET',
+        success: function(data){
+            showPosts(JSON.parse(data))
+        },
+        error: function(){
+        }
+    });
+
+    function showPosts(data)
+    {
+        for(i in data){
+             let imageID = data[i].ImageID
+        }
+
+        let temp;
+        for(i in data)
+        {
+            let imageID = data[i].ImageID
+            customAjax({
+                url: 'http://localhost:80/post-service/getImageByImageID/' + imageID,
+                method: 'GET',
+                 success: function(data){
+                     console.log("#id_"+i)
+                    $("#id_"+i).attr("src" , "data:image/jpeg;base64,"+data)
+                },
+                error: function(){
+                }
+            });
+          temp += `<a class="red card">
+                <div class="ui card">
+                <div class="content">
+                    <div class="right floated meta">`+ data[i].CreatedAt.split('T')[0]+`</div>
+                    <img class="ui avatar image" `+data[i].description+` />
+                </div>
+                <div class="image" >
+                    <img id="id_`+i+`"/>
+                </div>
+                <div class="content">
+                    <span class="right floated">
+                    <i class="heart outline like icon"></i>
+                    17 likes
+                    </span>
+                    <i class="comment icon"></i>
+                    3 comments
+                </div>
+                <div class="extra content">
+                    <div class="ui large transparent left icon input">
+                    <i class="heart outline icon"></i>
+                    <input type="text" placeholder="Add Comment...">
+                    </div>
+                </div>
+                </div>
+            </a>`
+        }
+        $('#posts').html(temp);
+    }
+    //get all posts from that user
+    $("#showData").html(
+        `<div  style="width:80%; margin-left:auto; 
+                             margin-right:auto;">
+            <h2 class="ui left aligned header" ></h2>
+           <div class="ui clearing segment">
+            <h3 class="ui right floated header">
+                Posts
+            </h3>
+             <h3 class="ui right floated header">
+                Followers
+            </h3> <h3 class="ui right floated header">
+               Following
+            </h3>
+            <h3 class="ui left floated header">
+               `+ json.username+`
+            </h3>
+            </div>
+            <div class="ui section divider"></div>
+            <h3 class="ui header">header</h3>
+                <div class="ui four cards" id='posts'></div>
+        </div> `
+        );
+}
 
 let editProfile = function(user) {
     var json = JSON.parse(user);

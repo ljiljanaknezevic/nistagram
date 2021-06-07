@@ -16,3 +16,9 @@ func (repo *PostRepository) CreatePost(post *model.Post) error {
 	fmt.Println(result.RowsAffected)
 	return nil
 }
+
+func (repo *PostRepository) GetAllPostsByEmail(email string) []model.Post {
+	var posts []model.Post
+	repo.Database.Where("email = ? ", email).Find(&posts)
+	return posts
+}

@@ -1,14 +1,21 @@
 package handler
 
 import (
+	"bytes"
 	"encoding/json"
 	"fmt"
+	"image"
+	"image/jpeg"
 	"io"
+	"log"
 	"net/http"
 	"os"
 	"path/filepath"
 	"post-service-mod/model"
 	"post-service-mod/service"
+	"strconv"
+
+	"github.com/gorilla/mux"
 )
 
 type PostHandler struct {
@@ -73,4 +80,48 @@ func jsonResponse(w http.ResponseWriter, code int, message string) {
 	//	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(code)
 	fmt.Fprint(w, message)
+}
+
+func (handler *PostHandler) GetAllPostsByEmail(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	email := vars["email"]
+	var result []model.Post
+	result = handler.Service.GetAllPostsByEmail(email)
+	w.WriteHeader(http.StatusOK)
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(result)
+}
+func (handler *PostHandler) GetImageByImageID(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	imageID := vars["imageID"]
+
+	u64, err := strconv.ParseUint(imageID, 10, 32)
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	var image_ID uint
+	image_ID = uint(u64)
+	var imagePath string
+	imagePath = handler.Service.FindFilePathById(image_ID)
+
+	//tamara
+	var mediaZaFront []byte
+	//image2 je putanja
+	f, _ := os.Open(imagePath)
+	defer f.Close()
+	image, _, _ := image.Decode(f)
+	buffer := new(bytes.Buffer)
+	if err := jpeg.Encode(buffer, image, nil); err != nil {
+		log.Println("unable to encode image.")
+	}
+	mediaZaFront = buffer.Bytes()
+	imagesMarshaled, err := json.Marshal(mediaZaFront)
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(http.StatusOK)
+	w.Write(imagesMarshaled)
 }

@@ -131,6 +131,9 @@ func CreateRouter() {
 //initialize all routes
 func InitializeRoute(handler *handler.PostHandler) {
 	router.HandleFunc("/savePost", handler.SavePost).Methods("POST")
+	router.HandleFunc("/getAllPostsByEmail/{email}", handler.GetAllPostsByEmail).Methods("GET")
+	router.HandleFunc("/getImageByImageID/{imageID}", handler.GetImageByImageID).Methods("GET")
+
 	router.Methods("OPTIONS").HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Access-Control-Allow-Origin", "")
 		w.Header().Set("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE")

@@ -24,3 +24,8 @@ func (repo *FileRepository) FindIdByPath(path string) uint {
 	fmt.Println(file)
 	return file.ID
 }
+func (repo *FileRepository) FindFilePathById(imageID uint) string {
+	var file model.File
+	repo.Database.Where("id = ? ", imageID).First(&file)
+	return file.Path
+}
