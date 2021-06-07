@@ -28,8 +28,12 @@ func initRepo(database *gorm.DB) *repository.PostRepository {
 	return &repository.PostRepository{Database: database}
 }
 
-func initServices(repo *repository.PostRepository) *service.PostService {
-	return &service.PostService{Repo: repo}
+func initFileRepo(database *gorm.DB) *repository.FileRepository {
+	return &repository.FileRepository{Database: database}
+}
+
+func initServices(repo *repository.PostRepository, fileRepo *repository.FileRepository) *service.PostService {
+	return &service.PostService{Repo: repo, FileRepo: fileRepo}
 }
 
 func initHandler(service *service.PostService) *handler.PostHandler {
@@ -64,6 +68,7 @@ func InitialMigration() {
 	connection := GetDatabase()
 	defer CloseDatabase(connection)
 	connection.AutoMigrate(model.Post{})
+	connection.AutoMigrate(model.File{})
 }
 
 //closes database connection
@@ -147,7 +152,8 @@ func main() {
 	InitialMigration()
 	CreateRouter()
 	repo := initRepo(db)
-	service := initServices(repo)
+	fileRepo := initFileRepo(db)
+	service := initServices(repo, fileRepo)
 	handler := initHandler(service)
 	InitializeRoute(handler)
 	ServerStart()

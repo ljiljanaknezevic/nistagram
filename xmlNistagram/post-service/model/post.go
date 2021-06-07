@@ -9,5 +9,6 @@ type Post struct {
 	Description string `json:"description"`
 	Username    string `gorm: "unique" json:"username"`
 	Tags        string `json:"tags"`
-	Image       string `json:image`
+	ImageID     uint   `json:imageID`
+	Location    string `json:location`
 }

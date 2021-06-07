@@ -22,7 +22,7 @@ func (repo *UserRepository) UpdateUser(user *model.User) error {
 	return nil
 }
 func (repo *UserRepository) DeleteFromWaitingList(ID uint) error {
-	repo.Database.Where("ID = ?",ID).Preload("Following").Preload("WaitingFollowers").Preload("Followers").Delete(&model.WaitingFollower{})
+	repo.Database.Where("ID = ?", ID).Preload("Following").Preload("WaitingFollowers").Preload("Followers").Delete(&model.WaitingFollower{})
 	return nil
 }
 
@@ -42,7 +42,6 @@ func (repo *UserRepository) GetWaitingUser(username string) model.WaitingFollowe
 	repo.Database.Where("username = ? ", username).First(&user)
 	return user
 }
-
 
 func (repo *UserRepository) GetUserByEmailAddress(email string) model.User {
 	var user model.User

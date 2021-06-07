@@ -1,16 +1,24 @@
 package service
 
 import (
-	"fmt"
 	"post-service-mod/model"
 	"post-service-mod/repository"
 )
 
 type PostService struct {
-	Repo *repository.PostRepository
+	Repo     *repository.PostRepository
+	FileRepo *repository.FileRepository
 }
 
 func (service *PostService) SavePost(post *model.Post) error {
-	fmt.Println("'usoooooooooooooooooooooooo'")
+	service.Repo.CreatePost(post)
 	return nil
+}
+func (service *PostService) SaveFile(file *model.File) error {
+	service.FileRepo.CreateFile(file)
+	return nil
+}
+
+func (service *PostService) FindFileIdByPath(path string) uint {
+	return service.FileRepo.FindIdByPath(path)
 }

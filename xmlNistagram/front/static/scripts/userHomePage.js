@@ -1,4 +1,6 @@
 var file;
+var pomocnaP;
+  let jsonObjekat;
 function readURL(input) {
     if (input.files && input.files[0]) {
         var reader = new FileReader();
@@ -15,6 +17,84 @@ $(document).ready(function(e){
     var email = localStorage.getItem('email')
 
     $("#addPost").click(function () {
+
+
+        function reverseGeocode(coords) {
+            fetch('https://nominatim.openstreetmap.org/reverse?format=json&lon=' + coords[0] + '&lat=' + coords[1])
+                .then(function (response) {
+                    //alert(response);
+                    return response.json();
+                }).then(function (json) {
+                    let location=json["address"]["road"]+` `+json["address"]["house_number"]+` , `+json["address"]["city"]+` , `+json["address"]["country"];
+                    $('#location').val(location)
+
+            // $('#street-number').val(json["address"]["house_number"])
+        	//$('#city').val(json["address"]["city"])
+        	//$('#zip-code').val(json["address"]["postcode"])
+        	
+        	
+        	//$('#location-longitude').val(json["lon"]);
+        	//$('#location-latitude').val(json["lat"]);
+                    
+                    
+                    jsonObjekat = json;
+                });
+        };
+
+         pomocnaP = function () {
+        var map = new ol.Map({
+            
+                target: 'map',
+                layers: [
+                    new ol.layer.Tile({
+                        source: new ol.source.OSM()
+                    })
+                ],
+                view: new ol.View({
+                    center: ol.proj.fromLonLat([19.8424, 45.2541]),
+                    zoom: 15
+                })
+            });
+            //var jsonObjekat;
+            map.on('click', function (evt) {
+                var coord = ol.proj.toLonLat(evt.coordinate);
+                reverseGeocode(coord);
+                var iconFeatures = [];
+                var lon = coord[0];
+                var lat = coord[1];
+                var icon = "marker.png";
+                var iconGeometry = new ol.geom.Point(ol.proj.transform([lon, lat], 'EPSG:4326', 'EPSG:3857'));
+                var iconFeature = new ol.Feature({
+                    geometry: iconGeometry
+                });
+
+                iconFeatures.push(iconFeature);
+
+                var vectorSource = new ol.source.Vector({
+                    features: iconFeatures //add an array of features
+                });
+
+
+                var iconStyle = new ol.style.Style({
+                    image: new ol.style.Icon(/** @type {olx.style.IconOptions} */({
+                        anchor: [0.5, 46],
+                        anchorXUnits: 'fraction',
+                        anchorYUnits: 'pixels',
+                        opacity: 0.95,
+                        src: icon
+                    }))
+                });
+
+                var vectorLayer = new ol.layer.Vector({
+                    source: vectorSource,
+                    style: iconStyle
+                });
+
+                map.addLayer(vectorLayer);
+
+            });
+        }
+
         $("#showData").html(
             `<form  class="ui large form" 
                              style="width:80%; margin-left:auto; 
@@ -29,15 +109,19 @@ $(document).ready(function(e){
                                     <img id="blah" height="500px" alt="your image" />
                                 </div>
                                 <div class="field">
-                                    <label for="description">Description:</label>
-                                    <textarea type="text"  id="description" placeholder="Description" rows = "15"/>
-                                    
-                                    <label for="tags">Tags:</label>
-                                    <input type="text"  id="tags" placeholder="@tag" />
-
                                     <label for="location">Location:</label>
                                     <input type="text"  id="location" placeholder="place for location" />
+                                    <div id="map" class="map" style="height:420px;"></div>
+                                            <script>pomocnaP();</script>
                                 </div>
+                            </div>
+                             <div class="field">
+                                    <label for="description">Description:</label>
+                                    <textarea type="text"  id="description" name="description" placeholder="Description" rows = "2"/>
+                            </div>
+                            <div class="field">
+                               <label for="tags">Tags:</label>
+                                <input type="text"  id="tags" placeholder="@tag" />
                             </div>
                             <div class="ui grid">
                             <div class="two wide column"></div>
@@ -54,21 +138,20 @@ $(document).ready(function(e){
                           </form>
                       </form>`
         );
-        //var image=$('#blah').attr('src');
 
+      
 
         $('#save_post').click(function () {
-            //apartment.images=image;
-            var image = $('#blah').attr('src');
-
             var formData = new FormData();
             formData.append("file", file);
-
             var description = $('#description').val();
             var tags = $('#tags').val();
+            var location=$('#location').val();
             var username = localStorage.getItem('email');
 
-
+            formData.append("description", description)
+            formData.append("tags", tags)
+            formData.append("location", location)
             customAjax({
                 url: 'http://localhost:80/post-service/savePost',
                 method: 'POST',
@@ -77,15 +160,17 @@ $(document).ready(function(e){
                 contentType: false,
                 success: function () {
                     alert("Sucess saved post")
+                    location.href = "userHomePage.html";
                 },
                 error: function (e) {
-                    alert('greska')
-                    // p_log.text('Error');
+                    alert('Error uploading new post.')
                 }
             });
         });
     });
-        $(window).on('load', function () {
+    
+    
+    $(window).on('load', function () {
         customAjax({
             url: 'http://localhost:80/user-service/getByEmail/' + email,
             method: 'GET',
@@ -483,4 +568,7 @@ let showFollowers = function(user) {
 
 
 }
+
+
+
 
