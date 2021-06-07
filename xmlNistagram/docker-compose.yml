@@ -50,6 +50,8 @@ services:
       - '8083:8083'
     depends_on:
       - postgresdb
+    volumes:
+      - ./post-service/files:/go/app/files
   post-service:
     restart: always
     build:

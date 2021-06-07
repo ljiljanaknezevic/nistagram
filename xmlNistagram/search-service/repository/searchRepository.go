@@ -24,3 +24,15 @@ func (repo *SearchRepository) GetAllUsersExceptLogging(username string) []model.
 	repo.Database.Where("email != ?", username).Preload("Following").Preload("WaitingFollowers").Preload("Followers").Find(&users)
 	return users
 }
+
+func (repo *SearchRepository) GetAllPosts() []model.Post{
+	var posts []model.Post
+	repo.Database.Find(&posts)
+	return posts
+}
+
+func (repo *SearchRepository) FindFileById(id uint) model.File {
+	var file model.File
+	repo.Database.Where("ID = ? ", id).First(&file)
+	return file
+}
