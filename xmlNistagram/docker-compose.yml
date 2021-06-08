@@ -63,7 +63,7 @@ services:
     links:
       - postgresdb
     volumes:
-      - ./story-service/files:/go/app/files
+      - ./post-service/files:/go/app/files
   post-service:
     restart: always
     build:

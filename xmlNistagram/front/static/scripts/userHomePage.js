@@ -451,18 +451,16 @@ $(document).ready(function(e){
 let myProfile = function(user){
     var json = JSON.parse(user);
     var email = json.email
-
     customAjax({
         url: 'http://localhost:80/post-service/getAllPostsByEmail/' + email,
         method: 'GET',
         success: function(data){
-
             showPosts(data)
-
         },
         error: function(){
         }
     });
+
     function showPosts(data)
     {
         json = JSON.parse(data)
@@ -539,11 +537,103 @@ let myProfile = function(user){
                `+ json.username+`
             </h3>
             </div>
-            <div class="ui section divider"></div>
+           <div class="ui secondary pointing menu">
+            <a href="#" class="item active" id="posts_myprofile">
+                Posts
+            </a>
+            <a href="#" class="item" id="stories_myprofile">
+                Stories
+            </a>
+            <a class="right item">
+                Saved posts
+            </a>
+            </div>
             <h3 class="ui header"></h3>
                 <div class="ui four cards" id='posts'></div>
         </div> `
         );
+     $("#stories_myprofile.item").click(function () {
+         $(this).addClass('active');
+        $("#posts_myprofile").removeClass('active');
+         customAjax({
+        url: 'http://localhost:80/story-service/getAllStoriesByEmail/' + email,
+        method: 'GET',
+        success: function(data){
+            showStories(data)
+        },
+        error: function(){
+        }
+    });
+    });
+       $("#posts_myprofile.item").click(function () {
+         $(this).addClass('active');
+         $("#stories_myprofile").removeClass('active');
+         customAjax({
+        url: 'http://localhost:80/post-service/getAllPostsByEmail/' + email,
+        method: 'GET',
+        success: function(data){
+            showPosts(data)
+        },
+        error: function(){
+        }
+    });
+    });
+
+      function showStories(data)
+    {
+        json = JSON.parse(data)
+        var slika
+        result=""
+        result +=`<div style="margin-top: 50px" ><div class="ui cards">`;
+
+        for( i in json) {
+
+            slika = ""
+            customAjax({
+                url: 'http://localhost:80/search-service/getMedia/' + json[i].ImageID,
+                method: 'GET',
+                async:false,
+                success: function (data) {
+
+                    slika = data
+                    console.log(slika)
+                    console.log("slka slika slika" + slika)
+
+                    pom1 = `<img id="output" height="150px" alt="slika" src ="`+'data:image/png;base64,'+ slika + ` ">`;
+                    result += `<br><div class="ui card">
+
+  <div class="content">
+     <div class="right floated meta">` + json[i].CreatedAt.split("T")[0] + `</div>  
+  </div>
+   <div class="image">
+    ` + pom1 + `
+  </div>
+  <div class="content">
+  <div class="description">
+      `+ json[i].description+`
+    </div>
+  </div> 
+</div>`;
+
+                },
+                error: function () {
+
+
+                }
+            })
+
+
+        }
+
+        result+=`</div></div>`;
+        $('#posts').html(result);
+
+
+
+    }
+
+
+
 }
 
 let editProfile = function(user) {
