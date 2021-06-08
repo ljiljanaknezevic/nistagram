@@ -1,13 +1,7 @@
 var file;
 var pomocnaP;
-<<<<<<< HEAD
-let jsonObjekat;
-//var loggedUser = new Object();
-
-=======
   let jsonObjekat;
   let slika
->>>>>>> b5b533da882f08539d788922b364af7cbccb66a6
 function readURL(input) {
 
     if (input.files && input.files[0]) {
@@ -23,14 +17,172 @@ function readURL(input) {
 
 }
 $(document).ready(function(e){
-<<<<<<< HEAD
-=======
 
     var email = localStorage.getItem('email')
->>>>>>> b5b533da882f08539d788922b364af7cbccb66a6
+    
+     $("#addStory").click(function () {
 
-    var email = localStorage.getItem('email')
-  
+
+        function reverseGeocode(coords) {
+            fetch('https://nominatim.openstreetmap.org/reverse?format=json&lon=' + coords[0] + '&lat=' + coords[1])
+                .then(function (response) {
+                    //alert(response);
+                    return response.json();
+                }).then(function (json) {
+                    let location=json["address"]["road"]+` `+json["address"]["house_number"]+` , `+json["address"]["city"]+` , `+json["address"]["country"];
+                    $('#location').val(location)
+
+            // $('#street-number').val(json["address"]["house_number"])
+        	//$('#city').val(json["address"]["city"])
+        	//$('#zip-code').val(json["address"]["postcode"])
+        	
+        	
+        	//$('#location-longitude').val(json["lon"]);
+        	//$('#location-latitude').val(json["lat"]);
+                    
+                    
+                    jsonObjekat = json;
+                });
+        };
+
+         pomocnaP = function () {
+        var map = new ol.Map({
+            
+                target: 'map',
+                layers: [
+                    new ol.layer.Tile({
+                        source: new ol.source.OSM()
+                    })
+                ],
+                view: new ol.View({
+                    center: ol.proj.fromLonLat([19.8424, 45.2541]),
+                    zoom: 15
+                })
+            });
+            //var jsonObjekat;
+            map.on('click', function (evt) {
+                var coord = ol.proj.toLonLat(evt.coordinate);
+                reverseGeocode(coord);
+                var iconFeatures = [];
+                var lon = coord[0];
+                var lat = coord[1];
+                var icon = "marker.png";
+                var iconGeometry = new ol.geom.Point(ol.proj.transform([lon, lat], 'EPSG:4326', 'EPSG:3857'));
+                var iconFeature = new ol.Feature({
+                    geometry: iconGeometry
+                });
+
+                iconFeatures.push(iconFeature);
+
+                var vectorSource = new ol.source.Vector({
+                    features: iconFeatures //add an array of features
+                });
+
+
+                var iconStyle = new ol.style.Style({
+                    image: new ol.style.Icon(/** @type {olx.style.IconOptions} */({
+                        anchor: [0.5, 46],
+                        anchorXUnits: 'fraction',
+                        anchorYUnits: 'pixels',
+                        opacity: 0.95,
+                        src: icon
+                    }))
+                });
+
+                var vectorLayer = new ol.layer.Vector({
+                    source: vectorSource,
+                    style: iconStyle
+                });
+
+                map.addLayer(vectorLayer);
+
+            });
+        }
+
+        $("#showData").html(
+            `<form  class="ui large form" 
+                             style="width:80%; margin-left:auto; 
+                             margin-right:auto; margin-top: 20px;">         
+                          <form method="post" enctype="multipart/form-data">
+                            <div class="field">
+                                <label for="file">Choose image:</label>
+                                <input type="file" id="file" name="file"  multiple required onchange="readURL(this);" accept=".jpg, .jpeg, .png"  >
+                            </div>
+                            <div class=" two fields">
+                                <div class="field">
+                                    <img id="blah" height="350px" alt="your image" />
+                                </div>
+                                <div class="field">
+                                    <label for="location">Location:</label>
+                                    <input type="text"  id="location" placeholder="place for location" />
+                                    <div id="map" class="map" style="height:420px;"></div>
+                                            <script>pomocnaP();</script>
+                                </div>
+                            </div>
+                             <div class="field">
+                                    <label for="description">Description:</label>
+                                    <textarea type="text"  id="description" name="description" placeholder="Description" rows = "2"/>
+                            </div>
+                            <div class="field">
+                               <label for="tags">Tags:</label>
+                                <input type="text"  id="tags" placeholder="@tag" />
+                            </div>
+                            <div class="ui grid">
+                            <div class="two wide column"></div>
+                            <div class="two wide column"></div>
+                            <div class="two wide column"></div>
+                            <div class="two wide column"></div>
+                            <div class="two wide column"></div>
+                            <div class="two wide column"></div>
+                            <div class="two wide column"></div>
+                            <div class="two wide column right">  
+                            <button type="button" style = "text-align: center" class="ui primary button" id="save_story" >ADD STORY</button>
+                            </div>
+                            </div>
+                          </form>
+                      </form>`
+        );
+
+        $('#save_story').click(function () {
+            var formData = new FormData();
+            formData.append("file", file);
+            var description = $('#description').val();
+            var tags = $('#tags').val();
+            var location=$('#location').val();
+            var email = localStorage.getItem('email');
+
+            formData.append("description", description)
+            formData.append("tags", tags)
+            formData.append("location", location)
+            formData.append("email", email)
+            customAjax({
+                url: 'http://localhost:80/story-service/saveStory',
+                method: 'POST',
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function () {
+                    alert("Sucess saved story")
+                     customAjax({
+                        url: 'http://localhost:80/user-service/getByEmail/' + email,
+                        method: 'GET',
+                        success: function(data){
+                            console.log("Success")
+                           // myProfile(data)
+                        },
+                        error: function(){
+                        }
+                    });
+                },
+                error: function (e) {
+                    alert('Error uploading new post.')
+                }
+            });
+        });
+    });
+
+
+
     $("#addPost").click(function () {
 
 
@@ -295,8 +447,6 @@ $(document).ready(function(e){
     });
 
 });
-
-
 let myProfile = function(user){
     var json = JSON.parse(user);
     var email = json.email
@@ -305,32 +455,18 @@ let myProfile = function(user){
         url: 'http://localhost:80/post-service/getAllPostsByEmail/' + email,
         method: 'GET',
         success: function(data){
-            showPosts(JSON.parse(data))
+			    showPosts(JSON.parse(data))  
         },
         error: function(){
         }
     });
-
     function showPosts(data)
     {
-        for(i in data){
-             let imageID = data[i].ImageID
-        }
-
         let temp;
         for(i in data)
-        {
-            let imageID = data[i].ImageID
-            customAjax({
-                url: 'http://localhost:80/post-service/getImageByImageID/' + imageID,
-                method: 'GET',
-                 success: function(data){
-                     console.log("#id_"+i)
-                    $("#id_"+i).attr("src" , "data:image/jpeg;base64,"+data)
-                },
-                error: function(){
-                }
-            });
+        { 
+        let imageID = data[i].ImageID
+        console.log("**********"+i)
           temp += `<a class="red card">
                 <div class="ui card">
                 <div class="content">
@@ -338,7 +474,7 @@ let myProfile = function(user){
                     <img class="ui avatar image" `+data[i].description+` />
                 </div>
                 <div class="image" >
-                    <img id="id_`+i+`"/>
+                    <img alt="image not loaded" id="id_`+i+`"/>
                 </div>
                 <div class="content">
                     <span class="right floated">
@@ -355,7 +491,18 @@ let myProfile = function(user){
                     </div>
                 </div>
                 </div>
-            </a>`
+            </a>`   
+        console.log("```````"+imageID) 
+            customAjax({
+            url: 'http://localhost:80/post-service/getImageByImageID/' + imageID,
+            method: 'GET',
+                success: function(data){
+                    console.log("++++++++"+i+imageID)
+                    $("#id_"+i).attr("src" , "data:image/jpeg;base64,"+data)
+                },
+                error: function(){
+                }
+            });
         }
         $('#posts').html(temp);
     }

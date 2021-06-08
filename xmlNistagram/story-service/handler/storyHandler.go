@@ -11,18 +11,19 @@ import (
 	"net/http"
 	"os"
 	"path/filepath"
-	"post-service-mod/model"
-	"post-service-mod/service"
+	"story-service-mod/model"
+	"story-service-mod/service"
 	"strconv"
 
 	"github.com/gorilla/mux"
 )
 
-type PostHandler struct {
-	Service *service.PostService
+type StoryHandler struct {
+	Service *service.StoryService
 }
 
-func (handler *PostHandler) SavePost(w http.ResponseWriter, r *http.Request) {
+func (handler *StoryHandler) SaveStory(w http.ResponseWriter, r *http.Request) {
+	fmt.Println("USAO JE U HENDLER")
 
 	r.ParseMultipartForm(32 << 20)
 	file, handle, err := r.FormFile("file")
@@ -65,13 +66,13 @@ func (handler *PostHandler) SavePost(w http.ResponseWriter, r *http.Request) {
 	fmt.Println(r.PostFormValue("location"))
 	fmt.Println(r.PostFormValue("tags"))
 
-	var post model.Post
-	post.Description = r.PostFormValue("description")
-	post.Location = r.PostFormValue("location")
-	post.Tags = r.PostFormValue("tags")
-	post.ImageID = fileId
-	post.Email = r.PostFormValue("email")
-	handler.Service.SavePost(&post)
+	var story model.Story
+	story.Description = r.PostFormValue("description")
+	story.Location = r.PostFormValue("location")
+	story.Tags = r.PostFormValue("tags")
+	story.ImageID = fileId
+	story.Email = r.PostFormValue("email")
+	handler.Service.SaveStory(&story)
 	jsonResponse(w, http.StatusCreated, "File uploaded successfully!.")
 
 }
@@ -82,16 +83,16 @@ func jsonResponse(w http.ResponseWriter, code int, message string) {
 	fmt.Fprint(w, message)
 }
 
-func (handler *PostHandler) GetAllPostsByEmail(w http.ResponseWriter, r *http.Request) {
+func (handler *StoryHandler) GetAllStoriesByEmail(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	email := vars["email"]
-	var result []model.Post
-	result = handler.Service.GetAllPostsByEmail(email)
+	var result []model.Story
+	result = handler.Service.GetAllStoriesByEmail(email)
 	w.WriteHeader(http.StatusOK)
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(result)
 }
-func (handler *PostHandler) GetImageByImageID(w http.ResponseWriter, r *http.Request) {
+func (handler *StoryHandler) GetImageByImageID(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	imageID := vars["imageID"]
 	fmt.Println(imageID)

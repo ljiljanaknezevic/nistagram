@@ -52,6 +52,18 @@ services:
       - postgresdb
     volumes:
       - ./post-service/files:/go/app/files
+  story-service:
+    restart: always
+    build:
+      context: ./story-service
+    env_file:
+      - .env
+    ports:
+      - '8085:8085'
+    links:
+      - postgresdb
+    volumes:
+      - ./story-service/files:/go/app/files
   post-service:
     restart: always
     build:
@@ -64,6 +76,7 @@ services:
       - postgresdb
     volumes:
       - ./post-service/files:/go/app/files
+    
 
 volumes:
   database_data:
