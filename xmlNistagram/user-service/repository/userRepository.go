@@ -16,6 +16,11 @@ func (repo *UserRepository) CreateUser(user *model.User) error {
 	fmt.Println(result.RowsAffected)
 	return nil
 }
+func (repo *UserRepository) GetAllUsersExceptLogging(email string) []model.User{
+	var users []model.User
+	repo.Database.Where("email != ?", email).Preload("Following").Preload("WaitingFollowers").Preload("Followers").Find(&users)
+	return users
+}
 func (repo *UserRepository) UpdateUser(user *model.User) error {
 	result := repo.Database.Preload("Following").Preload("WaitingFollowers").Preload("Followers").Save(user)
 	fmt.Println(result.RowsAffected)

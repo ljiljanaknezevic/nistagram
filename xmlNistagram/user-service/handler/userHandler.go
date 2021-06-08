@@ -373,3 +373,11 @@ func (handler *UserHandler) GetAllFollowers(w http.ResponseWriter, r *http.Reque
 
 	json.NewEncoder(w).Encode(result)
 }
+func (handler *UserHandler) GetAllUsersExceptLogging(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	email := vars["email"]
+	var users []model.User
+	users = handler.Service.GetAllUsersExceptLogging(email)
+	json.NewEncoder(w).Encode(users)
+}
+
