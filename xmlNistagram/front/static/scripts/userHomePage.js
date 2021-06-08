@@ -1,6 +1,8 @@
 var file;
 var pomocnaP;
-  let jsonObjekat;
+
+let jsonObjekat;
+
   let slika
 function readURL(input) {
 
@@ -180,7 +182,6 @@ $(document).ready(function(e){
             });
         });
     });
-
 
 
     $("#addPost").click(function () {
@@ -455,58 +456,72 @@ let myProfile = function(user){
         url: 'http://localhost:80/post-service/getAllPostsByEmail/' + email,
         method: 'GET',
         success: function(data){
-			    showPosts(JSON.parse(data))  
+
+            showPosts(data)
+
         },
         error: function(){
         }
     });
     function showPosts(data)
     {
-        let temp;
-        for(i in data)
-        { 
-        let imageID = data[i].ImageID
-        console.log("**********"+i)
-          temp += `<a class="red card">
-                <div class="ui card">
-                <div class="content">
-                    <div class="right floated meta">`+ data[i].CreatedAt.split('T')[0]+`</div>
-                    <img class="ui avatar image" `+data[i].description+` />
-                </div>
-                <div class="image" >
-                    <img alt="image not loaded" id="id_`+i+`"/>
-                </div>
-                <div class="content">
-                    <span class="right floated">
-                    <i class="heart outline like icon"></i>
-                    17 likes
-                    </span>
-                    <i class="comment icon"></i>
-                    3 comments
-                </div>
-                <div class="extra content">
-                    <div class="ui large transparent left icon input">
-                    <i class="heart outline icon"></i>
-                    <input type="text" placeholder="Add Comment...">
-                    </div>
-                </div>
-                </div>
-            </a>`   
-        console.log("```````"+imageID) 
+        json = JSON.parse(data)
+        var slika
+        result=""
+        result +=`<div style="margin-top: 50px" ><div class="ui cards">`;
+
+        for( i in json) {
+
+            slika = ""
             customAjax({
-            url: 'http://localhost:80/post-service/getImageByImageID/' + imageID,
-            method: 'GET',
-                success: function(data){
-                    console.log("++++++++"+i+imageID)
-                    $("#id_"+i).attr("src" , "data:image/jpeg;base64,"+data)
+                url: 'http://localhost:80/search-service/getMedia/' + json[i].ImageID,
+                method: 'GET',
+                async:false,
+                success: function (data) {
+
+                    slika = data
+                    console.log(slika)
+                    console.log("slka slika slika" + slika)
+
+                    pom1 = `<img id="output" height="150px" alt="slika" src ="`+'data:image/png;base64,'+ slika + ` ">`;
+                    result += `<br><div class="ui card">
+
+  <div class="content">
+     <div class="right floated meta">` + json[i].CreatedAt.split("T")[0] + `</div>  
+  </div>
+   <div class="image">
+    ` + pom1 + `
+  </div>
+  <div class="content">
+  <div class="description">
+      `+ json[i].description+`
+    </div>
+  </div> 
+  <div class="extra content">
+    <div class="ui large transparent left icon input">
+      <i class="heart outline icon"></i>
+      <input type="text" placeholder="Add Comment...">
+    </div>
+  </div>
+</div>`;
+
                 },
-                error: function(){
+                error: function () {
+
+
                 }
-            });
+            })
+
+
         }
-        $('#posts').html(temp);
+
+        result+=`</div></div>`;
+        $('#posts').html(result);
+
+
+
     }
-    //get all posts from that user
+
     $("#showData").html(
         `<div  style="width:80%; margin-left:auto; 
                              margin-right:auto;">
@@ -525,7 +540,7 @@ let myProfile = function(user){
             </h3>
             </div>
             <div class="ui section divider"></div>
-            <h3 class="ui header">header</h3>
+            <h3 class="ui header"></h3>
                 <div class="ui four cards" id='posts'></div>
         </div> `
         );
@@ -945,7 +960,6 @@ let showPosts = function(posts) {
 
 
     }
-
     pomocna+=`</div></div>`;
     $("#showData").html(pomocna);
 
