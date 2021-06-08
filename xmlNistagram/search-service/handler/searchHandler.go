@@ -90,9 +90,9 @@ func (handler *SearchHandler) SearchPostsByLocation(w http.ResponseWriter, r *ht
 	}
 	json.NewEncoder(w).Encode(result)
 }
-func (handler *SearchHandler) SearchPostsByLocationUnregistered(w http.ResponseWriter, r *http.Request) {
+func (handler *SearchHandler) SearchPostsByTag(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
-	location := vars["location"]
+	tag := vars["tag"]
 	email := vars["email"]
 
 	posts := handler.Service.GetAllPosts()
@@ -101,12 +101,58 @@ func (handler *SearchHandler) SearchPostsByLocationUnregistered(w http.ResponseW
 	for _, element := range posts {
 		if element.Email!=email{
 			if !handler.Service.GetUserByEmailAddress(element.Email).IsPrivate {
+				if strings.Contains(strings.ToLower(element.Tags),strings.ToLower(tag)) {
+					result = append(result, element)
+				}
+			}else {
+				for _,follower := range handler.Service.GetUserByEmailAddress(element.Email).Followers{
+					if strings.Compare(follower.Username,handler.Service.GetUserByEmailAddress(email).Username)==0{
+						if strings.Contains(strings.ToLower(element.Tags),strings.ToLower(tag)) {
+							if !contains(result,element) {
+								result = append(result, element)
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	json.NewEncoder(w).Encode(result)
+}
+
+func (handler *SearchHandler) SearchPostsByLocationUnregistered(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	location := vars["location"]
+
+	posts := handler.Service.GetAllPosts()
+	var result []model.Post
+
+	for _, element := range posts {
+			if !handler.Service.GetUserByEmailAddress(element.Email).IsPrivate {
 				if strings.Contains(strings.ToLower(element.Location),strings.ToLower(location)) {
 					result = append(result, element)
 				}
 			}
 
-		}
+
+	}
+	json.NewEncoder(w).Encode(result)
+}
+func (handler *SearchHandler) SearchPostsByTagUnregistered(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	tag := vars["tag"]
+
+	posts := handler.Service.GetAllPosts()
+	var result []model.Post
+
+	for _, element := range posts {
+			if !handler.Service.GetUserByEmailAddress(element.Email).IsPrivate {
+				if strings.Contains(strings.ToLower(element.Tags),strings.ToLower(tag)) {
+					result = append(result, element)
+				}
+			}
+
+
 	}
 	json.NewEncoder(w).Encode(result)
 }
@@ -140,6 +186,13 @@ func (handler *SearchHandler) GetPostsForSearchedUser(w http.ResponseWriter, r *
 	}
 
 	w.WriteHeader(http.StatusBadRequest)
+
+}
+func (handler *SearchHandler) GetPostsForSearchedUserUnregistered(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	email := vars["id"]
+	posts := handler.Service.GetPostsForSearchedUser(email)
+	json.NewEncoder(w).Encode(posts)
 
 }
 func (handler *SearchHandler) MediaForFront(w http.ResponseWriter, r *http.Request) {

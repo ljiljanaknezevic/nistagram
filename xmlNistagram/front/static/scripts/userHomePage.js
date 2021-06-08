@@ -25,6 +25,18 @@ $(document).ready(function(e){
 
     
      $("#addStory").click(function () {
+         customAjax({
+             url: 'http://localhost:80/user-service/getAllUsersExceptLogging/' + email,
+             method: 'GET',
+             async:false,
+             success: function (data) {
+                 var json = JSON.parse(data);
+                 users = json
+
+             },
+             error: function () {
+             }
+         })
 
 
         function reverseGeocode(coords) {
@@ -102,6 +114,10 @@ $(document).ready(function(e){
 
             });
         }
+         let temp=""
+         for (i in users) {
+             temp+=`<div class="item" data-value="`+ users[i].username + `">` + users[i].username + `</div>`
+         }
 
         $("#showData").html(
             `<form  class="ui large form" 
@@ -127,10 +143,18 @@ $(document).ready(function(e){
                                     <label for="description">Description:</label>
                                     <textarea type="text"  id="description" name="description" placeholder="Description" rows = "2"/>
                             </div>
-                            <div class="field">
-                               <label for="tags">Tags:</label>
-                                <input type="text"  id="tags" placeholder="@tag" />
-                            </div>
+                           <div class="tag">
+
+            <div class="ui fluid multiple search selection dropdown">
+                <input name="tags" id="tags" type="hidden">
+                <i class="dropdown icon"></i>
+                <div class="default text">Tags</div>
+                <div class="menu">
+              `+temp+`
+                </div>
+            </div>
+
+        </div>
                             <div class="ui grid">
                             <div class="two wide column"></div>
                             <div class="two wide column"></div>
@@ -143,6 +167,9 @@ $(document).ready(function(e){
                             <button type="button" style = "text-align: center" class="ui primary button" id="save_story" >ADD STORY</button>
                             </div>
                             </div>
+                             <script>
+                                    $('.tag .ui.dropdown').dropdown();
+                                </script>
                           </form>
                       </form>`
         );
@@ -480,6 +507,22 @@ $(document).ready(function(e){
         });
 
     });
+    $("#searchTags").click(function () {
+        var tag= $("#tagsSearch").val();
+        console.log(tag)
+        customAjax({
+            url: 'http://localhost:80/search-service/searchPostByTag/' + tag + "/" + localStorage.getItem("email"),
+            method: 'GET',
+            success: function (data) {
+                console.log(data)
+                showPosts(data);
+            },
+            error: function () {
+            }
+
+        });
+
+    });
 
 });
 let myProfile = function(user){
@@ -504,6 +547,7 @@ let myProfile = function(user){
 
         for( i in json) {
 
+
             slika = ""
             customAjax({
                 url: 'http://localhost:80/search-service/getMedia/' + json[i].ImageID,
@@ -524,6 +568,10 @@ let myProfile = function(user){
         <i class="bookmark outline icon"></i>
         </button>
     </div>  
+      <br>
+    <div class="description" style="color:cornflowerblue"><i class="location arrow icon" ></i>
+      `+ json[i].Location+`
+    </div>
   </div>
    <div class="image">
     ` + pom1 + `
@@ -531,6 +579,10 @@ let myProfile = function(user){
   <div class="content">
   <div class="description">
       `+ json[i].description+`
+    </div>
+      <br>
+    <div class="description"><i class="tags icon"></i>
+      `+ json[i].tags+`
     </div>
   </div> 
   <div class="extra content">
@@ -646,6 +698,10 @@ let myProfile = function(user){
         <i class="icon gem"></i>
         </button>
     </div> 
+       <br>
+    <div class="description" style="color:cornflowerblue"><i class="location arrow icon" ></i>
+      `+ json[i].Location+`
+    </div>
   </div>
    <div class="image">
     ` + pom1 + `
@@ -653,6 +709,10 @@ let myProfile = function(user){
   <div class="content">
   <div class="description">
       `+ json[i].description+`
+    </div>
+      <br>
+    <div class="description"><i class="tags icon"></i>
+      `+ json[i].tags+`
     </div>
   </div> 
 </div>`;
@@ -1065,15 +1125,19 @@ let showPosts = function(posts) {
                     }
                 })
                 slika = data
-                console.log(slika)
-                console.log("slka slika slika" + slika)
+
 
                 pom1 = `<img id="output" height="150px" alt="slika" src ="`+'data:image/png;base64,'+ slika + ` ">`;
                 pomocna += `<br><div class="ui card">
 
   <div class="content">
+    
      <div class="left floated meta">` + jsonParse.username + `</div>
      <div class="right floated meta">` + json[i].CreatedAt.split("T")[0] + `</div>
+       <br>
+    <div class="description" style="color:cornflowerblue"><i class="location arrow icon" ></i>
+      `+ json[i].Location+`
+    </div>
     
   </div>
    <div class="image">
@@ -1082,6 +1146,10 @@ let showPosts = function(posts) {
   <div class="content">
   <div class="description">
       `+ json[i].description+`
+    </div>
+    <br>
+    <div class="description"><i class="tags icon"></i>
+      `+ json[i].tags+`
     </div>
   </div>
   
@@ -1134,7 +1202,11 @@ let showPostsForSearchedUser = function(posts) {
                 result += `<br><div class="ui card">
 
   <div class="content">
-     <div class="right floated meta">` + json[i].CreatedAt.split("T")[0] + `</div>  
+     <div class="right floated meta">` + json[i].CreatedAt.split("T")[0] + `</div> 
+        <br>
+    <div class="description" style="color:cornflowerblue"><i class="location arrow icon" ></i>
+      `+ json[i].Location+`
+    </div> 
   </div>
    <div class="image">
     ` + pom1 + `
@@ -1142,6 +1214,10 @@ let showPostsForSearchedUser = function(posts) {
   <div class="content">
   <div class="description">
       `+ json[i].description+`
+    </div>
+     <br>
+    <div class="description"><i class="tags icon"></i>
+      `+ json[i].tags+`
     </div>
   </div> 
   <div class="extra content">
