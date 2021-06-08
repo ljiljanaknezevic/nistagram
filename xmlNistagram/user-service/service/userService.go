@@ -24,6 +24,10 @@ func (service *UserService) CreateUser(user *model.User) error {
 	service.Repo.CreateUser(user)
 	return nil
 }
+func (service *UserService) GetAllUsersExceptLogging(email string) []model.User{
+	users:= service.Repo.GetAllUsersExceptLogging(email)
+	return users
+}
 
 func (service *UserService) UpdateUser(user *model.User) error {
 	service.Repo.UpdateUser(user)

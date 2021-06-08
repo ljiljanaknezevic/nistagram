@@ -18,9 +18,11 @@ function readURL(input) {
     }
 
 }
+let users;
 $(document).ready(function(e){
 
     var email = localStorage.getItem('email')
+
     
      $("#addStory").click(function () {
 
@@ -184,7 +186,20 @@ $(document).ready(function(e){
     });
 
 
+
     $("#addPost").click(function () {
+        customAjax({
+            url: 'http://localhost:80/user-service/getAllUsersExceptLogging/' + email,
+            method: 'GET',
+            async:false,
+            success: function (data) {
+                var json = JSON.parse(data);
+                users = json
+
+            },
+            error: function () {
+            }
+        })
 
 
         function reverseGeocode(coords) {
@@ -262,7 +277,11 @@ $(document).ready(function(e){
 
             });
         }
-
+    console.log(users)
+        let temp=""
+        for (i in users) {
+            temp+=`<div class="item" data-value="`+ users[i].username + `">` + users[i].username + `</div>`
+        }
         $("#showData").html(
             `<form  class="ui large form" 
                              style="width:80%; margin-left:auto; 
@@ -286,11 +305,22 @@ $(document).ready(function(e){
                              <div class="field">
                                     <label for="description">Description:</label>
                                     <textarea type="text"  id="description" name="description" placeholder="Description" rows = "2"/>
-                            </div>
-                            <div class="field">
-                               <label for="tags">Tags:</label>
-                                <input type="text"  id="tags" placeholder="@tag" />
-                            </div>
+                            </div>                      
+                            
+                   
+                    <div class="tag">
+
+            <div class="ui fluid multiple search selection dropdown">
+                <input name="tags" id="tags" type="hidden">
+                <i class="dropdown icon"></i>
+                <div class="default text">Tags</div>
+                <div class="menu">
+              `+temp+`
+                </div>
+            </div>
+
+        </div>
+                            
                             <div class="ui grid">
                             <div class="two wide column"></div>
                             <div class="two wide column"></div>
@@ -303,6 +333,9 @@ $(document).ready(function(e){
                             <button type="button" style = "text-align: center" class="ui primary button" id="save_post" >ADD POST</button>
                             </div>
                             </div>
+                               <script>
+                                    $('.tag .ui.dropdown').dropdown();
+                                </script>
                           </form>
                       </form>`
         );
@@ -312,6 +345,7 @@ $(document).ready(function(e){
             formData.append("file", file);
             var description = $('#description').val();
             var tags = $('#tags').val();
+            console.log(tags)
             var location=$('#location').val();
             var email = localStorage.getItem('email');
 
@@ -815,25 +849,15 @@ let showProfile = function(user) {
     </div>
   </div>
   <div class="extra content">
-    <button class="ui teal button" name = "follow" id = ` + json[i].username + `><i class = "user icon"></i></button>
+    <button class="ui teal button" name = "follow" id = "` + json[i].username + `">Follow  <i class = "user icon"></i></button>
+    
     `+pom1+`
     <div class="right floated author">` + json[i].name + `
-    </div>
+    </div>   
+    <div id="error` + json[i].username + `" style="color:red"></div> 
   </div>
+  
 </div>`;
-
-        customAjax({
-            url: 'http://localhost:80/user-service/alreadyFollow/' + json[i].username + "/" + localStorage.getItem("email"),
-            method: 'GET',
-            success: function () {
-                document.getElementById(json[i].username).innerText = "Follow"
-                document.getElementById(json[i].username).disabled = false
-            },
-            error: function () {
-                document.getElementById(json[i].username).innerText = "Followed"
-                document.getElementById(json[i].username).disabled = true
-            }
-        })
 
     }
 
@@ -844,7 +868,7 @@ let showProfile = function(user) {
     $("a[name=profile]").click(function () {
         console.log("Usao u profile")
         id = this.id
-       console.log(id)
+        console.log(id)
         customAjax({
             url: 'http://localhost:80/search-service/getPostsForSearchedUser/' + this.id +"/"+ localStorage.getItem("email"),
             method: 'GET',
@@ -859,17 +883,37 @@ let showProfile = function(user) {
 
     $("button[name=follow]").click(function () {
         id = this.id
+        console.log(id)
+        customAjax({
+            url: 'http://localhost:80/user-service/alreadyFollow/' + id + "/" + localStorage.getItem("email"),
+            method: 'GET',
+            success: function () {
                 customAjax({
-                    url: 'http://localhost:80/user-service/follow/' + this.id + "/" + localStorage.getItem("email"),
+                    url: 'http://localhost:80/user-service/follow/' + id + "/" + localStorage.getItem("email"),
                     method: 'POST',
                     success: function (data) {
+                        console.log("Success za follow")
                         document.getElementById(id).innerText = "Followed"
                         document.getElementById(id).disabled = true
                     },
                     error: function () {
+                        console.log("Error za follow")
                     }
                 })
+
+            },
+            error: function () {
+                console.log("Error za already")
+                var errorId = "error"+id
+                document.getElementById(id).innerText = "Followed"
+                document.getElementById(id).disabled = true
+                document.getElementById(errorId).innerText="Already followed"
+            }
+        })
+
+
     })
+
 
 }
 let showRequests = function(user) {
