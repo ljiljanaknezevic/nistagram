@@ -485,7 +485,11 @@ let myProfile = function(user){
                     result += `<br><div class="ui card">
 
   <div class="content">
-     <div class="right floated meta">` + json[i].CreatedAt.split("T")[0] + `</div>  
+     <div class="right floated meta">`+ json[i].CreatedAt.split("T")[0] + `</div>  
+     <div class="left floated meta"><button class="ui basic icon button">
+        <i class="bookmark outline icon"></i>
+        </button>
+    </div>  
   </div>
    <div class="image">
     ` + pom1 + `
@@ -604,6 +608,10 @@ let myProfile = function(user){
 
   <div class="content">
      <div class="right floated meta">` + json[i].CreatedAt.split("T")[0] + `</div>  
+     <div class="left floated meta"><button class="ui basic icon button">
+        <i class="icon gem"></i>
+        </button>
+    </div> 
   </div>
    <div class="image">
     ` + pom1 + `
