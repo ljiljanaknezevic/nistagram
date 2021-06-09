@@ -5,11 +5,13 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
+	"net/mail"
 	"strings"
 	"user-service-mod/model"
 	"user-service-mod/service"
 
 	"github.com/gorilla/mux"
+	"regexp"
 )
 
 type UserHandler struct {
@@ -162,19 +164,29 @@ func (handler *UserHandler) SignUp(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusBadRequest)
 		return
 	}
+	if validateName(user.Name) && validateUsername(user.Username) && validEmail(user.Email) && validPassword(user.Password) {
 
-	err = handler.Service.CreateUser(&user)
-	if err != nil {
+		err = handler.Service.CreateUser(&user)
+		if err != nil {
+			var err model.Error
+			err = model.SetError(err, "Failed in creating user.")
+			json.NewEncoder(w).Encode(err)
+			w.WriteHeader(http.StatusExpectationFailed)
+			return
+		}
+
+		w.WriteHeader(http.StatusOK)
+		w.Header().Set("Content-Type", "application/json")
+		json.NewEncoder(w).Encode(user)
+	} else {
 		var err model.Error
-		err = model.SetError(err, "Failed in creating user.")
+
+		err = model.SetError(err, "Incorrectly entered data.")
+		w.WriteHeader(http.StatusBadRequest)
 		json.NewEncoder(w).Encode(err)
-		w.WriteHeader(http.StatusExpectationFailed)
+
 		return
 	}
-
-	w.WriteHeader(http.StatusOK)
-	w.Header().Set("Content-Type", "application/json")
-	json.NewEncoder(w).Encode(user)
 }
 
 func (handler *UserHandler) SignIn(w http.ResponseWriter, r *http.Request) {
@@ -381,3 +393,25 @@ func (handler *UserHandler) GetAllUsersExceptLogging(w http.ResponseWriter, r *h
 	json.NewEncoder(w).Encode(users)
 }
 
+func validEmail(email string) bool {
+	_, err := mail.ParseAddress(email)
+	return err == nil
+}
+
+func validPassword(password string) bool {
+	var strongRegex ="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\\$%\\^&\\*])(?=.{8,})"
+	isValid , _ := regexp.MatchString(strongRegex, password)
+	return isValid
+}
+
+func validateName(name string) bool{
+	var pattern = "^[a-zA-Z]+[a-zA-Z\\s]*$"
+	isValid, _ := regexp.MatchString(pattern, name)
+	return isValid
+}
+
+func validateUsername(name string) bool{
+	var pattern = "^[a-zA-Z0-9]+$"
+	isValid, _ := regexp.MatchString(pattern, name)
+	return isValid
+}
