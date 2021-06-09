@@ -39,6 +39,7 @@ func (handler *UserHandler) ChangePassword(w http.ResponseWriter, r *http.Reques
 		w.WriteHeader(http.StatusBadRequest)
 		return
 	}
+	if validEmail(changePassword.Email) && CheckPasswordLever(changePassword.Password)==nil && changePassword.Password==changePassword.ConfPassword{
 	var user model.User
 	user = handler.Service.GetUserByEmailAddress(changePassword.Email)
 	if user.Username == "" {
@@ -53,6 +54,13 @@ func (handler *UserHandler) ChangePassword(w http.ResponseWriter, r *http.Reques
 	handler.Service.UpdateUser(&user)
 	w.WriteHeader(http.StatusOK)
 	w.Header().Set("Content-Type", "application/json")
+	}else{
+		var err model.Error
+		err = model.SetError(err, "Incorrectly entered data.")
+		w.WriteHeader(http.StatusBadRequest)
+		json.NewEncoder(w).Encode(err)
+		return
+	}
 }
 
 func (handler *UserHandler) ChangeUserData(w http.ResponseWriter, r *http.Request) {
@@ -76,18 +84,26 @@ func (handler *UserHandler) ChangeUserData(w http.ResponseWriter, r *http.Reques
 		json.NewEncoder(w).Encode(err)
 		return
 	}
-	user.Email = userChange.Email
-	user.Username = userChange.Username
-	user.Name = userChange.Name
-	user.PhoneNumber = userChange.PhoneNumber
-	user.Biography = userChange.Biography
-	user.Birhtday = userChange.Birhtday
-	user.Website = userChange.Website
-	user.Gender = userChange.Gender
-	user.IsPrivate = userChange.IsPrivate
-	handler.Service.UpdateUser(&user)
-	w.WriteHeader(http.StatusOK)
-	w.Header().Set("Content-Type", "application/json")
+	if validateUsername(userChange.Username){
+		user.Email = userChange.Email
+		user.Username = userChange.Username
+		user.Name = userChange.Name
+		user.PhoneNumber = userChange.PhoneNumber
+		user.Biography = userChange.Biography
+		user.Birhtday = userChange.Birhtday
+		user.Website = userChange.Website
+		user.Gender = userChange.Gender
+		user.IsPrivate = userChange.IsPrivate
+		handler.Service.UpdateUser(&user)
+		w.WriteHeader(http.StatusOK)
+		w.Header().Set("Content-Type", "application/json")
+		}else{
+		var err model.Error
+		err = model.SetError(err, "Incorrectly entered data.")
+		w.WriteHeader(http.StatusBadRequest)
+		json.NewEncoder(w).Encode(err)
+		return
+	}
 }
 
 func (handler *UserHandler) SendConfirmation(w http.ResponseWriter, r *http.Request) {
@@ -164,23 +180,22 @@ func (handler *UserHandler) SignUp(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusBadRequest)
 		return
 	}
-	if validateName(user.Name) && validateUsername(user.Username) && validEmail(user.Email) && validPassword(user.Password) {
+	if validateName(user.Name) && validateUsername(user.Username) && validEmail(user.Email) &&  CheckPasswordLever(user.Password) ==nil  {
 
-		err = handler.Service.CreateUser(&user)
-		if err != nil {
+		isValid := handler.Service.CreateUser(&user)
+		if !isValid {
 			var err model.Error
 			err = model.SetError(err, "Failed in creating user.")
-			json.NewEncoder(w).Encode(err)
 			w.WriteHeader(http.StatusExpectationFailed)
+			json.NewEncoder(w).Encode(err)
 			return
 		}
-
+		json.NewEncoder(w).Encode(user)
 		w.WriteHeader(http.StatusOK)
 		w.Header().Set("Content-Type", "application/json")
-		json.NewEncoder(w).Encode(user)
+
 	} else {
 		var err model.Error
-
 		err = model.SetError(err, "Incorrectly entered data.")
 		w.WriteHeader(http.StatusBadRequest)
 		json.NewEncoder(w).Encode(err)
@@ -202,44 +217,52 @@ func (handler *UserHandler) SignIn(w http.ResponseWriter, r *http.Request) {
 		json.NewEncoder(w).Encode(err)
 		return
 	}
-	var authUser model.User
-	authUser = handler.Service.UserForLogin(authDetails.Email)
+	if validEmail(authDetails.Email) && CheckPasswordLever(authDetails.Password)==nil{
+		var authUser model.User
+		authUser = handler.Service.UserForLogin(authDetails.Email)
+		if authUser.Email == "" {
+			var err model.Error
+			err = model.SetError(err, "Username or Password is incorrect")
+			w.Header().Set("Content-Type", "application/json")
+			w.WriteHeader(http.StatusBadRequest)
+			json.NewEncoder(w).Encode(err)
+			return
+		}
 
-	if authUser.Email == "" {
-		var err model.Error
-		err = model.SetError(err, "Username or Password is incorrect")
+		check := handler.Service.CheckPasswordHash(authDetails.Password, authUser.Password)
+
+		if !check {
+			var err model.Error
+			err = model.SetError(err, "Username or Password is incorrect")
+			w.Header().Set("Content-Type", "application/json")
+			w.WriteHeader(http.StatusBadRequest)
+			json.NewEncoder(w).Encode(err)
+			return
+		}
+
+		validToken, err := handler.Service.GenerateJWT(authUser.Email, authUser.Role)
+		if err != nil {
+			var err model.Error
+			err = model.SetError(err, "Failed to generate token")
+			w.Header().Set("Content-Type", "application/json")
+			w.WriteHeader(http.StatusBadRequest)
+			json.NewEncoder(w).Encode(err)
+			return
+		}
+		var token model.Token
+		token.Email = authUser.Email
+		token.Role = authUser.Role
+		token.TokenString = validToken
 		w.Header().Set("Content-Type", "application/json")
+		json.NewEncoder(w).Encode(token)
+	} else{
+		var err model.Error
+		err = model.SetError(err, "Incorrectly entered data.")
 		w.WriteHeader(http.StatusBadRequest)
 		json.NewEncoder(w).Encode(err)
 		return
-	}
 
-	check := handler.Service.CheckPasswordHash(authDetails.Password, authUser.Password)
-
-	if !check {
-		var err model.Error
-		err = model.SetError(err, "Username or Password is incorrect")
-		w.Header().Set("Content-Type", "application/json")
-		w.WriteHeader(http.StatusBadRequest)
-		json.NewEncoder(w).Encode(err)
-		return
 	}
-
-	validToken, err := handler.Service.GenerateJWT(authUser.Email, authUser.Role)
-	if err != nil {
-		var err model.Error
-		err = model.SetError(err, "Failed to generate token")
-		w.Header().Set("Content-Type", "application/json")
-		w.WriteHeader(http.StatusBadRequest)
-		json.NewEncoder(w).Encode(err)
-		return
-	}
-	var token model.Token
-	token.Email = authUser.Email
-	token.Role = authUser.Role
-	token.TokenString = validToken
-	w.Header().Set("Content-Type", "application/json")
-	json.NewEncoder(w).Encode(token)
 }
 
 func (handler *UserHandler) GetUserByEmailAddress(w http.ResponseWriter, r *http.Request) {
@@ -414,4 +437,26 @@ func validateUsername(name string) bool{
 	var pattern = "^[a-zA-Z0-9]+$"
 	isValid, _ := regexp.MatchString(pattern, name)
 	return isValid
+}
+func CheckPasswordLever(ps string) error {
+	if len(ps) < 8 {
+		return fmt.Errorf("password len is < 8")
+	}
+	num := `[0-9]{1}`
+	a_z := `[a-z]{1}`
+	A_Z := `[A-Z]{1}`
+	symbol := `[!@#~$%^&*()+|_]{1}`
+	if b, err := regexp.MatchString(num, ps); !b || err != nil {
+		return fmt.Errorf("password need num :%v", err)
+	}
+	if b, err := regexp.MatchString(a_z, ps); !b || err != nil {
+		return fmt.Errorf("password need a_z :%v", err)
+	}
+	if b, err := regexp.MatchString(A_Z, ps); !b || err != nil {
+		return fmt.Errorf("password need A_Z :%v", err)
+	}
+	if b, err := regexp.MatchString(symbol, ps); !b || err != nil {
+		return fmt.Errorf("password need symbol :%v", err)
+	}
+	return nil
 }

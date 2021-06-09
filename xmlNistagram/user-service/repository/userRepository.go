@@ -11,10 +11,13 @@ type UserRepository struct {
 	Database *gorm.DB
 }
 
-func (repo *UserRepository) CreateUser(user *model.User) error {
+func (repo *UserRepository) CreateUser(user *model.User) bool {
+	if !repo.UserExists(user.Email,user.Username) {
 	result := repo.Database.Create(user)
 	fmt.Println(result.RowsAffected)
-	return nil
+	return true
+	}
+	return false
 }
 func (repo *UserRepository) GetAllUsersExceptLogging(email string) []model.User{
 	var users []model.User

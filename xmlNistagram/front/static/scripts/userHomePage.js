@@ -776,8 +776,8 @@ let editProfile = function(user) {
                                <tr>
                                    <td>Username:</td>
                                    <td class="ui input small"> <input type="text" id="txtUsername" value="`+ ((json.username != null) ? json.username:`` ) + `"/></td>
-                                 
-                               </tr>
+                                    <td> <p id="errorUsername"></p></td>
+                               </tr>                            
                                <tr>
                                <td>Phone number:</td>
                                <td class="ui input small"> <input type="text" id="txtPhone" value="`+ ((json.phone != null) ? json.phone:`` ) + `"/></td>
@@ -823,6 +823,25 @@ let editProfile = function(user) {
              </tfoot>
                        </table> <p id="er"> </p>`);
 
+        input_username=$('#txtUsername');
+        var btnEdit = document.getElementById("acceptChange")
+        btnEdit.disabled = true
+    input_username.keyup(function () {
+        if(validateUsername(input_username.val())) {
+            btnEdit.disabled = false
+        }
+        if(!validateUsername(input_username.val())){
+            btnEdit.disabled = true
+            $(this).addClass(`alert-danger`);
+            $('#txtUsername').css('border-color', 'red');
+            $("#errorUsername").text("You can only use letters and numbers for username!")
+            $('#errorUsername').css('color', 'red');
+        }else {
+            $(this).removeClass(`alert-danger`);
+            $('#txtUsername').css('border-color', '');
+            $("#errorUsername").text("")
+        }
+    });
         $('#acceptChange').click(function(){
 
         let email=$('#txtEmail').val()
@@ -1053,25 +1072,13 @@ let showFollowers = function(user) {
     <div class="content">
       <div class="header">` +json[i].username + `</div> 
       <div class="description"> Started following you.
-        <button class="ui teal active button" name="followBack" id="`+json[i].username+`"><i class="user icon"></i>
+        <button class="ui teal active button" name="followBack" id="`+json[i].username+`"><i class="user icon"></i>Follow back
   </button>
       </div>
-       
+       <div id="error` + json[i].username + `" style="color:red"></div>
     </div>
   </div>
 `;
-        customAjax({
-            url: 'http://localhost:80/user-service/alreadyFollow/' + json[i].username + "/" + localStorage.getItem("email"),
-            method: 'GET',
-            success: function () {
-                document.getElementById(json[i].username).innerText = "Follow back"
-                document.getElementById(json[i].username).disabled = false
-            },
-            error: function () {
-                document.getElementById(json[i].username).innerText = "Followed"
-                document.getElementById(json[i].username).disabled = true
-            }
-        })
 
 
     }
@@ -1082,14 +1089,32 @@ let showFollowers = function(user) {
     $("button[name=followBack]").click(function () {
         id = this.id
         customAjax({
-            url: 'http://localhost:80/user-service/follow/' + this.id + "/" + localStorage.getItem("email"),
-            method: 'POST',
-            success: function (data) {
-                document.getElementById(id).disabled = true
+            url: 'http://localhost:80/user-service/alreadyFollow/' + id + "/" + localStorage.getItem("email"),
+            method: 'GET',
+            success: function () {
+                customAjax({
+                    url: 'http://localhost:80/user-service/follow/' + id + "/" + localStorage.getItem("email"),
+                    method: 'POST',
+                    success: function (data) {
+                        console.log("Success za follow")
+                        document.getElementById(id).innerText = "Followed"
+                        document.getElementById(id).disabled = true
+                    },
+                    error: function () {
+                        console.log("Error za follow")
+                    }
+                })
+
             },
             error: function () {
+                console.log("Error za already")
+                var errorId = "error"+id
+                document.getElementById(id).innerText = "Followed"
+                document.getElementById(id).disabled = true
+                document.getElementById(errorId).innerText="Already followed"
             }
         })
+
     })
 
 
@@ -1243,6 +1268,10 @@ let showPostsForSearchedUser = function(posts) {
 
 
 
+}
+function validateUsername(name) {
+    const re = /^[a-zA-Z0-9]+$/;
+    return re.test(String(name));
 }
 
 

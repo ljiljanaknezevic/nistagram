@@ -9,6 +9,7 @@ import (
 	"post-service-mod/model"
 	"post-service-mod/repository"
 	"post-service-mod/service"
+	"strings"
 
 	"github.com/dgrijalva/jwt-go"
 	"github.com/gorilla/handlers"
@@ -81,16 +82,16 @@ func CloseDatabase(connection *gorm.DB) {
 func IsAuthorized(handler http.HandlerFunc) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 
-		if r.Header["Token"] == nil {
+		if r.Header["Authorization"] == nil {
 			var err model.Error
 			err = model.SetError(err, "No Token Found")
+			w.WriteHeader(http.StatusUnauthorized)
 			json.NewEncoder(w).Encode(err)
 			return
 		}
 
 		var mySigningKey = []byte(secretkey)
-
-		token, err := jwt.Parse(r.Header["Token"][0], func(token *jwt.Token) (interface{}, error) {
+		token, err := jwt.Parse(strings.Split(r.Header["Authorization"][0]," ")[1], func(token *jwt.Token) (interface{}, error) {
 			if _, ok := token.Method.(*jwt.SigningMethodHMAC); !ok {
 				return nil, fmt.Errorf("There was an error in parsing token.")
 			}
@@ -100,25 +101,26 @@ func IsAuthorized(handler http.HandlerFunc) http.HandlerFunc {
 		if err != nil {
 			var err model.Error
 			err = model.SetError(err, "Your Token has been expired.")
+			w.WriteHeader(http.StatusUnauthorized)
 			json.NewEncoder(w).Encode(err)
 			return
 		}
 
 		if claims, ok := token.Claims.(jwt.MapClaims); ok && token.Valid {
-			if claims["role"] == "admin" {
-				r.Header.Set("Role", "admin")
+			if claims["role"] == "user" {
+				r.Header.Set("Role", "user")
 				handler.ServeHTTP(w, r)
 				return
-
-			} else if claims["role"] == "user" {
-				r.Header.Set("Role", "user")
+			}else if claims["role"] == "admin" {
+				r.Header.Set("Role", "admin")
 				handler.ServeHTTP(w, r)
 				return
 			}
 		}
 		var reserr model.Error
 		reserr = model.SetError(reserr, "Not Authorized.")
-		json.NewEncoder(w).Encode(err)
+		w.WriteHeader(http.StatusUnauthorized)
+		json.NewEncoder(w).Encode(reserr)
 	}
 }
 
@@ -130,9 +132,9 @@ func CreateRouter() {
 
 //initialize all routes
 func InitializeRoute(handler *handler.PostHandler) {
-	router.HandleFunc("/savePost", handler.SavePost).Methods("POST")
-	router.HandleFunc("/getAllPostsByEmail/{email}", handler.GetAllPostsByEmail).Methods("GET")
-	router.HandleFunc("/getImageByImageID/{imageID}", handler.GetImageByImageID).Methods("GET")
+	router.HandleFunc("/savePost",IsAuthorized(handler.SavePost)).Methods("POST")
+	router.HandleFunc("/getAllPostsByEmail/{email}",IsAuthorized(handler.GetAllPostsByEmail)).Methods("GET")
+	router.HandleFunc("/getImageByImageID/{imageID}", IsAuthorized(handler.GetImageByImageID)).Methods("GET")
 
 	router.Methods("OPTIONS").HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Access-Control-Allow-Origin", "")

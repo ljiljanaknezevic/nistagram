@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"strings"
 	"user-service-mod/handler"
 	"user-service-mod/repository"
 	"user-service-mod/service"
@@ -80,16 +81,16 @@ func CloseDatabase(connection *gorm.DB) {
 func IsAuthorized(handler http.HandlerFunc) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
 
-		if r.Header["Token"] == nil {
+		if r.Header["Authorization"] == nil {
 			var err model.Error
 			err = model.SetError(err, "No Token Found")
+			w.WriteHeader(http.StatusUnauthorized)
 			json.NewEncoder(w).Encode(err)
 			return
 		}
 
 		var mySigningKey = []byte(secretkey)
-
-		token, err := jwt.Parse(r.Header["Token"][0], func(token *jwt.Token) (interface{}, error) {
+		token, err := jwt.Parse(strings.Split(r.Header["Authorization"][0]," ")[1], func(token *jwt.Token) (interface{}, error) {
 			if _, ok := token.Method.(*jwt.SigningMethodHMAC); !ok {
 				return nil, fmt.Errorf("There was an error in parsing token.")
 			}
@@ -99,25 +100,26 @@ func IsAuthorized(handler http.HandlerFunc) http.HandlerFunc {
 		if err != nil {
 			var err model.Error
 			err = model.SetError(err, "Your Token has been expired.")
+			w.WriteHeader(http.StatusUnauthorized)
 			json.NewEncoder(w).Encode(err)
 			return
 		}
 
 		if claims, ok := token.Claims.(jwt.MapClaims); ok && token.Valid {
-			if claims["role"] == "admin" {
-				r.Header.Set("Role", "admin")
+			 if claims["role"] == "user" {
+				r.Header.Set("Role", "user")
 				handler.ServeHTTP(w, r)
 				return
-
-			} else if claims["role"] == "user" {
-				r.Header.Set("Role", "user")
+			}else if claims["role"] == "admin" {
+				r.Header.Set("Role", "admin")
 				handler.ServeHTTP(w, r)
 				return
 			}
 		}
 		var reserr model.Error
 		reserr = model.SetError(reserr, "Not Authorized.")
-		json.NewEncoder(w).Encode(err)
+		w.WriteHeader(http.StatusUnauthorized)
+		json.NewEncoder(w).Encode(reserr)
 	}
 }
 
@@ -134,20 +136,20 @@ func InitializeRoute(handler *handler.UserHandler) {
 	router.HandleFunc("/confirmRegistration", handler.SendConfirmation).Methods("POST")
 	router.HandleFunc("/sendEmailForAccountRecovery", handler.SendEmailForAccountRecovery).Methods("POST")
 	router.HandleFunc("/changePassword", handler.ChangePassword).Methods("POST")
-	router.HandleFunc("/getAllRequests/{email}", handler.GetAllFromWaitingList).Methods("GET")
+	router.HandleFunc("/getAllRequests/{email}", IsAuthorized(handler.GetAllFromWaitingList)).Methods("GET")
 	router.HandleFunc("/getByEmail/{email}", handler.GetUserByEmailAddress).Methods("GET")
-	router.HandleFunc("/changeUserData", handler.ChangeUserData).Methods("POST")
-	router.HandleFunc("/follow/{followerUsername}/{email}", handler.Follow).Methods("POST")
-	router.HandleFunc("/declineRequest/{followerUsername}/{email}", handler.DeclineRequest).Methods("POST")
-	router.HandleFunc("/acceptRequest/{followerUsername}/{email}", handler.AcceptRequest).Methods("POST")
-	router.HandleFunc("/alreadyFollow/{followerUsername}/{email}", handler.AlreadyFollow).Methods("GET")
-	router.HandleFunc("/getAllFollowers/{email}", handler.GetAllFollowers).Methods("GET")
-	router.HandleFunc("/getAllUsersExceptLogging/{email}", handler.GetAllUsersExceptLogging).Methods("GET")
-	/*router.Methods("OPTIONS").HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+	router.HandleFunc("/changeUserData", IsAuthorized(handler.ChangeUserData)).Methods("POST")
+	router.HandleFunc("/follow/{followerUsername}/{email}", IsAuthorized(handler.Follow)).Methods("POST")
+	router.HandleFunc("/declineRequest/{followerUsername}/{email}",IsAuthorized(handler.DeclineRequest)).Methods("POST")
+	router.HandleFunc("/acceptRequest/{followerUsername}/{email}",IsAuthorized( handler.AcceptRequest)).Methods("POST")
+	router.HandleFunc("/alreadyFollow/{followerUsername}/{email}", IsAuthorized(handler.AlreadyFollow)).Methods("GET")
+	router.HandleFunc("/getAllFollowers/{email}", IsAuthorized(handler.GetAllFollowers)).Methods("GET")
+	router.HandleFunc("/getAllUsersExceptLogging/{email}", IsAuthorized(handler.GetAllUsersExceptLogging)).Methods("GET")
+	router.Methods("OPTIONS").HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Access-Control-Allow-Origin", "")
 		w.Header().Set("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE")
-		w.Header().Set("Access-Control-Allow-Headers", "Accept, Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, Access-Control-Request-Headers, Access-Control-Request-Method, Connection, Host, Origin, User-Agent, Referer, Cache-Control, X-header")
-	})*/
+		w.Header().Set("Access-Control-Allow-Headers", "Accept, Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, Access-Control-Request-Headers,Token, Access-Control-Request-Method, Connection, Host, Origin, User-Agent, Referer, Cache-Control, X-header")
+	})
 }
 
 //start the server

@@ -15,7 +15,7 @@ $(document).ready(function(e){
     btnRegister.disabled = true
 
     input_name.keyup(function () {
-        if(validateEmail(input_email.val()) && validatePassword(input_password.val()) && validateName(input_name.val()) && validateUsername(input_username.val()) ) {
+        if(validateEmail(input_email.val()) && validatePassword(input_password.val()) && validateName(input_name.val()) && validateUsername(input_username.val()) && input_password.val()==input_password_repeat.val()) {
             btnRegister.disabled = false
         }
         if(!validateName(input_name.val())){
@@ -32,7 +32,7 @@ $(document).ready(function(e){
     });
 
     input_username.keyup(function () {
-        if(validateEmail(input_email.val()) && validatePassword(input_password.val()) && validateName(input_name.val()) && validateUsername(input_username.val())  ) {
+        if(validateEmail(input_email.val()) && validatePassword(input_password.val()) && validateName(input_name.val()) && validateUsername(input_username.val()) && input_password.val()==input_password_repeat.val() ) {
             btnRegister.disabled = false
         }
         if(!validateUsername(input_username.val())){
@@ -49,7 +49,7 @@ $(document).ready(function(e){
     });
 
     input_email.keyup(function () {
-        if(validateEmail(input_email.val()) && validatePassword(input_password.val()) && validateName(input_name.val()) && validateUsername(input_username.val()) ) {
+        if(validateEmail(input_email.val()) && validatePassword(input_password.val()) && validateName(input_name.val()) && validateUsername(input_username.val()) && input_password.val()==input_password_repeat.val() ) {
             btnRegister.disabled = false
         }
         if(!validateEmail(input_email.val())){
@@ -66,7 +66,7 @@ $(document).ready(function(e){
     });
 
     input_password.keyup(function () {
-        if(validateEmail(input_email.val()) && validatePassword(input_password.val()) && validateName(input_name.val()) && validateUsername(input_username.val()) ) {
+        if(validateEmail(input_email.val()) && validatePassword(input_password.val()) && validateName(input_name.val()) && validateUsername(input_username.val()) && input_password.val()==input_password_repeat.val() ) {
             btnRegister.disabled = false
         }
         if(!validatePassword(input_password.val())) {

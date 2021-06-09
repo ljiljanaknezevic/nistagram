@@ -19,10 +19,9 @@ type UserService struct {
 	Repo *repository.UserRepository
 }
 
-func (service *UserService) CreateUser(user *model.User) error {
+func (service *UserService) CreateUser(user *model.User) bool {
 	user.Password, _ = service.GeneratehashPassword(user.Password)
-	service.Repo.CreateUser(user)
-	return nil
+	return service.Repo.CreateUser(user)
 }
 func (service *UserService) GetAllUsersExceptLogging(email string) []model.User{
 	users:= service.Repo.GetAllUsersExceptLogging(email)
