@@ -81,8 +81,9 @@ if(validateEmail(input_email.val()) && validatePassword(input_password.val())) {
 	        if(xhr.status == 200){
 	        localStorage.setItem('email', jwt.email);
 	        localStorage.setItem('jwt', jwt.token);
-	        localStorage.setItem('role', jwt.role)
-	        authentification();
+	        localStorage.setItem('role', jwt.role);
+	        window.location.href = "twoFactorAuthentication.html";
+	      //  authentification();
     	}
 	
 	

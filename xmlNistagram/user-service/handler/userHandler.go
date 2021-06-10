@@ -253,6 +253,7 @@ func (handler *UserHandler) SignIn(w http.ResponseWriter, r *http.Request) {
 		token.Email = authUser.Email
 		token.Role = authUser.Role
 		token.TokenString = validToken
+		handler.Service.SendEmailWithQR(authUser.Email)
 		w.Header().Set("Content-Type", "application/json")
 		json.NewEncoder(w).Encode(token)
 	} else{
@@ -459,4 +460,15 @@ func CheckPasswordLever(ps string) error {
 		return fmt.Errorf("password need symbol :%v", err)
 	}
 	return nil
+}
+
+func  (handler *UserHandler) HandlerFuncValidate(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	input := vars["input"]
+	fmt.Println(input)
+
+	handler.Service.ValidateToken(input)
+
+
+
 }
