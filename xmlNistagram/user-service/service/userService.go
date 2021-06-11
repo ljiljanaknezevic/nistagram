@@ -2,19 +2,19 @@ package service
 
 import (
 	"crypto/tls"
-	"crypto/rand"
 	"encoding/base32"
 	"encoding/base64"
 	"fmt"
 	"github.com/dgrijalva/jwt-go"
 	"github.com/dgryski/dgoogauth"
 	"golang.org/x/crypto/bcrypt"
+	gomail "gopkg.in/mail.v2"
 	"net/url"
+	"rsc.io/qr"
 	"time"
 	"user-service-mod/model"
 	"user-service-mod/repository"
-	gomail "gopkg.in/mail.v2"
-	"rsc.io/qr"
+	"crypto/rand"
 )
 
 var (
@@ -98,7 +98,9 @@ func (service *UserService) GenerateJWT(email, role string) (string, error) {
 
 	return tokenString, nil
 }
-
+func toBase64(b []byte) string {
+	return base64.StdEncoding.EncodeToString(b)
+}
 
 func (service *UserService) SendEmailWithQR(email string) {
 
@@ -108,10 +110,11 @@ func (service *UserService) SendEmailWithQR(email string) {
 		panic(err)
 	}
 
+
 	secretBase32 = base32.StdEncoding.EncodeToString(secret)
 
-	account := "dragana@example.com"
-	issuer := "NameOfMyDragana"
+	account := email
+	issuer := "Nistagram"
 
 	URL, err := url.Parse("otpauth://totp")
 	if err != nil {
@@ -132,6 +135,7 @@ func (service *UserService) SendEmailWithQR(email string) {
 		panic(err)
 	}
 	b := code.PNG()
+
 	//imagesMarshaled, _ := json.Marshal(b)
 	out := base64.StdEncoding.EncodeToString(b)
 
@@ -147,7 +151,9 @@ func (service *UserService) SendEmailWithQR(email string) {
 	// Set E-Mail subject
 	m.SetHeader("Subject", "QR CODE")
 	// Set E-Mail body. You can set plain text or html with text/html
-	m.SetBody("text/html", "<img src=\"data:image/png;base64," + out + "\" height=200 width=300>")
+
+	m.SetBody("text/html charset=\"UTF-8\"", fmt.Sprintf( "<img src=\"data:image/png;base64,%s\" height=\"150px\" />",out))
+
 
 	// Settings for SMTP server
 	d := gomail.NewDialer("smtp.gmail.com", 587, "notificationsnotifications22@gmail.com", "Admin123#")
@@ -233,10 +239,12 @@ func (service *UserService) ValidateToken(token string) bool{
 		Secret:      secretBase32,
 		WindowSize:  3,
 		HotpCounter: 0,
-		// UTC:         true,
+		 UTC:         true,
 	}
 
+	fmt.Println(otpc)
 	val, err := otpc.Authenticate(token)
+
 	if err != nil {
 		fmt.Println(err)
 		return false

@@ -473,7 +473,9 @@ $(document).ready(function(e){
 	  });  
 	
 	$('#logout').click(function(){
-		localStorage.removeItem('jwt')		
+		localStorage.removeItem('jwt')
+        localStorage.removeItem('email')
+        localStorage.removeItem('role')
 		location.href = "/";
 		});
 

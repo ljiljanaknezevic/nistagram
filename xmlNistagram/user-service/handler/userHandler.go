@@ -17,6 +17,8 @@ import (
 type UserHandler struct {
 	Service *service.UserService
 }
+var  secretBase32 string
+var authUser model.User
 
 type EmailForRecovery struct {
 	Email string `json:"email"`
@@ -218,7 +220,7 @@ func (handler *UserHandler) SignIn(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 	if validEmail(authDetails.Email) && CheckPasswordLever(authDetails.Password)==nil{
-		var authUser model.User
+		//var authUser model.User
 		authUser = handler.Service.UserForLogin(authDetails.Email)
 		if authUser.Email == "" {
 			var err model.Error
@@ -239,23 +241,9 @@ func (handler *UserHandler) SignIn(w http.ResponseWriter, r *http.Request) {
 			json.NewEncoder(w).Encode(err)
 			return
 		}
-
-		validToken, err := handler.Service.GenerateJWT(authUser.Email, authUser.Role)
-		if err != nil {
-			var err model.Error
-			err = model.SetError(err, "Failed to generate token")
-			w.Header().Set("Content-Type", "application/json")
-			w.WriteHeader(http.StatusBadRequest)
-			json.NewEncoder(w).Encode(err)
-			return
-		}
-		var token model.Token
-		token.Email = authUser.Email
-		token.Role = authUser.Role
-		token.TokenString = validToken
 		handler.Service.SendEmailWithQR(authUser.Email)
-		w.Header().Set("Content-Type", "application/json")
-		json.NewEncoder(w).Encode(token)
+		w.WriteHeader(http.StatusOK)
+
 	} else{
 		var err model.Error
 		err = model.SetError(err, "Incorrectly entered data.")
@@ -264,6 +252,7 @@ func (handler *UserHandler) SignIn(w http.ResponseWriter, r *http.Request) {
 		return
 
 	}
+
 }
 
 func (handler *UserHandler) GetUserByEmailAddress(w http.ResponseWriter, r *http.Request) {
@@ -465,10 +454,31 @@ func CheckPasswordLever(ps string) error {
 func  (handler *UserHandler) HandlerFuncValidate(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	input := vars["input"]
-	fmt.Println(input)
 
-	handler.Service.ValidateToken(input)
-
+	if handler.Service.ValidateToken(input){
+		validToken, err := handler.Service.GenerateJWT(authUser.Email, authUser.Role)
+		if err != nil {
+			var err model.Error
+			err = model.SetError(err, "Failed to generate token")
+			w.Header().Set("Content-Type", "application/json")
+			w.WriteHeader(http.StatusBadRequest)
+			json.NewEncoder(w).Encode(err)
+			return
+		}
+		var token model.Token
+		token.Email = authUser.Email
+		token.Role = authUser.Role
+		token.TokenString = validToken
+		handler.Service.SendEmailWithQR(authUser.Email)
+		w.Header().Set("Content-Type", "application/json")
+		json.NewEncoder(w).Encode(token)
+		fmt.Println("Authorized")
+		w.WriteHeader(http.StatusOK)
+	}else{
+		fmt.Println("Not authorized")
+		w.WriteHeader(http.StatusBadRequest)
+	}
 
 
 }
+
