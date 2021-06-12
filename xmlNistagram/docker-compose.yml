@@ -40,6 +40,8 @@ services:
       - '8081:8081'
     depends_on:
       - postgresdb
+    volumes:
+      - ./post-service/files:/go/app/files
   search-service:
     restart: always
     build:

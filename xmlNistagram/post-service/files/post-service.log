@@ -1,0 +1,3 @@
+{"level":"info","location":"post-service.main.go","msg":"Log file created","time":"2021-06-12T08:19:30Z"}
+{"level":"info","location":"post-service.handler.postHandler.init()","msg":"Post-service Log file created/opened","time":"2021-06-12T08:26:26Z"}
+{"level":"info","location":"post-service.main.go","msg":"Log file created","time":"2021-06-12T08:26:26Z"}

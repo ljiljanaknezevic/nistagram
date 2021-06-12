@@ -1,0 +1,39 @@
+{"level":"info","location":"user-service.handler.userHandler.init()","msg":"User-service Log file created/opened","time":"2021-06-11T11:23:17Z"}
+{"level":"info","location":"user-service.handler.userHandler.init()","msg":"User-service Log file created/opened","time":"2021-06-11T11:23:17Z"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email.","time":"2021-06-11T11:24:39Z","user_email":"mili@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email success.","time":"2021-06-11T11:24:39Z","user_email":"mili@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.SignIn()","msg":"User sign in.","time":"2021-06-11T11:24:42Z","user_email":""}
+{"level":"info","location":"user-service.handler.userHandler.SignIn()","msg":"User sign in success.Generate token scuccess.","time":"2021-06-11T11:24:44Z","user_email":"mili@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email.","time":"2021-06-11T11:24:45Z","user_email":"mili@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email success.","time":"2021-06-11T11:24:45Z","user_email":"mili@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.init()","msg":"User-service Log file created/opened","time":"2021-06-11T12:21:31Z"}
+{"level":"info","location":"user-service.handler.userHandler.init()","msg":"User-service Log file created/opened","time":"2021-06-11T12:21:31Z"}
+{"level":"info","location":"user-service.handler.userHandler.SignIn()","msg":"User sign in.","time":"2021-06-11T12:25:36Z","user_email":""}
+{"level":"info","location":"user-service.handler.userHandler.SignIn()","msg":"User sign in success.Generate token scuccess.","time":"2021-06-11T12:25:37Z","user_email":"mili@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email.","time":"2021-06-11T12:25:37Z","user_email":"mili@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email success.","time":"2021-06-11T12:25:37Z","user_email":"mili@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email.","time":"2021-06-11T12:25:41Z","user_email":"mili@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email success.","time":"2021-06-11T12:25:41Z","user_email":"mili@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email.","time":"2021-06-11T12:26:14Z","user_email":"mili@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email success.","time":"2021-06-11T12:26:14Z","user_email":"mili@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email.","time":"2021-06-11T12:26:14Z","user_email":"mili@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email success.","time":"2021-06-11T12:26:14Z","user_email":"mili@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.ChangeUserData()","msg":"User update profile.","time":"2021-06-11T12:26:42Z","user_email":"mili@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.ChangeUserData()","msg":"User update profile success.","time":"2021-06-11T12:26:42Z","user_email":"mili@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email.","time":"2021-06-11T12:26:45Z","user_email":"mili@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email success.","time":"2021-06-11T12:26:45Z","user_email":"mili@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email.","time":"2021-06-11T12:26:47Z","user_email":"mili@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email success.","time":"2021-06-11T12:26:47Z","user_email":"mili@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email.","time":"2021-06-11T12:27:19Z","user_email":"mili@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email success.","time":"2021-06-11T12:27:19Z","user_email":"mili@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.init()","msg":"User-service Log file created/opened","time":"2021-06-11T13:06:59Z"}
+{"level":"info","location":"user-service.handler.userHandler.init()","msg":"User-service Log file created/opened","time":"2021-06-11T13:06:59Z"}
+{"level":"info","location":"user-service.handler.userHandler.init()","msg":"User-service Log file created/opened","time":"2021-06-11T13:31:04Z"}
+{"level":"info","location":"user-service.handler.userHandler.init()","msg":"User-service Log file created/opened","time":"2021-06-11T13:31:04Z"}
+{"level":"info","location":"user-service.handler.userHandler.init()","msg":"User-service Log file created/opened","time":"2021-06-11T19:05:54Z"}
+{"level":"info","location":"user-service.handler.userHandler.init()","msg":"User-service Log file created/opened","time":"2021-06-11T19:05:54Z"}
+{"level":"fatal","location":"user-service.main.GetDatabase()","msg":"Invalid database url","time":"2021-06-11T19:05:54Z"}
+{"level":"info","location":"user-service.handler.userHandler.init()","msg":"User-service Log file created/opened","time":"2021-06-11T19:05:56Z"}
+{"level":"info","location":"user-service.handler.userHandler.init()","msg":"User-service Log file created/opened","time":"2021-06-11T19:05:56Z"}
+{"level":"info","location":"user-service.handler.userHandler.init()","msg":"User-service Log file created/opened","time":"2021-06-12T08:26:25Z"}
+{"level":"info","location":"user-service.handler.userHandler.init()","msg":"User-service Log file created/opened","time":"2021-06-12T08:26:25Z"}

@@ -2,6 +2,7 @@ package repository
 
 import (
 	"fmt"
+	"html/template"
 	"user-service-mod/model"
 
 	"github.com/jinzhu/gorm"
@@ -16,7 +17,7 @@ func (repo *UserRepository) CreateUser(user *model.User) error {
 	fmt.Println(result.RowsAffected)
 	return nil
 }
-func (repo *UserRepository) GetAllUsersExceptLogging(email string) []model.User{
+func (repo *UserRepository) GetAllUsersExceptLogging(email string) []model.User {
 	var users []model.User
 	repo.Database.Where("email != ?", email).Preload("Following").Preload("WaitingFollowers").Preload("Followers").Find(&users)
 	return users
@@ -51,6 +52,15 @@ func (repo *UserRepository) GetWaitingUser(username string) model.WaitingFollowe
 func (repo *UserRepository) GetUserByEmailAddress(email string) model.User {
 	var user model.User
 	repo.Database.Where("email = ? ", email).Preload("Following").Preload("WaitingFollowers").Preload("Followers").First(&user)
+
+	user.Name = template.HTMLEscapeString(user.Name)
+	user.Password = template.HTMLEscapeString(user.Password)
+	user.PhoneNumber = template.HTMLEscapeString(user.PhoneNumber)
+	user.Gender = template.HTMLEscapeString(user.Gender)
+	user.Birhtday = template.HTMLEscapeString(user.Birhtday)
+	user.Username = template.HTMLEscapeString(user.Username)
+	user.Website = template.HTMLEscapeString(user.Website)
+	user.Biography = template.HTMLEscapeString(user.Biography)
 	return user
 }
 func (repo *UserRepository) GetUserByUsername(username string) model.User {
