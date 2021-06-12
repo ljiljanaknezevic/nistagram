@@ -77,15 +77,9 @@ if(validateEmail(input_email.val()) && validatePassword(input_password.val())) {
       url: 'http://localhost:80/user-service/signin',
       method: 'POST',
       data: JSON.stringify({ email: email, password: password }),
-      success: function(jwt, status, xhr){
-	        if(xhr.status == 200){
-	        localStorage.setItem('email', jwt.email);
-	        localStorage.setItem('jwt', jwt.token);
-	        localStorage.setItem('role', jwt.role)
-	        authentification();
-    	}
-	
-	
+      success: function(){
+	        window.location.href = "twoFactorAuthentication.html";
+	        
       },
       error: function(){
 	

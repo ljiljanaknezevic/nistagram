@@ -15,6 +15,7 @@ $(document).ready(function(e) {
                 } else {
                     alert("Sucess registration.")
                 }
+
             },
             error: function () {
                 p_log.text('Error');

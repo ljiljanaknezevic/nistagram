@@ -37,3 +37,5 @@
 {"level":"info","location":"user-service.handler.userHandler.init()","msg":"User-service Log file created/opened","time":"2021-06-11T19:05:56Z"}
 {"level":"info","location":"user-service.handler.userHandler.init()","msg":"User-service Log file created/opened","time":"2021-06-12T08:26:25Z"}
 {"level":"info","location":"user-service.handler.userHandler.init()","msg":"User-service Log file created/opened","time":"2021-06-12T08:26:25Z"}
+{"level":"info","location":"user-service.handler.userHandler.init()","msg":"User-service Log file created/opened","time":"2021-06-12T10:51:21+02:00"}
+{"level":"info","location":"user-service.handler.userHandler.init()","msg":"User-service Log file created/opened","time":"2021-06-12T10:51:21+02:00"}

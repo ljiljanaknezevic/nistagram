@@ -1,14 +1,16 @@
 package main
 
 import (
+	"encoding/json"
 	"fmt"
+	"github.com/dgrijalva/jwt-go"
 	"log"
 	"net/http"
 	"search-service/repository"
 	"search-service/handler"
 	"search-service/model"
 	"search-service/service"
-
+	"strings"
 
 	"github.com/gorilla/handlers"
 	"github.com/gorilla/mux"
@@ -80,16 +82,61 @@ func CloseUserDatabase(connection *gorm.DB) {
 func CreateRouter() {
 	router = mux.NewRouter()
 }
+//check whether user is authorized or not
+func IsAuthorized(handler http.HandlerFunc) http.HandlerFunc {
+	return func(w http.ResponseWriter, r *http.Request) {
+
+		if r.Header["Authorization"] == nil {
+			var err model.Error
+			err = model.SetError(err, "No Token Found")
+			w.WriteHeader(http.StatusUnauthorized)
+			json.NewEncoder(w).Encode(err)
+			return
+		}
+
+		var mySigningKey = []byte(secretkey)
+		token, err := jwt.Parse(strings.Split(r.Header["Authorization"][0]," ")[1], func(token *jwt.Token) (interface{}, error) {
+			if _, ok := token.Method.(*jwt.SigningMethodHMAC); !ok {
+				return nil, fmt.Errorf("There was an error in parsing token.")
+			}
+			return mySigningKey, nil
+		})
+
+		if err != nil {
+			var err model.Error
+			err = model.SetError(err, "Your Token has been expired.")
+			w.WriteHeader(http.StatusUnauthorized)
+			json.NewEncoder(w).Encode(err)
+			return
+		}
+
+		if claims, ok := token.Claims.(jwt.MapClaims); ok && token.Valid {
+			if claims["role"] == "user" {
+				r.Header.Set("Role", "user")
+				handler.ServeHTTP(w, r)
+				return
+			}else if claims["role"] == "admin" {
+				r.Header.Set("Role", "admin")
+				handler.ServeHTTP(w, r)
+				return
+			}
+		}
+		var reserr model.Error
+		reserr = model.SetError(reserr, "Not Authorized.")
+		w.WriteHeader(http.StatusUnauthorized)
+		json.NewEncoder(w).Encode(reserr)
+	}
+}
 
 //initialize all routes
 func InitializeRoute(handler *handler.SearchHandler) {
-		router.HandleFunc("/searchUserByUsername/{username}/{loggingUsername}", handler.GetUserByUsername).Methods("GET")
+		router.HandleFunc("/searchUserByUsername/{username}/{loggingUsername}", IsAuthorized(handler.GetUserByUsername)).Methods("GET")
 		//router.HandleFunc("/getAllUsers", handler.GetAllUsers).Methods("GET")
 		router.HandleFunc("/searchUserByUsernameForUnregistredUser/{username}", handler.GetUserByUsernameForUnregistredUser).Methods("GET")
-		router.HandleFunc("/searchPostByLocation/{location}/{email}", handler.SearchPostsByLocation).Methods("GET")
+		router.HandleFunc("/searchPostByLocation/{location}/{email}", IsAuthorized(handler.SearchPostsByLocation)).Methods("GET")
 		router.HandleFunc("/searchPostByLocationUnregistered/{location}", handler.SearchPostsByLocationUnregistered).Methods("GET")
-		router.HandleFunc("/getPostsForSearchedUser/{id}/{email}", handler.GetPostsForSearchedUser).Methods("GET")
-		router.HandleFunc("/searchPostByTag/{tag}/{email}", handler.SearchPostsByTag).Methods("GET")
+		router.HandleFunc("/getPostsForSearchedUser/{id}/{email}",IsAuthorized(handler.GetPostsForSearchedUser)).Methods("GET")
+		router.HandleFunc("/searchPostByTag/{tag}/{email}",IsAuthorized( handler.SearchPostsByTag)).Methods("GET")
 	router.HandleFunc("/searchPostByTagUnregistered/{tag}", handler.SearchPostsByTagUnregistered).Methods("GET")
 		router.HandleFunc("/getMedia/{id}", handler.MediaForFront).Methods("GET")
 	router.HandleFunc("/getPostsForSearchedUserUnregistered/{id}", handler.GetPostsForSearchedUserUnregistered).Methods("GET")
