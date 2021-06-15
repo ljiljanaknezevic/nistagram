@@ -239,7 +239,7 @@ func (service *UserService) ValidateToken(token string) bool{
 		Secret:      secretBase32,
 		WindowSize:  3,
 		HotpCounter: 0,
-		 UTC:         true,
+		//UTC:         true,
 	}
 
 	fmt.Println(otpc)

@@ -311,7 +311,6 @@ func (handler *UserHandler) SignIn(w http.ResponseWriter, r *http.Request) {
 		json.NewEncoder(w).Encode(err)
 		return
 	}
-	var authUser model.User
 
 	log.WithFields(logrus.Fields{
 		"location":   "user-service.handler.userHandler.SignIn()",
@@ -639,11 +638,13 @@ func (handler *UserHandler) HandlerFuncValidate(w http.ResponseWriter, r *http.R
 			json.NewEncoder(w).Encode(err)
 			return
 		}
+
+
 		var token model.Token
 		token.Email = authUser.Email
 		token.Role = authUser.Role
 		token.TokenString = validToken
-		handler.Service.SendEmailWithQR(authUser.Email)
+
 		w.Header().Set("Content-Type", "application/json")
 		json.NewEncoder(w).Encode(token)
 		fmt.Println("Authorized")

@@ -139,6 +139,7 @@ func InitializeRoute(handler *handler.SearchHandler) {
 		router.HandleFunc("/searchPostByTag/{tag}/{email}",IsAuthorized( handler.SearchPostsByTag)).Methods("GET")
 	router.HandleFunc("/searchPostByTagUnregistered/{tag}", handler.SearchPostsByTagUnregistered).Methods("GET")
 		router.HandleFunc("/getMedia/{id}", handler.MediaForFront).Methods("GET")
+	router.HandleFunc("/getVideos/{id}", handler.VideoZaFront).Methods("GET")
 	router.HandleFunc("/getPostsForSearchedUserUnregistered/{id}", handler.GetPostsForSearchedUserUnregistered).Methods("GET")
 	router.Methods("OPTIONS").HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 			w.Header().Set("Access-Control-Allow-Origin", "")

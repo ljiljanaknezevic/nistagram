@@ -10,7 +10,7 @@ $(document).ready(function(){
                     localStorage.setItem('email', jwt.email);
                     localStorage.setItem('jwt', jwt.token);
                     localStorage.setItem('role', jwt.role);
-                    authentification()}
+                    authentification();}
 
             },
             error: function () {

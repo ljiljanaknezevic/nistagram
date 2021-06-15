@@ -79,7 +79,7 @@ if(validateEmail(input_email.val()) && validatePassword(input_password.val())) {
       data: JSON.stringify({ email: email, password: password }),
       success: function(){
 	        window.location.href = "twoFactorAuthentication.html";
-	        
+
       },
       error: function(){
 	

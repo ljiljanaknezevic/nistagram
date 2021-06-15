@@ -2,12 +2,14 @@ package handler
 
 import (
 	"bytes"
+	"encoding/base64"
 	"encoding/json"
 	"fmt"
+	"github.com/gorilla/mux"
+	logrus "github.com/sirupsen/logrus"
+	"gopkg.in/natefinch/lumberjack.v2"
 	"html/template"
-	"image"
-	"image/jpeg"
-	"image/png"
+	"io"
 	"net/http"
 	"os"
 	"path/filepath"
@@ -15,10 +17,6 @@ import (
 	"search-service/service"
 	"strconv"
 	"strings"
-
-	"github.com/gorilla/mux"
-	logrus "github.com/sirupsen/logrus"
-	"gopkg.in/natefinch/lumberjack.v2"
 )
 
 type SearchHandler struct {
@@ -26,6 +24,13 @@ type SearchHandler struct {
 }
 
 var log = logrus.New()
+
+type FileWithBASE64 struct {
+	Path string `json:"path"`
+	FileType string `json:"type"`
+
+}
+
 
 func init() {
 	absPath, err := os.Getwd()
@@ -315,28 +320,16 @@ func (handler *SearchHandler) MediaForFront(w http.ResponseWriter, r *http.Reque
 	var file model.File
 	file = handler.Service.FindFileById(uint(id))
 
-	var mediaZaFront []byte
-
+	buffer := new(bytes.Buffer)
 	f, _ := os.Open(file.Path)
 
 	defer f.Close()
-
-	image, _, _ := image.Decode(f)
-
-	buffer := new(bytes.Buffer)
-	if err := jpeg.Encode(buffer, image, nil); err != nil {
-		if err := png.Encode(buffer, image); err != nil {
-			log.WithFields(logrus.Fields{
-				"location": "search-service.handler.searchHandler.MediaForFront()"}).Error("Unable to encode image.")
-
-			fmt.Printf("Unable to encode image")
-		}
-	}
-
-	mediaZaFront = buffer.Bytes()
-
-	imagesMarshaled, err := json.Marshal(mediaZaFront)
-
+	io.Copy(buffer,f)
+	s := base64.StdEncoding.EncodeToString(buffer.Bytes())
+	var base64String FileWithBASE64
+	base64String.FileType = file.Type
+	base64String.Path = s
+	imagesMarshaled, err := json.Marshal(base64String)
 	if err != nil {
 		log.WithFields(logrus.Fields{
 			"location": "search-service.handler.searchHandler.MediaForFront()"}).Error(err)
@@ -346,6 +339,32 @@ func (handler *SearchHandler) MediaForFront(w http.ResponseWriter, r *http.Reque
 	log.WithFields(logrus.Fields{
 		"location": "search-service.handler.searchHandler.MediaForFront()"}).Info("Get image by imageID success.")
 
+
+	/*	image, _, _ := image.Decode(f)
+
+		buffer := new(bytes.Buffer)
+		if err := jpeg.Encode(buffer, image, nil); err != nil {
+			if err := png.Encode(buffer, image); err != nil {
+				log.WithFields(logrus.Fields{
+					"location": "search-service.handler.searchHandler.MediaForFront()"}).Error("Unable to encode image.")
+
+				fmt.Printf("Unable to encode image")
+			}
+		}
+
+		mediaZaFront = buffer.Bytes()
+
+		imagesMarshaled, err := json.Marshal(mediaZaFront)
+
+		if err != nil {
+			log.WithFields(logrus.Fields{
+				"location": "search-service.handler.searchHandler.MediaForFront()"}).Error(err)
+
+			fmt.Fprint(w, err)
+		}
+		log.WithFields(logrus.Fields{
+			"location": "search-service.handler.searchHandler.MediaForFront()"}).Info("Get image by imageID success.")
+	*/
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
 	w.Write(imagesMarshaled)
@@ -353,3 +372,42 @@ func (handler *SearchHandler) MediaForFront(w http.ResponseWriter, r *http.Reque
 	//json.NewEncoder(w).Encode(imagesMarshaled)
 
 }
+
+func (handler *SearchHandler) VideoZaFront(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	idString := vars["id"]
+	id, _ := strconv.ParseUint(idString, 10, 64)
+	log.WithFields(logrus.Fields{
+		"location": "search-service.handler.searchHandler.MediaForFront()"}).Info("Get image by imageID.")
+
+	var file model.File
+	file = handler.Service.FindFileById(uint(id))
+
+
+		buffer := new(bytes.Buffer)
+		f, _ := os.Open(file.Path)
+
+		defer f.Close()
+		io.Copy(buffer,f)
+		//s:=string(buffer.Bytes())
+		s := base64.StdEncoding.EncodeToString(buffer.Bytes())
+		imagesMarshaled, err := json.Marshal(s)
+
+		if err != nil {
+			log.WithFields(logrus.Fields{
+				"location": "search-service.handler.searchHandler.MediaForFront()"}).Error(err)
+
+			fmt.Fprint(w, err)
+		}
+		log.WithFields(logrus.Fields{
+			"location": "search-service.handler.searchHandler.MediaForFront()"}).Info("Get image by imageID success.")
+
+		w.Header().Set("Content-Type", "application/json")
+		w.WriteHeader(http.StatusOK)
+		w.Write(imagesMarshaled)
+
+	}
+
+
+
+

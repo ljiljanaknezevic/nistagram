@@ -73,6 +73,8 @@ func (handler *PostHandler) SavePost(w http.ResponseWriter, r *http.Request) {
 	}
 	defer file.Close()
 	absPath, err := os.Getwd()
+	var fileType string
+	fileType = r.FormValue("type")
 
 	path := filepath.Join(absPath, "files", handle.Filename)
 
@@ -91,7 +93,7 @@ func (handler *PostHandler) SavePost(w http.ResponseWriter, r *http.Request) {
 
 	var savingFile model.File
 	savingFile.Path = path
-	savingFile.Type = "IMAGE"
+	savingFile.Type = fileType
 
 	err = handler.Service.SaveFile(&savingFile)
 
