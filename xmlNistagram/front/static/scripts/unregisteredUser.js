@@ -126,7 +126,12 @@ let showPostsForSearchedUser = function(posts) {
                 console.log(slika)
                 console.log("slka slika slika" + slika)
 
-                pom1 = `<img id="output" height="150px" alt="slika" src ="`+'data:image/png;base64,'+ slika + ` ">`;
+                if (slika.type == "video") {
+
+                    pom1 = `<video id="output" height="150px" alt="slika" autoplay src ="` + 'data:video/mp4;base64,' + slika.path + ` ">`;
+                } else {
+                    pom1 = `<img id="output" height="150px" alt="slika" src ="` + 'data:image/png;base64,' + slika.path + ` ">`;
+                }
                 result += `<br><div class="ui card">
 
   <div class="content">
@@ -201,7 +206,12 @@ let showPosts = function(posts) {
                 console.log(slika)
                 console.log("slka slika slika" + slika)
 
-                pom1 = `<img id="output" height="150px" alt="slika" src ="`+'data:image/png;base64,'+ slika + ` ">`;
+                if (slika.type == "video") {
+
+                    pom1 = `<video id="output" height="150px" alt="slika" autoplay src ="` + 'data:video/mp4;base64,' + slika.path + ` ">`;
+                } else {
+                    pom1 = `<img id="output" height="150px" alt="slika" src ="` + 'data:image/png;base64,' + slika.path + ` ">`;
+                }
                 pomocna += `<br><div class="ui card">
 
   <div class="content">

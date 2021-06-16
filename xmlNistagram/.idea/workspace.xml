@@ -2,28 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4e794cd-97af-43bb-852b-a14e71c3e83e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/data/WiredTiger.lock" beforeDir="false" afterPath="$PROJECT_DIR$/data/WiredTiger.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/static/scripts/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/static/scripts/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/static/scripts/twoFactorAuthentication.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/static/scripts/twoFactorAuthentication.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/static/scripts/unregisteredUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/static/scripts/unregisteredUser.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/static/scripts/userHomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/static/scripts/userHomePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/static/userHomepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/static/userHomepage.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/static/scripts/videoPosts.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/static/scripts/videoPosts.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/post-service/files/post-service.log" beforeDir="false" afterPath="$PROJECT_DIR$/post-service/files/post-service.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/post-service/files/search-service.log" beforeDir="false" afterPath="$PROJECT_DIR$/post-service/files/search-service.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/post-service/files/story-service.log" beforeDir="false" afterPath="$PROJECT_DIR$/post-service/files/story-service.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/post-service/files/user-service.log" beforeDir="false" afterPath="$PROJECT_DIR$/post-service/files/user-service.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/post-service/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/post-service/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/post-service/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/post-service/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/post-service/handler/postHandler.go" beforeDir="false" afterPath="$PROJECT_DIR$/post-service/handler/postHandler.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/search-service/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/search-service/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/search-service/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/search-service/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/search-service/handler/searchHandler.go" beforeDir="false" afterPath="$PROJECT_DIR$/search-service/handler/searchHandler.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/search-service/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/search-service/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/story-service/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/story-service/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/story-service/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/story-service/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/go.sum" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/handler/userHandler.go" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/handler/userHandler.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/service/userService.go" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/service/userService.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/story-service/handler/storyHandler.go" beforeDir="false" afterPath="$PROJECT_DIR$/story-service/handler/storyHandler.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

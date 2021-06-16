@@ -70,6 +70,8 @@ func (handler *StoryHandler) SaveStory(w http.ResponseWriter, r *http.Request) {
 	}
 	defer file.Close()
 	absPath, err := os.Getwd()
+	var fileType string
+	fileType = r.FormValue("type")
 
 	path := filepath.Join(absPath, "files", handle.Filename)
 	f, err := os.OpenFile(path, os.O_WRONLY|os.O_CREATE, 0666)
@@ -87,7 +89,7 @@ func (handler *StoryHandler) SaveStory(w http.ResponseWriter, r *http.Request) {
 
 	var savingFile model.File
 	savingFile.Path = path
-	savingFile.Type = "IMAGE"
+	savingFile.Type = fileType
 
 	err = handler.Service.SaveFile(&savingFile)
 

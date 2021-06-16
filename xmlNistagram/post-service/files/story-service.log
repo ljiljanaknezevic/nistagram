@@ -43,3 +43,18 @@
 {"level":"info","location":"story-service.handler.storyHandler.init()","msg":"Story-service Log file created","time":"2021-06-15T15:01:13Z"}
 {"level":"info","location":"story-service.handler.storyHandler.init()","msg":"Story-service Log file created","time":"2021-06-15T15:07:51Z"}
 {"level":"info","location":"story-service.handler.storyHandler.init()","msg":"Story-service Log file created","time":"2021-06-15T15:10:58Z"}
+{"level":"info","location":"story-service.handler.storyHandler.init()","msg":"Story-service Log file created","time":"2021-06-15T16:28:33Z"}
+{"level":"info","location":"story-service.handler.storyHandler.init()","msg":"Story-service Log file created","time":"2021-06-16T10:16:03Z"}
+{"level":"info","location":"story-service.handler.storyHandler.SaveStory()","msg":"User add story.","time":"2021-06-16T10:21:33Z","user_email":"majatepavcevic133@gmail.com"}
+{"level":"info","location":"story-service.handler.storyHandler.SaveStory()","msg":"File localy created.","time":"2021-06-16T10:21:33Z"}
+{"level":"info","location":"story-service.handler.storyHandler.SaveStory()","msg":"Save post success.","time":"2021-06-16T10:21:33Z"}
+{"level":"info","location":"story-service.handler.storyHandler.SaveStory()","msg":"User add post success.","time":"2021-06-16T10:21:33Z","user_email":"majatepavcevic133@gmail.com"}
+{"level":"info","location":"story-service.handler.storyHandler.init()","msg":"Story-service Log file created","time":"2021-06-16T10:37:20Z"}
+{"level":"info","location":"story-service.handler.storyHandler.SaveStory()","msg":"User add story.","time":"2021-06-16T10:37:58Z","user_email":"majatepavcevic133@gmail.com"}
+{"level":"info","location":"story-service.handler.storyHandler.SaveStory()","msg":"File localy created.","time":"2021-06-16T10:37:58Z"}
+{"level":"info","location":"story-service.handler.storyHandler.SaveStory()","msg":"Save post success.","time":"2021-06-16T10:37:58Z"}
+{"level":"info","location":"story-service.handler.storyHandler.SaveStory()","msg":"User add post success.","time":"2021-06-16T10:37:58Z","user_email":"majatepavcevic133@gmail.com"}
+{"level":"info","location":"story-service.handler.storyHandler.SaveStory()","msg":"User add story.","time":"2021-06-16T10:38:32Z","user_email":"majatepavcevic133@gmail.com"}
+{"level":"info","location":"story-service.handler.storyHandler.SaveStory()","msg":"File localy created.","time":"2021-06-16T10:38:32Z"}
+{"level":"info","location":"story-service.handler.storyHandler.SaveStory()","msg":"Save post success.","time":"2021-06-16T10:38:32Z"}
+{"level":"info","location":"story-service.handler.storyHandler.SaveStory()","msg":"User add post success.","time":"2021-06-16T10:38:32Z","user_email":"majatepavcevic133@gmail.com"}
