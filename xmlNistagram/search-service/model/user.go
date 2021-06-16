@@ -17,6 +17,7 @@ type User struct {
 	Website     string `json:"website"`
 	Biography   string `json:"biography"`
 	IsPrivate   bool   `json:"isPrivate"`
+	IsVerified  bool   `json:"isVerified"`
 	Followers   []Follower `gorm:"many2many:user_followers; json:"followers"`
 	WaitingFollowers   []WaitingFollower `gorm:"many2many:user_waitingFollowers; json:"waitingFollowers"`
 	Following   []Following `gorm:"many2many:user_following; json:"following"`

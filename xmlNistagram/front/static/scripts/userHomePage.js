@@ -543,6 +543,12 @@ $(document).ready(function(e){
 let myProfile = function(user){
     var json = JSON.parse(user);
     var email = json.email
+    var verified = ""
+    if(json.isVerified) {
+        verified = `<i class="check circle icon" style="color: dodgerblue"></i>`
+    } else {
+        verified = ``
+    }
     customAjax({
         url: 'http://localhost:80/post-service/getAllPostsByEmail/' + email,
         method: 'GET',
@@ -557,6 +563,7 @@ let myProfile = function(user){
         json = JSON.parse(data)
 
         var slika
+
         result = ""
         result += `<div style="margin-top: 50px" ><div class="ui cards">`;
         console.log(json)
@@ -631,16 +638,10 @@ let myProfile = function(user){
                              margin-right:auto;">
             <h2 class="ui left aligned header" ></h2>
            <div class="ui clearing segment">
-            <h3 class="ui right floated header">
-                Posts
-            </h3>
-             <h3 class="ui right floated header">
-                Followers
-            </h3> <h3 class="ui right floated header">
-               Following
-            </h3>
+           <h3 class="ui right aligned header" >
+          <div class="ui vertical labeled icon buttons"><button id="verification" class="ui button"><i class="check circle icon"></i>Request for verification</button></div></h3>
             <h3 class="ui left floated header">
-               ` + json.username + `
+               ` + json.username + ``+ verified+`
             </h3>
             </div>
            <div class="ui secondary pointing menu">
@@ -658,6 +659,10 @@ let myProfile = function(user){
                 <div class="ui four cards" id='posts'></div>
         </div> `
         );
+        $("#verification").click(function () {
+            showRequest(localStorage.getItem("email"));
+
+        })
         $("#stories_myprofile.item").click(function () {
             $(this).addClass('active');
             $("#posts_myprofile").removeClass('active');
@@ -919,6 +924,12 @@ let showProfile = function(user) {
 
     pomocna +=`<div style="margin-top: 50px" ><div class="ui link cards">`;
     for( i in json) {
+        var verified = ""
+        if(json[i].isVerified) {
+            verified += `<i class="check circle icon" style="color: dodgerblue"></i>`
+        } else {
+            verified = ``
+        }
 
         var pom = '';
         if (json[i].gender == "female") {
@@ -935,7 +946,7 @@ let showProfile = function(user) {
   <div class="image">` + pom + `
   </div>
   <div class="content">
-    <a class="header" name="profile" id="`+json[i].email+`">` + json[i].username + `</a>
+    <a class="header" name="profile" id="`+json[i].email+`">` + json[i].username + ``+verified+`</a>
     <div class="meta">
       <span class="date">Birthday: ` + json[i].birthday + `</span>
     </div>

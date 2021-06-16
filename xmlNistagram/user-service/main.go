@@ -79,6 +79,7 @@ func InitialMigration() {
 	connection.AutoMigrate(model.Follower{})
 	connection.AutoMigrate(model.WaitingFollower{})
 	connection.AutoMigrate(model.Following{})
+	connection.AutoMigrate(model.VerificationRequest{})
 }
 
 //closes database connection
@@ -178,6 +179,10 @@ func InitializeRoute(handler *handler.UserHandler) {
 	router.HandleFunc("/getAllFollowers/{email}", IsAuthorized(handler.GetAllFollowers)).Methods("GET")
 	router.HandleFunc("/getAllUsersExceptLogging/{email}", IsAuthorized(handler.GetAllUsersExceptLogging)).Methods("GET")
 	router.HandleFunc("/validateToken/{input}", handler.HandlerFuncValidate).Methods("GET")
+	router.HandleFunc("/createRequest", handler.CreateRequest).Methods("POST")
+	router.HandleFunc("/getAllRequests", handler.GetAllRequestes).Methods("GET")
+	router.HandleFunc("/acceptVerification/{email}", handler.AcceptVerification).Methods("POST")
+	router.HandleFunc("/declineVerification/{email}", handler.DeclineVerification).Methods("POST")
 	router.Methods("OPTIONS").HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Access-Control-Allow-Origin", "")
 		w.Header().Set("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE")

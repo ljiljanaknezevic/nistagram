@@ -51,6 +51,12 @@ let showProfile = function(user) {
 
     pomocna +=`<div style="margin-top: 50px" ><div class="ui link cards">`;
     for( i in json) {
+        var verified = ""
+        if(json[i].isVerified) {
+            verified += `<i class="check circle icon" style="color: dodgerblue"></i>`
+        } else {
+            verified = ``
+        }
 
         var pom = '';
         if (json[i].gender == "female") {
@@ -64,7 +70,7 @@ let showProfile = function(user) {
   <div class="image">` + pom + `
   </div>
   <div class="content">
-    <a class="header" name="profile" id="`+json[i].email+`">` + json[i].username + `</a>
+    <a class="header" name="profile" id="`+json[i].email+`">` + json[i].username + ``+verified+`</a>
     <div class="meta">
       <span class="date">Birthday: ` + json[i].birthday + `</span>
     </div>

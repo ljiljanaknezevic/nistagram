@@ -23,7 +23,11 @@ $(document).ready(function(){
 })
 function authentification(){
     var role =localStorage.getItem('role');
+
     if( role == 'user') {
         window.location.href = "userHomepage.html";
+    }
+    if (role == 'admin') {
+        window.location.href = "adminHomePage.html";
     }
 }
