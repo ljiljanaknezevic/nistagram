@@ -73,8 +73,10 @@ func (handler *SearchHandler) GetUserByUsername(w http.ResponseWriter, r *http.R
 	var result []model.User
 
 	for _, element := range users {
-		if strings.Contains(strings.ToLower(element.Username), strings.ToLower(username)) {
-			result = append(result, element)
+		if element.Role =="user"{
+			if strings.Contains(strings.ToLower(element.Username), strings.ToLower(username)) {
+				result = append(result, element)
+			}
 		}
 	}
 	if result == nil {
@@ -99,10 +101,11 @@ func (handler *SearchHandler) GetUserByUsernameForUnregistredUser(w http.Respons
 	var result []model.User
 
 	for _, element := range users {
-		if !element.IsPrivate {
+		if !element.IsPrivate && element.Role=="user" {
 			if strings.Contains(strings.ToLower(element.Username), strings.ToLower(username)) {
 				result = append(result, element)
 			}
+
 		}
 	}
 	if result == nil {

@@ -25,103 +25,111 @@ $(document).ready(function(e){
 
     
      $("#addStory").click(function () {
-
-         customAjax({
-             url: 'http://localhost:80/user-service/getAllUsersExceptLogging/' + email,
-             method: 'GET',
-             async:false,
-             success: function (data) {
-                 var json = JSON.parse(data);
-                 users = json
-
-             },
-             error: function () {
-             }
+         $(`#showData`).html(`<div class="ui buttons">
+  <button id="addStoryImage" class="ui button">Add image</button>
+  <button id="addStoryVideo" class="ui button">Add video</button>
+</div><div id="showDataMedia"></div>`);
+         $("#addStoryVideo").click(function () {
+             showVideoStory()
          })
 
+         $("#addStoryImage").click(function () {
+             customAjax({
+                 url: 'http://localhost:80/user-service/getAllUsersExceptLogging/' + email,
+                 method: 'GET',
+                 async: false,
+                 success: function (data) {
+                     var json = JSON.parse(data);
+                     users = json
 
-        function reverseGeocode(coords) {
-            fetch('https://nominatim.openstreetmap.org/reverse?format=json&lon=' + coords[0] + '&lat=' + coords[1])
-                .then(function (response) {
-                    //alert(response);
-                    return response.json();
-                }).then(function (json) {
-                    let location=json["address"]["road"]+` `+json["address"]["house_number"]+` , `+json["address"]["city"]+` , `+json["address"]["country"];
-                    $('#location').val(location)
-
-            // $('#street-number').val(json["address"]["house_number"])
-        	//$('#city').val(json["address"]["city"])
-        	//$('#zip-code').val(json["address"]["postcode"])
-        	
-        	
-        	//$('#location-longitude').val(json["lon"]);
-        	//$('#location-latitude').val(json["lat"]);
-                    
-                    
-                    jsonObjekat = json;
-                });
-        };
-
-         pomocnaP = function () {
-        var map = new ol.Map({
-            
-                target: 'map',
-                layers: [
-                    new ol.layer.Tile({
-                        source: new ol.source.OSM()
-                    })
-                ],
-                view: new ol.View({
-                    center: ol.proj.fromLonLat([19.8424, 45.2541]),
-                    zoom: 15
-                })
-            });
-            //var jsonObjekat;
-            map.on('click', function (evt) {
-                var coord = ol.proj.toLonLat(evt.coordinate);
-                reverseGeocode(coord);
-                var iconFeatures = [];
-                var lon = coord[0];
-                var lat = coord[1];
-                var icon = "marker.png";
-                var iconGeometry = new ol.geom.Point(ol.proj.transform([lon, lat], 'EPSG:4326', 'EPSG:3857'));
-                var iconFeature = new ol.Feature({
-                    geometry: iconGeometry
-                });
-
-                iconFeatures.push(iconFeature);
-
-                var vectorSource = new ol.source.Vector({
-                    features: iconFeatures //add an array of features
-                });
+                 },
+                 error: function () {
+                 }
+             })
 
 
-                var iconStyle = new ol.style.Style({
-                    image: new ol.style.Icon(/** @type {olx.style.IconOptions} */({
-                        anchor: [0.5, 46],
-                        anchorXUnits: 'fraction',
-                        anchorYUnits: 'pixels',
-                        opacity: 0.95,
-                        src: icon
-                    }))
-                });
+             function reverseGeocode(coords) {
+                 fetch('https://nominatim.openstreetmap.org/reverse?format=json&lon=' + coords[0] + '&lat=' + coords[1])
+                     .then(function (response) {
+                         //alert(response);
+                         return response.json();
+                     }).then(function (json) {
+                     let location = json["address"]["road"] + ` ` + json["address"]["house_number"] + ` , ` + json["address"]["city"] + ` , ` + json["address"]["country"];
+                     $('#location').val(location)
 
-                var vectorLayer = new ol.layer.Vector({
-                    source: vectorSource,
-                    style: iconStyle
-                });
+                     // $('#street-number').val(json["address"]["house_number"])
+                     //$('#city').val(json["address"]["city"])
+                     //$('#zip-code').val(json["address"]["postcode"])
 
-                map.addLayer(vectorLayer);
 
-            });
-        }
-         let temp=""
-         for (i in users) {
-             temp+=`<div class="item" data-value="`+ users[i].username + `">` + users[i].username + `</div>`
-         }
+                     //$('#location-longitude').val(json["lon"]);
+                     //$('#location-latitude').val(json["lat"]);
 
-        $("#showData").html(
-            `<form  class="ui large form" 
+
+                     jsonObjekat = json;
+                 });
+             };
+
+             pomocnaP = function () {
+                 var map = new ol.Map({
+
+                     target: 'map',
+                     layers: [
+                         new ol.layer.Tile({
+                             source: new ol.source.OSM()
+                         })
+                     ],
+                     view: new ol.View({
+                         center: ol.proj.fromLonLat([19.8424, 45.2541]),
+                         zoom: 15
+                     })
+                 });
+                 //var jsonObjekat;
+                 map.on('click', function (evt) {
+                     var coord = ol.proj.toLonLat(evt.coordinate);
+                     reverseGeocode(coord);
+                     var iconFeatures = [];
+                     var lon = coord[0];
+                     var lat = coord[1];
+                     var icon = "marker.png";
+                     var iconGeometry = new ol.geom.Point(ol.proj.transform([lon, lat], 'EPSG:4326', 'EPSG:3857'));
+                     var iconFeature = new ol.Feature({
+                         geometry: iconGeometry
+                     });
+
+                     iconFeatures.push(iconFeature);
+
+                     var vectorSource = new ol.source.Vector({
+                         features: iconFeatures //add an array of features
+                     });
+
+
+                     var iconStyle = new ol.style.Style({
+                         image: new ol.style.Icon(/** @type {olx.style.IconOptions} */({
+                             anchor: [0.5, 46],
+                             anchorXUnits: 'fraction',
+                             anchorYUnits: 'pixels',
+                             opacity: 0.95,
+                             src: icon
+                         }))
+                     });
+
+                     var vectorLayer = new ol.layer.Vector({
+                         source: vectorSource,
+                         style: iconStyle
+                     });
+
+                     map.addLayer(vectorLayer);
+
+                 });
+             }
+             let temp = ""
+             for (i in users) {
+                 temp += `<div class="item" data-value="` + users[i].username + `">` + users[i].username + `</div>`
+             }
+
+             $("#showDataMedia").html(
+                 `<form  class="ui large form" 
                              style="width:80%; margin-left:auto; 
                              margin-right:auto; margin-top: 20px;">         
                           <form method="post" enctype="multipart/form-data">
@@ -151,7 +159,7 @@ $(document).ready(function(e){
                 <i class="dropdown icon"></i>
                 <div class="default text">Tags</div>
                 <div class="menu">
-              `+temp+`
+              ` + temp + `
                 </div>
             </div>
 
@@ -173,45 +181,47 @@ $(document).ready(function(e){
                                 </script>
                           </form>
                       </form>`
-        );
+             );
 
-        $('#save_story').click(function () {
-            var formData = new FormData();
-            formData.append("file", file);
-            var description = $('#description').val();
-            var tags = $('#tags').val();
-            var location=$('#location').val();
-            var email = localStorage.getItem('email');
+             $('#save_story').click(function () {
+                 var formData = new FormData();
+                 formData.append("file", file);
+                 var description = $('#description').val();
+                 var tags = $('#tags').val();
+                 var location = $('#location').val();
+                 var email = localStorage.getItem('email');
+                 formData.append("type","image")
 
-            formData.append("description", description)
-            formData.append("tags", tags)
-            formData.append("location", location)
-            formData.append("email", email)
-            customAjax({
-                url: 'http://localhost:80/story-service/saveStory',
-                method: 'POST',
-                data: formData,
-                processData: false,
-                contentType: false,
-                success: function () {
-                    alert("Sucess saved story")
-                     customAjax({
-                        url: 'http://localhost:80/user-service/getByEmail/' + email,
-                        method: 'GET',
-                        success: function(data){
-                            console.log("Success")
-                           // myProfile(data)
-                        },
-                        error: function(){
-                        }
-                    });
-                },
-                error: function (e) {
-                    alert('Error uploading new post.')
-                }
-            });
-        });
-    });
+                 formData.append("description", description)
+                 formData.append("tags", tags)
+                 formData.append("location", location)
+                 formData.append("email", email)
+                 customAjax({
+                     url: 'http://localhost:80/story-service/saveStory',
+                     method: 'POST',
+                     data: formData,
+                     processData: false,
+                     contentType: false,
+                     success: function () {
+                         alert("Sucess saved story")
+                         customAjax({
+                             url: 'http://localhost:80/user-service/getByEmail/' + email,
+                             method: 'GET',
+                             success: function (data) {
+                                 console.log("Success")
+                                 // myProfile(data)
+                             },
+                             error: function () {
+                             }
+                         });
+                     },
+                     error: function (e) {
+                         alert('Error uploading new post.')
+                     }
+                 });
+             });
+         });
+     });
 
     $("#addPost").click(function () {
         $(`#showData`).html(`<div class="ui buttons">
@@ -533,6 +543,12 @@ $(document).ready(function(e){
 let myProfile = function(user){
     var json = JSON.parse(user);
     var email = json.email
+    var verified = ""
+    if(json.isVerified) {
+        verified = `<i class="check circle icon" style="color: dodgerblue"></i>`
+    } else {
+        verified = ``
+    }
     customAjax({
         url: 'http://localhost:80/post-service/getAllPostsByEmail/' + email,
         method: 'GET',
@@ -543,54 +559,54 @@ let myProfile = function(user){
         }
     });
 
-    function showPosts(data)
-    {
+    function showPosts(data) {
         json = JSON.parse(data)
+
         var slika
-        result=""
-        result +=`<div style="margin-top: 50px" ><div class="ui cards">`;
 
-        for( i in json) {
+        result = ""
+        result += `<div style="margin-top: 50px" ><div class="ui cards">`;
+        console.log(json)
+            for (i in json) {
 
 
-            slika = ""
-            customAjax({
-                url: 'http://localhost:80/search-service/getMedia/' + json[i].ImageID,
-                method: 'GET',
-                async:false,
-                success: function (data) {
-                    console.log(data)
-                    slika = data
-                    console.log(slika)
-                    if(slika.type == "video") {
+                slika = ""
+                customAjax({
+                    url: 'http://localhost:80/search-service/getMedia/' + json[i].ImageID,
+                    method: 'GET',
+                    async: false,
+                    success: function (data) {
+                        slika = data
 
-                        pom1 = `<video id="output" height="150px" alt="slika" autoplay src ="` + 'data:video/mp4;base64,' + slika.path + ` ">`;
-                    } else {
-                        pom1 = `<img id="output" height="150px" alt="slika" src ="`+'data:image/png;base64,'+ slika.path + ` ">`;
-                    }
-                    result += `<br><div class="ui card">
+                        if (slika.type == "video") {
+
+                            pom1 = `<video id="output" height="150px" alt="slika" autoplay src ="` + 'data:video/mp4;base64,' + slika.path + ` ">`;
+                        } else {
+                            pom1 = `<img id="output" height="150px" alt="slika" src ="` + 'data:image/png;base64,' + slika.path + ` ">`;
+                        }
+                        result += `<br><div class="ui card">
 
   <div class="content">
-     <div class="right floated meta">`+ json[i].CreatedAt.split("T")[0] + `</div>  
+     <div class="right floated meta">` + json[i].CreatedAt.split("T")[0] +  `</div>  
      <div class="left floated meta"><button class="ui basic icon button">
         <i class="bookmark outline icon"></i>
         </button>
     </div>  
       <br>
     <div class="description" style="color:cornflowerblue"><i class="location arrow icon" ></i>
-      `+ json[i].Location+`
+      ` + json[i].Location + `
     </div>
   </div>
-   <div class="video">
+   <div class="image">
     ` + pom1 + `
   </div>
   <div class="content">
   <div class="description">
-      `+ json[i].description+`
+      ` + json[i].description + `
     </div>
       <br>
     <div class="description"><i class="tags icon"></i>
-      `+ json[i].tags+`
+      ` + json[i].tags + `
     </div>
   </div> 
   <div class="extra content">
@@ -603,17 +619,8 @@ let myProfile = function(user){
   </div>
 </div>`;
 
-                },
-                error: function () {
-
-
-                }
-            })
-
-        }
-
-        result+=`</div></div>`;
-        $('#posts').html(result);
+                    },
+                    error: function () {
 
         $("button[name=like]").click(function(){
         var postID=this.id
@@ -632,24 +639,22 @@ let myProfile = function(user){
 
     });
 
+            result += `</div></div>`;
+            $('#posts').html(result);
 
-    }
 
-    $("#showData").html(
-        `<div  style="width:80%; margin-left:auto; 
+
+        }
+
+        $("#showData").html(
+            `<div  style="width:80%; margin-left:auto; 
                              margin-right:auto;">
             <h2 class="ui left aligned header" ></h2>
            <div class="ui clearing segment">
-            <h3 class="ui right floated header">
-                Posts
-            </h3>
-             <h3 class="ui right floated header">
-                Followers
-            </h3> <h3 class="ui right floated header">
-               Following
-            </h3>
+           <h3 class="ui right aligned header" >
+          <div class="ui vertical labeled icon buttons"><button id="verification" class="ui button"><i class="check circle icon"></i>Request for verification</button></div></h3>
             <h3 class="ui left floated header">
-               `+ json.username+`
+               ` + json.username + ``+ verified+`
             </h3>
             </div>
            <div class="ui secondary pointing menu">
@@ -710,6 +715,37 @@ let myProfile = function(user){
     });
     });
 
+        $("#verification").click(function () {
+            showRequest(localStorage.getItem("email"));
+
+        })
+        $("#stories_myprofile.item").click(function () {
+            $(this).addClass('active');
+            $("#posts_myprofile").removeClass('active');
+            customAjax({
+                url: 'http://localhost:80/story-service/getAllStoriesByEmail/' + email,
+                method: 'GET',
+                success: function (data) {
+                    showStories(data)
+                },
+                error: function () {
+                }
+            });
+        });
+        $("#posts_myprofile.item").click(function () {
+            $(this).addClass('active');
+            $("#stories_myprofile").removeClass('active');
+            customAjax({
+                url: 'http://localhost:80/post-service/getAllPostsByEmail/' + email,
+                method: 'GET',
+                success: function (data) {
+                    showPosts(data)
+                },
+                error: function () {
+                }
+            });
+        });
+
       function showStories(data)
     {
         json = JSON.parse(data)
@@ -730,7 +766,12 @@ let myProfile = function(user){
                     console.log(slika)
                     console.log("slka slika slika" + slika)
 
-                    pom1 = `<img id="output" height="150px" alt="slika" src ="`+'data:image/png;base64,'+ slika + ` ">`;
+                    if(slika.type == "video") {
+
+                        pom1 = `<video id="output" height="150px" alt="slika" autoplay src ="` + 'data:video/mp4;base64,' + slika.path + ` ">`;
+                    } else {
+                        pom1 = `<img id="output" height="150px" alt="slika" src ="`+'data:image/png;base64,'+ slika.path + ` ">`;
+                    }
                     result += `<br><div class="ui card">
 
   <div class="content">
@@ -939,6 +980,12 @@ let showProfile = function(user) {
 
     pomocna +=`<div style="margin-top: 50px" ><div class="ui link cards">`;
     for( i in json) {
+        var verified = ""
+        if(json[i].isVerified) {
+            verified += `<i class="check circle icon" style="color: dodgerblue"></i>`
+        } else {
+            verified = ``
+        }
 
         var pom = '';
         if (json[i].gender == "female") {
@@ -955,7 +1002,7 @@ let showProfile = function(user) {
   <div class="image">` + pom + `
   </div>
   <div class="content">
-    <a class="header" name="profile" id="`+json[i].email+`">` + json[i].username + `</a>
+    <a class="header" name="profile" id="`+json[i].email+`">` + json[i].username + ``+verified+`</a>
     <div class="meta">
       <span class="date">Birthday: ` + json[i].birthday + `</span>
     </div>
@@ -1191,7 +1238,17 @@ let showPosts = function(posts) {
                 })
                 slika = data
 
+
                 pom1 = `<img id="output" height="150px" alt="slika" src ="`+'data:image/png;base64,'+ slika + ` ">`;
+
+
+                if (slika.type == "video") {
+
+                    pom1 = `<video id="output" height="150px" alt="slika" autoplay src ="` + 'data:video/mp4;base64,' + slika.path + ` ">`;
+                } else {
+                    pom1 = `<img id="output" height="150px" alt="slika" src ="` + 'data:image/png;base64,' + slika.path + ` ">`;
+                }
+
                 pomocna += `<br><div class="ui card">
 
   <div class="content">
@@ -1280,7 +1337,12 @@ let showPostsForSearchedUser = function(posts) {
                 console.log(slika)
                 console.log("slka slika slika" + slika)
 
-                pom1 = `<img id="output" height="150px" alt="slika" src ="`+'data:image/png;base64,'+ slika + ` ">`;
+                if (slika.type == "video") {
+
+                    pom1 = `<video id="output" height="150px" alt="slika" autoplay src ="` + 'data:video/mp4;base64,' + slika.path + ` ">`;
+                } else {
+                    pom1 = `<img id="output" height="150px" alt="slika" src ="` + 'data:image/png;base64,' + slika.path + ` ">`;
+                }
                 result += `<br><div class="ui card">
 
   <div class="content">

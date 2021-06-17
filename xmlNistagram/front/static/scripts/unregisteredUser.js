@@ -51,6 +51,12 @@ let showProfile = function(user) {
 
     pomocna +=`<div style="margin-top: 50px" ><div class="ui link cards">`;
     for( i in json) {
+        var verified = ""
+        if(json[i].isVerified) {
+            verified += `<i class="check circle icon" style="color: dodgerblue"></i>`
+        } else {
+            verified = ``
+        }
 
         var pom = '';
         if (json[i].gender == "female") {
@@ -64,7 +70,7 @@ let showProfile = function(user) {
   <div class="image">` + pom + `
   </div>
   <div class="content">
-    <a class="header" name="profile" id="`+json[i].email+`">` + json[i].username + `</a>
+    <a class="header" name="profile" id="`+json[i].email+`">` + json[i].username + ``+verified+`</a>
     <div class="meta">
       <span class="date">Birthday: ` + json[i].birthday + `</span>
     </div>
@@ -126,7 +132,12 @@ let showPostsForSearchedUser = function(posts) {
                 console.log(slika)
                 console.log("slka slika slika" + slika)
 
-                pom1 = `<img id="output" height="150px" alt="slika" src ="`+'data:image/png;base64,'+ slika + ` ">`;
+                if (slika.type == "video") {
+
+                    pom1 = `<video id="output" height="150px" alt="slika" autoplay src ="` + 'data:video/mp4;base64,' + slika.path + ` ">`;
+                } else {
+                    pom1 = `<img id="output" height="150px" alt="slika" src ="` + 'data:image/png;base64,' + slika.path + ` ">`;
+                }
                 result += `<br><div class="ui card">
 
   <div class="content">
@@ -201,7 +212,12 @@ let showPosts = function(posts) {
                 console.log(slika)
                 console.log("slka slika slika" + slika)
 
-                pom1 = `<img id="output" height="150px" alt="slika" src ="`+'data:image/png;base64,'+ slika + ` ">`;
+                if (slika.type == "video") {
+
+                    pom1 = `<video id="output" height="150px" alt="slika" autoplay src ="` + 'data:video/mp4;base64,' + slika.path + ` ">`;
+                } else {
+                    pom1 = `<img id="output" height="150px" alt="slika" src ="` + 'data:image/png;base64,' + slika.path + ` ">`;
+                }
                 pomocna += `<br><div class="ui card">
 
   <div class="content">

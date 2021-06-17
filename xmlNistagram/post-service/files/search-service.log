@@ -250,6 +250,7 @@
 {"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-15T15:12:43Z"}
 {"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-15T15:12:43Z"}
 {"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-15T15:12:43Z"}
+<<<<<<< HEAD
 {"level":"info","location":"search-service.handler.searchHandler.init()","msg":"Search-service Log file created/opened","time":"2021-06-15T16:43:50Z"}
 {"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-15T16:47:50Z"}
 {"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-15T16:47:50Z"}
@@ -1298,3 +1299,618 @@
 {"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-17T08:38:22Z"}
 {"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-17T08:38:22Z"}
 {"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-17T08:38:22Z"}
+=======
+{"level":"info","location":"search-service.handler.searchHandler.init()","msg":"Search-service Log file created/opened","time":"2021-06-15T16:28:34Z"}
+{"level":"info","location":"search-service.handler.searchHandler.init()","msg":"Search-service Log file created/opened","time":"2021-06-16T10:16:04Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:16:55Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:16:55Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:16:55Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:16:55Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:16:56Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:16:56Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:19:06Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:19:06Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:19:06Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:19:06Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:19:06Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:19:06Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:19:06Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:19:06Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:19:47Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:19:47Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:19:47Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:19:47Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:19:47Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:19:47Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:19:47Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:19:47Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:20:00Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:20:00Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:20:00Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:20:00Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:20:00Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:20:00Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:20:00Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:20:00Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:20:24Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:20:24Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:20:24Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:20:24Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:20:24Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:20:24Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:20:24Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:20:24Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:20:59Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:20:59Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:20:59Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:20:59Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:20:59Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:20:59Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:20:59Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:20:59Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:21:20Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:21:20Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:21:38Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:21:38Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:21:38Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:21:38Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:21:38Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:21:38Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:21:38Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:21:38Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:21:39Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:21:39Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:21:39Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:21:39Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:21:54Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:21:54Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:21:54Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:21:54Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:21:54Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:21:54Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:21:54Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:21:54Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:24:29Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:24:29Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:24:29Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:24:29Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:24:29Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:24:29Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:24:29Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:24:29Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:24:48Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:24:48Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:24:48Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:24:49Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:24:49Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:24:49Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:24:49Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:24:49Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:24:56Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:24:56Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:24:56Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:24:56Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:24:57Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:24:57Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:24:57Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:24:57Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:25:04Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:25:04Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:25:04Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:25:04Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:26:46Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:26:46Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:26:46Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:26:46Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:26:46Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:26:46Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:26:46Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:26:46Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:26:47Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:26:47Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:26:47Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:26:47Z"}
+{"level":"info","location":"search-service.handler.searchHandler.init()","msg":"Search-service Log file created/opened","time":"2021-06-16T10:37:21Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:37:33Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:37:33Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:37:33Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:37:33Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:37:33Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:37:33Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:37:33Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:37:33Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:37:35Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:37:35Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:37:35Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:37:35Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:38:03Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:38:03Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:38:03Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:38:03Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:38:03Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:38:03Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:38:03Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:38:03Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:38:04Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:38:04Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:38:05Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:38:05Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:38:05Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:38:05Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:38:33Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:38:33Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:38:33Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:38:33Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:38:34Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:38:34Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:38:34Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:38:34Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:38:36Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:38:36Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:38:36Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:38:36Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:38:36Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:38:36Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:38:36Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:38:37Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:42:34Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:42:34Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:42:34Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:42:34Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:43:57Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:43:57Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:43:58Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:43:58Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:49:19Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:49:19Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:49:21Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:49:21Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:49:25Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:49:25Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:50:09Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:50:09Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:50:40Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:50:40Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:51:45Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:51:45Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:52:42Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:52:42Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:52:42Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:52:42Z"}
+{"level":"info","location":"search-service.handler.searchHandler.GetUserByUsername()","msg":"Get searched user by username.","time":"2021-06-16T10:53:51Z","user_username":"an"}
+{"level":"info","location":"search-service.handler.searchHandler.GetUserByUsername()","msg":"Get searched user by username success.","time":"2021-06-16T10:53:51Z","user_username":"an"}
+{"level":"info","location":"search-service.handler.searchHandler.SearchPostsByLocation()","msg":"Search posts by location from registred user.","time":"2021-06-16T10:53:59Z","user_email":"majatepavcevic133@gmail.com"}
+{"level":"warning","location":"search-service.handler.searchHandler.SearchPostsByLocation()","msg":"No found posts by location.","time":"2021-06-16T10:53:59Z","user_email":"majatepavcevic133@gmail.com"}
+{"level":"info","location":"search-service.handler.searchHandler.SearchPostsByLocation()","msg":"Search by location from registred user success.","time":"2021-06-16T10:53:59Z","user_email":"majatepavcevic133@gmail.com"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:54:08Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:54:08Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:54:08Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:54:08Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:54:15Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:54:15Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:54:15Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:54:15Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:55:06Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:55:06Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:55:06Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:55:06Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:55:52Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:55:52Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:55:52Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:55:52Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:57:40Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:57:40Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T10:57:40Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T10:57:40Z"}
+{"level":"info","location":"search-service.handler.searchHandler.GetUserByUsername()","msg":"Get searched user by username.","time":"2021-06-16T10:59:53Z","user_username":"a"}
+{"level":"info","location":"search-service.handler.searchHandler.GetUserByUsername()","msg":"Get searched user by username success.","time":"2021-06-16T10:59:53Z","user_username":"a"}
+{"level":"info","location":"search-service.handler.searchHandler.GetUserByUsername()","msg":"Get searched user by username.","time":"2021-06-16T11:00:27Z","user_username":"a"}
+{"level":"info","location":"search-service.handler.searchHandler.GetUserByUsername()","msg":"Get searched user by username success.","time":"2021-06-16T11:00:27Z","user_username":"a"}
+{"level":"info","location":"search-service.handler.searchHandler.SearchPostsByLocation()","msg":"Search posts by location from registred user.","time":"2021-06-16T11:00:29Z","user_email":"majatepavcevic133@gmail.com"}
+{"level":"warning","location":"search-service.handler.searchHandler.SearchPostsByLocation()","msg":"No found posts by location.","time":"2021-06-16T11:00:29Z","user_email":"majatepavcevic133@gmail.com"}
+{"level":"info","location":"search-service.handler.searchHandler.SearchPostsByLocation()","msg":"Search by location from registred user success.","time":"2021-06-16T11:00:29Z","user_email":"majatepavcevic133@gmail.com"}
+{"level":"info","location":"search-service.handler.searchHandler.SearchPostsByLocationUnregistered()","msg":"Search posts by location from unregistred user.","time":"2021-06-16T11:01:40Z"}
+{"level":"warning","location":"search-service.handler.searchHandler.SearchPostsByLocationUnregistered()","msg":"Not found posts by searched location.","time":"2021-06-16T11:01:40Z"}
+{"level":"info","location":"search-service.handler.searchHandler.SearchPostsByLocationUnregistered()","msg":"Search posts by location from unregistred user success.","time":"2021-06-16T11:01:40Z"}
+{"level":"info","location":"search-service.handler.searchHandler.SearchPostsByTagUnregistered()","msg":"Search posts by tag from unregistred user.","time":"2021-06-16T11:01:47Z"}
+{"level":"info","location":"search-service.handler.searchHandler.SearchPostsByTagUnregistered()","msg":"No found posts by searched tag.","time":"2021-06-16T11:01:47Z"}
+{"level":"info","location":"search-service.handler.searchHandler.SearchPostsByTagUnregistered()","msg":"Search posts by tag from unregistred user.","time":"2021-06-16T11:01:47Z"}
+{"level":"info","location":"search-service.handler.searchHandler.GetUserByUsernameForUnregistredUser()","msg":"Get searched user by username from unregistred user.","time":"2021-06-16T11:02:02Z"}
+{"level":"info","location":"search-service.handler.searchHandler.GetUserByUsernameForUnregistredUser()","msg":"Get searched user by username from unregistred user success.","time":"2021-06-16T11:02:02Z"}
+{"level":"info","location":"search-service.handler.searchHandler.GetPostsForSearchedUserUnregistered()","msg":"Get posts for searched user from unregistred user success.","time":"2021-06-16T11:02:08Z","user_email":"majatepavcevic133@gmail.com"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T11:03:07Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T11:03:07Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T11:03:07Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T11:03:07Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T11:03:36Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T11:03:36Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T11:03:52Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T11:03:52Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T11:03:52Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T11:03:53Z"}
+{"level":"info","location":"search-service.handler.searchHandler.SearchPostsByLocationUnregistered()","msg":"Search posts by location from unregistred user.","time":"2021-06-16T11:03:59Z"}
+{"level":"info","location":"search-service.handler.searchHandler.SearchPostsByLocationUnregistered()","msg":"Search posts by location from unregistred user success.","time":"2021-06-16T11:03:59Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T11:03:59Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T11:03:59Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T11:03:59Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T11:03:59Z"}
+{"level":"info","location":"search-service.handler.searchHandler.SearchPostsByTagUnregistered()","msg":"Search posts by tag from unregistred user.","time":"2021-06-16T11:04:05Z"}
+{"level":"info","location":"search-service.handler.searchHandler.SearchPostsByTagUnregistered()","msg":"Search posts by tag from unregistred user.","time":"2021-06-16T11:04:05Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T11:04:05Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T11:04:05Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T11:04:05Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T11:04:05Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T11:30:39Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T11:30:39Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T11:30:39Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T11:30:39Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T11:32:30Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T11:32:30Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T11:32:31Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T11:32:31Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T11:33:08Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T11:33:08Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T11:33:08Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T11:33:09Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T11:33:22Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T11:33:22Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T11:33:22Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T11:33:22Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T11:36:27Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T11:36:27Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T11:36:27Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T11:36:27Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T11:37:02Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T11:37:02Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T11:37:02Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T11:37:02Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T11:40:33Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T11:40:33Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T11:40:33Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T11:40:33Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T11:40:45Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T11:40:45Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T11:40:45Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T11:40:45Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T11:41:15Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T11:41:15Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T11:41:15Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T11:41:15Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T11:41:33Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T11:41:33Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T11:41:33Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T11:41:33Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T11:42:12Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T11:42:12Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T11:42:12Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T11:42:12Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T11:42:31Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T11:42:31Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T11:42:31Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T11:42:31Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T11:43:02Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T11:43:02Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T11:43:02Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T11:43:02Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T11:43:21Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T11:43:21Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T11:43:21Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T11:43:21Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T11:44:02Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T11:44:02Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T11:44:02Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T11:44:02Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T11:44:14Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T11:44:14Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T11:44:14Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T11:44:14Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T11:46:30Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T11:46:30Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T11:46:30Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T11:46:30Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T11:48:15Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T11:48:15Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T11:48:15Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T11:48:15Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T11:51:01Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T11:51:01Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T11:51:01Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T11:51:01Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T11:53:03Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T11:53:03Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T11:53:03Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T11:53:03Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T11:56:04Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T11:56:04Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T11:56:04Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T11:56:04Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T12:01:35Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T12:01:35Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T12:01:35Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T12:01:35Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T12:04:09Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T12:04:09Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T12:04:09Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T12:04:09Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T12:06:36Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T12:06:36Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T12:06:36Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T12:06:36Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T12:06:53Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T12:06:53Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T12:06:53Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T12:06:53Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T12:07:25Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T12:07:25Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T12:07:25Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T12:07:25Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T12:13:16Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T12:13:16Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T12:13:16Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T12:13:16Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T12:14:00Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T12:14:00Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T12:14:00Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T12:14:00Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T12:14:52Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T12:14:52Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T12:14:52Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T12:14:53Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T12:15:08Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T12:15:08Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T12:15:08Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T12:15:08Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T12:15:34Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T12:15:34Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T12:15:34Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T12:15:34Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T12:15:50Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T12:15:50Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T12:15:50Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T12:15:50Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T12:16:55Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T12:16:55Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T12:16:55Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T12:16:56Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T12:17:43Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T12:17:43Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T12:17:43Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T12:17:43Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T12:21:18Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T12:21:18Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T12:21:18Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T12:21:18Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T12:22:08Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T12:22:08Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T12:22:08Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T12:22:08Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T12:22:34Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T12:22:34Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T12:22:34Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T12:22:34Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T12:23:14Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T12:23:14Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T12:23:14Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T12:23:14Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T12:24:11Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T12:24:11Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T12:24:11Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T12:24:11Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T12:25:20Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T12:25:20Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T12:25:20Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T12:25:20Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T12:25:53Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T12:25:53Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T12:25:53Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T12:25:53Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T12:26:15Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T12:26:15Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T12:26:16Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T12:26:16Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T12:26:49Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T12:26:49Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T12:26:49Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T12:26:49Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T12:29:42Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T12:29:42Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T12:29:42Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T12:29:42Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T12:30:48Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T12:30:48Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T12:30:48Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T12:30:48Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T12:33:59Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T12:33:59Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T12:33:59Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T12:33:59Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T12:36:53Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T12:36:53Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T12:36:53Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T12:36:54Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T12:37:57Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T12:37:57Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T12:37:57Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T12:37:57Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T12:41:53Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T12:41:53Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T12:41:53Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T12:41:53Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T12:42:21Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T12:42:21Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T12:42:21Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T12:42:21Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T12:46:27Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T12:46:27Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T12:46:27Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T12:46:27Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T12:47:19Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T12:47:19Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T12:47:19Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T12:47:19Z"}
+{"level":"info","location":"search-service.handler.searchHandler.init()","msg":"Search-service Log file created/opened","time":"2021-06-16T13:04:46Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T13:05:57Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T13:05:57Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T13:05:57Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T13:05:57Z"}
+{"level":"info","location":"search-service.handler.searchHandler.init()","msg":"Search-service Log file created/opened","time":"2021-06-16T13:07:54Z"}
+{"level":"info","location":"search-service.handler.searchHandler.init()","msg":"Search-service Log file created/opened","time":"2021-06-16T13:45:25Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T13:46:22Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T13:46:22Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T13:46:22Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T13:46:22Z"}
+{"level":"info","location":"search-service.handler.searchHandler.init()","msg":"Search-service Log file created/opened","time":"2021-06-16T13:48:30Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T13:48:46Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T13:48:46Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T13:48:46Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T13:48:46Z"}
+{"level":"info","location":"search-service.handler.searchHandler.init()","msg":"Search-service Log file created/opened","time":"2021-06-16T13:52:05Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T13:52:11Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T13:52:11Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T13:52:11Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T13:52:11Z"}
+{"level":"info","location":"search-service.handler.searchHandler.init()","msg":"Search-service Log file created/opened","time":"2021-06-16T13:54:16Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T13:54:27Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T13:54:27Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T13:54:27Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T13:54:27Z"}
+{"level":"info","location":"search-service.handler.searchHandler.init()","msg":"Search-service Log file created/opened","time":"2021-06-16T13:55:39Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T13:55:51Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T13:55:51Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T13:55:51Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T13:55:51Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T13:56:53Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T13:56:53Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T13:56:53Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T13:56:53Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T14:00:39Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T14:00:39Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T14:00:39Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T14:00:39Z"}
+{"level":"info","location":"search-service.handler.searchHandler.init()","msg":"Search-service Log file created/opened","time":"2021-06-16T14:17:59Z"}
+{"level":"info","location":"search-service.handler.searchHandler.init()","msg":"Search-service Log file created/opened","time":"2021-06-16T14:21:35Z"}
+{"level":"info","location":"search-service.handler.searchHandler.init()","msg":"Search-service Log file created/opened","time":"2021-06-16T14:32:33Z"}
+{"level":"info","location":"search-service.handler.searchHandler.init()","msg":"Search-service Log file created/opened","time":"2021-06-16T15:08:11Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T15:15:04Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T15:15:04Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T15:15:04Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T15:15:04Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T15:15:42Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T15:15:42Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T15:15:42Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T15:15:42Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T15:15:48Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T15:15:48Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T15:15:48Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T15:15:48Z"}
+{"level":"info","location":"search-service.handler.searchHandler.init()","msg":"Search-service Log file created/opened","time":"2021-06-16T15:21:40Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T15:21:41Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T15:21:41Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T15:21:41Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T15:21:41Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T15:25:20Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T15:25:20Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T15:25:20Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T15:25:20Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T15:25:55Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T15:25:55Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T15:25:55Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T15:25:55Z"}
+{"level":"info","location":"search-service.handler.searchHandler.init()","msg":"Search-service Log file created/opened","time":"2021-06-16T15:30:02Z"}
+{"level":"info","location":"search-service.handler.searchHandler.init()","msg":"Search-service Log file created/opened","time":"2021-06-16T15:32:35Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T15:34:17Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T15:34:17Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T15:34:17Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T15:34:18Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T15:36:16Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T15:36:16Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T15:36:16Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T15:36:16Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T15:36:49Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T15:36:49Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T15:36:49Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T15:36:49Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T16:04:36Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T16:04:37Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T16:04:37Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T16:04:37Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T16:11:36Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T16:11:36Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T16:11:36Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T16:11:36Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T16:11:50Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T16:11:50Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T16:11:50Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T16:11:50Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T16:16:08Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T16:16:08Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T16:16:08Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T16:16:08Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T16:17:07Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T16:17:07Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T16:17:07Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T16:17:07Z"}
+{"level":"info","location":"search-service.handler.searchHandler.SearchPostsByLocation()","msg":"Search posts by location from registred user.","time":"2021-06-16T16:18:22Z","user_email":"majatepavcevic133@gmail.com"}
+{"level":"warning","location":"search-service.handler.searchHandler.SearchPostsByLocation()","msg":"No found posts by location.","time":"2021-06-16T16:18:22Z","user_email":"majatepavcevic133@gmail.com"}
+{"level":"info","location":"search-service.handler.searchHandler.SearchPostsByLocation()","msg":"Search by location from registred user success.","time":"2021-06-16T16:18:22Z","user_email":"majatepavcevic133@gmail.com"}
+{"level":"info","location":"search-service.handler.searchHandler.init()","msg":"Search-service Log file created/opened","time":"2021-06-16T16:23:13Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T16:24:16Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T16:24:16Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T16:24:16Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T16:24:16Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T16:25:07Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T16:25:07Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T16:25:07Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T16:25:07Z"}
+{"level":"info","location":"search-service.handler.searchHandler.GetUserByUsername()","msg":"Get searched user by username.","time":"2021-06-16T16:28:04Z","user_username":"a"}
+{"level":"info","location":"search-service.handler.searchHandler.GetUserByUsername()","msg":"Get searched user by username success.","time":"2021-06-16T16:28:04Z","user_username":"a"}
+{"level":"info","location":"search-service.handler.searchHandler.GetUserByUsername()","msg":"Get searched user by username.","time":"2021-06-16T16:28:11Z","user_username":"a"}
+{"level":"info","location":"search-service.handler.searchHandler.GetUserByUsername()","msg":"Get searched user by username success.","time":"2021-06-16T16:28:11Z","user_username":"a"}
+{"level":"info","location":"search-service.handler.searchHandler.GetPostsForSearchedUser()","msg":"Get posts for searched user from registred user.","time":"2021-06-16T16:28:15Z","user_email":"jovana@gmail.com"}
+{"level":"info","location":"search-service.handler.searchHandler.GetPostsForSearchedUser()","msg":"Get posts for searched public user from registred user success.","time":"2021-06-16T16:28:15Z","user_email":"jovana@gmail.com"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T16:28:15Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T16:28:15Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T16:28:15Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T16:28:15Z"}
+{"level":"info","location":"search-service.handler.searchHandler.GetUserByUsername()","msg":"Get searched user by username.","time":"2021-06-16T16:28:47Z","user_username":"a"}
+{"level":"info","location":"search-service.handler.searchHandler.GetUserByUsername()","msg":"Get searched user by username success.","time":"2021-06-16T16:28:47Z","user_username":"a"}
+{"level":"info","location":"search-service.handler.searchHandler.GetUserByUsername()","msg":"Get searched user by username.","time":"2021-06-16T16:29:51Z","user_username":"a"}
+{"level":"info","location":"search-service.handler.searchHandler.GetUserByUsername()","msg":"Get searched user by username success.","time":"2021-06-16T16:29:51Z","user_username":"a"}
+{"level":"info","location":"search-service.handler.searchHandler.GetUserByUsername()","msg":"Get searched user by username.","time":"2021-06-16T16:30:42Z","user_username":"a"}
+{"level":"info","location":"search-service.handler.searchHandler.GetUserByUsername()","msg":"Get searched user by username success.","time":"2021-06-16T16:30:42Z","user_username":"a"}
+{"level":"info","location":"search-service.handler.searchHandler.GetUserByUsername()","msg":"Get searched user by username.","time":"2021-06-16T16:31:22Z","user_username":"a"}
+{"level":"info","location":"search-service.handler.searchHandler.GetUserByUsername()","msg":"Get searched user by username success.","time":"2021-06-16T16:31:22Z","user_username":"a"}
+{"level":"info","location":"search-service.handler.searchHandler.init()","msg":"Search-service Log file created/opened","time":"2021-06-16T16:32:51Z"}
+{"level":"info","location":"search-service.handler.searchHandler.GetUserByUsername()","msg":"Get searched user by username.","time":"2021-06-16T16:33:00Z","user_username":"a"}
+{"level":"info","location":"search-service.handler.searchHandler.GetUserByUsername()","msg":"Get searched user by username success.","time":"2021-06-16T16:33:00Z","user_username":"a"}
+{"level":"info","location":"search-service.handler.searchHandler.init()","msg":"Search-service Log file created/opened","time":"2021-06-16T16:34:28Z"}
+{"level":"info","location":"search-service.handler.searchHandler.GetUserByUsername()","msg":"Get searched user by username.","time":"2021-06-16T16:34:47Z","user_username":"a"}
+{"level":"info","location":"search-service.handler.searchHandler.GetUserByUsername()","msg":"Get searched user by username success.","time":"2021-06-16T16:34:47Z","user_username":"a"}
+{"level":"info","location":"search-service.handler.searchHandler.GetPostsForSearchedUser()","msg":"Get posts for searched user from registred user.","time":"2021-06-16T16:34:57Z","user_email":"jovana@gmail.com"}
+{"level":"info","location":"search-service.handler.searchHandler.GetPostsForSearchedUser()","msg":"Get posts for searched public user from registred user success.","time":"2021-06-16T16:34:57Z","user_email":"jovana@gmail.com"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T16:34:57Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T16:34:57Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T16:34:57Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T16:34:57Z"}
+{"level":"info","location":"search-service.handler.searchHandler.GetUserByUsernameForUnregistredUser()","msg":"Get searched user by username from unregistred user.","time":"2021-06-16T16:36:38Z"}
+{"level":"info","location":"search-service.handler.searchHandler.GetUserByUsernameForUnregistredUser()","msg":"Get searched user by username from unregistred user success.","time":"2021-06-16T16:36:38Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T16:37:15Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T16:37:15Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T16:37:16Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T16:37:16Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T16:37:49Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T16:37:49Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T16:37:49Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T16:37:49Z"}
+{"level":"info","location":"search-service.handler.searchHandler.GetUserByUsernameForUnregistredUser()","msg":"Get searched user by username from unregistred user.","time":"2021-06-16T16:38:51Z"}
+{"level":"info","location":"search-service.handler.searchHandler.GetUserByUsernameForUnregistredUser()","msg":"Get searched user by username from unregistred user success.","time":"2021-06-16T16:38:51Z"}
+{"level":"info","location":"search-service.handler.searchHandler.GetUserByUsername()","msg":"Get searched user by username.","time":"2021-06-16T16:39:23Z","user_username":"a"}
+{"level":"info","location":"search-service.handler.searchHandler.GetUserByUsername()","msg":"Get searched user by username success.","time":"2021-06-16T16:39:23Z","user_username":"a"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T16:39:56Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T16:39:56Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-16T16:39:56Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-16T16:39:56Z"}
+{"level":"info","location":"search-service.handler.searchHandler.init()","msg":"Search-service Log file created/opened","time":"2021-06-16T16:46:27Z"}
+{"level":"info","location":"search-service.handler.searchHandler.GetUserByUsernameForUnregistredUser()","msg":"Get searched user by username from unregistred user.","time":"2021-06-16T16:46:32Z"}
+{"level":"info","location":"search-service.handler.searchHandler.GetUserByUsernameForUnregistredUser()","msg":"Get searched user by username from unregistred user success.","time":"2021-06-16T16:46:32Z"}
+>>>>>>> c375cf8dccaba966addadcb78c03f308758aadb1

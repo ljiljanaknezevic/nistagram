@@ -20,11 +20,28 @@ func (repo *UserRepository) CreateUser(user *model.User) bool {
 	}
 	return false
 }
+func (repo *UserRepository) CreateRequest(request *model.VerificationRequest) bool {
+	fmt.Println(request.Email)
+	if !repo.RequestExists(request.Email) {
+		fmt.Println("usao u if za request");
+		result := repo.Database.Create(request)
+		fmt.Println(result.RowsAffected)
+		return true
+	}
+	return false
+}
 func (repo *UserRepository) GetAllUsersExceptLogging(email string) []model.User {
 	var users []model.User
 	repo.Database.Where("email != ?", email).Preload("Following").Preload("WaitingFollowers").Preload("Followers").Find(&users)
 	return users
 }
+
+func (repo *UserRepository) GetAllRequests() []model.VerificationRequest {
+	var requests []model.VerificationRequest
+	repo.Database.Find(&requests)
+	return requests
+}
+
 func (repo *UserRepository) UpdateUser(user *model.User) error {
 	result := repo.Database.Preload("Following").Preload("WaitingFollowers").Preload("Followers").Save(user)
 	fmt.Println(result.RowsAffected)
@@ -35,9 +52,20 @@ func (repo *UserRepository) DeleteFromWaitingList(ID uint) error {
 	return nil
 }
 
+func (repo *UserRepository) DeleteVerificationRequest(email string) error {
+	//repo.Database.Where("email = ?", email).Delete(&model.VerificationRequest{})
+	repo.Database.Exec("DELETE FROM verification_requests WHERE email=$1;", email)
+	return nil
+}
+
 func (repo *UserRepository) UserExists(email string, username string) bool {
 	var count int64
 	repo.Database.Where("email = ? or username = ?", email, username).Find(&model.User{}).Count(&count)
+	return count != 0
+}
+func (repo *UserRepository) RequestExists(email string) bool {
+	var count int64
+	repo.Database.Where("email = ?", email).Find(&model.VerificationRequest{}).Count(&count)
 	return count != 0
 }
 

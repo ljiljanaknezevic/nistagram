@@ -30,9 +30,16 @@ func (service *UserService) CreateUser(user *model.User) bool {
 	user.Password, _ = service.GeneratehashPassword(user.Password)
 	return service.Repo.CreateUser(user)
 }
+func (service *UserService) CreateRequest(request *model.VerificationRequest) bool {
+	return service.Repo.CreateRequest(request)
+}
 func (service *UserService) GetAllUsersExceptLogging(email string) []model.User{
 	users:= service.Repo.GetAllUsersExceptLogging(email)
 	return users
+}
+func (service *UserService) GetAllRequests() []model.VerificationRequest {
+	requests := service.Repo.GetAllRequests()
+	return requests
 }
 
 func (service *UserService) UpdateUser(user *model.User) error {
@@ -41,6 +48,11 @@ func (service *UserService) UpdateUser(user *model.User) error {
 }
 func (service *UserService) DeleteFromWaitingList(ID uint) error {
 	service.Repo.DeleteFromWaitingList(ID)
+	return nil
+}
+
+func (service *UserService) DeleteVerificationRequest(email string) error {
+	service.Repo.DeleteVerificationRequest(email)
 	return nil
 }
 

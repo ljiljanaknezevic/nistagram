@@ -43,6 +43,7 @@
 {"level":"info","location":"story-service.handler.storyHandler.init()","msg":"Story-service Log file created","time":"2021-06-15T15:01:13Z"}
 {"level":"info","location":"story-service.handler.storyHandler.init()","msg":"Story-service Log file created","time":"2021-06-15T15:07:51Z"}
 {"level":"info","location":"story-service.handler.storyHandler.init()","msg":"Story-service Log file created","time":"2021-06-15T15:10:58Z"}
+<<<<<<< HEAD
 {"level":"info","location":"story-service.handler.storyHandler.init()","msg":"Story-service Log file created","time":"2021-06-15T16:43:50Z"}
 {"level":"info","location":"story-service.handler.storyHandler.init()","msg":"Story-service Log file created","time":"2021-06-16T11:32:13Z"}
 {"level":"info","location":"story-service.handler.storyHandler.init()","msg":"Story-service Log file created","time":"2021-06-16T11:32:18Z"}
@@ -80,3 +81,38 @@
 {"level":"info","location":"story-service.handler.storyHandler.init()","msg":"Story-service Log file created","time":"2021-06-16T22:17:37Z"}
 {"level":"info","location":"story-service.handler.storyHandler.init()","msg":"Story-service Log file created","time":"2021-06-17T07:25:19Z"}
 {"level":"info","location":"story-service.handler.storyHandler.init()","msg":"Story-service Log file created","time":"2021-06-17T08:22:37Z"}
+=======
+{"level":"info","location":"story-service.handler.storyHandler.init()","msg":"Story-service Log file created","time":"2021-06-15T16:28:33Z"}
+{"level":"info","location":"story-service.handler.storyHandler.init()","msg":"Story-service Log file created","time":"2021-06-16T10:16:03Z"}
+{"level":"info","location":"story-service.handler.storyHandler.SaveStory()","msg":"User add story.","time":"2021-06-16T10:21:33Z","user_email":"majatepavcevic133@gmail.com"}
+{"level":"info","location":"story-service.handler.storyHandler.SaveStory()","msg":"File localy created.","time":"2021-06-16T10:21:33Z"}
+{"level":"info","location":"story-service.handler.storyHandler.SaveStory()","msg":"Save post success.","time":"2021-06-16T10:21:33Z"}
+{"level":"info","location":"story-service.handler.storyHandler.SaveStory()","msg":"User add post success.","time":"2021-06-16T10:21:33Z","user_email":"majatepavcevic133@gmail.com"}
+{"level":"info","location":"story-service.handler.storyHandler.init()","msg":"Story-service Log file created","time":"2021-06-16T10:37:20Z"}
+{"level":"info","location":"story-service.handler.storyHandler.SaveStory()","msg":"User add story.","time":"2021-06-16T10:37:58Z","user_email":"majatepavcevic133@gmail.com"}
+{"level":"info","location":"story-service.handler.storyHandler.SaveStory()","msg":"File localy created.","time":"2021-06-16T10:37:58Z"}
+{"level":"info","location":"story-service.handler.storyHandler.SaveStory()","msg":"Save post success.","time":"2021-06-16T10:37:58Z"}
+{"level":"info","location":"story-service.handler.storyHandler.SaveStory()","msg":"User add post success.","time":"2021-06-16T10:37:58Z","user_email":"majatepavcevic133@gmail.com"}
+{"level":"info","location":"story-service.handler.storyHandler.SaveStory()","msg":"User add story.","time":"2021-06-16T10:38:32Z","user_email":"majatepavcevic133@gmail.com"}
+{"level":"info","location":"story-service.handler.storyHandler.SaveStory()","msg":"File localy created.","time":"2021-06-16T10:38:32Z"}
+{"level":"info","location":"story-service.handler.storyHandler.SaveStory()","msg":"Save post success.","time":"2021-06-16T10:38:32Z"}
+{"level":"info","location":"story-service.handler.storyHandler.SaveStory()","msg":"User add post success.","time":"2021-06-16T10:38:32Z","user_email":"majatepavcevic133@gmail.com"}
+{"level":"info","location":"story-service.handler.storyHandler.init()","msg":"Story-service Log file created","time":"2021-06-16T13:04:43Z"}
+{"level":"info","location":"story-service.handler.storyHandler.init()","msg":"Story-service Log file created","time":"2021-06-16T13:07:53Z"}
+{"level":"info","location":"story-service.handler.storyHandler.init()","msg":"Story-service Log file created","time":"2021-06-16T13:45:24Z"}
+{"level":"info","location":"story-service.handler.storyHandler.init()","msg":"Story-service Log file created","time":"2021-06-16T13:48:30Z"}
+{"level":"info","location":"story-service.handler.storyHandler.init()","msg":"Story-service Log file created","time":"2021-06-16T13:52:05Z"}
+{"level":"info","location":"story-service.handler.storyHandler.init()","msg":"Story-service Log file created","time":"2021-06-16T13:54:15Z"}
+{"level":"info","location":"story-service.handler.storyHandler.init()","msg":"Story-service Log file created","time":"2021-06-16T13:55:39Z"}
+{"level":"info","location":"story-service.handler.storyHandler.init()","msg":"Story-service Log file created","time":"2021-06-16T14:17:59Z"}
+{"level":"info","location":"story-service.handler.storyHandler.init()","msg":"Story-service Log file created","time":"2021-06-16T14:21:35Z"}
+{"level":"info","location":"story-service.handler.storyHandler.init()","msg":"Story-service Log file created","time":"2021-06-16T14:32:33Z"}
+{"level":"info","location":"story-service.handler.storyHandler.init()","msg":"Story-service Log file created","time":"2021-06-16T15:08:11Z"}
+{"level":"info","location":"story-service.handler.storyHandler.init()","msg":"Story-service Log file created","time":"2021-06-16T15:21:39Z"}
+{"level":"info","location":"story-service.handler.storyHandler.init()","msg":"Story-service Log file created","time":"2021-06-16T15:30:01Z"}
+{"level":"info","location":"story-service.handler.storyHandler.init()","msg":"Story-service Log file created","time":"2021-06-16T15:32:34Z"}
+{"level":"info","location":"story-service.handler.storyHandler.init()","msg":"Story-service Log file created","time":"2021-06-16T16:23:14Z"}
+{"level":"info","location":"story-service.handler.storyHandler.init()","msg":"Story-service Log file created","time":"2021-06-16T16:32:50Z"}
+{"level":"info","location":"story-service.handler.storyHandler.init()","msg":"Story-service Log file created","time":"2021-06-16T16:34:27Z"}
+{"level":"info","location":"story-service.handler.storyHandler.init()","msg":"Story-service Log file created","time":"2021-06-16T16:46:27Z"}
+>>>>>>> c375cf8dccaba966addadcb78c03f308758aadb1

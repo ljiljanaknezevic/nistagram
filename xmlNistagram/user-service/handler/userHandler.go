@@ -244,12 +244,44 @@ func (handler *UserHandler) SendEmailForAccountRecovery(w http.ResponseWriter, r
 	w.WriteHeader(http.StatusOK)
 	w.Header().Set("Content-Type", "application/json")
 }
+func (handler *UserHandler) CreateRequest(w http.ResponseWriter, r *http.Request) {
+	b, _ := ioutil.ReadAll(r.Body)
+
+	var request model.VerificationRequest
+
+	err := json.Unmarshal(b, &request)
+	if err != nil {
+		var err model.Error
+		err = model.SetError(err, "Error in reading payload.")
+		json.NewEncoder(w).Encode(err)
+		w.WriteHeader(http.StatusBadRequest)
+		return
+	}
+	isValid := handler.Service.CreateRequest(&request)
+
+	if !isValid {
+		var err model.Error
+		err = model.SetError(err, "Failed in creating request.")
+		w.WriteHeader(http.StatusExpectationFailed)
+		json.NewEncoder(w).Encode(err)
+		return
+	}
+
+
+	json.NewEncoder(w).Encode(request)
+	w.WriteHeader(http.StatusOK)
+	w.Header().Set("Content-Type", "application/json")
+
+
+
+}
 
 func (handler *UserHandler) SignUp(w http.ResponseWriter, r *http.Request) {
 	b, _ := ioutil.ReadAll(r.Body)
 
 	var user model.User
 	user.Role = "user"
+	user.IsVerified= false
 	err := json.Unmarshal(b, &user)
 	if err != nil {
 		var err model.Error
@@ -295,14 +327,79 @@ func (handler *UserHandler) SignUp(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
+//func (handler *UserHandler) SignIn(w http.ResponseWriter, r *http.Request) {
+//	b, _ := ioutil.ReadAll(r.Body)
+//	var authDetails model.Authentication
+//	err := json.Unmarshal(b, &authDetails)
+//	if err != nil {
+//		var err model.Error
+//		log.WithFields(logrus.Fields{
+//			"location": "user-service.handler.userHandler.SignIn()"}).Error("Error in reading payload.")
+//		err = model.SetError(err, "Error in reading payload.")
+//
+//		w.WriteHeader(http.StatusBadRequest)
+//		w.Header().Set("Content-Type", "application/json")
+//		json.NewEncoder(w).Encode(err)
+//		return
+//	}
+//
+//	log.WithFields(logrus.Fields{
+//		"location":   "user-service.handler.userHandler.SignIn()",
+//		"user_email": template.HTMLEscapeString(authUser.Email)}).Info("User sign in.")
+//	//	authUser = handler.Service.UserForLogin(authDetails.Email)
+//
+//	if validEmail(authDetails.Email) && CheckPasswordLever(authDetails.Password) == nil {
+//		//var authUser model.User
+//		authUser = handler.Service.UserForLogin(authDetails.Email)
+//		if authUser.Email == "" {
+//			var err model.Error
+//			log.WithFields(logrus.Fields{
+//				"location":   "user-service.handler.userHandler.SignIn()",
+//				"user_email": template.HTMLEscapeString(authUser.Email)}).Error("User sign in fail.Username or Password is incorrect.")
+//
+//			err = model.SetError(err, "Username or Password is incorrect")
+//			w.Header().Set("Content-Type", "application/json")
+//			w.WriteHeader(http.StatusBadRequest)
+//			json.NewEncoder(w).Encode(err)
+//			return
+//		}
+//
+//		check := handler.Service.CheckPasswordHash(authDetails.Password, authUser.Password)
+//
+//		if !check {
+//			var err model.Error
+//			err = model.SetError(err, "Username or Password is incorrect")
+//			log.WithFields(logrus.Fields{
+//				"location": "user-service.handler.userHandler.SignIn()", "user_email": template.HTMLEscapeString(authUser.Email)}).Error("User sign in fail.Username or Password is incorrect.")
+//			w.Header().Set("Content-Type", "application/json")
+//			w.WriteHeader(http.StatusBadRequest)
+//			json.NewEncoder(w).Encode(err)
+//			return
+//		}
+//		handler.Service.SendEmailWithQR(authUser.Email)
+//		w.WriteHeader(http.StatusOK)
+//
+//	} else {
+//		var err model.Error
+//		log.WithFields(logrus.Fields{
+//			"location": "user-service.handler.userHandler.SignIn()", "user_email": template.HTMLEscapeString(authUser.Email)}).Error("User sign in fail.Username or Password is incorrect.")
+//
+//		err = model.SetError(err, "Username or Password is incorrect")
+//		w.Header().Set("Content-Type", "application/json")
+//		//	err = model.SetError(err, "Incorrectly entered data.")
+//		w.WriteHeader(http.StatusBadRequest)
+//		json.NewEncoder(w).Encode(err)
+//		return
+//
+//	}
+//
+//}
 func (handler *UserHandler) SignIn(w http.ResponseWriter, r *http.Request) {
 	b, _ := ioutil.ReadAll(r.Body)
 	var authDetails model.Authentication
 	err := json.Unmarshal(b, &authDetails)
 	if err != nil {
 		var err model.Error
-		log.WithFields(logrus.Fields{
-			"location": "user-service.handler.userHandler.SignIn()"}).Error("Error in reading payload.")
 		err = model.SetError(err, "Error in reading payload.")
 
 		w.WriteHeader(http.StatusBadRequest)
@@ -310,21 +407,11 @@ func (handler *UserHandler) SignIn(w http.ResponseWriter, r *http.Request) {
 		json.NewEncoder(w).Encode(err)
 		return
 	}
-
-	log.WithFields(logrus.Fields{
-		"location":   "user-service.handler.userHandler.SignIn()",
-		"user_email": template.HTMLEscapeString(authUser.Email)}).Info("User sign in.")
-	//	authUser = handler.Service.UserForLogin(authDetails.Email)
-
-	if validEmail(authDetails.Email) && CheckPasswordLever(authDetails.Password) == nil {
-		//var authUser model.User
+	if validEmail(authDetails.Email) && CheckPasswordLever(authDetails.Password)==nil{
+		var authUser model.User
 		authUser = handler.Service.UserForLogin(authDetails.Email)
 		if authUser.Email == "" {
 			var err model.Error
-			log.WithFields(logrus.Fields{
-				"location":   "user-service.handler.userHandler.SignIn()",
-				"user_email": template.HTMLEscapeString(authUser.Email)}).Error("User sign in fail.Username or Password is incorrect.")
-
 			err = model.SetError(err, "Username or Password is incorrect")
 			w.Header().Set("Content-Type", "application/json")
 			w.WriteHeader(http.StatusBadRequest)
@@ -337,30 +424,67 @@ func (handler *UserHandler) SignIn(w http.ResponseWriter, r *http.Request) {
 		if !check {
 			var err model.Error
 			err = model.SetError(err, "Username or Password is incorrect")
-			log.WithFields(logrus.Fields{
-				"location": "user-service.handler.userHandler.SignIn()", "user_email": template.HTMLEscapeString(authUser.Email)}).Error("User sign in fail.Username or Password is incorrect.")
 			w.Header().Set("Content-Type", "application/json")
 			w.WriteHeader(http.StatusBadRequest)
 			json.NewEncoder(w).Encode(err)
 			return
 		}
-		handler.Service.SendEmailWithQR(authUser.Email)
-		w.WriteHeader(http.StatusOK)
 
-	} else {
-		var err model.Error
-		log.WithFields(logrus.Fields{
-			"location": "user-service.handler.userHandler.SignIn()", "user_email": template.HTMLEscapeString(authUser.Email)}).Error("User sign in fail.Username or Password is incorrect.")
-
-		err = model.SetError(err, "Username or Password is incorrect")
+		validToken, err := handler.Service.GenerateJWT(authUser.Email, authUser.Role)
+		if err != nil {
+			var err model.Error
+			err = model.SetError(err, "Failed to generate token")
+			w.Header().Set("Content-Type", "application/json")
+			w.WriteHeader(http.StatusBadRequest)
+			json.NewEncoder(w).Encode(err)
+			return
+		}
+		var token model.Token
+		token.Email = authUser.Email
+		token.Role = authUser.Role
+		token.TokenString = validToken
 		w.Header().Set("Content-Type", "application/json")
-		//	err = model.SetError(err, "Incorrectly entered data.")
+		json.NewEncoder(w).Encode(token)
+	} else{
+		var err model.Error
+		err = model.SetError(err, "Incorrectly entered data.")
 		w.WriteHeader(http.StatusBadRequest)
 		json.NewEncoder(w).Encode(err)
 		return
 
 	}
+}
 
+func (handler *UserHandler) GetAllRequestes(w http.ResponseWriter, r *http.Request) {
+
+	var requests []model.VerificationRequest
+	requests = handler.Service.GetAllRequests()
+	w.WriteHeader(http.StatusOK)
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(requests)
+}
+
+func (handler *UserHandler) AcceptVerification(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	email := vars["email"]
+
+	user := handler.Service.GetUserByEmailAddress(email)
+	user.IsVerified = true
+	handler.Service.UpdateUser(&user)
+	handler.Service.DeleteVerificationRequest(email)
+	w.WriteHeader(http.StatusOK)
+	w.Header().Set("Content-Type", "application/json")
+}
+
+func (handler *UserHandler) DeclineVerification(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	email := vars["email"]
+	user := handler.Service.GetUserByEmailAddress(email)
+	user.IsVerified = false
+	handler.Service.UpdateUser(&user)
+	handler.Service.DeleteVerificationRequest(email)
+	w.WriteHeader(http.StatusOK)
+	w.Header().Set("Content-Type", "application/json")
 }
 
 func (handler *UserHandler) GetUserByEmailAddress(w http.ResponseWriter, r *http.Request) {
