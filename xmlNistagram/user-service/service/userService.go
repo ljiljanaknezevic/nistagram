@@ -1,25 +1,26 @@
 package service
 
 import (
+	"crypto/rand"
 	"crypto/tls"
 	"encoding/base32"
 	"encoding/base64"
 	"fmt"
+	"net/url"
+	"time"
+	"user-service-mod/model"
+	"user-service-mod/repository"
+
 	"github.com/dgrijalva/jwt-go"
 	"github.com/dgryski/dgoogauth"
 	"golang.org/x/crypto/bcrypt"
 	gomail "gopkg.in/mail.v2"
-	"net/url"
 	"rsc.io/qr"
-	"time"
-	"user-service-mod/model"
-	"user-service-mod/repository"
-	"crypto/rand"
 )
 
 var (
-	secretkey string = "secretkeyjwt"
-    secretBase32 string
+	secretkey    string = "secretkeyjwt"
+	secretBase32 string
 )
 
 type UserService struct {
@@ -33,8 +34,12 @@ func (service *UserService) CreateUser(user *model.User) bool {
 func (service *UserService) CreateRequest(request *model.VerificationRequest) bool {
 	return service.Repo.CreateRequest(request)
 }
-func (service *UserService) GetAllUsersExceptLogging(email string) []model.User{
-	users:= service.Repo.GetAllUsersExceptLogging(email)
+func (service *UserService) GetAllUsersExceptLogging(email string) []model.User {
+	users := service.Repo.GetAllUsersExceptLogging(email)
+	return users
+}
+func (service *UserService) GetAllUsersExceptLoggingForTag(email string) []model.User {
+	users := service.Repo.GetAllUsersExceptLoggingForTag(email)
 	return users
 }
 func (service *UserService) GetAllRequests() []model.VerificationRequest {
@@ -61,7 +66,6 @@ func (service *UserService) UserExists(email string, username string) (bool, err
 	return exists, nil
 }
 
-
 func (service *UserService) GetUserByEmail(email string) (bool, error) {
 	exists := service.Repo.GetUserByEmail(email)
 	return exists, nil
@@ -85,7 +89,6 @@ func (service *UserService) GetUserByUsername(username string) model.User {
 	user := service.Repo.GetUserByUsername(username)
 	return user
 }
-
 
 func (service *UserService) CheckPasswordHash(password, hash string) bool {
 	err := bcrypt.CompareHashAndPassword([]byte(hash), []byte(password))
@@ -122,7 +125,6 @@ func (service *UserService) SendEmailWithQR(email string) {
 		panic(err)
 	}
 
-
 	secretBase32 = base32.StdEncoding.EncodeToString(secret)
 
 	account := email
@@ -151,7 +153,6 @@ func (service *UserService) SendEmailWithQR(email string) {
 	//imagesMarshaled, _ := json.Marshal(b)
 	out := base64.StdEncoding.EncodeToString(b)
 
-
 	m := gomail.NewMessage()
 
 	// Set E-Mail sender
@@ -164,8 +165,7 @@ func (service *UserService) SendEmailWithQR(email string) {
 	m.SetHeader("Subject", "QR CODE")
 	// Set E-Mail body. You can set plain text or html with text/html
 
-	m.SetBody("text/html charset=\"UTF-8\"", fmt.Sprintf( "<img src=\"data:image/png;base64,%s\" height=\"150px\" />",out))
-
+	m.SetBody("text/html charset=\"UTF-8\"", fmt.Sprintf("<img src=\"data:image/png;base64,%s\" height=\"150px\" />", out))
 
 	// Settings for SMTP server
 	d := gomail.NewDialer("smtp.gmail.com", 587, "notificationsnotifications22@gmail.com", "Admin123#")
@@ -183,7 +183,6 @@ func (service *UserService) SendEmailWithQR(email string) {
 	return
 }
 
-
 func (service *UserService) SendEmail(email string) {
 	m := gomail.NewMessage()
 
@@ -196,7 +195,7 @@ func (service *UserService) SendEmail(email string) {
 	// Set E-Mail subject
 	m.SetHeader("Subject", "Confirm registration")
 	// Set E-Mail body. You can set plain text or html with text/html
-	m.SetBody("text/html", "<a href='"+ "http://localhost:8082/confirmRegistration.html" + "'>Confirm registration!</a>")
+	m.SetBody("text/html", "<a href='"+"http://localhost:8082/confirmRegistration.html"+"'>Confirm registration!</a>")
 
 	// Settings for SMTP server
 	d := gomail.NewDialer("smtp.gmail.com", 587, "notificationsnotifications22@gmail.com", "Admin123#")
@@ -226,7 +225,7 @@ func (service *UserService) SendEmailForAccountRecovery(email string) {
 	// Set E-Mail subject
 	m.SetHeader("Subject", "Account recovery")
 	// Set E-Mail body. You can set plain text or html with text/html
-	m.SetBody("text/html", "<a href='"+ "http://localhost:8082/recoveryAccount.html" + "'>Change password</a>")
+	m.SetBody("text/html", "<a href='"+"http://localhost:8082/recoveryAccount.html"+"'>Change password</a>")
 
 	// Settings for SMTP server
 	d := gomail.NewDialer("smtp.gmail.com", 587, "notificationsnotifications22@gmail.com", "Admin123#")
@@ -244,8 +243,7 @@ func (service *UserService) SendEmailForAccountRecovery(email string) {
 	return
 }
 
-
-func (service *UserService) ValidateToken(token string) bool{
+func (service *UserService) ValidateToken(token string) bool {
 
 	otpc := &dgoogauth.OTPConfig{
 		Secret:      secretBase32,
@@ -273,5 +271,3 @@ func (service *UserService) ValidateToken(token string) bool{
 	return true
 
 }
-
-

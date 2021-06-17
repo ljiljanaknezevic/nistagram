@@ -13,17 +13,17 @@ type UserRepository struct {
 }
 
 func (repo *UserRepository) CreateUser(user *model.User) bool {
-	if !repo.UserExists(user.Email,user.Username) {
-	result := repo.Database.Create(user)
-	fmt.Println(result.RowsAffected)
-	return true
+	if !repo.UserExists(user.Email, user.Username) {
+		result := repo.Database.Create(user)
+		fmt.Println(result.RowsAffected)
+		return true
 	}
 	return false
 }
 func (repo *UserRepository) CreateRequest(request *model.VerificationRequest) bool {
 	fmt.Println(request.Email)
 	if !repo.RequestExists(request.Email) {
-		fmt.Println("usao u if za request");
+		fmt.Println("usao u if za request")
 		result := repo.Database.Create(request)
 		fmt.Println(result.RowsAffected)
 		return true
@@ -33,6 +33,16 @@ func (repo *UserRepository) CreateRequest(request *model.VerificationRequest) bo
 func (repo *UserRepository) GetAllUsersExceptLogging(email string) []model.User {
 	var users []model.User
 	repo.Database.Where("email != ?", email).Preload("Following").Preload("WaitingFollowers").Preload("Followers").Find(&users)
+	return users
+}
+func (repo *UserRepository) GetAllUsersExceptLoggingForTag(email string) []model.User {
+	var users []model.User
+	var isTrue bool
+	isTrue = true
+	repo.Database.Where("email != ? and canTag = ?", email, isTrue).Preload("Following").Preload("WaitingFollowers").Preload("Followers").Find(&users)
+
+	fmt.Println(users)
+
 	return users
 }
 

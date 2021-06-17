@@ -178,6 +178,7 @@ func InitializeRoute(handler *handler.UserHandler) {
 	router.HandleFunc("/alreadyFollow/{followerUsername}/{email}", IsAuthorized(handler.AlreadyFollow)).Methods("GET")
 	router.HandleFunc("/getAllFollowers/{email}", IsAuthorized(handler.GetAllFollowers)).Methods("GET")
 	router.HandleFunc("/getAllUsersExceptLogging/{email}", IsAuthorized(handler.GetAllUsersExceptLogging)).Methods("GET")
+	router.HandleFunc("/getAllUsersExceptLoggingForTag/{email}", IsAuthorized(handler.GetAllUsersExceptLogging)).Methods("GET")
 	router.HandleFunc("/validateToken/{input}", handler.HandlerFuncValidate).Methods("GET")
 	router.HandleFunc("/createRequest", handler.CreateRequest).Methods("POST")
 	router.HandleFunc("/getAllRequests", handler.GetAllRequestes).Methods("GET")

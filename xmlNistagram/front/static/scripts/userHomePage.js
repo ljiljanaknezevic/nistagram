@@ -235,7 +235,7 @@ $(document).ready(function(e){
 
         $("#addPostImage").click(function () {
             customAjax({
-                url: 'http://localhost:80/user-service/getAllUsersExceptLogging/' + email,
+                url: 'http://localhost:80/user-service/getAllUsersExceptLoggingForTag/' + email,
                 method: 'GET',
                 async: false,
                 success: function (data) {
@@ -621,6 +621,9 @@ let myProfile = function(user){
 
                     },
                     error: function () {
+                    }
+                })
+            }
 
         $("button[name=like]").click(function(){
         var postID=this.id
@@ -641,9 +644,6 @@ let myProfile = function(user){
 
             result += `</div></div>`;
             $('#posts').html(result);
-
-
-
         }
 
         $("#showData").html(
@@ -816,8 +816,6 @@ let myProfile = function(user){
 
     }
 
-
-
 }
 
 let editProfile = function(user) {
@@ -836,6 +834,12 @@ let editProfile = function(user) {
         isPrivate = `<input type="checkbox" name="private" id="isPrivate" checked="checked">`
     } else {
         isPrivate = `<input type="checkbox" name="private" id="isPrivate">`
+    }
+      var canTag = ``;
+    if (json.canTag) {
+        canTag = `<input type="checkbox" name="tag" id="canTag" checked="checked">`
+    } else {
+        canTag = `<input type="checkbox" name="tag" id="canTag">`
     }
     $("#showData").html(`<table class="ui large table" style="width:50%; margin-left:auto; 
                margin-right:auto; margin-top: 40px;">
@@ -892,6 +896,12 @@ let editProfile = function(user) {
                         <label></label>
                     </div></td>
                  </tr>
+                  <tr>
+                     <td>Can others tag me in posts</td>
+                   <td><div class="ui toggle checkbox ">`+canTag+`
+                        <label></label>
+                    </div></td>
+                 </tr>
                      
                            </tbody>
                            <tfoot class="full-width">
@@ -907,7 +917,7 @@ let editProfile = function(user) {
 
         input_username=$('#txtUsername');
         var btnEdit = document.getElementById("acceptChange")
-        btnEdit.disabled = true
+        btnEdit.disabled = false
     input_username.keyup(function () {
         if(validateUsername(input_username.val())) {
             btnEdit.disabled = false
@@ -935,6 +945,7 @@ let editProfile = function(user) {
         let biography=$('#txtBiography').val()
         let gender = $("input:radio[name=gender]:checked").val();
         let isPrivate = document.getElementById("isPrivate").checked;
+        let canTag = document.getElementById("canTag").checked;
         console.log(website)
 
         obj = JSON.stringify({
@@ -946,7 +957,8 @@ let editProfile = function(user) {
         website :website,
         biography:biography,
         gender:gender,
-        isPrivate:isPrivate
+        isPrivate:isPrivate,
+        canTag:canTag
         });
         console.log(obj)
         
@@ -1291,8 +1303,6 @@ let showPosts = function(posts) {
 
             }
         })
-
-
     }
     pomocna+=`</div></div>`;
     $("#showData").html(pomocna);
@@ -1381,7 +1391,6 @@ let showPostsForSearchedUser = function(posts) {
 
             }
         })
-
 
     }
 

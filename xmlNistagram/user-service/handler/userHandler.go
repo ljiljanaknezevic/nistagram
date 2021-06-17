@@ -151,6 +151,7 @@ func (handler *UserHandler) ChangeUserData(w http.ResponseWriter, r *http.Reques
 		user.Website = userChange.Website
 		user.Gender = userChange.Gender
 		user.IsPrivate = userChange.IsPrivate
+		user.CanTag = userChange.CanTag
 		handler.Service.UpdateUser(&user)
 		log.WithFields(logrus.Fields{
 			"location":   "user-service.handler.userHandler.ChangeUserData()",
@@ -267,12 +268,9 @@ func (handler *UserHandler) CreateRequest(w http.ResponseWriter, r *http.Request
 		return
 	}
 
-
 	json.NewEncoder(w).Encode(request)
 	w.WriteHeader(http.StatusOK)
 	w.Header().Set("Content-Type", "application/json")
-
-
 
 }
 
@@ -281,7 +279,7 @@ func (handler *UserHandler) SignUp(w http.ResponseWriter, r *http.Request) {
 
 	var user model.User
 	user.Role = "user"
-	user.IsVerified= false
+	user.IsVerified = false
 	err := json.Unmarshal(b, &user)
 	if err != nil {
 		var err model.Error
@@ -407,7 +405,7 @@ func (handler *UserHandler) SignIn(w http.ResponseWriter, r *http.Request) {
 		json.NewEncoder(w).Encode(err)
 		return
 	}
-	if validEmail(authDetails.Email) && CheckPasswordLever(authDetails.Password)==nil{
+	if validEmail(authDetails.Email) && CheckPasswordLever(authDetails.Password) == nil {
 		var authUser model.User
 		authUser = handler.Service.UserForLogin(authDetails.Email)
 		if authUser.Email == "" {
@@ -445,7 +443,7 @@ func (handler *UserHandler) SignIn(w http.ResponseWriter, r *http.Request) {
 		token.TokenString = validToken
 		w.Header().Set("Content-Type", "application/json")
 		json.NewEncoder(w).Encode(token)
-	} else{
+	} else {
 		var err model.Error
 		err = model.SetError(err, "Incorrectly entered data.")
 		w.WriteHeader(http.StatusBadRequest)
@@ -699,6 +697,15 @@ func (handler *UserHandler) GetAllUsersExceptLogging(w http.ResponseWriter, r *h
 
 	log.WithFields(logrus.Fields{
 		"location": "user-service.handler.userHandler.GetAllUsersExceptLogging()", "user_email": template.HTMLEscapeString(email)}).Info("Get all users for  user success.")
+	json.NewEncoder(w).Encode(users)
+}
+
+func (handler *UserHandler) GetAllUsersExceptLoggingForTag(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	email := vars["email"]
+	var users []model.User
+	users = handler.Service.GetAllUsersExceptLoggingForTag(email)
+
 	json.NewEncoder(w).Encode(users)
 }
 

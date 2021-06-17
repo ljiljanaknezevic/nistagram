@@ -1914,3 +1914,31 @@
 {"level":"info","location":"search-service.handler.searchHandler.GetUserByUsernameForUnregistredUser()","msg":"Get searched user by username from unregistred user.","time":"2021-06-16T16:46:32Z"}
 {"level":"info","location":"search-service.handler.searchHandler.GetUserByUsernameForUnregistredUser()","msg":"Get searched user by username from unregistred user success.","time":"2021-06-16T16:46:32Z"}
 >>>>>>> c375cf8dccaba966addadcb78c03f308758aadb1
+{"level":"info","location":"search-service.handler.searchHandler.init()","msg":"Search-service Log file created/opened","time":"2021-06-17T12:18:02Z"}
+{"level":"info","location":"search-service.handler.searchHandler.init()","msg":"Search-service Log file created/opened","time":"2021-06-17T12:29:32Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-17T12:38:14Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-17T12:38:14Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-17T12:38:14Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-17T12:38:14Z"}
+{"level":"info","location":"search-service.handler.searchHandler.init()","msg":"Search-service Log file created/opened","time":"2021-06-17T12:48:42Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-17T12:50:28Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-17T12:50:28Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-17T12:50:28Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-17T12:50:28Z"}
+{"level":"info","location":"search-service.handler.searchHandler.init()","msg":"Search-service Log file created/opened","time":"2021-06-17T13:04:05Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-17T13:05:12Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-17T13:05:12Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-17T13:05:47Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-17T13:05:47Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-17T13:06:14Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-17T13:06:14Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-17T13:06:14Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-17T13:06:14Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-17T13:06:41Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-17T13:06:41Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-17T13:06:41Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-17T13:06:41Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-17T13:09:11Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-17T13:09:11Z"}
+{"level":"info","location":"search-service.handler.searchHandler.init()","msg":"Search-service Log file created/opened","time":"2021-06-17T13:17:49Z"}
+{"level":"info","location":"search-service.handler.searchHandler.init()","msg":"Search-service Log file created/opened","time":"2021-06-17T13:19:42Z"}
