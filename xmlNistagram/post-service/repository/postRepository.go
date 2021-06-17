@@ -18,6 +18,21 @@ func (repo *PostRepository) CreatePost(post *model.Post) error {
 	return nil
 }
 
+func (repo PostRepository) CreateSpam(spam model.Spam) bool {
+	if !repo.SpamExists(spam.Email, spam.PostId) {
+		fmt.Println("usao u if za request")
+		result := repo.Database.Create(spam)
+		fmt.Println(result.RowsAffected)
+		return true
+	}
+	return false
+}
+func (repo *PostRepository) SpamExists(email string, postId string) bool {
+	var count int64
+	repo.Database.Where("email = ? and postId = ?", email, postId).Find(&model.Spam{}).Count(&count)
+	return count != 0
+}
+
 func (repo *PostRepository) GetAllPostsByEmail(email string) []model.Post {
 	var posts []model.Post
 	repo.Database.Where("email = ? ", email).Find(&posts)

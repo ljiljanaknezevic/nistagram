@@ -7,6 +7,7 @@ import (
 	"image"
 	"image/jpeg"
 	"io"
+	"io/ioutil"
 	"net/http"
 	"os"
 	"path/filepath"
@@ -135,6 +136,35 @@ func (handler *PostHandler) SavePost(w http.ResponseWriter, r *http.Request) {
 		"user_email": template.HTMLEscapeString(r.PostFormValue("email"))}).Info("User add post success.")
 
 	jsonResponse(w, http.StatusCreated, "File uploaded successfully!.")
+
+}
+
+func (handler PostHandler) CreateSpam(w http.ResponseWriter, r http.Request) {
+	b, _ := ioutil.ReadAll(r.Body)
+
+	var spam model.Spam
+
+	err := json.Unmarshal(b, &spam)
+	if err != nil {
+		var err model.Error
+		err = model.SetError(err, "Error in reading payload.")
+		json.NewEncoder(w).Encode(err)
+		w.WriteHeader(http.StatusBadRequest)
+		return
+	}
+	isValid := handler.Service.CreateSpam(&spam)
+
+	if !isValid {
+		var err model.Error
+		err = model.SetError(err, "Failed in creating spam.")
+		w.WriteHeader(http.StatusExpectationFailed)
+		json.NewEncoder(w).Encode(err)
+		return
+	}
+
+	json.NewEncoder(w).Encode(spam)
+	w.WriteHeader(http.StatusOK)
+	w.Header().Set("Content-Type", "application/json")
 
 }
 
