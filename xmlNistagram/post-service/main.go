@@ -81,6 +81,7 @@ func InitialMigration() {
 	connection.AutoMigrate(model.Post{})
 	connection.AutoMigrate(model.File{})
 	connection.AutoMigrate(model.Like{})
+	connection.AutoMigrate(model.Spam{})
 }
 
 //closes database connection
@@ -168,7 +169,7 @@ func InitializeRoute(handler *handler.PostHandler) {
 	router.HandleFunc("/getImageByImageID/{imageID}", IsAuthorized(handler.GetImageByImageID)).Methods("GET")
 	router.HandleFunc("/liked/{postID}/{userWhoLiked}", IsAuthorized(handler.Liked)).Methods("POST")
 	router.HandleFunc("/getAllLikedPostsByEmail/{email}", IsAuthorized(handler.GetAllLikedPostsByEmail)).Methods("GET")
-
+	router.HandleFunc("/reportPost", IsAuthorized(handler.CreateSpam)).Methods("POST")
 	router.Methods("OPTIONS").HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Access-Control-Allow-Origin", "")
 		w.Header().Set("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE")

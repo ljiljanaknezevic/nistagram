@@ -616,31 +616,50 @@ let myProfile = function(user){
       <label name="`+json[i].ID+`"></label>
       <input type="text" placeholder="Add Comment...">
     </div>
+    <div class="ui icon menu right floated ">
+    <div class="ui dropdown item">
+      <i class="ellipsis vertical icon"></i>
+      <div class="menu">
+        <a class="item" name="report" id="`+json[i].ID+`"> <p style="color:red">Report...</p></a>
+      </div>
+    </div>
+  
   </div>
-</div>`;
+  <script>$('.ui.dropdown')
+    .dropdown()
+  ;</script>
+      </div>
+  </div>`;
 
-                    },
-                    error: function () {
-
-        $("button[name=like]").click(function(){
-        var postID=this.id
-        var userWhoLiked=localStorage.getItem('email');
-
-      
-          customAjax({
-                    url: 'http://localhost:80/post-service/liked/' + postID + "/" + userWhoLiked,
-                    method: 'POST',
-                    success: function (data) {
-                       $('label[name='+postID+']').text("Liked")
                     },
                     error: function () {
                     }
                 })
-
-    });
-
+            }
             result += `</div></div>`;
             $('#posts').html(result);
+
+            $("a[name=report]").click(function () {
+                var id = this.id;
+               showReport(id,localStorage.getItem("email"));
+            })
+
+            $("button[name=like]").click(function(){
+                var postID=this.id
+                var userWhoLiked=localStorage.getItem('email');
+        
+              
+                  customAjax({
+                            url: 'http://localhost:80/post-service/liked/' + postID + "/" + userWhoLiked,
+                            method: 'POST',
+                            success: function (data) {
+                               $('label[name='+postID+']').text("Liked")
+                            },
+                            error: function () {
+                            }
+                        })
+        
+            });
 
 
 
@@ -1283,6 +1302,18 @@ let showPosts = function(posts) {
       <label name="`+json[i].ID+`"></label>
       <input type="text" placeholder="Add Comment...">
     </div>
+    <div class="ui icon menu right floated ">
+    <div class="ui dropdown item">
+      <i class="ellipsis vertical icon"></i>
+      <div class="menu">
+        <a class="item" name="report" id="`+json[i].ID+`"> <p style="color:red">Report...</p></a>
+      </div>
+    </div>
+  
+  </div>
+  <script>$('.ui.dropdown')
+    .dropdown()
+  ;</script>
   </div>
 </div>`;
 
@@ -1296,6 +1327,10 @@ let showPosts = function(posts) {
     }
     pomocna+=`</div></div>`;
     $("#showData").html(pomocna);
+    $("a[name=report]").click(function () {
+        var id = this.id;
+       showReport(id,localStorage.getItem("email"));
+    })
 
     $("button[name=like]").click(function(){
         var postID=this.id
