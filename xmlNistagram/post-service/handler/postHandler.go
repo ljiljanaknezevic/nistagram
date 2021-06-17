@@ -13,6 +13,7 @@ import (
 	"post-service-mod/model"
 	"post-service-mod/service"
 	"strconv"
+	"strings"
 	"text/template"
 
 	"github.com/gorilla/mux"
@@ -211,4 +212,78 @@ func (handler *PostHandler) GetImageByImageID(w http.ResponseWriter, r *http.Req
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
 	w.Write(imagesMarshaled)
+}
+
+func (handler *PostHandler) Liked(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	userWhoLiked := vars["userWhoLiked"]
+	postID := vars["postID"]
+	var post model.Post
+	post = handler.Service.GetPostById(postID)
+	fmt.Println(post.Likes)
+	isLiked := false
+
+	for _, element := range post.Likes {
+		if strings.Compare(element.Username, userWhoLiked) == 0 {
+			fmt.Println("VEC LAJKOVAO")
+			isLiked = true
+		}
+	}
+	fmt.Println(isLiked)
+	if isLiked {
+		fmt.Println("uradi dislajk")
+		for _, element := range post.Likes {
+			if element.Username == userWhoLiked {
+				handler.Service.Dislike(element.ID)
+			}
+		}
+	} else {
+		fmt.Println("uradi lajk")
+		var newLike model.Like
+		newLike.Username = userWhoLiked
+
+		post.Likes = append(post.Likes, newLike)
+	}
+
+	handler.Service.UpdatePost(&post)
+
+	w.WriteHeader(http.StatusOK)
+	w.Header().Set("Content-Type", "application/json")
+}
+func (handler *PostHandler) GetAllLikedPostsByEmail(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	email := vars["email"]
+
+	var posts []model.Post
+	posts = handler.Service.GetAllPosts()
+
+	var newPosts []model.Post
+	for _, post := range posts {
+		for _, element := range post.Likes {
+			if strings.Compare(element.Username, email) == 0 {
+				if contains(newPosts, post) {
+					fmt.Println("sadrzi")
+				} else {
+
+					newPosts = append(newPosts, post)
+				}
+
+			}
+		}
+	}
+	for _, post := range newPosts {
+		// provera. radi dobro
+		fmt.Println(post.ID)
+	}
+	w.WriteHeader(http.StatusOK)
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(newPosts)
+}
+func contains(s []model.Post, e model.Post) bool {
+	for _, a := range s {
+		if a.ID == e.ID {
+			return true
+		}
+	}
+	return false
 }

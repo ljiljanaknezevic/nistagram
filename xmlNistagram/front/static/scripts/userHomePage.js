@@ -594,8 +594,10 @@ let myProfile = function(user){
     </div>
   </div> 
   <div class="extra content">
-    <div class="ui large transparent left icon input">
-      <i class="heart outline icon"></i>
+    <div class="ui large transparent left icon input"><button name="like" id="`+json[i].ID+`">
+      <i class="heart outline  icon"></i>
+      </button>
+      <label name="`+json[i].ID+`"></label>
       <input type="text" placeholder="Add Comment...">
     </div>
   </div>
@@ -608,12 +610,27 @@ let myProfile = function(user){
                 }
             })
 
-
         }
 
         result+=`</div></div>`;
         $('#posts').html(result);
 
+        $("button[name=like]").click(function(){
+        var postID=this.id
+        var userWhoLiked=localStorage.getItem('email');
+
+      
+          customAjax({
+                    url: 'http://localhost:80/post-service/liked/' + postID + "/" + userWhoLiked,
+                    method: 'POST',
+                    success: function (data) {
+                       $('label[name='+postID+']').text("Liked")
+                    },
+                    error: function () {
+                    }
+                })
+
+    });
 
 
     }
@@ -642,17 +659,32 @@ let myProfile = function(user){
             <a href="#" class="item" id="stories_myprofile">
                 Stories
             </a>
-            <a class="right item">
-                Saved posts
+            <a  href="#" class="right item" id="liked_posts_myprofile">
+                Liked posts
             </a>
             </div>
             <h3 class="ui header"></h3>
                 <div class="ui four cards" id='posts'></div>
         </div> `
         );
+     $('#liked_posts_myprofile.item').click(function(){
+        $(this).addClass('active')
+        $("#posts_myprofile").removeClass('active');
+        $("#stories_myprofile").removeClass('active');
+        customAjax({
+            url: 'http://localhost:80/post-service/getAllLikedPostsByEmail/' + email,
+            method: 'GET',
+            success: function(data){
+                showPosts(data)
+            },
+            error: function(){
+            }
+        });
+     });
      $("#stories_myprofile.item").click(function () {
          $(this).addClass('active');
         $("#posts_myprofile").removeClass('active');
+        $("#liked_posts_myprofile").removeClass('active');
          customAjax({
         url: 'http://localhost:80/story-service/getAllStoriesByEmail/' + email,
         method: 'GET',
@@ -666,6 +698,7 @@ let myProfile = function(user){
        $("#posts_myprofile.item").click(function () {
          $(this).addClass('active');
          $("#stories_myprofile").removeClass('active');
+         $("#liked_posts_myprofile").removeClass('active');
          customAjax({
         url: 'http://localhost:80/post-service/getAllPostsByEmail/' + email,
         method: 'GET',
@@ -1138,7 +1171,6 @@ let showPosts = function(posts) {
     pomocna +=`<div style="margin-top: 50px" ><div class="ui cards">`;
 
     for( i in json) {
-
         slika = ""
         customAjax({
             url: 'http://localhost:80/search-service/getMedia/' + json[i].ImageID,
@@ -1158,7 +1190,6 @@ let showPosts = function(posts) {
                     }
                 })
                 slika = data
-
 
                 pom1 = `<img id="output" height="150px" alt="slika" src ="`+'data:image/png;base64,'+ slika + ` ">`;
                 pomocna += `<br><div class="ui card">
@@ -1189,7 +1220,10 @@ let showPosts = function(posts) {
   
   <div class="extra content">
     <div class="ui large transparent left icon input">
-      <i class="heart outline icon"></i>
+    <button name="like" id="`+json[i].ID+`">
+      <i class="heart outline  icon"></i>
+      </button>
+      <label name="`+json[i].ID+`"></label>
       <input type="text" placeholder="Add Comment...">
     </div>
   </div>
@@ -1206,10 +1240,25 @@ let showPosts = function(posts) {
     pomocna+=`</div></div>`;
     $("#showData").html(pomocna);
 
+    $("button[name=like]").click(function(){
+        var postID=this.id
+        var userWhoLiked=localStorage.getItem('email');
+
+      
+          customAjax({
+                    url: 'http://localhost:80/post-service/liked/' + postID + "/" + userWhoLiked,
+                    method: 'POST',
+                    success: function (data) {
+                        $('label[name='+postID+']').text("Liked");
+                    },
+                    error: function () {
+                    }
+                })
+
+    });
 
 
 }
-
 
 let showPostsForSearchedUser = function(posts) {
     var json = JSON.parse(posts)
@@ -1255,7 +1304,10 @@ let showPostsForSearchedUser = function(posts) {
   </div> 
   <div class="extra content">
     <div class="ui large transparent left icon input">
-      <i class="heart outline icon"></i>
+      <button name="like" id="`+json[i].ID+`">
+      <i class="heart outline  icon"></i>
+      </button>
+      <label name="`+json[i].ID+`"></label>
       <input type="text" placeholder="Add Comment...">
     </div>
   </div>
@@ -1274,6 +1326,20 @@ let showPostsForSearchedUser = function(posts) {
     result+=`</div></div>`;
     $("#showData").html(result);
 
+    $("button[name=like]").click(function(){
+        var postID=this.id
+        var userWhoLiked=localStorage.getItem('email');
+          customAjax({
+                    url: 'http://localhost:80/post-service/liked/' + postID + "/" + userWhoLiked,
+                    method: 'POST',
+                    success: function (data) {
+                      $('label[name='+postID+']').text("Liked")
+                    },
+                    error: function () {
+                    }
+                })
+
+    });
 
 
 }

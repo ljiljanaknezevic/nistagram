@@ -28,3 +28,20 @@ func (service *PostService) FindFilePathById(imageID uint) string {
 func (service *PostService) GetAllPostsByEmail(email string) []model.Post {
 	return service.Repo.GetAllPostsByEmail(email)
 }
+
+func (service *PostService) GetPostById(postId string) model.Post {
+	return service.Repo.GetPostById(postId)
+}
+func (service *PostService) UpdatePost(post *model.Post) error {
+	service.Repo.UpdatePost(post)
+	return nil
+}
+
+func (service *PostService) GetAllPosts() []model.Post {
+	return service.Repo.GetAllPosts()
+
+}
+func (service *PostService) Dislike(ID uint) error {
+	service.Repo.Dislike(ID)
+	return nil
+}

@@ -834,3 +834,221 @@
 {"level":"info","location":"user-service.handler.userHandler.GetAllUsersExceptLogging()","msg":"Get all users for  user success.","time":"2021-06-15T17:12:25+02:00","user_email":"majatepavcevic133@gmail.com"}
 {"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email.","time":"2021-06-15T17:12:42+02:00","user_email":"majatepavcevic133@gmail.com"}
 {"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email success.","time":"2021-06-15T17:12:42+02:00","user_email":"majatepavcevic133@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.init()","msg":"User-service Log file created/opened","time":"2021-06-15T18:43:50+02:00"}
+{"level":"info","location":"user-service.handler.userHandler.init()","msg":"User-service Log file created/opened","time":"2021-06-15T18:43:50+02:00"}
+{"level":"info","location":"user-service.handler.userHandler.SignIn()","msg":"User sign in.","time":"2021-06-15T18:44:57+02:00","user_email":""}
+{"level":"info","location":"user-service.handler.userHandler.SignIn()","msg":"User sign in.","time":"2021-06-15T18:46:51+02:00","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email.","time":"2021-06-15T18:47:26+02:00","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email success.","time":"2021-06-15T18:47:26+02:00","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"user-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-15T18:47:30+02:00"}
+{"level":"info","location":"user-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-15T18:47:30+02:00"}
+{"level":"info","location":"user-service.handler.userHandler.GetAllUsersExceptLogging()","msg":"Get all users for  user.","time":"2021-06-15T18:47:30+02:00","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetAllUsersExceptLogging()","msg":"Get all users for  user success.","time":"2021-06-15T18:47:30+02:00","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email.","time":"2021-06-15T18:47:49+02:00","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email success.","time":"2021-06-15T18:47:50+02:00","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email.","time":"2021-06-15T18:52:54+02:00","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email success.","time":"2021-06-15T18:52:54+02:00","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email.","time":"2021-06-15T18:53:00+02:00","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email success.","time":"2021-06-15T18:53:00+02:00","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email.","time":"2021-06-15T18:53:46+02:00","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email success.","time":"2021-06-15T18:53:46+02:00","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email.","time":"2021-06-15T18:54:25+02:00","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email success.","time":"2021-06-15T18:54:25+02:00","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email.","time":"2021-06-15T18:54:28+02:00","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email success.","time":"2021-06-15T18:54:28+02:00","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email.","time":"2021-06-15T18:54:47+02:00","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email success.","time":"2021-06-15T18:54:47+02:00","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email.","time":"2021-06-15T18:54:49+02:00","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email success.","time":"2021-06-15T18:54:49+02:00","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email.","time":"2021-06-15T18:55:11+02:00","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email success.","time":"2021-06-15T18:55:11+02:00","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email.","time":"2021-06-15T18:55:14+02:00","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email success.","time":"2021-06-15T18:55:14+02:00","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email.","time":"2021-06-15T18:56:06+02:00","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email success.","time":"2021-06-15T18:56:06+02:00","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email.","time":"2021-06-15T18:56:08+02:00","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email success.","time":"2021-06-15T18:56:08+02:00","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email.","time":"2021-06-15T18:56:53+02:00","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email success.","time":"2021-06-15T18:56:53+02:00","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email.","time":"2021-06-15T18:56:55+02:00","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email success.","time":"2021-06-15T18:56:55+02:00","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.init()","msg":"User-service Log file created/opened","time":"2021-06-16T13:32:14+02:00"}
+{"level":"info","location":"user-service.handler.userHandler.init()","msg":"User-service Log file created/opened","time":"2021-06-16T13:32:14+02:00"}
+{"level":"fatal","location":"user-service.main.GetDatabase()","msg":"Invalid database url","time":"2021-06-16T13:32:14+02:00"}
+{"level":"info","location":"user-service.handler.userHandler.init()","msg":"User-service Log file created/opened","time":"2021-06-16T13:32:18+02:00"}
+{"level":"info","location":"user-service.handler.userHandler.init()","msg":"User-service Log file created/opened","time":"2021-06-16T13:32:18+02:00"}
+{"level":"fatal","location":"user-service.main.GetDatabase()","msg":"Invalid database url","time":"2021-06-16T13:32:18+02:00"}
+{"level":"info","location":"user-service.handler.userHandler.init()","msg":"User-service Log file created/opened","time":"2021-06-16T13:32:20+02:00"}
+{"level":"info","location":"user-service.handler.userHandler.init()","msg":"User-service Log file created/opened","time":"2021-06-16T13:32:20+02:00"}
+{"level":"info","location":"user-service.handler.userHandler.SignIn()","msg":"User sign in.","time":"2021-06-16T13:43:35+02:00","user_email":""}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email.","time":"2021-06-16T13:44:25+02:00","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email success.","time":"2021-06-16T13:44:25+02:00","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email.","time":"2021-06-16T13:44:36+02:00","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email success.","time":"2021-06-16T13:44:36+02:00","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email.","time":"2021-06-16T13:49:58+02:00","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email success.","time":"2021-06-16T13:49:58+02:00","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email.","time":"2021-06-16T13:50:03+02:00","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email success.","time":"2021-06-16T13:50:03+02:00","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.SignIn()","msg":"User sign in.","time":"2021-06-16T13:58:07+02:00","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.SignIn()","msg":"User sign in.","time":"2021-06-16T13:59:54+02:00","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.SignIn()","msg":"User sign in.","time":"2021-06-16T14:00:23+02:00","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email.","time":"2021-06-16T14:00:45+02:00","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email success.","time":"2021-06-16T14:00:45+02:00","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email.","time":"2021-06-16T14:00:49+02:00","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email success.","time":"2021-06-16T14:00:49+02:00","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.SendConfirmation()","msg":"Sending email for confiring registration success.","time":"2021-06-16T14:06:19+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.SignUp()","msg":"User sign up success.","time":"2021-06-16T14:06:37+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"error","location":"user-service.handler.userHandler.SignUp()","msg":"Failed in creating user.","time":"2021-06-16T14:06:46+02:00"}
+{"level":"error","location":"user-service.handler.userHandler.SignUp()","msg":"Failed in creating user.","time":"2021-06-16T14:06:51+02:00"}
+{"level":"error","location":"user-service.handler.userHandler.SignUp()","msg":"Failed in creating user.","time":"2021-06-16T14:06:52+02:00"}
+{"level":"error","location":"user-service.handler.userHandler.SignUp()","msg":"Failed in creating user.","time":"2021-06-16T14:06:53+02:00"}
+{"level":"error","location":"user-service.handler.userHandler.SignUp()","msg":"Failed in creating user.","time":"2021-06-16T14:06:53+02:00"}
+{"level":"error","location":"user-service.handler.userHandler.SignUp()","msg":"Failed in creating user.","time":"2021-06-16T14:06:53+02:00"}
+{"level":"error","location":"user-service.handler.userHandler.SignUp()","msg":"Failed in creating user.","time":"2021-06-16T14:06:55+02:00"}
+{"level":"info","location":"user-service.handler.userHandler.SignIn()","msg":"User sign in.","time":"2021-06-16T14:07:56+02:00","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email.","time":"2021-06-16T14:08:39+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email success.","time":"2021-06-16T14:08:39+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-16T14:08:49+02:00"}
+{"level":"info","location":"user-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-16T14:08:49+02:00"}
+{"level":"info","location":"user-service.handler.userHandler.GetAllFromWaitingList()","msg":"Check followers for user.","time":"2021-06-16T14:08:49+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetAllFromWaitingList()","msg":"Check followers for user success.","time":"2021-06-16T14:08:49+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-16T14:08:49+02:00"}
+{"level":"info","location":"user-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-16T14:08:49+02:00"}
+{"level":"info","location":"user-service.handler.userHandler.Follow()","msg":"User followed another user.","time":"2021-06-16T14:08:49+02:00"}
+{"level":"info","location":"user-service.handler.userHandler.Follow()","msg":"User followed updated.","time":"2021-06-16T14:08:49+02:00"}
+{"level":"info","location":"user-service.handler.userHandler.Follow()","msg":"Followed user updated.","time":"2021-06-16T14:08:49+02:00"}
+{"level":"info","location":"user-service.handler.userHandler.Follow()","msg":"User followed another user success.","time":"2021-06-16T14:08:49+02:00"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email.","time":"2021-06-16T14:09:56+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email success.","time":"2021-06-16T14:09:56+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email.","time":"2021-06-16T14:10:11+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email success.","time":"2021-06-16T14:10:11+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email.","time":"2021-06-16T14:10:51+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email success.","time":"2021-06-16T14:10:51+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.init()","msg":"User-service Log file created/opened","time":"2021-06-16T14:47:03+02:00"}
+{"level":"info","location":"user-service.handler.userHandler.init()","msg":"User-service Log file created/opened","time":"2021-06-16T14:47:03+02:00"}
+{"level":"info","location":"user-service.handler.userHandler.SignIn()","msg":"User sign in.","time":"2021-06-16T14:47:59+02:00","user_email":""}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email.","time":"2021-06-16T14:48:35+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email success.","time":"2021-06-16T14:48:35+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.init()","msg":"User-service Log file created/opened","time":"2021-06-16T15:08:19+02:00"}
+{"level":"info","location":"user-service.handler.userHandler.init()","msg":"User-service Log file created/opened","time":"2021-06-16T15:08:19+02:00"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email.","time":"2021-06-16T15:08:31+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email success.","time":"2021-06-16T15:08:31+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email.","time":"2021-06-16T15:19:00+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email success.","time":"2021-06-16T15:19:00+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.SignIn()","msg":"User sign in.","time":"2021-06-16T15:19:06+02:00","user_email":""}
+{"level":"info","location":"user-service.handler.userHandler.SignIn()","msg":"User sign in.","time":"2021-06-16T15:19:07+02:00","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.SignIn()","msg":"User sign in.","time":"2021-06-16T15:19:29+02:00","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email.","time":"2021-06-16T15:20:04+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email success.","time":"2021-06-16T15:20:04+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email.","time":"2021-06-16T15:25:51+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email success.","time":"2021-06-16T15:25:51+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email.","time":"2021-06-16T15:28:12+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email success.","time":"2021-06-16T15:28:12+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email.","time":"2021-06-16T15:28:56+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email success.","time":"2021-06-16T15:28:56+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email.","time":"2021-06-16T15:29:41+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email success.","time":"2021-06-16T15:29:41+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email.","time":"2021-06-16T15:30:41+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email success.","time":"2021-06-16T15:30:42+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email.","time":"2021-06-16T15:32:17+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email success.","time":"2021-06-16T15:32:17+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email.","time":"2021-06-16T15:33:52+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email success.","time":"2021-06-16T15:33:52+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email.","time":"2021-06-16T15:34:51+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email success.","time":"2021-06-16T15:34:51+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email.","time":"2021-06-16T15:35:49+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email success.","time":"2021-06-16T15:35:49+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.init()","msg":"User-service Log file created/opened","time":"2021-06-16T15:58:17+02:00"}
+{"level":"info","location":"user-service.handler.userHandler.init()","msg":"User-service Log file created/opened","time":"2021-06-16T15:58:17+02:00"}
+{"level":"fatal","location":"user-service.main.GetDatabase()","msg":"Invalid database url","time":"2021-06-16T15:58:18+02:00"}
+{"level":"info","location":"user-service.handler.userHandler.init()","msg":"User-service Log file created/opened","time":"2021-06-16T15:58:19+02:00"}
+{"level":"info","location":"user-service.handler.userHandler.init()","msg":"User-service Log file created/opened","time":"2021-06-16T15:58:19+02:00"}
+{"level":"info","location":"user-service.handler.userHandler.SignIn()","msg":"User sign in.","time":"2021-06-16T15:59:52+02:00","user_email":""}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email.","time":"2021-06-16T16:00:22+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email success.","time":"2021-06-16T16:00:22+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.init()","msg":"User-service Log file created/opened","time":"2021-06-16T16:02:40+02:00"}
+{"level":"info","location":"user-service.handler.userHandler.init()","msg":"User-service Log file created/opened","time":"2021-06-16T16:02:40+02:00"}
+{"level":"info","location":"user-service.handler.userHandler.init()","msg":"User-service Log file created/opened","time":"2021-06-16T18:26:31+02:00"}
+{"level":"info","location":"user-service.handler.userHandler.init()","msg":"User-service Log file created/opened","time":"2021-06-16T18:26:31+02:00"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email.","time":"2021-06-16T18:27:24+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email success.","time":"2021-06-16T18:27:24+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.SignIn()","msg":"User sign in.","time":"2021-06-16T18:27:39+02:00","user_email":""}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email.","time":"2021-06-16T18:28:08+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email success.","time":"2021-06-16T18:28:08+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.init()","msg":"User-service Log file created/opened","time":"2021-06-16T18:30:58+02:00"}
+{"level":"info","location":"user-service.handler.userHandler.init()","msg":"User-service Log file created/opened","time":"2021-06-16T18:30:58+02:00"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email.","time":"2021-06-16T18:31:11+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email success.","time":"2021-06-16T18:31:11+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.init()","msg":"User-service Log file created/opened","time":"2021-06-16T18:37:45+02:00"}
+{"level":"info","location":"user-service.handler.userHandler.init()","msg":"User-service Log file created/opened","time":"2021-06-16T18:37:45+02:00"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email.","time":"2021-06-16T18:38:07+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email success.","time":"2021-06-16T18:38:07+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.init()","msg":"User-service Log file created/opened","time":"2021-06-16T18:54:40+02:00"}
+{"level":"info","location":"user-service.handler.userHandler.init()","msg":"User-service Log file created/opened","time":"2021-06-16T18:54:40+02:00"}
+{"level":"info","location":"user-service.handler.userHandler.init()","msg":"User-service Log file created/opened","time":"2021-06-16T19:00:55+02:00"}
+{"level":"info","location":"user-service.handler.userHandler.init()","msg":"User-service Log file created/opened","time":"2021-06-16T19:00:55+02:00"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email.","time":"2021-06-16T19:01:31+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email success.","time":"2021-06-16T19:01:31+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.SignIn()","msg":"User sign in.","time":"2021-06-16T19:01:45+02:00","user_email":""}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email.","time":"2021-06-16T19:02:14+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email success.","time":"2021-06-16T19:02:14+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.init()","msg":"User-service Log file created/opened","time":"2021-06-16T19:06:05+02:00"}
+{"level":"info","location":"user-service.handler.userHandler.init()","msg":"User-service Log file created/opened","time":"2021-06-16T19:06:05+02:00"}
+{"level":"info","location":"user-service.handler.userHandler.init()","msg":"User-service Log file created/opened","time":"2021-06-16T19:30:36+02:00"}
+{"level":"info","location":"user-service.handler.userHandler.init()","msg":"User-service Log file created/opened","time":"2021-06-16T19:30:36+02:00"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email.","time":"2021-06-16T19:32:21+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email success.","time":"2021-06-16T19:32:21+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email.","time":"2021-06-16T19:32:23+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email success.","time":"2021-06-16T19:32:23+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.SignIn()","msg":"User sign in.","time":"2021-06-16T20:22:28+02:00","user_email":""}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email.","time":"2021-06-16T20:23:17+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email success.","time":"2021-06-16T20:23:17+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email.","time":"2021-06-16T20:23:43+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email success.","time":"2021-06-16T20:23:43+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email.","time":"2021-06-16T20:38:44+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email success.","time":"2021-06-16T20:38:44+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.init()","msg":"User-service Log file created/opened","time":"2021-06-16T21:05:27+02:00"}
+{"level":"info","location":"user-service.handler.userHandler.init()","msg":"User-service Log file created/opened","time":"2021-06-16T21:05:27+02:00"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email.","time":"2021-06-16T21:06:46+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email success.","time":"2021-06-16T21:06:46+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email.","time":"2021-06-16T21:06:48+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email success.","time":"2021-06-16T21:06:48+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.SignIn()","msg":"User sign in.","time":"2021-06-16T21:06:51+02:00","user_email":""}
+{"level":"info","location":"user-service.handler.userHandler.SignIn()","msg":"User sign in.","time":"2021-06-16T21:07:10+02:00","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email.","time":"2021-06-16T21:09:46+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email success.","time":"2021-06-16T21:09:46+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email.","time":"2021-06-16T21:09:49+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email success.","time":"2021-06-16T21:09:49+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email.","time":"2021-06-16T21:13:22+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email success.","time":"2021-06-16T21:13:22+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email.","time":"2021-06-16T21:13:24+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email success.","time":"2021-06-16T21:13:24+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.init()","msg":"User-service Log file created/opened","time":"2021-06-16T21:16:58+02:00"}
+{"level":"info","location":"user-service.handler.userHandler.init()","msg":"User-service Log file created/opened","time":"2021-06-16T21:16:58+02:00"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email.","time":"2021-06-16T21:17:11+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email success.","time":"2021-06-16T21:17:11+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email.","time":"2021-06-16T21:17:13+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email success.","time":"2021-06-16T21:17:13+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.init()","msg":"User-service Log file created/opened","time":"2021-06-16T21:22:39+02:00"}
+{"level":"info","location":"user-service.handler.userHandler.init()","msg":"User-service Log file created/opened","time":"2021-06-16T21:22:39+02:00"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email.","time":"2021-06-16T21:22:49+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email success.","time":"2021-06-16T21:22:49+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email.","time":"2021-06-16T21:23:53+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.GetUserByEmailAddress()","msg":"Get user by email success.","time":"2021-06-16T21:23:53+02:00","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"user-service.handler.userHandler.init()","msg":"User-service Log file created/opened","time":"2021-06-16T21:40:50+02:00"}
+{"level":"info","location":"user-service.handler.userHandler.init()","msg":"User-service Log file created/opened","time":"2021-06-16T21:40:50+02:00"}
+{"level":"info","location":"user-service.handler.userHandler.init()","msg":"User-service Log file created/opened","time":"2021-06-16T21:41:11+02:00"}
+{"level":"info","location":"user-service.handler.userHandler.init()","msg":"User-service Log file created/opened","time":"2021-06-16T21:41:11+02:00"}
+{"level":"fatal","location":"user-service.main.GetDatabase()","msg":"Invalid database url","time":"2021-06-16T21:41:11+02:00"}
+{"level":"info","location":"user-service.handler.userHandler.init()","msg":"User-service Log file created/opened","time":"2021-06-16T21:41:12+02:00"}
+{"level":"info","location":"user-service.handler.userHandler.init()","msg":"User-service Log file created/opened","time":"2021-06-16T21:41:12+02:00"}
+{"level":"info","location":"user-service.handler.userHandler.init()","msg":"User-service Log file created/opened","time":"2021-06-16T22:06:56+02:00"}
+{"level":"info","location":"user-service.handler.userHandler.init()","msg":"User-service Log file created/opened","time":"2021-06-16T22:06:56+02:00"}
+{"level":"fatal","location":"user-service.main.GetDatabase()","msg":"Invalid database url","time":"2021-06-16T22:06:56+02:00"}
+{"level":"info","location":"user-service.handler.userHandler.init()","msg":"User-service Log file created/opened","time":"2021-06-16T22:07:04+02:00"}
+{"level":"info","location":"user-service.handler.userHandler.init()","msg":"User-service Log file created/opened","time":"2021-06-16T22:07:04+02:00"}
+{"level":"fatal","location":"user-service.main.GetDatabase()","msg":"Invalid database url","time":"2021-06-16T22:07:04+02:00"}
+{"level":"info","location":"user-service.handler.userHandler.init()","msg":"User-service Log file created/opened","time":"2021-06-16T22:07:06+02:00"}
+{"level":"info","location":"user-service.handler.userHandler.init()","msg":"User-service Log file created/opened","time":"2021-06-16T22:07:06+02:00"}
+{"level":"info","location":"user-service.handler.userHandler.init()","msg":"User-service Log file created/opened","time":"2021-06-16T22:34:31+02:00"}
+{"level":"info","location":"user-service.handler.userHandler.init()","msg":"User-service Log file created/opened","time":"2021-06-16T22:34:31+02:00"}

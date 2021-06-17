@@ -29,7 +29,6 @@ var authUser model.User
 var log = logrus.New()
 
 func init() {
-	fmt.Println("USAOOOOO")
 	absPath, err := os.Getwd()
 
 	path := filepath.Join(absPath, "files", "user-service.log")
@@ -638,7 +637,6 @@ func (handler *UserHandler) HandlerFuncValidate(w http.ResponseWriter, r *http.R
 			json.NewEncoder(w).Encode(err)
 			return
 		}
-
 
 		var token model.Token
 		token.Email = authUser.Email

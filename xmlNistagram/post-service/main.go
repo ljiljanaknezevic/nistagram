@@ -80,6 +80,7 @@ func InitialMigration() {
 	defer CloseDatabase(connection)
 	connection.AutoMigrate(model.Post{})
 	connection.AutoMigrate(model.File{})
+	connection.AutoMigrate(model.Like{})
 }
 
 //closes database connection
@@ -165,6 +166,8 @@ func InitializeRoute(handler *handler.PostHandler) {
 	router.HandleFunc("/savePost", IsAuthorized(handler.SavePost)).Methods("POST")
 	router.HandleFunc("/getAllPostsByEmail/{email}", IsAuthorized(handler.GetAllPostsByEmail)).Methods("GET")
 	router.HandleFunc("/getImageByImageID/{imageID}", IsAuthorized(handler.GetImageByImageID)).Methods("GET")
+	router.HandleFunc("/liked/{postID}/{userWhoLiked}", IsAuthorized(handler.Liked)).Methods("POST")
+	router.HandleFunc("/getAllLikedPostsByEmail/{email}", IsAuthorized(handler.GetAllLikedPostsByEmail)).Methods("GET")
 
 	router.Methods("OPTIONS").HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Access-Control-Allow-Origin", "")
