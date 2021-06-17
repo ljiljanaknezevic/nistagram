@@ -78,7 +78,7 @@ let showReport = function(id,email){
  
           },
           error: function(){
-             alert('Error');
+             alert('You have alreadu reported this post');
           }
        });
     })

@@ -139,7 +139,7 @@ func (handler *PostHandler) SavePost(w http.ResponseWriter, r *http.Request) {
 
 }
 
-func (handler PostHandler) CreateSpam(w http.ResponseWriter, r http.Request) {
+func (handler *PostHandler) CreateSpam(w http.ResponseWriter, r* http.Request) {
 	b, _ := ioutil.ReadAll(r.Body)
 
 	var spam model.Spam

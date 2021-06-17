@@ -14,7 +14,7 @@ func (service *PostService) SavePost(post *model.Post) error {
 	service.Repo.CreatePost(post)
 	return nil
 }
-func (service PostService) CreateSpam(spam model.Spam) bool {
+func (service *PostService) CreateSpam(spam *model.Spam) bool {
 	return service.Repo.CreateSpam(spam)
 }
 func (service *PostService) SaveFile(file *model.File) error {

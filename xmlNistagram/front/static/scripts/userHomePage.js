@@ -540,11 +540,11 @@ $(document).ready(function(e){
     });
 
 });
-let myProfile = function(user){
+let myProfile = function(user) {
     var json = JSON.parse(user);
     var email = json.email
     var verified = ""
-    if(json.isVerified) {
+    if (json.isVerified) {
         verified = `<i class="check circle icon" style="color: dodgerblue"></i>`
     } else {
         verified = ``
@@ -552,10 +552,10 @@ let myProfile = function(user){
     customAjax({
         url: 'http://localhost:80/post-service/getAllPostsByEmail/' + email,
         method: 'GET',
-        success: function(data){
+        success: function (data) {
             showPosts(data)
         },
-        error: function(){
+        error: function () {
         }
     });
 
@@ -567,27 +567,27 @@ let myProfile = function(user){
         result = ""
         result += `<div style="margin-top: 50px" ><div class="ui cards">`;
         console.log(json)
-            for (i in json) {
+        for (i in json) {
 
 
-                slika = ""
-                customAjax({
-                    url: 'http://localhost:80/search-service/getMedia/' + json[i].ImageID,
-                    method: 'GET',
-                    async: false,
-                    success: function (data) {
-                        slika = data
+            slika = ""
+            customAjax({
+                url: 'http://localhost:80/search-service/getMedia/' + json[i].ImageID,
+                method: 'GET',
+                async: false,
+                success: function (data) {
+                    slika = data
 
-                        if (slika.type == "video") {
+                    if (slika.type == "video") {
 
-                            pom1 = `<video id="output" height="150px" alt="slika" autoplay src ="` + 'data:video/mp4;base64,' + slika.path + ` ">`;
-                        } else {
-                            pom1 = `<img id="output" height="150px" alt="slika" src ="` + 'data:image/png;base64,' + slika.path + ` ">`;
-                        }
-                        result += `<br><div class="ui card">
+                        pom1 = `<video id="output" height="150px" alt="slika" autoplay src ="` + 'data:video/mp4;base64,' + slika.path + ` ">`;
+                    } else {
+                        pom1 = `<img id="output" height="150px" alt="slika" src ="` + 'data:image/png;base64,' + slika.path + ` ">`;
+                    }
+                    result += `<br><div class="ui card">
 
   <div class="content">
-     <div class="right floated meta">` + json[i].CreatedAt.split("T")[0] +  `</div>  
+     <div class="right floated meta">` + json[i].CreatedAt.split("T")[0] + `</div>  
      <div class="left floated meta"><button class="ui basic icon button">
         <i class="bookmark outline icon"></i>
         </button>
@@ -610,80 +610,55 @@ let myProfile = function(user){
     </div>
   </div> 
   <div class="extra content">
-    <div class="ui large transparent left icon input"><button name="like" id="`+json[i].ID+`">
+    <div class="ui large transparent left icon input"><button name="like" id="` + json[i].ID + `">
       <i class="heart outline  icon"></i>
       </button>
-      <label name="`+json[i].ID+`"></label>
+      <label name="` + json[i].ID + `"></label>
       <input type="text" placeholder="Add Comment...">
     </div>
-    <div class="ui icon menu right floated ">
-    <div class="ui dropdown item">
-      <i class="ellipsis vertical icon"></i>
-      <div class="menu">
-        <a class="item" name="report" id="`+json[i].ID+`"> <p style="color:red">Report...</p></a>
-      </div>
-    </div>
-  
-  </div>
-
- <script>$('.ui.dropdown')
-    .dropdown()
-  ;</script>
       </div>
   </div>`;
 
-                    },
-                    error: function () {
-                    }
-                })
-            }
-
-        $("button[name=like]").click(function(){
-        var postID=this.id
-        var userWhoLiked=localStorage.getItem('email');
-
-                    },
-                    error: function () {
-                    }
-                })
-            }
-            result += `</div></div>`;
-            $('#posts').html(result);
-
-            $("a[name=report]").click(function () {
-                var id = this.id;
-               showReport(id,localStorage.getItem("email"));
+                },
+                error: function () {
+                }
             })
-
-            $("button[name=like]").click(function(){
-                var postID=this.id
-                var userWhoLiked=localStorage.getItem('email');
-        
-              
-                  customAjax({
-                            url: 'http://localhost:80/post-service/liked/' + postID + "/" + userWhoLiked,
-                            method: 'POST',
-                            success: function (data) {
-                               $('label[name='+postID+']').text("Liked")
-                            },
-                            error: function () {
-                            }
-                        })
-        
-            });
-
-
         }
 
-        $("#showData").html(
-            `<div  style="width:80%; margin-left:auto; 
+
+        result += `</div></div>`;
+        $('#posts').html(result);
+
+
+        $("button[name=like]").click(function () {
+            var postID = this.id
+            var userWhoLiked = localStorage.getItem('email');
+
+
+            customAjax({
+                url: 'http://localhost:80/post-service/liked/' + postID + "/" + userWhoLiked,
+                method: 'POST',
+                success: function (data) {
+                    $('label[name=' + postID + ']').text("Liked")
+                },
+                error: function () {
+                }
+            })
+
+        });
+
+
+    }
+
+    $("#showData").html(
+        `<div  style="width:80%; margin-left:auto; 
                              margin-right:auto;">
             <h2 class="ui left aligned header" ></h2>
            <div class="ui clearing segment">
            <h3 class="ui right aligned header" >
           <div class="ui vertical labeled icon buttons"><button id="verification" class="ui button"><i class="check circle icon"></i>Request for verification</button></div></h3>
             <h3 class="ui left floated header">
-               ` + json.username + ``+ verified+`
+               ` + json.username + `` + verified + `
             </h3>
             </div>
            <div class="ui secondary pointing menu">
@@ -700,81 +675,81 @@ let myProfile = function(user){
             <h3 class="ui header"></h3>
                 <div class="ui four cards" id='posts'></div>
         </div> `
-        );
-     $('#liked_posts_myprofile.item').click(function(){
+    );
+    $('#liked_posts_myprofile.item').click(function () {
         $(this).addClass('active')
         $("#posts_myprofile").removeClass('active');
         $("#stories_myprofile").removeClass('active');
         customAjax({
             url: 'http://localhost:80/post-service/getAllLikedPostsByEmail/' + email,
             method: 'GET',
-            success: function(data){
+            success: function (data) {
                 showPosts(data)
             },
-            error: function(){
+            error: function () {
             }
         });
-     });
-     $("#stories_myprofile.item").click(function () {
-         $(this).addClass('active');
+    });
+    $("#stories_myprofile.item").click(function () {
+        $(this).addClass('active');
         $("#posts_myprofile").removeClass('active');
         $("#liked_posts_myprofile").removeClass('active');
-         customAjax({
-        url: 'http://localhost:80/story-service/getAllStoriesByEmail/' + email,
-        method: 'GET',
-        success: function(data){
-            showStories(data)
-        },
-        error: function(){
-        }
-    });
-    });
-       $("#posts_myprofile.item").click(function () {
-         $(this).addClass('active');
-         $("#stories_myprofile").removeClass('active');
-         $("#liked_posts_myprofile").removeClass('active');
-         customAjax({
-        url: 'http://localhost:80/post-service/getAllPostsByEmail/' + email,
-        method: 'GET',
-        success: function(data){
-            showPosts(data)
-        },
-        error: function(){
-        }
-    });
-    });
-
-        $("#verification").click(function () {
-            showRequest(localStorage.getItem("email"));
-
-        })
-        $("#stories_myprofile.item").click(function () {
-            $(this).addClass('active');
-            $("#posts_myprofile").removeClass('active');
-            customAjax({
-                url: 'http://localhost:80/story-service/getAllStoriesByEmail/' + email,
-                method: 'GET',
-                success: function (data) {
-                    showStories(data)
-                },
-                error: function () {
-                }
-            });
+        customAjax({
+            url: 'http://localhost:80/story-service/getAllStoriesByEmail/' + email,
+            method: 'GET',
+            success: function (data) {
+                showStories(data)
+            },
+            error: function () {
+            }
         });
-        $("#posts_myprofile.item").click(function () {
-            $(this).addClass('active');
-            $("#stories_myprofile").removeClass('active');
-            customAjax({
-                url: 'http://localhost:80/post-service/getAllPostsByEmail/' + email,
-                method: 'GET',
-                success: function (data) {
-                    showPosts(data)
-                },
-                error: function () {
-                }
-            });
+    });
+    $("#posts_myprofile.item").click(function () {
+        $(this).addClass('active');
+        $("#stories_myprofile").removeClass('active');
+        $("#liked_posts_myprofile").removeClass('active');
+        customAjax({
+            url: 'http://localhost:80/post-service/getAllPostsByEmail/' + email,
+            method: 'GET',
+            success: function (data) {
+                showPosts(data)
+            },
+            error: function () {
+            }
         });
+    });
 
+    $("#verification").click(function () {
+        showRequest(localStorage.getItem("email"));
+
+    })
+    $("#stories_myprofile.item").click(function () {
+        $(this).addClass('active');
+        $("#posts_myprofile").removeClass('active');
+        customAjax({
+            url: 'http://localhost:80/story-service/getAllStoriesByEmail/' + email,
+            method: 'GET',
+            success: function (data) {
+                showStories(data)
+            },
+            error: function () {
+            }
+        });
+    });
+    $("#posts_myprofile.item").click(function () {
+        $(this).addClass('active');
+        $("#stories_myprofile").removeClass('active');
+        customAjax({
+            url: 'http://localhost:80/post-service/getAllPostsByEmail/' + email,
+            method: 'GET',
+            success: function (data) {
+                showPosts(data)
+            },
+            error: function () {
+            }
+        });
+    });
+}
       function showStories(data)
     {
         json = JSON.parse(data)
@@ -843,7 +818,6 @@ let myProfile = function(user){
 
 
 
-    }
 
 }
 
@@ -1427,6 +1401,20 @@ let showPostsForSearchedUser = function(posts) {
       <label name="`+json[i].ID+`"></label>
       <input type="text" placeholder="Add Comment...">
     </div>
+    
+    <div class="ui icon menu right floated ">
+    <div class="ui dropdown item">
+      <i class="ellipsis vertical icon"></i>
+      <div class="menu">
+        <a class="item" name="report" id="`+json[i].ID+`"> <p style="color:red">Report...</p></a>
+      </div>
+    </div>
+  
+  </div>
+
+ <script>$('.ui.dropdown')
+    .dropdown()
+  ;</script>
   </div>
 </div>`;
 
@@ -1441,6 +1429,10 @@ let showPostsForSearchedUser = function(posts) {
 
     result+=`</div></div>`;
     $("#showData").html(result);
+    $("a[name=report]").click(function () {
+        var id = this.id;
+       showReport(id,localStorage.getItem("email"));
+    })
 
     $("button[name=like]").click(function(){
         var postID=this.id
