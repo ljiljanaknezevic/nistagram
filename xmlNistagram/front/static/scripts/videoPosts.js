@@ -14,7 +14,7 @@ function readURL(input) {
 }
 let showVideo = function () {
     customAjax({
-        url: 'http://localhost:80/user-service/getAllUsersExceptLogging/' + localStorage.getItem("email"),
+        url: 'http://localhost:80/user-service/getAllUsersExceptLoggingForTag/' + localStorage.getItem("email"),
         method: 'GET',
         async: false,
         success: function (data) {
@@ -201,7 +201,7 @@ let showVideo = function () {
 
 let showVideoStory = function () {
     customAjax({
-        url: 'http://localhost:80/user-service/getAllUsersExceptLogging/' + localStorage.getItem("email"),
+        url: 'http://localhost:80/user-service/getAllUsersExceptLoggingForTag/' + localStorage.getItem("email"),
         method: 'GET',
         async: false,
         success: function (data) {

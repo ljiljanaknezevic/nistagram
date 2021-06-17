@@ -3,14 +3,15 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/dgrijalva/jwt-go"
 	"log"
 	"net/http"
-	"search-service/repository"
 	"search-service/handler"
 	"search-service/model"
+	"search-service/repository"
 	"search-service/service"
 	"strings"
+
+	"github.com/dgrijalva/jwt-go"
 
 	"github.com/gorilla/handlers"
 	"github.com/gorilla/mux"
@@ -69,6 +70,7 @@ func InitialUserMigration() {
 	connection.AutoMigrate(model.Follower{})
 	connection.AutoMigrate(model.WaitingFollower{})
 	connection.AutoMigrate(model.Following{})
+	connection.AutoMigrate(model.Blocked{})
 }
 
 //closes database connection
@@ -82,6 +84,7 @@ func CloseUserDatabase(connection *gorm.DB) {
 func CreateRouter() {
 	router = mux.NewRouter()
 }
+
 //check whether user is authorized or not
 func IsAuthorized(handler http.HandlerFunc) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
@@ -95,7 +98,7 @@ func IsAuthorized(handler http.HandlerFunc) http.HandlerFunc {
 		}
 
 		var mySigningKey = []byte(secretkey)
-		token, err := jwt.Parse(strings.Split(r.Header["Authorization"][0]," ")[1], func(token *jwt.Token) (interface{}, error) {
+		token, err := jwt.Parse(strings.Split(r.Header["Authorization"][0], " ")[1], func(token *jwt.Token) (interface{}, error) {
 			if _, ok := token.Method.(*jwt.SigningMethodHMAC); !ok {
 				return nil, fmt.Errorf("There was an error in parsing token.")
 			}
@@ -115,7 +118,7 @@ func IsAuthorized(handler http.HandlerFunc) http.HandlerFunc {
 				r.Header.Set("Role", "user")
 				handler.ServeHTTP(w, r)
 				return
-			}else if claims["role"] == "admin" {
+			} else if claims["role"] == "admin" {
 				r.Header.Set("Role", "admin")
 				handler.ServeHTTP(w, r)
 				return
@@ -130,22 +133,22 @@ func IsAuthorized(handler http.HandlerFunc) http.HandlerFunc {
 
 //initialize all routes
 func InitializeRoute(handler *handler.SearchHandler) {
-		router.HandleFunc("/searchUserByUsername/{username}/{loggingUsername}", IsAuthorized(handler.GetUserByUsername)).Methods("GET")
-		//router.HandleFunc("/getAllUsers", handler.GetAllUsers).Methods("GET")
-		router.HandleFunc("/searchUserByUsernameForUnregistredUser/{username}", handler.GetUserByUsernameForUnregistredUser).Methods("GET")
-		router.HandleFunc("/searchPostByLocation/{location}/{email}", IsAuthorized(handler.SearchPostsByLocation)).Methods("GET")
-		router.HandleFunc("/searchPostByLocationUnregistered/{location}", handler.SearchPostsByLocationUnregistered).Methods("GET")
-		router.HandleFunc("/getPostsForSearchedUser/{id}/{email}",IsAuthorized(handler.GetPostsForSearchedUser)).Methods("GET")
-		router.HandleFunc("/searchPostByTag/{tag}/{email}",IsAuthorized( handler.SearchPostsByTag)).Methods("GET")
+	router.HandleFunc("/searchUserByUsername/{username}/{loggingUsername}", IsAuthorized(handler.GetUserByUsername)).Methods("GET")
+	//router.HandleFunc("/getAllUsers", handler.GetAllUsers).Methods("GET")
+	router.HandleFunc("/searchUserByUsernameForUnregistredUser/{username}", handler.GetUserByUsernameForUnregistredUser).Methods("GET")
+	router.HandleFunc("/searchPostByLocation/{location}/{email}", IsAuthorized(handler.SearchPostsByLocation)).Methods("GET")
+	router.HandleFunc("/searchPostByLocationUnregistered/{location}", handler.SearchPostsByLocationUnregistered).Methods("GET")
+	router.HandleFunc("/getPostsForSearchedUser/{id}/{email}", IsAuthorized(handler.GetPostsForSearchedUser)).Methods("GET")
+	router.HandleFunc("/searchPostByTag/{tag}/{email}", IsAuthorized(handler.SearchPostsByTag)).Methods("GET")
 	router.HandleFunc("/searchPostByTagUnregistered/{tag}", handler.SearchPostsByTagUnregistered).Methods("GET")
-		router.HandleFunc("/getMedia/{id}", handler.MediaForFront).Methods("GET")
+	router.HandleFunc("/getMedia/{id}", handler.MediaForFront).Methods("GET")
 	router.HandleFunc("/getVideos/{id}", handler.VideoZaFront).Methods("GET")
 	router.HandleFunc("/getPostsForSearchedUserUnregistered/{id}", handler.GetPostsForSearchedUserUnregistered).Methods("GET")
 	router.Methods("OPTIONS").HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-			w.Header().Set("Access-Control-Allow-Origin", "")
-			w.Header().Set("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE")
-			w.Header().Set("Access-Control-Allow-Headers", "Accept, Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, Access-Control-Request-Headers, Access-Control-Request-Method, Connection, Host, Origin, User-Agent, Referer, Cache-Control, X-header")
-		})
+		w.Header().Set("Access-Control-Allow-Origin", "")
+		w.Header().Set("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE")
+		w.Header().Set("Access-Control-Allow-Headers", "Accept, Content-Type, Content-Length, Accept-Encoding, X-CSRF-Token, Authorization, Access-Control-Request-Headers, Access-Control-Request-Method, Connection, Host, Origin, User-Agent, Referer, Cache-Control, X-header")
+	})
 }
 
 //start the server

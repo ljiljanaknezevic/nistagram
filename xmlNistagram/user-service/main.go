@@ -80,6 +80,7 @@ func InitialMigration() {
 	connection.AutoMigrate(model.WaitingFollower{})
 	connection.AutoMigrate(model.Following{})
 	connection.AutoMigrate(model.VerificationRequest{})
+	connection.AutoMigrate(model.Blocked{})
 }
 
 //closes database connection
@@ -173,12 +174,13 @@ func InitializeRoute(handler *handler.UserHandler) {
 	router.HandleFunc("/getByEmail/{email}", handler.GetUserByEmailAddress).Methods("GET")
 	router.HandleFunc("/changeUserData", IsAuthorized(handler.ChangeUserData)).Methods("POST")
 	router.HandleFunc("/follow/{followerUsername}/{email}", IsAuthorized(handler.Follow)).Methods("POST")
+	router.HandleFunc("/block/{followerUsername}/{email}", IsAuthorized(handler.Block)).Methods("POST")
 	router.HandleFunc("/declineRequest/{followerUsername}/{email}", IsAuthorized(handler.DeclineRequest)).Methods("POST")
 	router.HandleFunc("/acceptRequest/{followerUsername}/{email}", IsAuthorized(handler.AcceptRequest)).Methods("POST")
 	router.HandleFunc("/alreadyFollow/{followerUsername}/{email}", IsAuthorized(handler.AlreadyFollow)).Methods("GET")
 	router.HandleFunc("/getAllFollowers/{email}", IsAuthorized(handler.GetAllFollowers)).Methods("GET")
 	router.HandleFunc("/getAllUsersExceptLogging/{email}", IsAuthorized(handler.GetAllUsersExceptLogging)).Methods("GET")
-	router.HandleFunc("/getAllUsersExceptLoggingForTag/{email}", IsAuthorized(handler.GetAllUsersExceptLogging)).Methods("GET")
+	router.HandleFunc("/getAllUsersExceptLoggingForTag/{email}", IsAuthorized(handler.GetAllUsersExceptLoggingForTag)).Methods("GET")
 	router.HandleFunc("/validateToken/{input}", handler.HandlerFuncValidate).Methods("GET")
 	router.HandleFunc("/createRequest", handler.CreateRequest).Methods("POST")
 	router.HandleFunc("/getAllRequests", handler.GetAllRequestes).Methods("GET")

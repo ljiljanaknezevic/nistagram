@@ -5,9 +5,6 @@ import (
 	"encoding/base64"
 	"encoding/json"
 	"fmt"
-	"github.com/gorilla/mux"
-	logrus "github.com/sirupsen/logrus"
-	"gopkg.in/natefinch/lumberjack.v2"
 	"html/template"
 	"io"
 	"net/http"
@@ -17,6 +14,10 @@ import (
 	"search-service/service"
 	"strconv"
 	"strings"
+
+	"github.com/gorilla/mux"
+	logrus "github.com/sirupsen/logrus"
+	"gopkg.in/natefinch/lumberjack.v2"
 )
 
 type SearchHandler struct {
@@ -26,11 +27,9 @@ type SearchHandler struct {
 var log = logrus.New()
 
 type FileWithBASE64 struct {
-	Path string `json:"path"`
+	Path     string `json:"path"`
 	FileType string `json:"type"`
-
 }
-
 
 func init() {
 	absPath, err := os.Getwd()
@@ -65,29 +64,29 @@ func (handler *SearchHandler) GetUserByUsername(w http.ResponseWriter, r *http.R
 	vars := mux.Vars(r)
 	username := vars["username"]
 	loggingUsername := vars["loggingUsername"]
-	log.WithFields(logrus.Fields{
-		"location":      "search-service.handler.searchHandler.GetUserByUsername()",
-		"user_username": template.HTMLEscapeString(username)}).Info("Get searched user by username.")
+	fmt.Println("////////////////")
+	fmt.Println(loggingUsername)
 	users := handler.Service.GetAllUsersExceptLogging(loggingUsername)
+	loggedUser := handler.Service.GetUserByEmailAddress(loggingUsername)
 
 	var result []model.User
 
 	for _, element := range users {
-		if element.Role =="user"{
+		if element.Role == "user" {
 			if strings.Contains(strings.ToLower(element.Username), strings.ToLower(username)) {
-				result = append(result, element)
+				if len(loggedUser.Blocked) != 0 {
+					for _, elem := range loggedUser.Blocked {
+						if !strings.Contains(strings.ToLower(elem.Username), strings.ToLower(username)) {
+							result = append(result, element)
+						}
+					}
+				} else {
+					result = append(result, element)
+				}
 			}
 		}
 	}
-	if result == nil {
-		log.WithFields(logrus.Fields{
-			"location":      "search-service.handler.searchHandler.GetUserByUsername()",
-			"user_username": template.HTMLEscapeString(username)}).Warn("Searched user doesnt exist.")
-	}
 
-	log.WithFields(logrus.Fields{
-		"location":      "search-service.handler.searchHandler.GetUserByUsername()",
-		"user_username": template.HTMLEscapeString(username)}).Info("Get searched user by username success.")
 	json.NewEncoder(w).Encode(result)
 }
 
@@ -101,7 +100,7 @@ func (handler *SearchHandler) GetUserByUsernameForUnregistredUser(w http.Respons
 	var result []model.User
 
 	for _, element := range users {
-		if !element.IsPrivate && element.Role=="user" {
+		if !element.IsPrivate && element.Role == "user" {
 			if strings.Contains(strings.ToLower(element.Username), strings.ToLower(username)) {
 				result = append(result, element)
 			}
@@ -130,10 +129,8 @@ func (handler *SearchHandler) SearchPostsByLocation(w http.ResponseWriter, r *ht
 	vars := mux.Vars(r)
 	location := vars["location"]
 	email := vars["email"]
-	log.WithFields(logrus.Fields{
-		"location":   "search-service.handler.searchHandler.SearchPostsByLocation()",
-		"user_email": template.HTMLEscapeString(email)}).Info("Search posts by location from registred user.")
 
+	loggedUser := handler.Service.GetUserByEmailAddress(email)
 	posts := handler.Service.GetAllPosts()
 	var result []model.Post
 
@@ -141,7 +138,15 @@ func (handler *SearchHandler) SearchPostsByLocation(w http.ResponseWriter, r *ht
 		if element.Email != email {
 			if !handler.Service.GetUserByEmailAddress(element.Email).IsPrivate {
 				if strings.Contains(strings.ToLower(element.Location), strings.ToLower(location)) {
-					result = append(result, element)
+					if len(loggedUser.Blocked) != 0 {
+						for _, elem := range loggedUser.Blocked {
+							if !strings.Contains(strings.ToLower(elem.Username), strings.ToLower(element.Email)) {
+								result = append(result, element)
+							}
+						}
+					} else {
+						result = append(result, element)
+					}
 				}
 			} else {
 				for _, follower := range handler.Service.GetUserByEmailAddress(element.Email).Followers {
@@ -171,10 +176,8 @@ func (handler *SearchHandler) SearchPostsByTag(w http.ResponseWriter, r *http.Re
 	vars := mux.Vars(r)
 	tag := vars["tag"]
 	email := vars["email"]
-	log.WithFields(logrus.Fields{
-		"location":   "search-service.handler.searchHandler.SearchPostsByTag()",
-		"user_email": template.HTMLEscapeString(email)}).Info("Search posts by tag from registred user.")
 
+	loggedUser := handler.Service.GetUserByEmailAddress(email)
 	posts := handler.Service.GetAllPosts()
 	var result []model.Post
 
@@ -182,7 +185,15 @@ func (handler *SearchHandler) SearchPostsByTag(w http.ResponseWriter, r *http.Re
 		if element.Email != email {
 			if !handler.Service.GetUserByEmailAddress(element.Email).IsPrivate {
 				if strings.Contains(strings.ToLower(element.Tags), strings.ToLower(tag)) {
-					result = append(result, element)
+					if len(loggedUser.Blocked) != 0 {
+						for _, elem := range loggedUser.Blocked {
+							if !strings.Contains(strings.ToLower(elem.Username), strings.ToLower(element.Email)) {
+								result = append(result, element)
+							}
+						}
+					} else {
+						result = append(result, element)
+					}
 				}
 			} else {
 				for _, follower := range handler.Service.GetUserByEmailAddress(element.Email).Followers {
@@ -327,7 +338,7 @@ func (handler *SearchHandler) MediaForFront(w http.ResponseWriter, r *http.Reque
 	f, _ := os.Open(file.Path)
 
 	defer f.Close()
-	io.Copy(buffer,f)
+	io.Copy(buffer, f)
 	s := base64.StdEncoding.EncodeToString(buffer.Bytes())
 	var base64String FileWithBASE64
 	base64String.FileType = file.Type
@@ -341,7 +352,6 @@ func (handler *SearchHandler) MediaForFront(w http.ResponseWriter, r *http.Reque
 	}
 	log.WithFields(logrus.Fields{
 		"location": "search-service.handler.searchHandler.MediaForFront()"}).Info("Get image by imageID success.")
-
 
 	/*	image, _, _ := image.Decode(f)
 
@@ -386,31 +396,26 @@ func (handler *SearchHandler) VideoZaFront(w http.ResponseWriter, r *http.Reques
 	var file model.File
 	file = handler.Service.FindFileById(uint(id))
 
+	buffer := new(bytes.Buffer)
+	f, _ := os.Open(file.Path)
 
-		buffer := new(bytes.Buffer)
-		f, _ := os.Open(file.Path)
+	defer f.Close()
+	io.Copy(buffer, f)
+	//s:=string(buffer.Bytes())
+	s := base64.StdEncoding.EncodeToString(buffer.Bytes())
+	imagesMarshaled, err := json.Marshal(s)
 
-		defer f.Close()
-		io.Copy(buffer,f)
-		//s:=string(buffer.Bytes())
-		s := base64.StdEncoding.EncodeToString(buffer.Bytes())
-		imagesMarshaled, err := json.Marshal(s)
-
-		if err != nil {
-			log.WithFields(logrus.Fields{
-				"location": "search-service.handler.searchHandler.MediaForFront()"}).Error(err)
-
-			fmt.Fprint(w, err)
-		}
+	if err != nil {
 		log.WithFields(logrus.Fields{
-			"location": "search-service.handler.searchHandler.MediaForFront()"}).Info("Get image by imageID success.")
+			"location": "search-service.handler.searchHandler.MediaForFront()"}).Error(err)
 
-		w.Header().Set("Content-Type", "application/json")
-		w.WriteHeader(http.StatusOK)
-		w.Write(imagesMarshaled)
-
+		fmt.Fprint(w, err)
 	}
+	log.WithFields(logrus.Fields{
+		"location": "search-service.handler.searchHandler.MediaForFront()"}).Info("Get image by imageID success.")
 
+	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(http.StatusOK)
+	w.Write(imagesMarshaled)
 
-
-
+}

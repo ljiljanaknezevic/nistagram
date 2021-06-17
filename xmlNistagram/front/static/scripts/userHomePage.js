@@ -35,7 +35,7 @@ $(document).ready(function(e){
 
          $("#addStoryImage").click(function () {
              customAjax({
-                 url: 'http://localhost:80/user-service/getAllUsersExceptLogging/' + email,
+                 url: 'http://localhost:80/user-service/getAllUsersExceptLoggingForTag/' + email,
                  method: 'GET',
                  async: false,
                  success: function (data) {
@@ -629,7 +629,7 @@ let myProfile = function(user) {
         result += `</div></div>`;
         $('#posts').html(result);
 
-
+        var action = 1;
         $("button[name=like]").click(function () {
             var postID = this.id
             var userWhoLiked = localStorage.getItem('email');
@@ -639,11 +639,35 @@ let myProfile = function(user) {
                 url: 'http://localhost:80/post-service/liked/' + postID + "/" + userWhoLiked,
                 method: 'POST',
                 success: function (data) {
-                    $('label[name=' + postID + ']').text("Liked")
+                    /*
+                    var action = 1;
+
+                    $("input").on("click", viewSomething);
+
+                    function viewSomething() {
+                        if ( action == 1 ) {
+                            $("body").css("background", "honeydew");
+                            action = 2;
+                        } else {
+                            $("body").css("background", "beige");
+                            action = 1;
+                        }
+                    }
+                     */
+
+                    //$('label[name=' + postID + ']').text("Liked")
                 },
                 error: function () {
                 }
             })
+
+        if ( action == 1 ) {
+            $('label[name=' + postID + ']').text("Liked")
+            action = 2;
+        } else {
+            $('label[name=' + postID + ']').text("")
+            action = 1;
+        }
 
         });
 
@@ -1034,6 +1058,10 @@ let showProfile = function(user) {
     <button class="ui teal button" name = "follow" id = "` + json[i].username + `">Follow  <i class = "user icon"></i></button>
     
     `+pom1+`
+    <button class="ui teal button" name = "mute" id = "` + json[i].username + `">Mute  <i class="low vision icon"></i></button>
+    <div class="extra content">
+    <button class="ui teal button" name = "block" id = "` + json[i].username + `">Block<i class="ban icon"></i></i></button>
+    </div>
     <div class="right floated author">` + json[i].name + `
     </div>   
     <div id="error` + json[i].username + `" style="color:red"></div> 
@@ -1062,10 +1090,21 @@ let showProfile = function(user) {
             }
         })
     })
-
+    $("button[name=block]").click(function() {
+        id = this.id
+        customAjax({
+                url: 'http://localhost:80/user-service/block/' + id + "/" + localStorage.getItem("email"),
+                method: 'POST',
+                success: function (data) {
+                    console.log("Success za block")
+                },
+                error: function () {
+                    console.log("Error za block")
+                }
+            })
+    })
     $("button[name=follow]").click(function () {
         id = this.id
-        console.log(id)
         customAjax({
             url: 'http://localhost:80/user-service/alreadyFollow/' + id + "/" + localStorage.getItem("email"),
             method: 'GET',
@@ -1074,7 +1113,6 @@ let showProfile = function(user) {
                     url: 'http://localhost:80/user-service/follow/' + id + "/" + localStorage.getItem("email"),
                     method: 'POST',
                     success: function (data) {
-                        console.log("Success za follow")
                         document.getElementById(id).innerText = "Followed"
                         document.getElementById(id).disabled = true
                     },

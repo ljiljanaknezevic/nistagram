@@ -539,6 +539,26 @@ func (handler *UserHandler) Follow(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(user)
 }
+func (handler *UserHandler) Block(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	email := vars["email"]
+	followerUsername := vars["followerUsername"] //koga hocu da blokiram
+	blockedUser := handler.Service.GetUserByUsername(followerUsername)
+
+	//	followerUser := handler.Service.GetUserByUsername(followerUsername)
+
+	var user model.User
+	user = handler.Service.GetUserByEmailAddress(email) //ja
+
+	var blocked model.Blocked
+	blocked.Username = blockedUser.Email
+	user.Blocked = append(user.Blocked, blocked)
+	handler.Service.UpdateUser(&user)
+
+	w.WriteHeader(http.StatusOK)
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(user)
+}
 func (handler *UserHandler) AcceptRequest(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	email := vars["email"]
@@ -705,7 +725,6 @@ func (handler *UserHandler) GetAllUsersExceptLoggingForTag(w http.ResponseWriter
 	email := vars["email"]
 	var users []model.User
 	users = handler.Service.GetAllUsersExceptLoggingForTag(email)
-
 	json.NewEncoder(w).Encode(users)
 }
 
