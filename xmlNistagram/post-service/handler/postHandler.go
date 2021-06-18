@@ -56,6 +56,15 @@ func init() {
 		},
 	).Info("Post-service Log file created/opened")
 }
+func (handler *PostHandler) SaveComment(w http.ResponseWriter, r *http.Request) {
+
+	var comment model.Comment
+	comment.Text = r.PostFormValue("text")
+	comment.PostID = r.PostFormValue("postID")
+	comment.Email = r.PostFormValue("email")
+	handler.Service.SaveComment(&comment)
+	jsonResponse(w, http.StatusCreated, "File uploaded successfully!.")
+}
 func (handler *PostHandler) SavePost(w http.ResponseWriter, r *http.Request) {
 	log.WithFields(logrus.Fields{
 		"location":   "post-service.handler.postHandler.SavePost()",
@@ -139,7 +148,7 @@ func (handler *PostHandler) SavePost(w http.ResponseWriter, r *http.Request) {
 
 }
 
-func (handler *PostHandler) CreateSpam(w http.ResponseWriter, r* http.Request) {
+func (handler *PostHandler) CreateSpam(w http.ResponseWriter, r *http.Request) {
 	b, _ := ioutil.ReadAll(r.Body)
 
 	var spam model.Spam
@@ -177,25 +186,36 @@ func jsonResponse(w http.ResponseWriter, code int, message string) {
 func (handler *PostHandler) GetAllPostsByEmail(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	email := vars["email"]
-	log.WithFields(logrus.Fields{
-		"location":   "post-service.handler.postHandler.GetAllPostsByEmail()",
-		"user_email": template.HTMLEscapeString(email)}).Info("Get all posts for user.")
 	var result []model.Post
 	result = handler.Service.GetAllPostsByEmail(email)
 
+	var newPosts []model.Post
+	for _, element := range result {
+		var s string = strconv.FormatUint(uint64(element.ID), 10)
+
+		//	fmt.Println(postImage)
+		//	var id = element.ImageID
+		element.Comments = handler.Service.GetAllCommentsByPostsID(s)
+		newPosts = append(newPosts, element)
+	}
 	if result == nil {
-		log.WithFields(logrus.Fields{
-			"location":   "post-service.handler.postHandler.GetAllPostsByEmail()",
-			"user_email": template.HTMLEscapeString(email)}).Error("Get all posts for user fail.")
 		var err model.Error
 		err = model.SetError(err, "Get all posts fail.")
 		json.NewEncoder(w).Encode(err)
 		w.WriteHeader(http.StatusExpectationFailed)
 		return
 	}
-	log.WithFields(logrus.Fields{
-		"location":   "post-service.handler.postHandler.GetAllPostsByEmail()",
-		"user_email": template.HTMLEscapeString(email)}).Info("Get all posts for user success.")
+	w.WriteHeader(http.StatusOK)
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(newPosts)
+}
+
+func (handler *PostHandler) GetAllCommentsByPostsID(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	postID := vars["postID"]
+
+	var result []model.Comment
+	result = handler.Service.GetAllCommentsByPostsID(postID)
 	w.WriteHeader(http.StatusOK)
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(result)

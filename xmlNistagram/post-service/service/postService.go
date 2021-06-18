@@ -6,8 +6,9 @@ import (
 )
 
 type PostService struct {
-	Repo     *repository.PostRepository
-	FileRepo *repository.FileRepository
+	Repo        *repository.PostRepository
+	FileRepo    *repository.FileRepository
+	CommentRepo *repository.CommentRepository
 }
 
 func (service *PostService) SavePost(post *model.Post) error {
@@ -21,6 +22,10 @@ func (service *PostService) SaveFile(file *model.File) error {
 	service.FileRepo.CreateFile(file)
 	return nil
 }
+func (service *PostService) SaveComment(comment *model.Comment) error {
+	service.CommentRepo.CreateComment(comment)
+	return nil
+}
 
 func (service *PostService) FindFileIdByPath(path string) uint {
 	return service.FileRepo.FindIdByPath(path)
@@ -31,7 +36,9 @@ func (service *PostService) FindFilePathById(imageID uint) string {
 func (service *PostService) GetAllPostsByEmail(email string) []model.Post {
 	return service.Repo.GetAllPostsByEmail(email)
 }
-
+func (service *PostService) GetAllCommentsByPostsID(postID string) []model.Comment {
+	return service.CommentRepo.GetAllCommentsByPostsID(postID)
+}
 func (service *PostService) GetPostById(postId string) model.Post {
 	return service.Repo.GetPostById(postId)
 }

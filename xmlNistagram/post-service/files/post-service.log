@@ -172,3 +172,10 @@
 {"level":"info","location":"post-service.main.go","msg":"Log file created","time":"2021-06-17T16:25:54Z"}
 {"level":"info","location":"post-service.handler.postHandler.init()","msg":"Post-service Log file created/opened","time":"2021-06-17T16:29:57Z"}
 {"level":"info","location":"post-service.main.go","msg":"Log file created","time":"2021-06-17T16:29:57Z"}
+{"level":"info","location":"post-service.handler.postHandler.init()","msg":"Post-service Log file created/opened","time":"2021-06-18T06:03:51Z"}
+{"level":"info","location":"post-service.main.go","msg":"Log file created","time":"2021-06-18T06:03:51Z"}
+{"level":"fatal","location":"post-service.main.GetDatabase()","msg":"Invalid database url","time":"2021-06-18T06:03:51Z"}
+{"level":"info","location":"post-service.handler.postHandler.init()","msg":"Post-service Log file created/opened","time":"2021-06-18T06:03:52Z"}
+{"level":"info","location":"post-service.main.go","msg":"Log file created","time":"2021-06-18T06:03:52Z"}
+{"level":"info","location":"post-service.handler.postHandler.init()","msg":"Post-service Log file created/opened","time":"2021-06-18T10:01:28Z"}
+{"level":"info","location":"post-service.main.go","msg":"Log file created","time":"2021-06-18T10:01:28Z"}

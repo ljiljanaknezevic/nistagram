@@ -498,3 +498,6 @@
 {"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-17T16:30:58Z"}
 {"level":"warning","location":"search-service.handler.searchHandler.SearchPostsByLocation()","msg":"No found posts by location.","time":"2021-06-17T16:31:16Z","user_email":"mili@gmail.com"}
 {"level":"info","location":"search-service.handler.searchHandler.SearchPostsByLocation()","msg":"Search by location from registred user success.","time":"2021-06-17T16:31:16Z","user_email":"mili@gmail.com"}
+{"level":"info","location":"search-service.handler.searchHandler.init()","msg":"Search-service Log file created/opened","time":"2021-06-18T06:03:51Z"}
+{"level":"info","location":"search-service.handler.searchHandler.init()","msg":"Search-service Log file created/opened","time":"2021-06-18T10:01:27Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T10:20:53Z"}

@@ -33,12 +33,16 @@ func initRepo(database *gorm.DB) *repository.PostRepository {
 	return &repository.PostRepository{Database: database}
 }
 
+//comment repo
+func initCommentRepo(database *gorm.DB) *repository.CommentRepository {
+	return &repository.CommentRepository{Database: database}
+}
 func initFileRepo(database *gorm.DB) *repository.FileRepository {
 	return &repository.FileRepository{Database: database}
 }
 
-func initServices(repo *repository.PostRepository, fileRepo *repository.FileRepository) *service.PostService {
-	return &service.PostService{Repo: repo, FileRepo: fileRepo}
+func initServices(repo *repository.PostRepository, fileRepo *repository.FileRepository, commentRepo *repository.CommentRepository) *service.PostService {
+	return &service.PostService{Repo: repo, FileRepo: fileRepo, CommentRepo: commentRepo}
 }
 
 func initHandler(service *service.PostService) *handler.PostHandler {
@@ -82,6 +86,7 @@ func InitialMigration() {
 	connection.AutoMigrate(model.File{})
 	connection.AutoMigrate(model.Like{})
 	connection.AutoMigrate(model.Spam{})
+	connection.AutoMigrate(model.Comment{})
 }
 
 //closes database connection
@@ -170,6 +175,9 @@ func InitializeRoute(handler *handler.PostHandler) {
 	router.HandleFunc("/liked/{postID}/{userWhoLiked}", IsAuthorized(handler.Liked)).Methods("POST")
 	router.HandleFunc("/getAllLikedPostsByEmail/{email}", IsAuthorized(handler.GetAllLikedPostsByEmail)).Methods("GET")
 	router.HandleFunc("/reportPost", IsAuthorized(handler.CreateSpam)).Methods("POST")
+	router.HandleFunc("/saveComment", handler.SaveComment).Methods("POST")
+	router.HandleFunc("/getAllCommentsByPostsID/{postID}", handler.GetAllCommentsByPostsID).Methods("GET")
+
 	router.Methods("OPTIONS").HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Access-Control-Allow-Origin", "")
 		w.Header().Set("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE")
@@ -214,8 +222,9 @@ func main() {
 	InitialMigration()
 	CreateRouter()
 	repo := initRepo(db)
+	commentRepo := initCommentRepo(db)
 	fileRepo := initFileRepo(db)
-	service := initServices(repo, fileRepo)
+	service := initServices(repo, fileRepo, commentRepo)
 	handler := initHandler(service)
 	InitializeRoute(handler)
 	ServerStart()
