@@ -461,7 +461,29 @@ func (handler *UserHandler) GetAllRequestes(w http.ResponseWriter, r *http.Reque
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(requests)
 }
+func (handler *UserHandler) MuteAccount(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	email := vars["email"]
+	username:= vars["username"]
+	var muted model.Muted
+	muted.Username = username
+	user := handler.Service.GetUserByEmailAddress(email)
+	for _, element := range user.Muted {
+		if element.Username == username {
+			w.WriteHeader(http.StatusBadRequest)
+			w.Header().Set("Content-Type", "application/json")
+			return
 
+		}
+	}
+	user.Muted=append(user.Muted,muted)
+	handler.Service.UpdateUser(&user)
+	w.WriteHeader(http.StatusOK)
+	w.Header().Set("Content-Type", "application/json")
+
+
+
+}
 func (handler *UserHandler) AcceptVerification(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	email := vars["email"]

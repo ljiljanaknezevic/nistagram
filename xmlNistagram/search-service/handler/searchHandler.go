@@ -187,8 +187,29 @@ func (handler *SearchHandler) GetPostsForFeed(w http.ResponseWriter, r *http.Req
 			}
 		}
 	}
+	var res[] model.Post
+	var pom bool
+	pom=false
+	for _,elee := range result{
+		pom=false
+		for _,el := range loggedUser.Muted{
+			if handler.Service.GetUserByUsername(el.Username).Email == elee.Email {
+				pom =true
+				break
+			}
 
-	json.NewEncoder(w).Encode(result)
+		}
+		if !pom {
+			res = append(res, elee)
+		}
+	}
+	if len(res)>=0{
+		json.NewEncoder(w).Encode(res)
+	} else {
+		json.NewEncoder(w).Encode(result)
+	}
+
+
 }
 
 
@@ -206,7 +227,27 @@ func (handler *SearchHandler) GetStoriesForFeed(w http.ResponseWriter, r *http.R
 		}
 	}
 
-	json.NewEncoder(w).Encode(result)
+	var res[] model.Story
+	var pom bool
+	pom=false
+	for _,elee := range result{
+		pom=false
+		for _,el := range loggedUser.Muted{
+			if handler.Service.GetUserByUsername(el.Username).Email == elee.Email {
+				pom =true
+				break
+			}
+
+		}
+		if !pom {
+			res = append(res, elee)
+		}
+	}
+	if len(res)>=0{
+		json.NewEncoder(w).Encode(res)
+	} else {
+		json.NewEncoder(w).Encode(result)
+	}
 }
 
 func (handler *SearchHandler) SearchPostsByTag(w http.ResponseWriter, r *http.Request) {

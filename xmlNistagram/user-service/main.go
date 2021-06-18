@@ -81,6 +81,7 @@ func InitialMigration() {
 	connection.AutoMigrate(model.Following{})
 	connection.AutoMigrate(model.VerificationRequest{})
 	connection.AutoMigrate(model.Blocked{})
+	connection.AutoMigrate(model.Muted{})
 }
 
 //closes database connection
@@ -186,6 +187,7 @@ func InitializeRoute(handler *handler.UserHandler) {
 	router.HandleFunc("/getAllRequests", handler.GetAllRequestes).Methods("GET")
 	router.HandleFunc("/acceptVerification/{email}", handler.AcceptVerification).Methods("POST")
 	router.HandleFunc("/declineVerification/{email}", handler.DeclineVerification).Methods("POST")
+	router.HandleFunc("/muteAccount/{username}/{email}", handler.MuteAccount).Methods("POST")
 	router.Methods("OPTIONS").HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Access-Control-Allow-Origin", "")
 		w.Header().Set("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE")
