@@ -418,6 +418,10 @@ $(document).ready(function(e){
             });
         });
     });
+
+    $(window).on('load', function () {
+        showFeed()
+    });
     
     $(window).on('load', function () {
         customAjax({

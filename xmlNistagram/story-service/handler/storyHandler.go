@@ -148,6 +148,8 @@ func (handler *StoryHandler) GetAllStoriesByEmail(w http.ResponseWriter, r *http
 	json.NewEncoder(w).Encode(result)
 }
 
+
+
 func (handler *StoryHandler) GetImageByImageID(w http.ResponseWriter, r *http.Request) {
 	/*	vars := mux.Vars(r)
 			imageID := vars["imageID"]

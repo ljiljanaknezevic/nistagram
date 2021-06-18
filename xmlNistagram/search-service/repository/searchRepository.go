@@ -37,6 +37,12 @@ func (repo *SearchRepository) GetAllPosts() []model.Post {
 	repo.Database.Find(&posts)
 	return posts
 }
+
+func (repo *SearchRepository) GetAllStories() []model.Story {
+	var stories []model.Story
+	repo.Database.Find(&stories)
+	return stories
+}
 func (repo *SearchRepository) GetPostsForSearchedUser(email string) []model.Post {
 	var posts []model.Post
 	repo.Database.Where("email = ?", email).Find(&posts)

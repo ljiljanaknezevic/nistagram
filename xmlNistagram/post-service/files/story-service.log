@@ -20,3 +20,14 @@
 {"level":"info","location":"story-service.handler.storyHandler.init()","msg":"Story-service Log file created","time":"2021-06-17T16:29:57Z"}
 {"level":"info","location":"story-service.handler.storyHandler.init()","msg":"Story-service Log file created","time":"2021-06-18T06:03:51Z"}
 {"level":"info","location":"story-service.handler.storyHandler.init()","msg":"Story-service Log file created","time":"2021-06-18T10:01:28Z"}
+{"level":"info","location":"story-service.handler.storyHandler.init()","msg":"Story-service Log file created","time":"2021-06-18T05:07:42Z"}
+{"level":"info","location":"story-service.handler.storyHandler.init()","msg":"Story-service Log file created","time":"2021-06-18T05:25:24Z"}
+{"level":"info","location":"story-service.handler.storyHandler.init()","msg":"Story-service Log file created","time":"2021-06-18T05:32:47Z"}
+{"level":"info","location":"story-service.handler.storyHandler.init()","msg":"Story-service Log file created","time":"2021-06-18T05:37:48Z"}
+{"level":"info","location":"story-service.handler.storyHandler.init()","msg":"Story-service Log file created","time":"2021-06-18T06:21:32Z"}
+{"level":"info","location":"story-service.handler.storyHandler.SaveStory()","msg":"User add story.","time":"2021-06-18T06:23:20Z","user_email":"majatepavcevic133@gmail.com"}
+{"level":"info","location":"story-service.handler.storyHandler.SaveStory()","msg":"File localy created.","time":"2021-06-18T06:23:20Z"}
+{"level":"info","location":"story-service.handler.storyHandler.SaveStory()","msg":"Save post success.","time":"2021-06-18T06:23:20Z"}
+{"level":"info","location":"story-service.handler.storyHandler.SaveStory()","msg":"User add post success.","time":"2021-06-18T06:23:20Z","user_email":"majatepavcevic133@gmail.com"}
+{"level":"info","location":"story-service.handler.storyHandler.init()","msg":"Story-service Log file created","time":"2021-06-18T06:56:59Z"}
+{"level":"info","location":"story-service.handler.storyHandler.init()","msg":"Story-service Log file created","time":"2021-06-18T06:58:20Z"}
