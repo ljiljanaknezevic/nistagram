@@ -82,6 +82,7 @@ func InitialMigration() {
 	connection.AutoMigrate(model.VerificationRequest{})
 	connection.AutoMigrate(model.Blocked{})
 	connection.AutoMigrate(model.Muted{})
+	connection.AutoMigrate(model.UsersWhoBlocked{})
 }
 
 //closes database connection

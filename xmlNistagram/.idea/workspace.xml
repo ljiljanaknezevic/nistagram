@@ -2,12 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c4e794cd-97af-43bb-852b-a14e71c3e83e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/post-service/files/Screenshot (65).png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/static/scripts/userHomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/static/scripts/userHomePage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/post-service/files/post-service.log" beforeDir="false" afterPath="$PROJECT_DIR$/post-service/files/post-service.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/post-service/files/search-service.log" beforeDir="false" afterPath="$PROJECT_DIR$/post-service/files/search-service.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/post-service/files/story-service.log" beforeDir="false" afterPath="$PROJECT_DIR$/post-service/files/story-service.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/search-service/handler/searchHandler.go" beforeDir="false" afterPath="$PROJECT_DIR$/search-service/handler/searchHandler.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/search-service/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/search-service/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/search-service/model/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/search-service/model/user.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/search-service/repository/searchRepository.go" beforeDir="false" afterPath="$PROJECT_DIR$/search-service/repository/searchRepository.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user-service/handler/userHandler.go" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/handler/userHandler.go" afterDir="false" />

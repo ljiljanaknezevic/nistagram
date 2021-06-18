@@ -727,23 +727,6 @@ let myProfile = function(user) {
                 url: 'http://localhost:80/post-service/liked/' + postID + "/" + userWhoLiked,
                 method: 'POST',
                 success: function (data) {
-                    /*
-                    var action = 1;
-
-                    $("input").on("click", viewSomething);
-
-                    function viewSomething() {
-                        if ( action == 1 ) {
-                            $("body").css("background", "honeydew");
-                            action = 2;
-                        } else {
-                            $("body").css("background", "beige");
-                            action = 1;
-                        }
-                    }
-                     */
-
-                    //$('label[name=' + postID + ']').text("Liked")
                 },
                 error: function () {
                 }
@@ -1210,7 +1193,9 @@ let showProfile = function(user) {
                 url: 'http://localhost:80/user-service/block/' + id + "/" + localStorage.getItem("email"),
                 method: 'POST',
                 success: function (data) {
-                    console.log("Success za block")
+                    alert("Succesfully blocked user!")
+                    location.reload();
+
                 },
                 error: function () {
                     console.log("Error za block")
@@ -1477,7 +1462,7 @@ let showPosts = function(posts) {
         var id = this.id;
        showReport(id,localStorage.getItem("email"));
     })
-
+    var action=1
     $("button[name=like]").click(function(){
         var postID=this.id
         var userWhoLiked=localStorage.getItem('email');
@@ -1487,11 +1472,17 @@ let showPosts = function(posts) {
                     url: 'http://localhost:80/post-service/liked/' + postID + "/" + userWhoLiked,
                     method: 'POST',
                     success: function (data) {
-                        $('label[name='+postID+']').text("Liked");
                     },
                     error: function () {
                     }
                 })
+            if ( action == 1 ) {
+                 $('label[name=' + postID + ']').text("Liked")
+                action = 2;
+            } else {
+            $('label[name=' + postID + ']').text("")
+            action = 1;
+         }
 
     });
 
@@ -1585,7 +1576,7 @@ let showPostsForSearchedUser = function(posts) {
         var id = this.id;
        showReport(id,localStorage.getItem("email"));
     })
-
+     var action = 1;
     $("button[name=like]").click(function(){
         var postID=this.id
         var userWhoLiked=localStorage.getItem('email');
@@ -1593,11 +1584,17 @@ let showPostsForSearchedUser = function(posts) {
                     url: 'http://localhost:80/post-service/liked/' + postID + "/" + userWhoLiked,
                     method: 'POST',
                     success: function (data) {
-                      $('label[name='+postID+']').text("Liked")
                     },
                     error: function () {
                     }
                 })
+        if ( action == 1 ) {
+            $('label[name=' + postID + ']').text("Liked")
+            action = 2;
+        } else {
+            $('label[name=' + postID + ']').text("")
+            action = 1;
+        }
 
     });
 

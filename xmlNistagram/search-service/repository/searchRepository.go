@@ -12,23 +12,25 @@ type SearchRepository struct {
 
 func (repo *SearchRepository) GetUserByUsername(username string) model.User {
 	var user model.User
-	repo.Database.Where("username = ? ", username).Preload("Muted").Preload("Following").Preload("WaitingFollowers").Preload("Followers").Preload("Blocked").First(&user)
+	repo.Database.Where("username = ? ", username).Preload("Muted").Preload("Following").Preload("WaitingFollowers").Preload("Followers").Preload("UsersWhoBlocked").Preload("Blocked").First(&user)
 	return user
 }
 func (repo *SearchRepository) GetAllUsers() []model.User {
 	var users []model.User
-	repo.Database.Preload("Muted").Preload("Following").Preload("WaitingFollowers").Preload("Followers").Preload("Blocked").Find(&users)
+
+	repo.Database.Preload("Muted").Preload("Following").Preload("WaitingFollowers").Preload("Followers").Preload("Blocked").Preload("UsersWhoBlocked").Find(&users)
 	return users
 }
 
 func (repo *SearchRepository) GetAllUsersExceptLogging(username string) []model.User {
 	var users []model.User
-	repo.Database.Where("email != ?", username).Preload("Muted").Preload("Following").Preload("WaitingFollowers").Preload("Followers").Preload("Blocked").Find(&users)
+	repo.Database.Where("email != ?", username).Preload("UsersWhoBlocked").Preload("Muted").Preload("Following").Preload("WaitingFollowers").Preload("Followers").Preload("Blocked").Find(&users)
+
 	return users
 }
 func (repo *SearchRepository) GetUserByEmailAddress(email string) model.User {
 	var user model.User
-	repo.Database.Where("email = ? ", email).Preload("Muted").Preload("Following").Preload("WaitingFollowers").Preload("Followers").Preload("Blocked").First(&user)
+	repo.Database.Where("email = ? ", email).Preload("UsersWhoBlocked").Preload("Muted").Preload("Following").Preload("WaitingFollowers").Preload("Followers").Preload("Blocked").First(&user)
 	return user
 }
 
