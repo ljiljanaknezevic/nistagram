@@ -542,18 +542,21 @@ func (handler *UserHandler) Follow(w http.ResponseWriter, r *http.Request) {
 func (handler *UserHandler) Block(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	email := vars["email"]
-	followerUsername := vars["followerUsername"] //koga hocu da blokiram
-	blockedUser := handler.Service.GetUserByUsername(followerUsername)
-
-	//	followerUser := handler.Service.GetUserByUsername(followerUsername)
+	followerUsername := vars["followerUsername"]
+	blockedUser := handler.Service.GetUserByUsername(followerUsername) //koga hocu da blokiram
 
 	var user model.User
 	user = handler.Service.GetUserByEmailAddress(email) //ja
 
-	var blocked model.Blocked
+	var blocked model.Blocked //u moju listu dodajem da sam blokirala
 	blocked.Username = blockedUser.Email
 	user.Blocked = append(user.Blocked, blocked)
 	handler.Service.UpdateUser(&user)
+
+	var iAmBlocked model.UsersWhoBlocked //u listu blokiranog dodajem svoj email
+	iAmBlocked.Username = user.Email
+	blockedUser.UsersWhoBlocked = append(blockedUser.UsersWhoBlocked, iAmBlocked)
+	handler.Service.UpdateUser(&blockedUser)
 
 	w.WriteHeader(http.StatusOK)
 	w.Header().Set("Content-Type", "application/json")

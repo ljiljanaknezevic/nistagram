@@ -172,3 +172,317 @@
 {"level":"info","location":"post-service.main.go","msg":"Log file created","time":"2021-06-17T16:25:54Z"}
 {"level":"info","location":"post-service.handler.postHandler.init()","msg":"Post-service Log file created/opened","time":"2021-06-17T16:29:57Z"}
 {"level":"info","location":"post-service.main.go","msg":"Log file created","time":"2021-06-17T16:29:57Z"}
+{"level":"info","location":"post-service.handler.postHandler.init()","msg":"Post-service Log file created/opened","time":"2021-06-18T08:39:28Z"}
+{"level":"info","location":"post-service.main.go","msg":"Log file created","time":"2021-06-18T08:39:28Z"}
+{"level":"fatal","location":"post-service.main.GetDatabase()","msg":"Invalid database url","time":"2021-06-18T08:39:28Z"}
+{"level":"info","location":"post-service.handler.postHandler.init()","msg":"Post-service Log file created/opened","time":"2021-06-18T08:39:31Z"}
+{"level":"info","location":"post-service.main.go","msg":"Log file created","time":"2021-06-18T08:39:31Z"}
+{"level":"info","location":"post-service.handler.postHandler.init()","msg":"Post-service Log file created/opened","time":"2021-06-18T08:44:20Z"}
+{"level":"info","location":"post-service.main.go","msg":"Log file created","time":"2021-06-18T08:44:20Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T08:45:37Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T08:45:37Z"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user.","time":"2021-06-18T08:45:37Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"error","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user fail.","time":"2021-06-18T08:45:37Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T08:48:31Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T08:48:31Z"}
+{"level":"info","location":"post-service.handler.postHandler.SavePost()","msg":"User add post.","time":"2021-06-18T08:48:31Z","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"post-service.handler.postHandler.SavePost()","msg":"File localy created.","time":"2021-06-18T08:48:31Z"}
+{"level":"info","location":"post-service.handler.postHandler.SavePost()","msg":"Save post success.","time":"2021-06-18T08:48:31Z"}
+{"level":"info","location":"post-service.handler.postHandler.SavePost()","msg":"User add post success.","time":"2021-06-18T08:48:31Z","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T08:48:33Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T08:48:33Z"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user.","time":"2021-06-18T08:48:33Z","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user success.","time":"2021-06-18T08:48:33Z","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T08:48:57Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T08:48:57Z"}
+{"level":"info","location":"post-service.handler.postHandler.SavePost()","msg":"User add post.","time":"2021-06-18T08:48:57Z","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"post-service.handler.postHandler.SavePost()","msg":"File localy created.","time":"2021-06-18T08:48:57Z"}
+{"level":"info","location":"post-service.handler.postHandler.SavePost()","msg":"Save post success.","time":"2021-06-18T08:48:57Z"}
+{"level":"info","location":"post-service.handler.postHandler.SavePost()","msg":"User add post success.","time":"2021-06-18T08:48:57Z","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T08:48:58Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T08:48:58Z"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user.","time":"2021-06-18T08:48:58Z","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user success.","time":"2021-06-18T08:48:58Z","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T08:58:19Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T08:58:19Z"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user.","time":"2021-06-18T08:58:19Z","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user success.","time":"2021-06-18T08:58:19Z","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T08:58:57Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T08:58:57Z"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user.","time":"2021-06-18T08:58:57Z","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user success.","time":"2021-06-18T08:58:57Z","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T08:59:16Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T08:59:16Z"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user.","time":"2021-06-18T08:59:16Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"error","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user fail.","time":"2021-06-18T08:59:16Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T09:00:27Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T09:00:27Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T09:00:29Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T09:00:29Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T09:00:33Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T09:00:33Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T09:00:46Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T09:00:46Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T09:00:47Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T09:00:47Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T09:00:52Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T09:00:52Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T09:00:53Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T09:00:53Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T09:01:07Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T09:01:07Z"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user.","time":"2021-06-18T09:01:07Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"error","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user fail.","time":"2021-06-18T09:01:07Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T09:01:08Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T09:01:08Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T09:01:22Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T09:01:22Z"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user.","time":"2021-06-18T09:01:22Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"error","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user fail.","time":"2021-06-18T09:01:22Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T09:01:22Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T09:01:22Z"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user.","time":"2021-06-18T09:01:22Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"error","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user fail.","time":"2021-06-18T09:01:22Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T09:01:24Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T09:01:24Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T09:01:34Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T09:01:34Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T09:01:35Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T09:01:35Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T09:01:39Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T09:01:39Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T09:01:40Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T09:01:40Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T09:01:59Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T09:01:59Z"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user.","time":"2021-06-18T09:01:59Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"error","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user fail.","time":"2021-06-18T09:01:59Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T09:02:00Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T09:02:00Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T09:02:04Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T09:02:04Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T09:02:13Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T09:02:13Z"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user.","time":"2021-06-18T09:02:13Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"error","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user fail.","time":"2021-06-18T09:02:13Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T09:02:15Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T09:02:15Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T09:16:00Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T09:16:00Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T09:16:01Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T09:16:01Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T09:16:02Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T09:16:02Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T09:16:03Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T09:16:03Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T09:16:04Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T09:16:04Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T09:16:18Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T09:16:18Z"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user.","time":"2021-06-18T09:16:18Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"error","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user fail.","time":"2021-06-18T09:16:18Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T09:16:36Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T09:16:36Z"}
+{"level":"info","location":"post-service.handler.postHandler.SavePost()","msg":"User add post.","time":"2021-06-18T09:16:36Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"post-service.handler.postHandler.SavePost()","msg":"File localy created.","time":"2021-06-18T09:16:36Z"}
+{"level":"info","location":"post-service.handler.postHandler.SavePost()","msg":"Save post success.","time":"2021-06-18T09:16:36Z"}
+{"level":"info","location":"post-service.handler.postHandler.SavePost()","msg":"User add post success.","time":"2021-06-18T09:16:36Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T09:16:37Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T09:16:37Z"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user.","time":"2021-06-18T09:16:37Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user success.","time":"2021-06-18T09:16:37Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T09:16:39Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T09:16:39Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T09:16:40Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T09:16:40Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T09:16:41Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T09:16:41Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T09:16:43Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T09:16:43Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T09:16:43Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T09:16:43Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T09:16:57Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T09:16:57Z"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user.","time":"2021-06-18T09:16:57Z","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user success.","time":"2021-06-18T09:16:57Z","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T09:17:07Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T09:17:07Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T09:17:08Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T09:17:08Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T09:17:15Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T09:17:15Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T09:17:16Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T09:17:16Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T09:17:18Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T09:17:18Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T09:17:22Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T09:17:22Z"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user.","time":"2021-06-18T09:17:22Z","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user success.","time":"2021-06-18T09:17:22Z","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T09:17:24Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T09:17:24Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T09:17:26Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T09:17:26Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T09:17:26Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T09:17:26Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T09:17:28Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T09:17:28Z"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user.","time":"2021-06-18T09:17:28Z","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user success.","time":"2021-06-18T09:17:28Z","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T09:17:28Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T09:17:28Z"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user.","time":"2021-06-18T09:17:28Z","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user success.","time":"2021-06-18T09:17:28Z","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T09:17:29Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T09:17:29Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T09:17:29Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T09:17:29Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T09:18:01Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T09:18:01Z"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user.","time":"2021-06-18T09:18:01Z","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user success.","time":"2021-06-18T09:18:01Z","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T09:18:09Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T09:18:09Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T09:18:10Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T09:18:10Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T09:18:18Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T09:18:18Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T09:18:19Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T09:18:19Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T09:18:20Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T09:18:20Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T09:18:20Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T09:18:20Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T09:20:17Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T09:20:17Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T09:20:24Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T09:20:24Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T09:20:25Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T09:20:25Z"}
+{"level":"info","location":"post-service.handler.postHandler.init()","msg":"Post-service Log file created/opened","time":"2021-06-18T09:25:23Z"}
+{"level":"info","location":"post-service.main.go","msg":"Log file created","time":"2021-06-18T09:25:23Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T09:27:13Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T09:27:13Z"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user.","time":"2021-06-18T09:27:13Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user success.","time":"2021-06-18T09:27:13Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T09:27:40Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T09:27:40Z"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user.","time":"2021-06-18T09:27:40Z","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user success.","time":"2021-06-18T09:27:40Z","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"post-service.handler.postHandler.init()","msg":"Post-service Log file created/opened","time":"2021-06-18T11:09:05Z"}
+{"level":"info","location":"post-service.main.go","msg":"Log file created","time":"2021-06-18T11:09:05Z"}
+{"level":"fatal","location":"post-service.main.GetDatabase()","msg":"Invalid database url","time":"2021-06-18T11:09:06Z"}
+{"level":"info","location":"post-service.handler.postHandler.init()","msg":"Post-service Log file created/opened","time":"2021-06-18T11:09:10Z"}
+{"level":"info","location":"post-service.main.go","msg":"Log file created","time":"2021-06-18T11:09:10Z"}
+{"level":"info","location":"post-service.handler.postHandler.init()","msg":"Post-service Log file created/opened","time":"2021-06-18T11:20:18Z"}
+{"level":"info","location":"post-service.main.go","msg":"Log file created","time":"2021-06-18T11:20:18Z"}
+{"level":"info","location":"post-service.handler.postHandler.init()","msg":"Post-service Log file created/opened","time":"2021-06-18T11:24:24Z"}
+{"level":"info","location":"post-service.main.go","msg":"Log file created","time":"2021-06-18T11:24:24Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T11:27:39Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T11:27:39Z"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user.","time":"2021-06-18T11:27:39Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user success.","time":"2021-06-18T11:27:39Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T11:28:45Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T11:28:45Z"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user.","time":"2021-06-18T11:28:45Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user success.","time":"2021-06-18T11:28:45Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T11:28:52Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T11:28:52Z"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user.","time":"2021-06-18T11:28:52Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user success.","time":"2021-06-18T11:28:52Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"post-service.handler.postHandler.init()","msg":"Post-service Log file created/opened","time":"2021-06-18T12:10:50Z"}
+{"level":"info","location":"post-service.main.go","msg":"Log file created","time":"2021-06-18T12:10:50Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T12:12:31Z"}
+{"level":"error","location":"post-service.main.IsAuthorized()","msg":"Your Token has been expired.","time":"2021-06-18T12:12:31Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T12:12:45Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T12:12:45Z"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user.","time":"2021-06-18T12:12:45Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user success.","time":"2021-06-18T12:12:45Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T12:13:27Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T12:13:27Z"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user.","time":"2021-06-18T12:13:27Z","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user success.","time":"2021-06-18T12:13:27Z","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T12:13:44Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T12:13:44Z"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user.","time":"2021-06-18T12:13:44Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user success.","time":"2021-06-18T12:13:44Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"post-service.handler.postHandler.init()","msg":"Post-service Log file created/opened","time":"2021-06-18T12:19:55Z"}
+{"level":"info","location":"post-service.main.go","msg":"Log file created","time":"2021-06-18T12:19:55Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T12:21:51Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T12:21:51Z"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user.","time":"2021-06-18T12:21:51Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user success.","time":"2021-06-18T12:21:51Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T12:22:12Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T12:22:12Z"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user.","time":"2021-06-18T12:22:12Z","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user success.","time":"2021-06-18T12:22:12Z","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"post-service.handler.postHandler.init()","msg":"Post-service Log file created/opened","time":"2021-06-18T12:25:36Z"}
+{"level":"info","location":"post-service.main.go","msg":"Log file created","time":"2021-06-18T12:25:36Z"}
+{"level":"info","location":"post-service.handler.postHandler.init()","msg":"Post-service Log file created/opened","time":"2021-06-18T12:28:50Z"}
+{"level":"info","location":"post-service.main.go","msg":"Log file created","time":"2021-06-18T12:28:50Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T12:30:12Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T12:30:12Z"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user.","time":"2021-06-18T12:30:12Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user success.","time":"2021-06-18T12:30:12Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"post-service.handler.postHandler.init()","msg":"Post-service Log file created/opened","time":"2021-06-18T12:37:59Z"}
+{"level":"info","location":"post-service.main.go","msg":"Log file created","time":"2021-06-18T12:37:59Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T12:40:15Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T12:40:15Z"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user.","time":"2021-06-18T12:40:15Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user success.","time":"2021-06-18T12:40:15Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T12:40:34Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T12:40:34Z"}
+{"level":"info","location":"post-service.handler.postHandler.SavePost()","msg":"User add post.","time":"2021-06-18T12:40:34Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"post-service.handler.postHandler.SavePost()","msg":"File localy created.","time":"2021-06-18T12:40:34Z"}
+{"level":"info","location":"post-service.handler.postHandler.SavePost()","msg":"Save post success.","time":"2021-06-18T12:40:34Z"}
+{"level":"info","location":"post-service.handler.postHandler.SavePost()","msg":"User add post success.","time":"2021-06-18T12:40:34Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T12:40:36Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T12:40:36Z"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user.","time":"2021-06-18T12:40:36Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user success.","time":"2021-06-18T12:40:36Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T12:40:50Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T12:40:50Z"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user.","time":"2021-06-18T12:40:50Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user success.","time":"2021-06-18T12:40:50Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T12:43:04Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T12:43:04Z"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user.","time":"2021-06-18T12:43:04Z","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user success.","time":"2021-06-18T12:43:04Z","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"post-service.handler.postHandler.init()","msg":"Post-service Log file created/opened","time":"2021-06-18T12:47:06Z"}
+{"level":"info","location":"post-service.main.go","msg":"Log file created","time":"2021-06-18T12:47:06Z"}
+{"level":"info","location":"post-service.handler.postHandler.init()","msg":"Post-service Log file created/opened","time":"2021-06-18T12:50:39Z"}
+{"level":"info","location":"post-service.main.go","msg":"Log file created","time":"2021-06-18T12:50:39Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T12:50:48Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T12:50:48Z"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user.","time":"2021-06-18T12:50:48Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user success.","time":"2021-06-18T12:50:48Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T12:51:55Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T12:51:55Z"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user.","time":"2021-06-18T12:51:55Z","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user success.","time":"2021-06-18T12:51:55Z","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"post-service.handler.postHandler.init()","msg":"Post-service Log file created/opened","time":"2021-06-18T12:54:59Z"}
+{"level":"info","location":"post-service.main.go","msg":"Log file created","time":"2021-06-18T12:54:59Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T12:55:08Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T12:55:08Z"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user.","time":"2021-06-18T12:55:08Z","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user success.","time":"2021-06-18T12:55:08Z","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T12:55:24Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T12:55:24Z"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user.","time":"2021-06-18T12:55:24Z","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user success.","time":"2021-06-18T12:55:24Z","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T12:55:42Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T12:55:42Z"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user.","time":"2021-06-18T12:55:42Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user success.","time":"2021-06-18T12:55:42Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T12:57:26Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T12:57:26Z"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user.","time":"2021-06-18T12:57:26Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user success.","time":"2021-06-18T12:57:26Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T12:57:54Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T12:57:54Z"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user.","time":"2021-06-18T12:57:54Z","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user success.","time":"2021-06-18T12:57:54Z","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-18T13:06:09Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-18T13:06:09Z"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user.","time":"2021-06-18T13:06:09Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"post-service.handler.postHandler.GetAllPostsByEmail()","msg":"Get all posts for user success.","time":"2021-06-18T13:06:09Z","user_email":"knezevicljiljana12@gmail.com"}

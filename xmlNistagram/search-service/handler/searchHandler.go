@@ -64,23 +64,35 @@ func (handler *SearchHandler) GetUserByUsername(w http.ResponseWriter, r *http.R
 	vars := mux.Vars(r)
 	username := vars["username"]
 	loggingUsername := vars["loggingUsername"]
-	fmt.Println("////////////////")
-	fmt.Println(loggingUsername)
 	users := handler.Service.GetAllUsersExceptLogging(loggingUsername)
 	loggedUser := handler.Service.GetUserByEmailAddress(loggingUsername)
 
 	var result []model.User
+	isBlocked := false
+	amBlocked := false
 
 	for _, element := range users {
 		if element.Role == "user" {
 			if strings.Contains(strings.ToLower(element.Username), strings.ToLower(username)) {
+				//da li se u mojim blokovanim nalazi taj user
 				if len(loggedUser.Blocked) != 0 {
 					for _, elem := range loggedUser.Blocked {
-						if !strings.Contains(strings.ToLower(elem.Username), strings.ToLower(username)) {
-							result = append(result, element)
+						if strings.Contains(strings.ToLower(elem.Username), strings.ToLower(element.Email)) {
+							isBlocked = true
 						}
 					}
-				} else {
+				}
+				//da li se nalazi u mojim ko me je blokirao
+				if len(loggedUser.UsersWhoBlocked) != 0 {
+					for _, elem := range loggedUser.UsersWhoBlocked {
+						fmt.Println(elem.Username)
+						if strings.Contains(strings.ToLower(elem.Username), strings.ToLower(element.Email)) {
+							amBlocked = true
+						}
+					}
+				}
+				//ako ga nisam blokirala i nisam blokirana dodaj ga
+				if !amBlocked && !isBlocked {
 					result = append(result, element)
 				}
 			}
@@ -133,18 +145,34 @@ func (handler *SearchHandler) SearchPostsByLocation(w http.ResponseWriter, r *ht
 	loggedUser := handler.Service.GetUserByEmailAddress(email)
 	posts := handler.Service.GetAllPosts()
 	var result []model.Post
+	isBlocked := false
+	amBlocked := false
 
 	for _, element := range posts {
 		if element.Email != email {
 			if !handler.Service.GetUserByEmailAddress(element.Email).IsPrivate {
 				if strings.Contains(strings.ToLower(element.Location), strings.ToLower(location)) {
 					if len(loggedUser.Blocked) != 0 {
+						fmt.Println("Blokirani u lokaciji")
+						fmt.Println(loggedUser.Blocked)
 						for _, elem := range loggedUser.Blocked {
-							if !strings.Contains(strings.ToLower(elem.Username), strings.ToLower(element.Email)) {
-								result = append(result, element)
+							if strings.Contains(strings.ToLower(elem.Username), strings.ToLower(element.Email)) {
+								isBlocked = true
 							}
 						}
-					} else {
+					}
+					if len(loggedUser.UsersWhoBlocked) != 0 {
+						fmt.Println("Blokirana sam u lokaciji")
+						fmt.Println(loggedUser.UsersWhoBlocked)
+						for _, elem := range loggedUser.UsersWhoBlocked {
+							fmt.Println(elem.Username)
+							if strings.Contains(strings.ToLower(elem.Username), strings.ToLower(element.Email)) {
+								amBlocked = true
+							}
+						}
+					}
+					//ako ga nisam blokirala i nisam blokirana dodaj ga
+					if !amBlocked && !isBlocked {
 						result = append(result, element)
 					}
 				}
@@ -180,6 +208,8 @@ func (handler *SearchHandler) SearchPostsByTag(w http.ResponseWriter, r *http.Re
 	loggedUser := handler.Service.GetUserByEmailAddress(email)
 	posts := handler.Service.GetAllPosts()
 	var result []model.Post
+	isBlocked := false
+	amBlocked := false
 
 	for _, element := range posts {
 		if element.Email != email {
@@ -187,11 +217,21 @@ func (handler *SearchHandler) SearchPostsByTag(w http.ResponseWriter, r *http.Re
 				if strings.Contains(strings.ToLower(element.Tags), strings.ToLower(tag)) {
 					if len(loggedUser.Blocked) != 0 {
 						for _, elem := range loggedUser.Blocked {
-							if !strings.Contains(strings.ToLower(elem.Username), strings.ToLower(element.Email)) {
-								result = append(result, element)
+							if strings.Contains(strings.ToLower(elem.Username), strings.ToLower(element.Email)) {
+								isBlocked = true
 							}
 						}
-					} else {
+					}
+					if len(loggedUser.UsersWhoBlocked) != 0 {
+						for _, elem := range loggedUser.UsersWhoBlocked {
+							fmt.Println(elem.Username)
+							if strings.Contains(strings.ToLower(elem.Username), strings.ToLower(element.Email)) {
+								amBlocked = true
+							}
+						}
+					}
+					//ako ga nisam blokirala i nisam blokirana dodaj ga
+					if !amBlocked && !isBlocked {
 						result = append(result, element)
 					}
 				}
@@ -235,8 +275,8 @@ func (handler *SearchHandler) SearchPostsByLocationUnregistered(w http.ResponseW
 				result = append(result, element)
 			}
 		}
-
 	}
+
 	if result == nil {
 		log.WithFields(logrus.Fields{
 			"location": "search-service.handler.searchHandler.SearchPostsByLocationUnregistered()"}).Warn("Not found posts by searched location.")

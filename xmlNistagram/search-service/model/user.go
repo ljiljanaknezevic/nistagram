@@ -22,6 +22,7 @@ type User struct {
 	WaitingFollowers []WaitingFollower `gorm:"many2many:user_waitingFollowers; json:"waitingFollowers"`
 	Following        []Following       `gorm:"many2many:user_following; json:"following"`
 	Blocked          []Blocked         `gorm:"many2many:blocked_users; json:"blockedUsers"`
+	UsersWhoBlocked  []UsersWhoBlocked `gorm:"many2many:users_who_blocked; json:"usersWhoBlocked"`
 }
 
 type Follower struct {
@@ -37,6 +38,10 @@ type Following struct {
 	Username string `json:"username"`
 }
 type Blocked struct {
+	gorm.Model
+	Username string `json:"username"`
+}
+type UsersWhoBlocked struct {
 	gorm.Model
 	Username string `json:"username"`
 }

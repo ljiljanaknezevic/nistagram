@@ -498,3 +498,295 @@
 {"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-17T16:30:58Z"}
 {"level":"warning","location":"search-service.handler.searchHandler.SearchPostsByLocation()","msg":"No found posts by location.","time":"2021-06-17T16:31:16Z","user_email":"mili@gmail.com"}
 {"level":"info","location":"search-service.handler.searchHandler.SearchPostsByLocation()","msg":"Search by location from registred user success.","time":"2021-06-17T16:31:16Z","user_email":"mili@gmail.com"}
+{"level":"info","location":"search-service.handler.searchHandler.init()","msg":"Search-service Log file created/opened","time":"2021-06-18T08:39:27Z"}
+{"level":"info","location":"search-service.handler.searchHandler.init()","msg":"Search-service Log file created/opened","time":"2021-06-18T08:39:31Z"}
+{"level":"info","location":"search-service.handler.searchHandler.init()","msg":"Search-service Log file created/opened","time":"2021-06-18T08:44:20Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T08:45:37Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T08:45:37Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T08:45:37Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T08:45:37Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T08:48:33Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T08:48:33Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T08:48:58Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T08:48:58Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T08:48:59Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T08:48:59Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T08:58:19Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T08:58:19Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T08:58:19Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T08:58:19Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T08:58:57Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T08:58:57Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T08:58:57Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T08:58:57Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T08:59:16Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T08:59:16Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T08:59:16Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T08:59:16Z"}
+{"level":"info","location":"search-service.handler.searchHandler.GetPostsForSearchedUser()","msg":"Get posts for searched user from registred user.","time":"2021-06-18T09:00:24Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"search-service.handler.searchHandler.GetPostsForSearchedUser()","msg":"Get posts for searched public user from registred user success.","time":"2021-06-18T09:00:24Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T09:00:24Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T09:00:24Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T09:00:24Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T09:00:24Z"}
+{"level":"info","location":"search-service.handler.searchHandler.GetPostsForSearchedUser()","msg":"Get posts for searched user from registred user.","time":"2021-06-18T09:00:44Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"search-service.handler.searchHandler.GetPostsForSearchedUser()","msg":"Get posts for searched public user from registred user success.","time":"2021-06-18T09:00:44Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T09:00:44Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T09:00:44Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T09:00:44Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T09:00:44Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T09:01:07Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T09:01:07Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T09:01:07Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T09:01:07Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T09:01:08Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T09:01:08Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T09:01:22Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T09:01:22Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T09:01:22Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T09:01:22Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T09:01:22Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T09:01:22Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T09:01:22Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T09:01:22Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T09:01:24Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T09:01:24Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T09:01:59Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T09:01:59Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T09:01:59Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T09:01:59Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T09:02:00Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T09:02:00Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T09:02:13Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T09:02:13Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T09:02:13Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T09:02:13Z"}
+{"level":"info","location":"search-service.handler.searchHandler.GetPostsForSearchedUser()","msg":"Get posts for searched user from registred user.","time":"2021-06-18T09:07:29Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"search-service.handler.searchHandler.GetPostsForSearchedUser()","msg":"Get posts for searched public user from registred user success.","time":"2021-06-18T09:07:29Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T09:07:29Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T09:07:29Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T09:07:29Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T09:07:29Z"}
+{"level":"warning","location":"search-service.handler.searchHandler.SearchPostsByLocation()","msg":"No found posts by location.","time":"2021-06-18T09:07:38Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"search-service.handler.searchHandler.SearchPostsByLocation()","msg":"Search by location from registred user success.","time":"2021-06-18T09:07:38Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"search-service.handler.searchHandler.GetPostsForSearchedUser()","msg":"Get posts for searched user from registred user.","time":"2021-06-18T09:15:58Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"search-service.handler.searchHandler.GetPostsForSearchedUser()","msg":"Get posts for searched public user from registred user success.","time":"2021-06-18T09:15:58Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T09:15:58Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T09:15:58Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T09:15:58Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T09:15:58Z"}
+{"level":"warning","location":"search-service.handler.searchHandler.SearchPostsByLocation()","msg":"No found posts by location.","time":"2021-06-18T09:16:12Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"search-service.handler.searchHandler.SearchPostsByLocation()","msg":"Search by location from registred user success.","time":"2021-06-18T09:16:12Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T09:16:18Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T09:16:18Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T09:16:18Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T09:16:18Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T09:16:37Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T09:16:37Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T09:16:41Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T09:16:41Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T09:16:57Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T09:16:57Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T09:16:57Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T09:16:57Z"}
+{"level":"info","location":"search-service.handler.searchHandler.GetPostsForSearchedUser()","msg":"Get posts for searched user from registred user.","time":"2021-06-18T09:17:06Z","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"search-service.handler.searchHandler.GetPostsForSearchedUser()","msg":"Get posts for searched public user from registred user success.","time":"2021-06-18T09:17:06Z","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T09:17:06Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T09:17:06Z"}
+{"level":"info","location":"search-service.handler.searchHandler.SearchPostsByLocation()","msg":"Search by location from registred user success.","time":"2021-06-18T09:17:14Z","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T09:17:14Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T09:17:14Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T09:17:22Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T09:17:22Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T09:17:22Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T09:17:22Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T09:17:25Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T09:17:25Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T09:17:28Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T09:17:28Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T09:17:28Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T09:17:28Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T09:17:28Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T09:17:28Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T09:17:28Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T09:17:28Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T09:18:01Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T09:18:01Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T09:18:01Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T09:18:01Z"}
+{"level":"info","location":"search-service.handler.searchHandler.GetPostsForSearchedUser()","msg":"Get posts for searched user from registred user.","time":"2021-06-18T09:18:08Z","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"search-service.handler.searchHandler.GetPostsForSearchedUser()","msg":"Get posts for searched public user from registred user success.","time":"2021-06-18T09:18:08Z","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T09:18:08Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T09:18:08Z"}
+{"level":"info","location":"search-service.handler.searchHandler.SearchPostsByLocation()","msg":"Search by location from registred user success.","time":"2021-06-18T09:18:17Z","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T09:18:17Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T09:18:17Z"}
+{"level":"info","location":"search-service.handler.searchHandler.SearchPostsByLocation()","msg":"Search by location from registred user success.","time":"2021-06-18T09:20:22Z","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T09:20:22Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T09:20:22Z"}
+{"level":"info","location":"search-service.handler.searchHandler.init()","msg":"Search-service Log file created/opened","time":"2021-06-18T09:25:23Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T09:27:13Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T09:27:13Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T09:27:40Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T09:27:40Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T09:27:40Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T09:27:40Z"}
+{"level":"warning","location":"search-service.handler.searchHandler.SearchPostsByLocation()","msg":"No found posts by location.","time":"2021-06-18T09:27:59Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"search-service.handler.searchHandler.SearchPostsByLocation()","msg":"Search by location from registred user success.","time":"2021-06-18T09:27:59Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"warning","location":"search-service.handler.searchHandler.SearchPostsByLocation()","msg":"No found posts by location.","time":"2021-06-18T09:28:03Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"search-service.handler.searchHandler.SearchPostsByLocation()","msg":"Search by location from registred user success.","time":"2021-06-18T09:28:03Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"search-service.handler.searchHandler.init()","msg":"Search-service Log file created/opened","time":"2021-06-18T11:09:05Z"}
+{"level":"info","location":"search-service.handler.searchHandler.init()","msg":"Search-service Log file created/opened","time":"2021-06-18T11:09:10Z"}
+{"level":"info","location":"search-service.handler.searchHandler.init()","msg":"Search-service Log file created/opened","time":"2021-06-18T11:20:18Z"}
+{"level":"info","location":"search-service.handler.searchHandler.init()","msg":"Search-service Log file created/opened","time":"2021-06-18T11:24:23Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T11:27:39Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T11:27:39Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T11:28:45Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T11:28:45Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T11:28:52Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T11:28:52Z"}
+{"level":"info","location":"search-service.handler.searchHandler.init()","msg":"Search-service Log file created/opened","time":"2021-06-18T12:10:51Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:12:45Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:12:45Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:13:27Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:13:27Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:13:27Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:13:27Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:13:44Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:13:44Z"}
+{"level":"info","location":"search-service.handler.searchHandler.init()","msg":"Search-service Log file created/opened","time":"2021-06-18T12:19:55Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:21:52Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:21:52Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:22:12Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:22:12Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:22:12Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:22:12Z"}
+{"level":"info","location":"search-service.handler.searchHandler.init()","msg":"Search-service Log file created/opened","time":"2021-06-18T12:25:36Z"}
+{"level":"info","location":"search-service.handler.searchHandler.init()","msg":"Search-service Log file created/opened","time":"2021-06-18T12:28:51Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:30:12Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:30:12Z"}
+{"level":"info","location":"search-service.handler.searchHandler.init()","msg":"Search-service Log file created/opened","time":"2021-06-18T12:37:59Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:40:15Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:40:16Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:40:36Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:40:36Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:40:36Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:40:36Z"}
+{"level":"info","location":"search-service.handler.searchHandler.GetPostsForSearchedUser()","msg":"Get posts for searched user from registred user.","time":"2021-06-18T12:40:44Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"search-service.handler.searchHandler.GetPostsForSearchedUser()","msg":"Get posts for searched public user from registred user success.","time":"2021-06-18T12:40:44Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:40:44Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:40:44Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:40:44Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:40:44Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:40:50Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:40:50Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:40:50Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:40:50Z"}
+{"level":"info","location":"search-service.handler.searchHandler.SearchPostsByLocation()","msg":"Search by location from registred user success.","time":"2021-06-18T12:40:53Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:40:53Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:40:53Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:40:53Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:40:53Z"}
+{"level":"info","location":"search-service.handler.searchHandler.SearchPostsByLocation()","msg":"Search by location from registred user success.","time":"2021-06-18T12:40:58Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:40:58Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:40:58Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:40:58Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:40:58Z"}
+{"level":"info","location":"search-service.handler.searchHandler.SearchPostsByLocation()","msg":"Search by location from registred user success.","time":"2021-06-18T12:41:04Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:41:04Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:41:04Z"}
+{"level":"warning","location":"search-service.handler.searchHandler.SearchPostsByLocation()","msg":"No found posts by searched tag.","time":"2021-06-18T12:41:13Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"search-service.handler.searchHandler.SearchPostsByLocation()","msg":"Search posts by tag from registred user success.","time":"2021-06-18T12:41:13Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"search-service.handler.searchHandler.SearchPostsByLocation()","msg":"Search posts by tag from registred user success.","time":"2021-06-18T12:41:32Z","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:41:32Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:41:32Z"}
+{"level":"info","location":"search-service.handler.searchHandler.SearchPostsByLocation()","msg":"Search by location from registred user success.","time":"2021-06-18T12:41:40Z","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:41:40Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:41:40Z"}
+{"level":"info","location":"search-service.handler.searchHandler.SearchPostsByLocation()","msg":"Search by location from registred user success.","time":"2021-06-18T12:41:54Z","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:41:54Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:41:54Z"}
+{"level":"info","location":"search-service.handler.searchHandler.SearchPostsByLocation()","msg":"Search by location from registred user success.","time":"2021-06-18T12:42:11Z","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:42:11Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:42:11Z"}
+{"level":"info","location":"search-service.handler.searchHandler.SearchPostsByLocation()","msg":"Search by location from registred user success.","time":"2021-06-18T12:42:18Z","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:42:18Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:42:18Z"}
+{"level":"info","location":"search-service.handler.searchHandler.SearchPostsByLocation()","msg":"Search posts by tag from registred user success.","time":"2021-06-18T12:42:25Z","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:42:25Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:42:25Z"}
+{"level":"info","location":"search-service.handler.searchHandler.SearchPostsByLocation()","msg":"Search posts by tag from registred user success.","time":"2021-06-18T12:42:30Z","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:42:30Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:42:30Z"}
+{"level":"warning","location":"search-service.handler.searchHandler.SearchPostsByLocation()","msg":"No found posts by location.","time":"2021-06-18T12:42:56Z","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"search-service.handler.searchHandler.SearchPostsByLocation()","msg":"Search by location from registred user success.","time":"2021-06-18T12:42:56Z","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:43:04Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:43:04Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:43:04Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:43:04Z"}
+{"level":"info","location":"search-service.handler.searchHandler.SearchPostsByLocation()","msg":"Search by location from registred user success.","time":"2021-06-18T12:43:19Z","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:43:19Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:43:19Z"}
+{"level":"warning","location":"search-service.handler.searchHandler.SearchPostsByLocation()","msg":"No found posts by location.","time":"2021-06-18T12:43:41Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"search-service.handler.searchHandler.SearchPostsByLocation()","msg":"Search by location from registred user success.","time":"2021-06-18T12:43:41Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"warning","location":"search-service.handler.searchHandler.SearchPostsByLocation()","msg":"No found posts by location.","time":"2021-06-18T12:43:44Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"search-service.handler.searchHandler.SearchPostsByLocation()","msg":"Search by location from registred user success.","time":"2021-06-18T12:43:44Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"search-service.handler.searchHandler.init()","msg":"Search-service Log file created/opened","time":"2021-06-18T12:47:05Z"}
+{"level":"info","location":"search-service.handler.searchHandler.init()","msg":"Search-service Log file created/opened","time":"2021-06-18T12:50:39Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:50:48Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:50:48Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:50:48Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:50:48Z"}
+{"level":"warning","location":"search-service.handler.searchHandler.SearchPostsByLocation()","msg":"No found posts by location.","time":"2021-06-18T12:50:54Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"search-service.handler.searchHandler.SearchPostsByLocation()","msg":"Search by location from registred user success.","time":"2021-06-18T12:50:54Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"warning","location":"search-service.handler.searchHandler.SearchPostsByLocation()","msg":"No found posts by location.","time":"2021-06-18T12:51:18Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"search-service.handler.searchHandler.SearchPostsByLocation()","msg":"Search by location from registred user success.","time":"2021-06-18T12:51:18Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:51:55Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:51:55Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:51:55Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:51:55Z"}
+{"level":"info","location":"search-service.handler.searchHandler.SearchPostsByLocation()","msg":"Search by location from registred user success.","time":"2021-06-18T12:52:03Z","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:52:03Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:52:03Z"}
+{"level":"info","location":"search-service.handler.searchHandler.init()","msg":"Search-service Log file created/opened","time":"2021-06-18T12:54:59Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:55:08Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:55:08Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:55:08Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:55:08Z"}
+{"level":"warning","location":"search-service.handler.searchHandler.SearchPostsByLocation()","msg":"No found posts by location.","time":"2021-06-18T12:55:14Z","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"search-service.handler.searchHandler.SearchPostsByLocation()","msg":"Search by location from registred user success.","time":"2021-06-18T12:55:14Z","user_email":"ljiljana_56@yahoo.com"}
+{"level":"warning","location":"search-service.handler.searchHandler.SearchPostsByLocation()","msg":"No found posts by searched tag.","time":"2021-06-18T12:55:20Z","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"search-service.handler.searchHandler.SearchPostsByLocation()","msg":"Search posts by tag from registred user success.","time":"2021-06-18T12:55:20Z","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:55:24Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:55:24Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:55:24Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:55:24Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:55:42Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:55:42Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:55:42Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:55:42Z"}
+{"level":"warning","location":"search-service.handler.searchHandler.SearchPostsByLocation()","msg":"No found posts by location.","time":"2021-06-18T12:55:47Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"search-service.handler.searchHandler.SearchPostsByLocation()","msg":"Search by location from registred user success.","time":"2021-06-18T12:55:47Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:57:26Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:57:26Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:57:26Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:57:26Z"}
+{"level":"info","location":"search-service.handler.searchHandler.SearchPostsByLocation()","msg":"Search by location from registred user success.","time":"2021-06-18T12:57:36Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:57:36Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:57:36Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:57:54Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:57:54Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:57:54Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:57:54Z"}
+{"level":"info","location":"search-service.handler.searchHandler.SearchPostsByLocation()","msg":"Search by location from registred user success.","time":"2021-06-18T12:58:02Z","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:58:02Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:58:02Z"}
+{"level":"info","location":"search-service.handler.searchHandler.SearchPostsByLocation()","msg":"Search posts by tag from registred user success.","time":"2021-06-18T12:58:08Z","user_email":"ljiljana_56@yahoo.com"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:58:08Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:58:08Z"}
+{"level":"warning","location":"search-service.handler.searchHandler.SearchPostsByLocation()","msg":"No found posts by location.","time":"2021-06-18T13:06:07Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"search-service.handler.searchHandler.SearchPostsByLocation()","msg":"Search by location from registred user success.","time":"2021-06-18T13:06:07Z","user_email":"knezevicljiljana12@gmail.com"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T13:06:09Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T13:06:09Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T13:06:09Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T13:06:09Z"}
