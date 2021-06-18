@@ -145,6 +145,8 @@ func InitializeRoute(handler *handler.SearchHandler) {
 	router.HandleFunc("/getMedia/{id}", handler.MediaForFront).Methods("GET")
 	router.HandleFunc("/getVideos/{id}", handler.VideoZaFront).Methods("GET")
 	router.HandleFunc("/getPostsForSearchedUserUnregistered/{id}", handler.GetPostsForSearchedUserUnregistered).Methods("GET")
+	router.HandleFunc("/getAllPosts/{email}", handler.GetPostsForFeed).Methods("GET")
+	router.HandleFunc("/getAllStories/{email}", handler.GetStoriesForFeed).Methods("GET")
 	router.Methods("OPTIONS").HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Access-Control-Allow-Origin", "")
 		w.Header().Set("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE")

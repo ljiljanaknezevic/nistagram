@@ -418,6 +418,10 @@ $(document).ready(function(e){
             });
         });
     });
+
+    $(window).on('load', function () {
+        showFeed()
+    });
     
     $(window).on('load', function () {
         customAjax({
@@ -540,6 +544,8 @@ $(document).ready(function(e){
     });
 
 });
+
+let commentText = '';
 let myProfile = function(user) {
     var json = JSON.parse(user);
     var email = json.email
@@ -553,6 +559,10 @@ let myProfile = function(user) {
         url: 'http://localhost:80/post-service/getAllPostsByEmail/' + email,
         method: 'GET',
         success: function (data) {
+            console.log("***************************************")
+   json = JSON.parse(data)
+            console.log(json)
+            console.log("***************************************")
             showPosts(data)
         },
         error: function () {
@@ -568,7 +578,16 @@ let myProfile = function(user) {
         result += `<div style="margin-top: 50px" ><div class="ui cards">`;
         console.log(json)
         for (i in json) {
-
+            var postID = json[i].ID
+            /*customAjax({
+                url: 'http://localhost:80/post-service/getAllCommentsByPostsID/' + postID,
+                method: 'GET',
+                success: function(data){
+                    showComments(data)
+                },
+                error: function(){
+                }
+            });*/
 
             slika = ""
             customAjax({
@@ -610,12 +629,47 @@ let myProfile = function(user) {
     </div>
   </div> 
   <div class="extra content">
-    <div class="ui large transparent left icon input"><button name="like" id="` + json[i].ID + `">
-      <i class="heart outline  icon"></i>
-      </button>
-      <label name="` + json[i].ID + `"></label>
-      <input type="text" placeholder="Add Comment...">
-    </div>
+            <div class="ui large transparent left icon input"><button name="like" id="` + json[i].ID + `">
+            <i class="heart outline  icon"></i>
+            </button>
+            <label name="` + json[i].ID + `"></label>
+            </div>
+             <div class="ui large transparent  input"> 
+                        <input type="text" placeholder="Add Comment..."  name = "` + json[i].ID+`" />
+                        <button class="ui primary basic button" name = "add-comment-button" id="` + json[i].ID+`">Post</button>
+                    </div>
+            <div class="ui divider"></div>
+            <div class="ui comments">
+                            <div class="comment">
+                                        <div class="content">
+                                            <a class="author">Matt</a>
+                                            <div class="metadata">
+                                                <span class="date">Today at 5:42PM</span>
+                                            </div>
+                                            <div class="text">
+                                                How artistic!
+                                            </div>
+                                            <div class="actions">
+                                                <a class="reply">Reply</a>
+                                            </div>
+                                        </div>
+                            </div>
+
+                            <div class="comment">
+                                <div class="content">
+                                    <a class="author">Matt</a>
+                                    <div class="metadata">
+                                        <span class="date">Today at 5:42PM</span>
+                                    </div>
+                                    <div class="text">
+                                        How artistic!
+                                    </div>
+                                    <div class="actions">
+                                        <a class="reply">Reply</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
       </div>
   </div>`;
 
@@ -628,6 +682,40 @@ let myProfile = function(user) {
 
         result += `</div></div>`;
         $('#posts').html(result);
+
+         $("button[name=add-comment-button]").click(function(){
+                              var ideic= this.id
+                              var postID= this.id
+                            console.log(ideic)
+
+                             var ispis= $('input[name='+ ideic +']' ).val()
+                            console.log(ispis)
+
+                            var formData = new FormData();
+                            var text = ispis;
+                            var postID = ideic;
+                            var email = localStorage.getItem('email');
+
+                            formData.append("text", text)
+                            formData.append("postID", postID)
+                            formData.append("email", email)
+                            customAjax({
+                                url: 'http://localhost:80/post-service/saveComment',
+                                method: 'POST',
+                                data: formData,
+                                processData: false,
+                                contentType: false,
+                                success: function () {
+                                    alert("success post comment")
+                                    $('input[name='+ ideic +']' ).val('')
+                               
+                                },
+                                error: function (e) {
+                                    alert('Error uploading new post.')
+                                }
+                            });
+                    })
+
 
         var action = 1;
         $("button[name=like]").click(function () {

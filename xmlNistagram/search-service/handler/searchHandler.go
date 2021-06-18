@@ -14,6 +14,7 @@ import (
 	"search-service/service"
 	"strconv"
 	"strings"
+	"time"
 
 	"github.com/gorilla/mux"
 	logrus "github.com/sirupsen/logrus"
@@ -200,6 +201,42 @@ func (handler *SearchHandler) SearchPostsByLocation(w http.ResponseWriter, r *ht
 		"user_email": template.HTMLEscapeString(email)}).Info("Search by location from registred user success.")
 	json.NewEncoder(w).Encode(result)
 }
+
+func (handler *SearchHandler) GetPostsForFeed(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	email := vars["email"]
+	loggedUser := handler.Service.GetUserByEmailAddress(email)
+	posts := handler.Service.GetAllPosts()
+	var result []model.Post
+	for _,elemet := range loggedUser.Following {
+		for _,el := range posts {
+			if handler.Service.GetUserByUsername(elemet.Username).Email == el.Email {
+				result = append(result, el)
+			}
+		}
+	}
+
+	json.NewEncoder(w).Encode(result)
+}
+
+
+func (handler *SearchHandler) GetStoriesForFeed(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	email := vars["email"]
+	loggedUser := handler.Service.GetUserByEmailAddress(email)
+	stories := handler.Service.GetAllStories()
+	var result []model.Story
+	for _,elemet := range loggedUser.Following {
+		for _,el := range stories {
+			if handler.Service.GetUserByUsername(elemet.Username).Email == el.Email && el.CreatedAt.Add(time.Hour * time.Duration(24)).After(time.Now().Local()){
+				result = append(result, el)
+			}
+		}
+	}
+
+	json.NewEncoder(w).Encode(result)
+}
+
 func (handler *SearchHandler) SearchPostsByTag(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	tag := vars["tag"]

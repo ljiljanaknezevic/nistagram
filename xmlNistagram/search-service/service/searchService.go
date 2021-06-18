@@ -29,6 +29,12 @@ func (service *SearchService) GetAllPosts() []model.Post{
 	posts:= service.Repo.GetAllPosts()
 	return posts
 }
+
+
+func (service *SearchService) GetAllStories() []model.Story{
+	stories:= service.Repo.GetAllStories()
+	return stories
+}
 func (service *SearchService) GetPostsForSearchedUser(email string) []model.Post{
 	posts:= service.Repo.GetPostsForSearchedUser(email)
 	return posts

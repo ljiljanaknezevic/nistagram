@@ -4,11 +4,18 @@
     <list default="true" id="c4e794cd-97af-43bb-852b-a14e71c3e83e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/WiredTiger.lock" beforeDir="false" afterPath="$PROJECT_DIR$/data/WiredTiger.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front/static/scripts/reportContent.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/static/scripts/reportContent.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front/static/scripts/userHomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/front/static/scripts/userHomePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front/static/userHomepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/front/static/userHomepage.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/post-service/files/post-service.log" beforeDir="false" afterPath="$PROJECT_DIR$/post-service/files/post-service.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/post-service/files/search-service.log" beforeDir="false" afterPath="$PROJECT_DIR$/post-service/files/search-service.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/post-service/files/story-service.log" beforeDir="false" afterPath="$PROJECT_DIR$/post-service/files/story-service.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/search-service/handler/searchHandler.go" beforeDir="false" afterPath="$PROJECT_DIR$/search-service/handler/searchHandler.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/search-service/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/search-service/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/search-service/repository/searchRepository.go" beforeDir="false" afterPath="$PROJECT_DIR$/search-service/repository/searchRepository.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/search-service/service/searchService.go" beforeDir="false" afterPath="$PROJECT_DIR$/search-service/service/searchService.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/story-service/handler/storyHandler.go" beforeDir="false" afterPath="$PROJECT_DIR$/story-service/handler/storyHandler.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/story-service/repository/storyRepository.go" beforeDir="false" afterPath="$PROJECT_DIR$/story-service/repository/storyRepository.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/story-service/service/storyService.go" beforeDir="false" afterPath="$PROJECT_DIR$/story-service/service/storyService.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,9 +25,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Go File" />
         <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="Go File" />
       </list>
     </option>
   </component>
