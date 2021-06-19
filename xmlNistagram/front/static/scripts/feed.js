@@ -121,41 +121,13 @@ let showFeed = function () {
             </button>
             <label name="` + json[i].ID + `"></label>
             </div>
-             <div class="ui large transparent  input"> 
+        <div class="ui large transparent  input"> 
                         <input type="text" placeholder="Add Comment..."  name = "` + json[i].ID+`" />
                         <button class="ui primary basic button" name = "add-comment-button" id="` + json[i].ID+`">Post</button>
                     </div>
             <div class="ui divider"></div>
-            <div class="ui comments">
-                            <div class="comment">
-                                        <div class="content">
-                                            <a class="author">Matt</a>
-                                            <div class="metadata">
-                                                <span class="date">Today at 5:42PM</span>
-                                            </div>
-                                            <div class="text">
-                                                How artistic!
-                                            </div>
-                                            <div class="actions">
-                                                <a class="reply">Reply</a>
-                                            </div>
-                                        </div>
-                            </div>
-
-                            <div class="comment">
-                                <div class="content">
-                                    <a class="author">Matt</a>
-                                    <div class="metadata">
-                                        <span class="date">Today at 5:42PM</span>
-                                    </div>
-                                    <div class="text">
-                                        How artistic!
-                                    </div>
-                                    <div class="actions">
-                                        <a class="reply">Reply</a>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="ui comments">
+                           `+ showComments(json[i].comments)+ `
                         </div>
       </div>
   </div>`;
@@ -329,6 +301,27 @@ function showStories(data)
 
 
 
+}
+
+function showComments(data){
+    console.log('MIWIIIIIIIIIIIIIIIIIIIIIIIIIIIIC')
+        result = ''
+       for( i in data){
+        result += `<div class="comment">
+                                        <div class="content">
+                                            <a class="author">`+ data[i].email+`</a>
+                                            <div class="metadata">
+                                                <span class="date">`+ data[i].CreatedAt.split("T")[0]+`</span>
+                                            </div>
+                                            <div class="text">
+                                               `+ data[i].text+`
+                                            </div>
+                                            <div class="actions">
+                                                <a class="reply">Reply</a>
+                                            </div>
+                                        </div>
+                            </div>`}
+       return result
 }
 
 

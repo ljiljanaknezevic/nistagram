@@ -243,9 +243,21 @@ func (handler *SearchHandler) GetPostsForFeed(w http.ResponseWriter, r *http.Req
 		}
 	}
 	if len(res) >= 0 {
-		json.NewEncoder(w).Encode(res)
+		var newPosts []model.Post
+		for _, element := range res {
+			var s string = strconv.FormatUint(uint64(element.ID), 10)
+			element.Comments = handler.Service.GetAllCommentsByPostsID(s)
+			newPosts = append(newPosts, element)
+		}
+		json.NewEncoder(w).Encode(newPosts)
 	} else {
-		json.NewEncoder(w).Encode(result)
+		var newPosts []model.Post
+		for _, element := range result {
+			var s string = strconv.FormatUint(uint64(element.ID), 10)
+			element.Comments = handler.Service.GetAllCommentsByPostsID(s)
+			newPosts = append(newPosts, element)
+		}
+		json.NewEncoder(w).Encode(newPosts)
 	}
 
 }

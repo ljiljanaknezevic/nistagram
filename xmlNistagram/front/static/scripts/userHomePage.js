@@ -35,7 +35,7 @@ $(document).ready(function(e){
 
          $("#addStoryImage").click(function () {
              customAjax({
-                 url: 'http://localhost:80/user-service/getAllUsersExceptLoggingForTag/' + email'/',
+                 url: 'http://localhost:80/user-service/getAllUsersExceptLoggingForTag/' + email+'/',
                  method: 'GET',
                  async: false,
                  success: function (data) {
