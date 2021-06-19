@@ -5,7 +5,6 @@ import (
 	"encoding/base64"
 	"encoding/json"
 	"fmt"
-	"html/template"
 	"io"
 	"net/http"
 	"os"
@@ -59,7 +58,20 @@ func init() {
 		},
 	).Info("Search-service Log file created/opened")
 }
+func (handler *SearchHandler) SaveComment(w http.ResponseWriter, r *http.Request) {
 
+	var comment model.Comment
+	comment.Text = r.PostFormValue("text")
+	comment.PostID = r.PostFormValue("postID")
+	comment.Email = r.PostFormValue("email")
+	handler.Service.SaveComment(&comment)
+	jsonResponse(w, http.StatusCreated, "File uploaded successfully!.")
+}
+func jsonResponse(w http.ResponseWriter, code int, message string) {
+	//	w.Header().Set("Content-Type", "application/json")
+	w.WriteHeader(code)
+	fmt.Fprint(w, message)
+}
 func (handler *SearchHandler) GetUserByUsername(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	username := vars["username"]
@@ -93,8 +105,6 @@ func (handler *SearchHandler) GetUserByUsername(w http.ResponseWriter, r *http.R
 func (handler *SearchHandler) GetUserByUsernameForUnregistredUser(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	username := vars["username"]
-	log.WithFields(logrus.Fields{
-		"location": "search-service.handler.searchHandler.GetUserByUsernameForUnregistredUser()"}).Info("Get searched user by username from unregistred user.")
 
 	users := handler.Service.GetAllUsers()
 	var result []model.User
@@ -107,18 +117,12 @@ func (handler *SearchHandler) GetUserByUsernameForUnregistredUser(w http.Respons
 
 		}
 	}
-	if result == nil {
-		log.WithFields(logrus.Fields{
-			"location": "search-service.handler.searchHandler.GetUserByUsernameForUnregistredUser()"}).Warn("Searched username from unregistred user doesnt exists.")
-	}
 
-	log.WithFields(logrus.Fields{
-		"location": "search-service.handler.searchHandler.GetUserByUsernameForUnregistredUser()"}).Info("Get searched user by username from unregistred user success.")
 	json.NewEncoder(w).Encode(result)
 }
 func contains(s []model.Post, str model.Post) bool {
 	for _, v := range s {
-		if v == str {
+		if v.ID == str.ID {
 			return true
 		}
 	}
@@ -161,16 +165,15 @@ func (handler *SearchHandler) SearchPostsByLocation(w http.ResponseWriter, r *ht
 			}
 		}
 	}
-	if result == nil {
-		log.WithFields(logrus.Fields{
-			"location":   "search-service.handler.searchHandler.SearchPostsByLocation()",
-			"user_email": template.HTMLEscapeString(email)}).Warn("No found posts by location.")
+	var newPosts []model.Post
+	for _, element := range result {
+		var s string = strconv.FormatUint(uint64(element.ID), 10)
+
+		element.Comments = handler.Service.GetAllCommentsByPostsID(s)
+		newPosts = append(newPosts, element)
 	}
 
-	log.WithFields(logrus.Fields{
-		"location":   "search-service.handler.searchHandler.SearchPostsByLocation()",
-		"user_email": template.HTMLEscapeString(email)}).Info("Search by location from registred user success.")
-	json.NewEncoder(w).Encode(result)
+	json.NewEncoder(w).Encode(newPosts)
 }
 func (handler *SearchHandler) SearchPostsByTag(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
@@ -208,16 +211,14 @@ func (handler *SearchHandler) SearchPostsByTag(w http.ResponseWriter, r *http.Re
 			}
 		}
 	}
-	if result == nil {
-		log.WithFields(logrus.Fields{
-			"location":   "search-service.handler.searchHandler.SearchPostsByLocation()",
-			"user_email": template.HTMLEscapeString(email)}).Warn("No found posts by searched tag.")
-	}
+	var newPosts []model.Post
+	for _, element := range result {
+		var s string = strconv.FormatUint(uint64(element.ID), 10)
 
-	log.WithFields(logrus.Fields{
-		"location":   "search-service.handler.searchHandler.SearchPostsByLocation()",
-		"user_email": template.HTMLEscapeString(email)}).Info("Search posts by tag from registred user success.")
-	json.NewEncoder(w).Encode(result)
+		element.Comments = handler.Service.GetAllCommentsByPostsID(s)
+		newPosts = append(newPosts, element)
+	}
+	json.NewEncoder(w).Encode(newPosts)
 }
 
 func (handler *SearchHandler) SearchPostsByLocationUnregistered(w http.ResponseWriter, r *http.Request) {
@@ -237,19 +238,18 @@ func (handler *SearchHandler) SearchPostsByLocationUnregistered(w http.ResponseW
 		}
 
 	}
-	if result == nil {
-		log.WithFields(logrus.Fields{
-			"location": "search-service.handler.searchHandler.SearchPostsByLocationUnregistered()"}).Warn("Not found posts by searched location.")
+	var newPosts []model.Post
+	for _, element := range result {
+		var s string = strconv.FormatUint(uint64(element.ID), 10)
+
+		element.Comments = handler.Service.GetAllCommentsByPostsID(s)
+		newPosts = append(newPosts, element)
 	}
-	log.WithFields(logrus.Fields{
-		"location": "search-service.handler.searchHandler.SearchPostsByLocationUnregistered()"}).Info("Search posts by location from unregistred user success.")
-	json.NewEncoder(w).Encode(result)
+	json.NewEncoder(w).Encode(newPosts)
 }
 func (handler *SearchHandler) SearchPostsByTagUnregistered(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	tag := vars["tag"]
-	log.WithFields(logrus.Fields{
-		"location": "search-service.handler.searchHandler.SearchPostsByTagUnregistered()"}).Info("Search posts by tag from unregistred user.")
 
 	posts := handler.Service.GetAllPosts()
 	var result []model.Post
@@ -262,15 +262,15 @@ func (handler *SearchHandler) SearchPostsByTagUnregistered(w http.ResponseWriter
 		}
 
 	}
-	if result == nil {
-		log.WithFields(logrus.Fields{
-			"location": "search-service.handler.searchHandler.SearchPostsByTagUnregistered()"}).Info("No found posts by searched tag.")
+	var newPosts []model.Post
+	for _, element := range result {
+		var s string = strconv.FormatUint(uint64(element.ID), 10)
 
+		element.Comments = handler.Service.GetAllCommentsByPostsID(s)
+		newPosts = append(newPosts, element)
 	}
 
-	log.WithFields(logrus.Fields{
-		"location": "search-service.handler.searchHandler.SearchPostsByTagUnregistered()"}).Info("Search posts by tag from unregistred user.")
-	json.NewEncoder(w).Encode(result)
+	json.NewEncoder(w).Encode(newPosts)
 }
 
 func (handler *SearchHandler) GetPostsForSearchedUser(w http.ResponseWriter, r *http.Request) {
@@ -278,11 +278,14 @@ func (handler *SearchHandler) GetPostsForSearchedUser(w http.ResponseWriter, r *
 	email := vars["id"]
 	emailLoggedUser := vars["email"]
 
-	log.WithFields(logrus.Fields{
-		"location":   "search-service.handler.searchHandler.GetPostsForSearchedUser()",
-		"user_email": template.HTMLEscapeString(emailLoggedUser)}).Info("Get posts for searched user from registred user.")
 	posts := handler.Service.GetPostsForSearchedUser(email)
+	var newPosts []model.Post
+	for _, element := range posts {
+		var s string = strconv.FormatUint(uint64(element.ID), 10)
 
+		element.Comments = handler.Service.GetAllCommentsByPostsID(s)
+		newPosts = append(newPosts, element)
+	}
 	var user model.User
 	user = handler.Service.GetUserByEmailAddress(emailLoggedUser)
 
@@ -291,20 +294,14 @@ func (handler *SearchHandler) GetPostsForSearchedUser(w http.ResponseWriter, r *
 
 	if !searchUser.IsPrivate {
 
-		log.WithFields(logrus.Fields{
-			"location":   "search-service.handler.searchHandler.GetPostsForSearchedUser()",
-			"user_email": template.HTMLEscapeString(emailLoggedUser)}).Info("Get posts for searched public user from registred user success.")
 		fmt.Println(user.Username)
-		json.NewEncoder(w).Encode(posts)
+		json.NewEncoder(w).Encode(newPosts)
 		w.WriteHeader(http.StatusOK)
 		return
 	} else {
 		for _, following := range handler.Service.GetUserByEmailAddress(user.Email).Following {
 			if strings.Compare(following.Username, handler.Service.GetUserByEmailAddress(email).Username) == 0 {
-				log.WithFields(logrus.Fields{
-					"location":   "search-service.handler.searchHandler.GetPostsForSearchedUser()",
-					"user_email": template.HTMLEscapeString(emailLoggedUser)}).Info("Get posts for searched private user from registred user success.")
-				json.NewEncoder(w).Encode(posts)
+				json.NewEncoder(w).Encode(newPosts)
 				w.WriteHeader(http.StatusOK)
 				return
 			}
@@ -318,10 +315,14 @@ func (handler *SearchHandler) GetPostsForSearchedUserUnregistered(w http.Respons
 	vars := mux.Vars(r)
 	email := vars["id"]
 	posts := handler.Service.GetPostsForSearchedUser(email)
-	log.WithFields(logrus.Fields{
-		"location":   "search-service.handler.searchHandler.GetPostsForSearchedUserUnregistered()",
-		"user_email": template.HTMLEscapeString(email)}).Info("Get posts for searched user from unregistred user success.")
-	json.NewEncoder(w).Encode(posts)
+	var newPosts []model.Post
+	for _, element := range posts {
+		var s string = strconv.FormatUint(uint64(element.ID), 10)
+
+		element.Comments = handler.Service.GetAllCommentsByPostsID(s)
+		newPosts = append(newPosts, element)
+	}
+	json.NewEncoder(w).Encode(newPosts)
 
 }
 func (handler *SearchHandler) MediaForFront(w http.ResponseWriter, r *http.Request) {

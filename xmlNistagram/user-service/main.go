@@ -186,6 +186,8 @@ func InitializeRoute(handler *handler.UserHandler) {
 	router.HandleFunc("/getAllRequests", handler.GetAllRequestes).Methods("GET")
 	router.HandleFunc("/acceptVerification/{email}", handler.AcceptVerification).Methods("POST")
 	router.HandleFunc("/declineVerification/{email}", handler.DeclineVerification).Methods("POST")
+
+
 	router.Methods("OPTIONS").HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Access-Control-Allow-Origin", "")
 		w.Header().Set("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE")

@@ -555,10 +555,8 @@ let myProfile = function(user) {
         url: 'http://localhost:80/post-service/getAllPostsByEmail/' + email,
         method: 'GET',
         success: function (data) {
-            console.log("***************************************")
-   json = JSON.parse(data)
-            console.log(json)
-            console.log("***************************************")
+            json = JSON.parse(data)
+    
             showPosts(data)
         },
         error: function () {
@@ -575,15 +573,6 @@ let myProfile = function(user) {
         console.log(json)
         for (i in json) {
             var postID = json[i].ID
-            /*customAjax({
-                url: 'http://localhost:80/post-service/getAllCommentsByPostsID/' + postID,
-                method: 'GET',
-                success: function(data){
-                    showComments(data)
-                },
-                error: function(){
-                }
-            });*/
 
             slika = ""
             customAjax({
@@ -635,36 +624,8 @@ let myProfile = function(user) {
                         <button class="ui primary basic button" name = "add-comment-button" id="` + json[i].ID+`">Post</button>
                     </div>
             <div class="ui divider"></div>
-            <div class="ui comments">
-                            <div class="comment">
-                                        <div class="content">
-                                            <a class="author">Matt</a>
-                                            <div class="metadata">
-                                                <span class="date">Today at 5:42PM</span>
-                                            </div>
-                                            <div class="text">
-                                                How artistic!
-                                            </div>
-                                            <div class="actions">
-                                                <a class="reply">Reply</a>
-                                            </div>
-                                        </div>
-                            </div>
-
-                            <div class="comment">
-                                <div class="content">
-                                    <a class="author">Matt</a>
-                                    <div class="metadata">
-                                        <span class="date">Today at 5:42PM</span>
-                                    </div>
-                                    <div class="text">
-                                        How artistic!
-                                    </div>
-                                    <div class="actions">
-                                        <a class="reply">Reply</a>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="ui comments">
+                           `+ showComments(json[i].comments)+ `
                         </div>
       </div>
   </div>`;
@@ -704,7 +665,7 @@ let myProfile = function(user) {
                                 success: function () {
                                     alert("success post comment")
                                     $('input[name='+ ideic +']' ).val('')
-                               
+                                     
                                 },
                                 error: function (e) {
                                     alert('Error uploading new post.')
@@ -923,7 +884,39 @@ let myProfile = function(user) {
 
         result+=`</div></div>`;
         $('#posts').html(result);
+ $("button[name=add-comment-button]").click(function(){
+                              var ideic= this.id
+                              var postID= this.id
+                            console.log(ideic)
 
+                             var ispis= $('input[name='+ ideic +']' ).val()
+                            console.log(ispis)
+
+                            var formData = new FormData();
+                            var text = ispis;
+                            var postID = ideic;
+                            var email = localStorage.getItem('email');
+
+                            formData.append("text", text)
+                            formData.append("postID", postID)
+                            formData.append("email", email)
+                            customAjax({
+                                url: 'http://localhost:80/post-service/saveComment',
+                                method: 'POST',
+                                data: formData,
+                                processData: false,
+                                contentType: false,
+                                success: function () {
+                                    alert("success post comment")
+                                    $('input[name='+ ideic +']' ).val('')         
+                                   
+                               
+                                },
+                                error: function (e) {
+                                    alert('Error uploading new post.')
+                                }
+                            });
+                    })
 
 
 
@@ -1413,25 +1406,33 @@ let showPosts = function(posts) {
   
   
   <div class="extra content">
-    <div class="ui large transparent left icon input">
-    <button name="like" id="`+json[i].ID+`">
-      <i class="heart outline  icon"></i>
-      </button>
-      <label name="`+json[i].ID+`"></label>
-      <input type="text" placeholder="Add Comment...">
-    </div>
+        <div class="ui large transparent left icon input">
+                <button name="like" id="`+json[i].ID+`">
+                <i class="heart outline  icon"></i>
+                </button>
+                <label name="`+json[i].ID+`"></label>
+        </div>
+    
     <div class="ui icon menu right floated ">
-    <div class="ui dropdown item">
-      <i class="ellipsis vertical icon"></i>
-      <div class="menu">
+        <div class="ui dropdown item">
+             <i class="ellipsis vertical icon"></i>
+         <div class="menu">
         <a class="item" name="report" id="`+json[i].ID+`"> <p style="color:red">Report...</p></a>
-      </div>
-    </div>
+        </div>
+        </div>
   
   </div>
   <script>$('.ui.dropdown')
     .dropdown()
   ;</script>
+    <div class="ui large transparent  input"> 
+                        <input type="text" placeholder="Add Comment..."  name = "` + json[i].ID+`" />
+                        <button class="ui primary basic button" name = "add-comment-button" id="` + json[i].ID+`">Post</button>
+                    </div>
+            <div class="ui divider"></div>
+                        <div class="ui comments">
+                            `+ showComments(json[i].comments)+ `
+                        </div>
   </div>
 </div>`;
 
@@ -1521,7 +1522,6 @@ let showPostsForSearchedUser = function(posts) {
       <i class="heart outline  icon"></i>
       </button>
       <label name="`+json[i].ID+`"></label>
-      <input type="text" placeholder="Add Comment...">
     </div>
     
     <div class="ui icon menu right floated ">
@@ -1537,6 +1537,15 @@ let showPostsForSearchedUser = function(posts) {
  <script>$('.ui.dropdown')
     .dropdown()
   ;</script>
+
+    <div class="ui large transparent  input"> 
+                        <input type="text" placeholder="Add Comment..."  name = "` + json[i].ID+`" />
+                        <button class="ui primary basic button" name = "add-comment-button" id="` + json[i].ID+`">Post</button>
+                    </div>
+            <div class="ui divider"></div>
+                        <div class="ui comments">
+                           `+ showComments(json[i].comments)+ `
+                        </div>
   </div>
 </div>`;
 
@@ -1551,6 +1560,37 @@ let showPostsForSearchedUser = function(posts) {
 
     result+=`</div></div>`;
     $("#showData").html(result);
+     $("button[name=add-comment-button]").click(function(){
+                              var ideic= this.id
+                              var postID= this.id
+                            console.log(ideic)
+
+                             var ispis= $('input[name='+ ideic +']' ).val()
+                            console.log(ispis)
+
+                            var formData = new FormData();
+                            var text = ispis;
+                            var postID = ideic;
+                            var email = localStorage.getItem('email');
+
+                            formData.append("text", text)
+                            formData.append("postID", postID)
+                            formData.append("email", email)
+                            customAjax({
+                                url: 'http://localhost:80/post-service/saveComment',
+                                method: 'POST',
+                                data: formData,
+                                processData: false,
+                                contentType: false,
+                                success: function () {
+                                    alert("success post comment")
+                                    $('input[name='+ ideic +']' ).val('')       
+                                },
+                                error: function (e) {
+                                    alert('Error uploading new post.')
+                                }
+                            });
+                    })
     $("a[name=report]").click(function () {
         var id = this.id;
        showReport(id,localStorage.getItem("email"));
@@ -1578,5 +1618,24 @@ function validateUsername(name) {
     return re.test(String(name));
 }
 
-
+function showComments(data){
+    console.log('MIWIIIIIIIIIIIIIIIIIIIIIIIIIIIIC')
+        result = ''
+       for( i in data){
+        result += `<div class="comment">
+                                        <div class="content">
+                                            <a class="author">`+ data[i].email+`</a>
+                                            <div class="metadata">
+                                                <span class="date">`+ data[i].CreatedAt.split("T")[0]+`</span>
+                                            </div>
+                                            <div class="text">
+                                               `+ data[i].text+`
+                                            </div>
+                                            <div class="actions">
+                                                <a class="reply">Reply</a>
+                                            </div>
+                                        </div>
+                            </div>`}
+       return result
+}
 

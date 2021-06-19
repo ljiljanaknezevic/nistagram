@@ -501,3 +501,298 @@
 {"level":"info","location":"search-service.handler.searchHandler.init()","msg":"Search-service Log file created/opened","time":"2021-06-18T06:03:51Z"}
 {"level":"info","location":"search-service.handler.searchHandler.init()","msg":"Search-service Log file created/opened","time":"2021-06-18T10:01:27Z"}
 {"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T10:20:53Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T10:20:54Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T10:20:54Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T10:20:54Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T10:32:04Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T10:32:04Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T10:32:04Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T10:32:04Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T10:40:28Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T10:40:28Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T10:40:28Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T10:40:28Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T10:46:48Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T10:46:48Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T10:46:48Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T10:46:48Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T10:47:07Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T10:47:07Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T10:47:07Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T10:47:07Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T10:48:08Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T10:48:08Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T10:48:08Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T10:48:08Z"}
+{"level":"info","location":"search-service.handler.searchHandler.init()","msg":"Search-service Log file created/opened","time":"2021-06-18T12:31:22Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:33:01Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:33:01Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:33:01Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:33:01Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:33:20Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:33:20Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:33:20Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:33:20Z"}
+{"level":"info","location":"search-service.handler.searchHandler.GetPostsForSearchedUser()","msg":"Get posts for searched user from registred user.","time":"2021-06-18T12:33:28Z","user_email":"milica99okiljevic@gmail.com"}
+{"level":"info","location":"search-service.handler.searchHandler.GetPostsForSearchedUser()","msg":"Get posts for searched public user from registred user success.","time":"2021-06-18T12:33:28Z","user_email":"milica99okiljevic@gmail.com"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:33:28Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:33:28Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:33:28Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:33:28Z"}
+{"level":"info","location":"search-service.handler.searchHandler.GetPostsForSearchedUser()","msg":"Get posts for searched user from registred user.","time":"2021-06-18T12:36:06Z","user_email":"milica99okiljevic@gmail.com"}
+{"level":"info","location":"search-service.handler.searchHandler.GetPostsForSearchedUser()","msg":"Get posts for searched public user from registred user success.","time":"2021-06-18T12:36:06Z","user_email":"milica99okiljevic@gmail.com"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:36:06Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:36:06Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:36:06Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:36:06Z"}
+{"level":"info","location":"search-service.handler.searchHandler.SearchPostsByLocation()","msg":"Search by location from registred user success.","time":"2021-06-18T12:36:17Z","user_email":"milica99okiljevic@gmail.com"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:36:17Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:36:17Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:36:17Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:36:17Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:36:17Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:36:17Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:36:17Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:36:17Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:36:17Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:36:17Z"}
+{"level":"info","location":"search-service.handler.searchHandler.SearchPostsByLocation()","msg":"Search by location from registred user success.","time":"2021-06-18T12:36:44Z","user_email":"milica99okiljevic@gmail.com"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:36:44Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:36:44Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:36:44Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:36:44Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:36:44Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:36:44Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:36:45Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:36:45Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:36:45Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:36:45Z"}
+{"level":"info","location":"search-service.handler.searchHandler.SearchPostsByLocation()","msg":"Search by location from registred user success.","time":"2021-06-18T12:37:36Z","user_email":"milica99okiljevic@gmail.com"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:37:36Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:37:36Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:37:36Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:37:36Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:37:36Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:37:36Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:37:36Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:37:36Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:37:36Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:37:36Z"}
+{"level":"info","location":"search-service.handler.searchHandler.SearchPostsByLocation()","msg":"Search by location from registred user success.","time":"2021-06-18T12:38:12Z","user_email":"milica99okiljevic@gmail.com"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:38:12Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:38:12Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:38:12Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:38:12Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:38:12Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:38:12Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:38:12Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:38:12Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:38:12Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:38:12Z"}
+{"level":"info","location":"search-service.handler.searchHandler.SearchPostsByLocation()","msg":"Search by location from registred user success.","time":"2021-06-18T12:39:25Z","user_email":"milica99okiljevic@gmail.com"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:39:25Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:39:25Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:39:25Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:39:25Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:39:25Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:39:25Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:39:25Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:39:25Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:39:25Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:39:25Z"}
+{"level":"info","location":"search-service.handler.searchHandler.GetPostsForSearchedUser()","msg":"Get posts for searched user from registred user.","time":"2021-06-18T12:40:34Z","user_email":"milica99okiljevic@gmail.com"}
+{"level":"info","location":"search-service.handler.searchHandler.GetPostsForSearchedUser()","msg":"Get posts for searched public user from registred user success.","time":"2021-06-18T12:40:34Z","user_email":"milica99okiljevic@gmail.com"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:40:34Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:40:34Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:40:34Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:40:34Z"}
+{"level":"info","location":"search-service.handler.searchHandler.SearchPostsByLocation()","msg":"Search by location from registred user success.","time":"2021-06-18T12:40:45Z","user_email":"milica99okiljevic@gmail.com"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:40:45Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:40:45Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:40:45Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:40:45Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:40:45Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:40:45Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:40:45Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:40:45Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:40:45Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:40:45Z"}
+{"level":"info","location":"search-service.handler.searchHandler.GetPostsForSearchedUser()","msg":"Get posts for searched user from registred user.","time":"2021-06-18T12:41:08Z","user_email":"milica99okiljevic@gmail.com"}
+{"level":"info","location":"search-service.handler.searchHandler.GetPostsForSearchedUser()","msg":"Get posts for searched public user from registred user success.","time":"2021-06-18T12:41:08Z","user_email":"milica99okiljevic@gmail.com"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:41:08Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:41:08Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:41:08Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:41:08Z"}
+{"level":"info","location":"search-service.handler.searchHandler.GetPostsForSearchedUser()","msg":"Get posts for searched user from registred user.","time":"2021-06-18T12:43:08Z","user_email":"milica99okiljevic@gmail.com"}
+{"level":"info","location":"search-service.handler.searchHandler.GetPostsForSearchedUser()","msg":"Get posts for searched public user from registred user success.","time":"2021-06-18T12:43:08Z","user_email":"milica99okiljevic@gmail.com"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:43:08Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:43:08Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:43:08Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:43:08Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:48:06Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:48:06Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:48:06Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:48:06Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:50:17Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:50:17Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:50:17Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:50:17Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:51:58Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:51:58Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:51:58Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:51:58Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:52:01Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:52:01Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:52:01Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:52:01Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:53:46Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:53:46Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:53:46Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:53:46Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:54:51Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:54:51Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:54:51Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:54:51Z"}
+{"level":"info","location":"search-service.handler.searchHandler.GetPostsForSearchedUser()","msg":"Get posts for searched user from registred user.","time":"2021-06-18T12:54:58Z","user_email":"milica99okiljevic@gmail.com"}
+{"level":"info","location":"search-service.handler.searchHandler.GetPostsForSearchedUser()","msg":"Get posts for searched public user from registred user success.","time":"2021-06-18T12:54:58Z","user_email":"milica99okiljevic@gmail.com"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:54:58Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:54:58Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:54:58Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:54:58Z"}
+{"level":"info","location":"search-service.handler.searchHandler.GetPostsForSearchedUser()","msg":"Get posts for searched user from registred user.","time":"2021-06-18T12:55:12Z","user_email":"milica99okiljevic@gmail.com"}
+{"level":"info","location":"search-service.handler.searchHandler.GetPostsForSearchedUser()","msg":"Get posts for searched public user from registred user success.","time":"2021-06-18T12:55:12Z","user_email":"milica99okiljevic@gmail.com"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:55:12Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:55:12Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:55:12Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:55:12Z"}
+{"level":"info","location":"search-service.handler.searchHandler.SearchPostsByLocation()","msg":"Search by location from registred user success.","time":"2021-06-18T12:55:19Z","user_email":"milica99okiljevic@gmail.com"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:55:19Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:55:19Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:55:19Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:55:19Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:55:19Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:55:19Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:55:20Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:55:20Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:55:20Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:55:20Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:57:02Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:57:02Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:57:02Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:57:02Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:57:36Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:57:36Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:57:36Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:57:36Z"}
+{"level":"info","location":"search-service.handler.searchHandler.SearchPostsByLocation()","msg":"Search by location from registred user success.","time":"2021-06-18T12:58:49Z","user_email":"milica99okiljevic@gmail.com"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:58:49Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:58:49Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:58:49Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:58:49Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:58:49Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:58:49Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:58:50Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:58:50Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T12:58:50Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T12:58:50Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T13:04:40Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T13:04:40Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T13:04:40Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T13:04:40Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T13:07:08Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T13:07:08Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T13:07:08Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T13:07:08Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T13:08:03Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T13:08:03Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T13:08:03Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T13:08:03Z"}
+{"level":"info","location":"search-service.handler.searchHandler.init()","msg":"Search-service Log file created/opened","time":"2021-06-18T13:29:03Z"}
+{"level":"info","location":"search-service.handler.searchHandler.init()","msg":"Search-service Log file created/opened","time":"2021-06-18T13:32:09Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T13:32:48Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T13:32:48Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T13:32:48Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T13:32:48Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T13:33:07Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T13:33:07Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T13:33:07Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T13:33:07Z"}
+{"level":"info","location":"search-service.handler.searchHandler.SearchPostsByLocation()","msg":"Search by location from registred user success.","time":"2021-06-18T13:33:27Z","user_email":"milica99okiljevic@gmail.com"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T13:33:27Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T13:33:27Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T13:33:27Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T13:33:27Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T13:33:27Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T13:33:27Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T13:33:27Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T13:33:27Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T13:33:27Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T13:33:27Z"}
+{"level":"info","location":"search-service.handler.searchHandler.init()","msg":"Search-service Log file created/opened","time":"2021-06-18T13:37:44Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T13:38:02Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T13:38:02Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T13:38:02Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T13:38:02Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T13:38:02Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T13:38:02Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T13:38:03Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T13:38:03Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T13:38:03Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T13:38:03Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T13:38:19Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T13:38:19Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T13:38:19Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T13:38:19Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T13:38:25Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T13:38:25Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T13:38:25Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T13:38:25Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T13:38:25Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T13:38:25Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T13:38:25Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T13:38:25Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T13:38:25Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T13:38:25Z"}
+{"level":"info","location":"search-service.handler.searchHandler.init()","msg":"Search-service Log file created/opened","time":"2021-06-18T13:39:47Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T13:40:04Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T13:40:04Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T13:40:04Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T13:40:04Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T13:40:04Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T13:40:04Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T13:40:04Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T13:40:04Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T13:40:05Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T13:40:05Z"}
+{"level":"info","location":"search-service.handler.searchHandler.init()","msg":"Search-service Log file created/opened","time":"2021-06-18T13:43:46Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T13:44:17Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T13:44:17Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T13:44:17Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T13:44:17Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T13:44:23Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T13:44:23Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T13:44:23Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T13:44:23Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T13:44:24Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T13:44:24Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T13:44:24Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T13:44:24Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T13:44:24Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T13:44:24Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T13:44:33Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T13:44:33Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T13:44:33Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T13:44:33Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T13:44:44Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T13:44:44Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-18T13:44:44Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-18T13:44:44Z"}
+{"level":"info","location":"search-service.handler.searchHandler.init()","msg":"Search-service Log file created/opened","time":"2021-06-19T13:32:59Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-19T13:34:00Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-19T13:34:01Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-19T13:34:01Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-19T13:34:01Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-19T13:34:16Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-19T13:34:16Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID.","time":"2021-06-19T13:34:16Z"}
+{"level":"info","location":"search-service.handler.searchHandler.MediaForFront()","msg":"Get image by imageID success.","time":"2021-06-19T13:34:16Z"}

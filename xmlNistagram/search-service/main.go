@@ -30,8 +30,12 @@ func initRepo(database *gorm.DB) *repository.SearchRepository {
 	return &repository.SearchRepository{Database: database}
 }
 
-func initServices(repo *repository.SearchRepository) *service.SearchService {
-	return &service.SearchService{Repo: repo}
+//comment repo
+func initCommentRepo(database *gorm.DB) *repository.CommentRepository {
+	return &repository.CommentRepository{Database: database}
+}
+func initServices(repo *repository.SearchRepository, commentRepo *repository.CommentRepository) *service.SearchService {
+	return &service.SearchService{Repo: repo, CommentRepo: commentRepo}
 }
 
 func initHandler(service *service.SearchService) *handler.SearchHandler {
@@ -71,6 +75,7 @@ func InitialUserMigration() {
 	connection.AutoMigrate(model.WaitingFollower{})
 	connection.AutoMigrate(model.Following{})
 	connection.AutoMigrate(model.Blocked{})
+	connection.AutoMigrate(model.Comment{})
 }
 
 //closes database connection
@@ -144,6 +149,7 @@ func InitializeRoute(handler *handler.SearchHandler) {
 	router.HandleFunc("/getMedia/{id}", handler.MediaForFront).Methods("GET")
 	router.HandleFunc("/getVideos/{id}", handler.VideoZaFront).Methods("GET")
 	router.HandleFunc("/getPostsForSearchedUserUnregistered/{id}", handler.GetPostsForSearchedUserUnregistered).Methods("GET")
+	router.HandleFunc("/saveComment", handler.SaveComment).Methods("POST")
 	router.Methods("OPTIONS").HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 		w.Header().Set("Access-Control-Allow-Origin", "")
 		w.Header().Set("Access-Control-Allow-Methods", "POST, GET, OPTIONS, PUT, DELETE")
@@ -165,7 +171,8 @@ func main() {
 	InitialUserMigration()
 	CreateRouter()
 	repo := initRepo(db)
-	service := initServices(repo)
+	commentRepo := initCommentRepo(db)
+	service := initServices(repo, commentRepo)
 	handler := initHandler(service)
 	InitializeRoute(handler)
 	ServerStart()

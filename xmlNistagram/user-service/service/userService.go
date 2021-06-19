@@ -31,6 +31,7 @@ func (service *UserService) CreateUser(user *model.User) bool {
 	user.Password, _ = service.GeneratehashPassword(user.Password)
 	return service.Repo.CreateUser(user)
 }
+
 func (service *UserService) CreateRequest(request *model.VerificationRequest) bool {
 	return service.Repo.CreateRequest(request)
 }
