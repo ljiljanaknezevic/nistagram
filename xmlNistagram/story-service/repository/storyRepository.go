@@ -22,3 +22,4 @@ func (repo *StoryRepository) GetAllStoriesByEmail(email string) []model.Story {
 	repo.Database.Where("email = ? ", email).Find(&stories)
 	return stories
 }
+

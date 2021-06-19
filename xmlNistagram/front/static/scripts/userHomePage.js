@@ -35,7 +35,7 @@ $(document).ready(function(e){
 
          $("#addStoryImage").click(function () {
              customAjax({
-                 url: 'http://localhost:80/user-service/getAllUsersExceptLoggingForTag/' + email,
+                 url: 'http://localhost:80/user-service/getAllUsersExceptLoggingForTag/' + email'/',
                  method: 'GET',
                  async: false,
                  success: function (data) {
@@ -418,6 +418,10 @@ $(document).ready(function(e){
             });
         });
     });
+
+    $(window).on('load', function () {
+        showFeed()
+    });
     
     $(window).on('load', function () {
         customAjax({
@@ -684,23 +688,6 @@ let myProfile = function(user) {
                 url: 'http://localhost:80/post-service/liked/' + postID + "/" + userWhoLiked,
                 method: 'POST',
                 success: function (data) {
-                    /*
-                    var action = 1;
-
-                    $("input").on("click", viewSomething);
-
-                    function viewSomething() {
-                        if ( action == 1 ) {
-                            $("body").css("background", "honeydew");
-                            action = 2;
-                        } else {
-                            $("body").css("background", "beige");
-                            action = 1;
-                        }
-                    }
-                     */
-
-                    //$('label[name=' + postID + ']').text("Liked")
                 },
                 error: function () {
                 }
@@ -1135,9 +1122,20 @@ let showProfile = function(user) {
     <button class="ui teal button" name = "follow" id = "` + json[i].username + `">Follow  <i class = "user icon"></i></button>
     
     `+pom1+`
-    <button class="ui teal button" name = "mute" id = "` + json[i].username + `">Mute  <i class="low vision icon"></i></button>
+     <div class="ui icon menu right floated ">
+    <div class="ui dropdown item">
+      <i class="ellipsis vertical icon"></i>
+      <div class="menu">
+        <a class="item" name="mute" id="`+json[i].username+`"> <p style="color:red"><i class="low vision icon"></i>Mute</p></a>
+      </div>
+    </div>
+  
+  </div>
+  <script>$('.ui.dropdown')
+    .dropdown()
+  ;</script>
     <div class="extra content">
-    <button class="ui teal button" name = "block" id = "` + json[i].username + `">Block<i class="ban icon"></i></i></button>
+    <button class="ui red button" name = "block" id = "` + json[i].username + `">Block<i class="ban icon"></i></i></button>
     </div>
     <div class="right floated author">` + json[i].name + `
     </div>   
@@ -1151,6 +1149,21 @@ let showProfile = function(user) {
     pomocna+=`</div></div>`;
 
     $("#showData").html(pomocna);
+    $("a[name=mute]").click(function () {
+        var username = this.id;
+        customAjax({
+            url: 'http://localhost:80/user-service/muteAccount/' + username +"/"+ localStorage.getItem("email"),
+            method: 'POST',
+            success: function () {
+            alert("Success muted")
+
+            },
+            error: function () {
+                alert("Already muted")
+            }
+        })
+    })
+
 
     $("a[name=profile]").click(function () {
         console.log("Usao u profile")
@@ -1173,7 +1186,9 @@ let showProfile = function(user) {
                 url: 'http://localhost:80/user-service/block/' + id + "/" + localStorage.getItem("email"),
                 method: 'POST',
                 success: function (data) {
-                    console.log("Success za block")
+                    alert("Succesfully blocked user!")
+                    location.reload();
+
                 },
                 error: function () {
                     console.log("Error za block")
@@ -1448,7 +1463,7 @@ let showPosts = function(posts) {
         var id = this.id;
        showReport(id,localStorage.getItem("email"));
     })
-
+    var action=1
     $("button[name=like]").click(function(){
         var postID=this.id
         var userWhoLiked=localStorage.getItem('email');
@@ -1458,11 +1473,17 @@ let showPosts = function(posts) {
                     url: 'http://localhost:80/post-service/liked/' + postID + "/" + userWhoLiked,
                     method: 'POST',
                     success: function (data) {
-                        $('label[name='+postID+']').text("Liked");
                     },
                     error: function () {
                     }
                 })
+            if ( action == 1 ) {
+                 $('label[name=' + postID + ']').text("Liked")
+                action = 2;
+            } else {
+            $('label[name=' + postID + ']').text("")
+            action = 1;
+         }
 
     });
 
@@ -1595,7 +1616,7 @@ let showPostsForSearchedUser = function(posts) {
         var id = this.id;
        showReport(id,localStorage.getItem("email"));
     })
-
+     var action = 1;
     $("button[name=like]").click(function(){
         var postID=this.id
         var userWhoLiked=localStorage.getItem('email');
@@ -1603,11 +1624,17 @@ let showPostsForSearchedUser = function(posts) {
                     url: 'http://localhost:80/post-service/liked/' + postID + "/" + userWhoLiked,
                     method: 'POST',
                     success: function (data) {
-                      $('label[name='+postID+']').text("Liked")
                     },
                     error: function () {
                     }
                 })
+        if ( action == 1 ) {
+            $('label[name=' + postID + ']').text("Liked")
+            action = 2;
+        } else {
+            $('label[name=' + postID + ']').text("")
+            action = 1;
+        }
 
     });
 

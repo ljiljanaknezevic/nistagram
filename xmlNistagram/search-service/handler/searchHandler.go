@@ -13,6 +13,7 @@ import (
 	"search-service/service"
 	"strconv"
 	"strings"
+	"time"
 
 	"github.com/gorilla/mux"
 	logrus "github.com/sirupsen/logrus"
@@ -76,23 +77,35 @@ func (handler *SearchHandler) GetUserByUsername(w http.ResponseWriter, r *http.R
 	vars := mux.Vars(r)
 	username := vars["username"]
 	loggingUsername := vars["loggingUsername"]
-	fmt.Println("////////////////")
-	fmt.Println(loggingUsername)
 	users := handler.Service.GetAllUsersExceptLogging(loggingUsername)
 	loggedUser := handler.Service.GetUserByEmailAddress(loggingUsername)
 
 	var result []model.User
-
 	for _, element := range users {
+		isBlocked := false
+		amBlocked := false
 		if element.Role == "user" {
 			if strings.Contains(strings.ToLower(element.Username), strings.ToLower(username)) {
+				//da li se u mojim blokovanim nalazi taj user
 				if len(loggedUser.Blocked) != 0 {
 					for _, elem := range loggedUser.Blocked {
-						if !strings.Contains(strings.ToLower(elem.Username), strings.ToLower(username)) {
-							result = append(result, element)
+						fmt.Println("//////////////////")
+						fmt.Println(elem.Username)
+						if elem.Username == element.Email {
+							isBlocked = true
 						}
 					}
-				} else {
+				}
+				if len(loggedUser.UsersWhoBlocked) != 0 {
+					for _, elem := range loggedUser.UsersWhoBlocked {
+						fmt.Println(elem.Username)
+						if elem.Username == element.Email {
+							amBlocked = true
+						}
+					}
+				}
+				//ako ga nisam blokirala i nisam blokirana dodaj ga
+				if !amBlocked && !isBlocked {
 					result = append(result, element)
 				}
 			}
@@ -139,16 +152,28 @@ func (handler *SearchHandler) SearchPostsByLocation(w http.ResponseWriter, r *ht
 	var result []model.Post
 
 	for _, element := range posts {
+		isBlocked := false
+		amBlocked := false
 		if element.Email != email {
 			if !handler.Service.GetUserByEmailAddress(element.Email).IsPrivate {
 				if strings.Contains(strings.ToLower(element.Location), strings.ToLower(location)) {
 					if len(loggedUser.Blocked) != 0 {
 						for _, elem := range loggedUser.Blocked {
-							if !strings.Contains(strings.ToLower(elem.Username), strings.ToLower(element.Email)) {
-								result = append(result, element)
+							if elem.Username == element.Email {
+								isBlocked = true
 							}
 						}
-					} else {
+					}
+					if len(loggedUser.UsersWhoBlocked) != 0 {
+						for _, elem := range loggedUser.UsersWhoBlocked {
+							fmt.Println(elem.Username)
+							if elem.Username == element.Email {
+								amBlocked = true
+							}
+						}
+					}
+					//ako ga nisam blokirala i nisam blokirana dodaj ga
+					if !amBlocked && !isBlocked {
 						result = append(result, element)
 					}
 				}
@@ -175,6 +200,106 @@ func (handler *SearchHandler) SearchPostsByLocation(w http.ResponseWriter, r *ht
 
 	json.NewEncoder(w).Encode(newPosts)
 }
+
+func (handler *SearchHandler) GetPostsForFeed(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	email := vars["email"]
+	loggedUser := handler.Service.GetUserByEmailAddress(email)
+	posts := handler.Service.GetAllPosts()
+	var result []model.Post
+	for _, elemet := range loggedUser.Following {
+		for _, el := range posts {
+			if handler.Service.GetUserByUsername(elemet.Username).Email == el.Email {
+				result = append(result, el)
+			}
+		}
+	}
+	var res []model.Post
+	var pom bool
+	pom = false
+
+	for _, elee := range result {
+		isBlocked := false
+		amBlocked := false
+		pom = false
+		for _, el := range loggedUser.Muted {
+			if handler.Service.GetUserByUsername(el.Username).Email == elee.Email {
+				pom = true
+				break
+			}
+		}
+		for _, elem := range loggedUser.Blocked {
+			if elem.Username == elee.Email {
+				isBlocked = true
+			}
+		}
+		for _, elemm := range loggedUser.UsersWhoBlocked {
+			if elemm.Username == elee.Email {
+				amBlocked = true
+			}
+		}
+		if !pom && !isBlocked && !amBlocked {
+			res = append(res, elee)
+		}
+	}
+	if len(res) >= 0 {
+		json.NewEncoder(w).Encode(res)
+	} else {
+		json.NewEncoder(w).Encode(result)
+	}
+
+}
+
+func (handler *SearchHandler) GetStoriesForFeed(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	email := vars["email"]
+	loggedUser := handler.Service.GetUserByEmailAddress(email)
+	stories := handler.Service.GetAllStories()
+	var result []model.Story
+	for _, elemet := range loggedUser.Following {
+		for _, el := range stories {
+			if handler.Service.GetUserByUsername(elemet.Username).Email == el.Email && el.CreatedAt.Add(time.Hour*time.Duration(24)).After(time.Now().Local()) {
+				result = append(result, el)
+			}
+		}
+	}
+
+	var res []model.Story
+	var pom bool
+	pom = false
+
+	for _, elee := range result {
+		pom = false
+		isBlocked := false
+		amBlocked := false
+		for _, el := range loggedUser.Muted {
+			if handler.Service.GetUserByUsername(el.Username).Email == elee.Email {
+				pom = true
+				break
+			}
+
+		}
+		for _, elem := range loggedUser.Blocked {
+			if elem.Username == elee.Email {
+				isBlocked = true
+			}
+		}
+		for _, elemm := range loggedUser.UsersWhoBlocked {
+			if elemm.Username == elee.Email {
+				amBlocked = true
+			}
+		}
+		if !pom && !amBlocked && !isBlocked {
+			res = append(res, elee)
+		}
+	}
+	if len(res) >= 0 {
+		json.NewEncoder(w).Encode(res)
+	} else {
+		json.NewEncoder(w).Encode(result)
+	}
+}
+
 func (handler *SearchHandler) SearchPostsByTag(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	tag := vars["tag"]
@@ -185,16 +310,27 @@ func (handler *SearchHandler) SearchPostsByTag(w http.ResponseWriter, r *http.Re
 	var result []model.Post
 
 	for _, element := range posts {
+		isBlocked := false
+		amBlocked := false
 		if element.Email != email {
 			if !handler.Service.GetUserByEmailAddress(element.Email).IsPrivate {
 				if strings.Contains(strings.ToLower(element.Tags), strings.ToLower(tag)) {
 					if len(loggedUser.Blocked) != 0 {
 						for _, elem := range loggedUser.Blocked {
-							if !strings.Contains(strings.ToLower(elem.Username), strings.ToLower(element.Email)) {
-								result = append(result, element)
+							if elem.Username == element.Email {
+								isBlocked = true
 							}
 						}
-					} else {
+					}
+					if len(loggedUser.UsersWhoBlocked) != 0 {
+						for _, elem := range loggedUser.UsersWhoBlocked {
+							if elem.Username == element.Email {
+								amBlocked = true
+							}
+						}
+					}
+					//ako ga nisam blokirala i nisam blokirana dodaj ga
+					if !amBlocked && !isBlocked {
 						result = append(result, element)
 					}
 				}
@@ -236,7 +372,6 @@ func (handler *SearchHandler) SearchPostsByLocationUnregistered(w http.ResponseW
 				result = append(result, element)
 			}
 		}
-
 	}
 	var newPosts []model.Post
 	for _, element := range result {
@@ -244,7 +379,9 @@ func (handler *SearchHandler) SearchPostsByLocationUnregistered(w http.ResponseW
 
 		element.Comments = handler.Service.GetAllCommentsByPostsID(s)
 		newPosts = append(newPosts, element)
+
 	}
+
 	json.NewEncoder(w).Encode(newPosts)
 }
 func (handler *SearchHandler) SearchPostsByTagUnregistered(w http.ResponseWriter, r *http.Request) {

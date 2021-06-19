@@ -32,14 +32,14 @@ func (repo *UserRepository) CreateRequest(request *model.VerificationRequest) bo
 }
 func (repo *UserRepository) GetAllUsersExceptLogging(email string) []model.User {
 	var users []model.User
-	repo.Database.Where("email != ?", email).Preload("Following").Preload("WaitingFollowers").Preload("Followers").Preload("Blocked").Find(&users)
+	repo.Database.Where("email != ?", email).Preload("Muted").Preload("Following").Preload("WaitingFollowers").Preload("Followers").Preload("Blocked").Preload("UsersWhoBlocked").Find(&users)
 	return users
 }
 func (repo *UserRepository) GetAllUsersExceptLoggingForTag(email string) []model.User {
 	var users []model.User
 	var isTrue bool
 	isTrue = true
-	repo.Database.Where("email != ? and can_tag = ?", email, isTrue).Preload("Following").Preload("WaitingFollowers").Preload("Blocked").Preload("Followers").Find(&users)
+	repo.Database.Where("email != ? and can_tag = ?", email, isTrue).Preload("Muted").Preload("Following").Preload("WaitingFollowers").Preload("Blocked").Preload("Followers").Preload("UsersWhoBlocked").Find(&users)
 	return users
 }
 
@@ -50,12 +50,12 @@ func (repo *UserRepository) GetAllRequests() []model.VerificationRequest {
 }
 
 func (repo *UserRepository) UpdateUser(user *model.User) error {
-	result := repo.Database.Preload("Following").Preload("WaitingFollowers").Preload("Followers").Preload("Blocked").Save(user)
+	result := repo.Database.Preload("Muted").Preload("Following").Preload("WaitingFollowers").Preload("Followers").Preload("UsersWhoBlocked").Preload("Blocked").Save(user)
 	fmt.Println(result.RowsAffected)
 	return nil
 }
 func (repo *UserRepository) DeleteFromWaitingList(ID uint) error {
-	repo.Database.Where("ID = ?", ID).Preload("Following").Preload("WaitingFollowers").Preload("Followers").Preload("Blocked").Delete(&model.WaitingFollower{})
+	repo.Database.Where("ID = ?", ID).Preload("Muted").Preload("Following").Preload("WaitingFollowers").Preload("Followers").Preload("UsersWhoBlocked").Preload("Blocked").Delete(&model.WaitingFollower{})
 	return nil
 }
 
@@ -89,8 +89,7 @@ func (repo *UserRepository) GetWaitingUser(username string) model.WaitingFollowe
 
 func (repo *UserRepository) GetUserByEmailAddress(email string) model.User {
 	var user model.User
-	repo.Database.Where("email = ? ", email).Preload("Following").Preload("WaitingFollowers").Preload("Followers").Preload("Blocked").First(&user)
-
+	repo.Database.Where("email = ? ", email).Preload("Muted").Preload("Following").Preload("WaitingFollowers").Preload("Followers").Preload("UsersWhoBlocked").Preload("Blocked").First(&user)
 	user.Name = template.HTMLEscapeString(user.Name)
 	user.Password = template.HTMLEscapeString(user.Password)
 	user.PhoneNumber = template.HTMLEscapeString(user.PhoneNumber)
@@ -103,12 +102,12 @@ func (repo *UserRepository) GetUserByEmailAddress(email string) model.User {
 }
 func (repo *UserRepository) GetUserByUsername(username string) model.User {
 	var user model.User
-	repo.Database.Where("username = ? ", username).Preload("Following").Preload("WaitingFollowers").Preload("Followers").Preload("Blocked").First(&user)
+	repo.Database.Where("username = ? ", username).Preload("Muted").Preload("UsersWhoBlocked").Preload("Following").Preload("WaitingFollowers").Preload("Followers").Preload("Blocked").First(&user)
 	return user
 }
 
 func (repo *UserRepository) UserForLogin(email string) model.User {
 	var authUser model.User
-	repo.Database.Where("email = ?", email).Preload("Following").Preload("WaitingFollowers").Preload("Followers").Preload("Blocked").First(&authUser)
+	repo.Database.Where("email = ?", email).Preload("UsersWhoBlocked").Preload("Muted").Preload("Following").Preload("WaitingFollowers").Preload("Followers").Preload("Blocked").First(&authUser)
 	return authUser
 }

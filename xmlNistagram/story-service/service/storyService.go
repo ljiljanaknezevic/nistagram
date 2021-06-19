@@ -10,6 +10,7 @@ type StoryService struct {
 	FileRepo *repository.FileRepository
 }
 
+
 func (service *StoryService) SaveStory(story *model.Story) error {
 	service.Repo.CreateStory(story)
 	return nil
