@@ -69,25 +69,25 @@ func (handler *SearchHandler) GetUserByUsername(w http.ResponseWriter, r *http.R
 	loggedUser := handler.Service.GetUserByEmailAddress(loggingUsername)
 
 	var result []model.User
-	isBlocked := false
-	amBlocked := false
-
 	for _, element := range users {
+		isBlocked := false
+		amBlocked := false
 		if element.Role == "user" {
 			if strings.Contains(strings.ToLower(element.Username), strings.ToLower(username)) {
 				//da li se u mojim blokovanim nalazi taj user
 				if len(loggedUser.Blocked) != 0 {
 					for _, elem := range loggedUser.Blocked {
-						if strings.Contains(strings.ToLower(elem.Username), strings.ToLower(element.Email)) {
+						fmt.Println("//////////////////")
+						fmt.Println(elem.Username)
+						if elem.Username == element.Email {
 							isBlocked = true
 						}
 					}
 				}
-				//da li se nalazi u mojim ko me je blokirao
 				if len(loggedUser.UsersWhoBlocked) != 0 {
 					for _, elem := range loggedUser.UsersWhoBlocked {
 						fmt.Println(elem.Username)
-						if strings.Contains(strings.ToLower(elem.Username), strings.ToLower(element.Email)) {
+						if elem.Username == element.Email {
 							amBlocked = true
 						}
 					}
@@ -146,28 +146,24 @@ func (handler *SearchHandler) SearchPostsByLocation(w http.ResponseWriter, r *ht
 	loggedUser := handler.Service.GetUserByEmailAddress(email)
 	posts := handler.Service.GetAllPosts()
 	var result []model.Post
-	isBlocked := false
-	amBlocked := false
 
 	for _, element := range posts {
+		isBlocked := false
+		amBlocked := false
 		if element.Email != email {
 			if !handler.Service.GetUserByEmailAddress(element.Email).IsPrivate {
 				if strings.Contains(strings.ToLower(element.Location), strings.ToLower(location)) {
 					if len(loggedUser.Blocked) != 0 {
-						fmt.Println("Blokirani u lokaciji")
-						fmt.Println(loggedUser.Blocked)
 						for _, elem := range loggedUser.Blocked {
-							if strings.Contains(strings.ToLower(elem.Username), strings.ToLower(element.Email)) {
+							if elem.Username == element.Email {
 								isBlocked = true
 							}
 						}
 					}
 					if len(loggedUser.UsersWhoBlocked) != 0 {
-						fmt.Println("Blokirana sam u lokaciji")
-						fmt.Println(loggedUser.UsersWhoBlocked)
 						for _, elem := range loggedUser.UsersWhoBlocked {
 							fmt.Println(elem.Username)
-							if strings.Contains(strings.ToLower(elem.Username), strings.ToLower(element.Email)) {
+							if elem.Username == element.Email {
 								amBlocked = true
 							}
 						}
@@ -208,38 +204,48 @@ func (handler *SearchHandler) GetPostsForFeed(w http.ResponseWriter, r *http.Req
 	loggedUser := handler.Service.GetUserByEmailAddress(email)
 	posts := handler.Service.GetAllPosts()
 	var result []model.Post
-	for _,elemet := range loggedUser.Following {
-		for _,el := range posts {
+	for _, elemet := range loggedUser.Following {
+		for _, el := range posts {
 			if handler.Service.GetUserByUsername(elemet.Username).Email == el.Email {
 				result = append(result, el)
 			}
 		}
 	}
-	var res[] model.Post
+	var res []model.Post
 	var pom bool
-	pom=false
-	for _,elee := range result{
-		pom=false
-		for _,el := range loggedUser.Muted{
+	pom = false
+
+	for _, elee := range result {
+		isBlocked := false
+		amBlocked := false
+		pom = false
+		for _, el := range loggedUser.Muted {
 			if handler.Service.GetUserByUsername(el.Username).Email == elee.Email {
-				pom =true
+				pom = true
 				break
 			}
-
 		}
-		if !pom {
+		for _, elem := range loggedUser.Blocked {
+			if elem.Username == elee.Email {
+				isBlocked = true
+			}
+		}
+		for _, elemm := range loggedUser.UsersWhoBlocked {
+			if elemm.Username == elee.Email {
+				amBlocked = true
+			}
+		}
+		if !pom && !isBlocked && !amBlocked {
 			res = append(res, elee)
 		}
 	}
-	if len(res)>=0{
+	if len(res) >= 0 {
 		json.NewEncoder(w).Encode(res)
 	} else {
 		json.NewEncoder(w).Encode(result)
 	}
 
-
 }
-
 
 func (handler *SearchHandler) GetStoriesForFeed(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
@@ -247,31 +253,44 @@ func (handler *SearchHandler) GetStoriesForFeed(w http.ResponseWriter, r *http.R
 	loggedUser := handler.Service.GetUserByEmailAddress(email)
 	stories := handler.Service.GetAllStories()
 	var result []model.Story
-	for _,elemet := range loggedUser.Following {
-		for _,el := range stories {
-			if handler.Service.GetUserByUsername(elemet.Username).Email == el.Email && el.CreatedAt.Add(time.Hour * time.Duration(24)).After(time.Now().Local()){
+	for _, elemet := range loggedUser.Following {
+		for _, el := range stories {
+			if handler.Service.GetUserByUsername(elemet.Username).Email == el.Email && el.CreatedAt.Add(time.Hour*time.Duration(24)).After(time.Now().Local()) {
 				result = append(result, el)
 			}
 		}
 	}
 
-	var res[] model.Story
+	var res []model.Story
 	var pom bool
-	pom=false
-	for _,elee := range result{
-		pom=false
-		for _,el := range loggedUser.Muted{
+	pom = false
+
+	for _, elee := range result {
+		pom = false
+		isBlocked := false
+		amBlocked := false
+		for _, el := range loggedUser.Muted {
 			if handler.Service.GetUserByUsername(el.Username).Email == elee.Email {
-				pom =true
+				pom = true
 				break
 			}
 
 		}
-		if !pom {
+		for _, elem := range loggedUser.Blocked {
+			if elem.Username == elee.Email {
+				isBlocked = true
+			}
+		}
+		for _, elemm := range loggedUser.UsersWhoBlocked {
+			if elemm.Username == elee.Email {
+				amBlocked = true
+			}
+		}
+		if !pom && !amBlocked && !isBlocked {
 			res = append(res, elee)
 		}
 	}
-	if len(res)>=0{
+	if len(res) >= 0 {
 		json.NewEncoder(w).Encode(res)
 	} else {
 		json.NewEncoder(w).Encode(result)
@@ -286,24 +305,23 @@ func (handler *SearchHandler) SearchPostsByTag(w http.ResponseWriter, r *http.Re
 	loggedUser := handler.Service.GetUserByEmailAddress(email)
 	posts := handler.Service.GetAllPosts()
 	var result []model.Post
-	isBlocked := false
-	amBlocked := false
 
 	for _, element := range posts {
+		isBlocked := false
+		amBlocked := false
 		if element.Email != email {
 			if !handler.Service.GetUserByEmailAddress(element.Email).IsPrivate {
 				if strings.Contains(strings.ToLower(element.Tags), strings.ToLower(tag)) {
 					if len(loggedUser.Blocked) != 0 {
 						for _, elem := range loggedUser.Blocked {
-							if strings.Contains(strings.ToLower(elem.Username), strings.ToLower(element.Email)) {
+							if elem.Username == element.Email {
 								isBlocked = true
 							}
 						}
 					}
 					if len(loggedUser.UsersWhoBlocked) != 0 {
 						for _, elem := range loggedUser.UsersWhoBlocked {
-							fmt.Println(elem.Username)
-							if strings.Contains(strings.ToLower(elem.Username), strings.ToLower(element.Email)) {
+							if elem.Username == element.Email {
 								amBlocked = true
 							}
 						}

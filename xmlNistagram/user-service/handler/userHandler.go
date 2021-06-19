@@ -464,7 +464,7 @@ func (handler *UserHandler) GetAllRequestes(w http.ResponseWriter, r *http.Reque
 func (handler *UserHandler) MuteAccount(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	email := vars["email"]
-	username:= vars["username"]
+	username := vars["username"]
 	var muted model.Muted
 	muted.Username = username
 	user := handler.Service.GetUserByEmailAddress(email)
@@ -476,12 +476,10 @@ func (handler *UserHandler) MuteAccount(w http.ResponseWriter, r *http.Request) 
 
 		}
 	}
-	user.Muted=append(user.Muted,muted)
+	user.Muted = append(user.Muted, muted)
 	handler.Service.UpdateUser(&user)
 	w.WriteHeader(http.StatusOK)
 	w.Header().Set("Content-Type", "application/json")
-
-
 
 }
 func (handler *UserHandler) AcceptVerification(w http.ResponseWriter, r *http.Request) {
@@ -748,9 +746,37 @@ func (handler *UserHandler) GetAllUsersExceptLogging(w http.ResponseWriter, r *h
 func (handler *UserHandler) GetAllUsersExceptLoggingForTag(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	email := vars["email"]
+	loggedUser := handler.Service.GetUserByEmailAddress(email)
 	var users []model.User
+	var result []model.User
+	//svi koji mogu biti tagovani bez obzira na blok
 	users = handler.Service.GetAllUsersExceptLoggingForTag(email)
-	json.NewEncoder(w).Encode(users)
+	
+	for _, element := range users {
+		isBlocked := false
+		amBlocked := false
+				//da li se u mojim blokovanim nalazi taj user
+		for _, elem := range loggedUser.Blocked {
+			if elem.Username == element.Email {
+				isBlocked = true
+			}
+		}
+
+		for _, elem := range loggedUser.UsersWhoBlocked {
+			fmt.Println(elem.Username)
+			if elem.Username == element.Email {
+				amBlocked = true
+			}
+		}
+
+		//ako ga nisam blokirala i nisam blokirana dodaj ga
+		if !amBlocked && !isBlocked {
+			result = append(result, element)
+		}
+	}
+	
+	//users = handler.Service.GetAllUsersExceptLoggingForTag(email)
+	json.NewEncoder(w).Encode(result)
 }
 
 func validEmail(email string) bool {
