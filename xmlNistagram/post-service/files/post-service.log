@@ -2,3 +2,53 @@
 {"level":"info","location":"post-service.main.go","msg":"Log file created","time":"2021-06-19T14:29:19Z"}
 {"level":"info","location":"post-service.handler.postHandler.init()","msg":"Post-service Log file created/opened","time":"2021-06-19T15:52:49Z"}
 {"level":"info","location":"post-service.main.go","msg":"Log file created","time":"2021-06-19T15:52:49Z"}
+{"level":"info","location":"post-service.handler.postHandler.init()","msg":"Post-service Log file created/opened","time":"2021-06-20T17:03:17Z"}
+{"level":"info","location":"post-service.main.go","msg":"Log file created","time":"2021-06-20T17:03:17Z"}
+{"level":"info","location":"post-service.handler.postHandler.init()","msg":"Post-service Log file created/opened","time":"2021-06-20T17:31:53Z"}
+{"level":"info","location":"post-service.main.go","msg":"Log file created","time":"2021-06-20T17:31:53Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-20T17:32:26Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-20T17:32:26Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-20T17:34:18Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-20T17:34:18Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-20T17:34:21Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-20T17:34:21Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-20T17:34:31Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-20T17:34:31Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-20T17:34:32Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-20T17:34:32Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-20T17:34:32Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-20T17:34:32Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-20T17:34:32Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-20T17:34:32Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-20T17:34:32Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-20T17:34:32Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-20T17:38:43Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-20T17:38:43Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-20T17:40:04Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-20T17:40:04Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-20T17:41:16Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-20T17:41:16Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-20T17:45:47Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-20T17:45:47Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-20T17:45:49Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-20T17:45:49Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-20T17:45:54Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-20T17:45:54Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-20T17:46:38Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-20T17:46:38Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-20T17:48:23Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-20T17:48:23Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-20T17:49:32Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-20T17:49:32Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-20T17:51:36Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-20T17:51:36Z"}
+{"level":"info","location":"post-service.handler.postHandler.init()","msg":"Post-service Log file created/opened","time":"2021-06-20T18:07:45Z"}
+{"level":"info","location":"post-service.main.go","msg":"Log file created","time":"2021-06-20T18:07:45Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-20T18:08:40Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-20T18:08:40Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-20T18:08:40Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-20T18:08:40Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-20T18:11:49Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-20T18:11:49Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"Check is user authorized","time":"2021-06-20T18:11:49Z"}
+{"level":"info","location":"post-service.main.IsAuthorized()","msg":"User authorize success.","time":"2021-06-20T18:11:49Z"}

@@ -4,6 +4,7 @@ var pomocnaP;
 let jsonObjekat;
 
   let slika
+let notificationsdata;
 function readURL(input) {
 
     if (input.files && input.files[0]) {
@@ -437,6 +438,7 @@ $(document).ready(function(e){
                             url: 'http://localhost:80/user-service/getAllRequests/' + email,
                             method: 'GET',
                             success: function(data){
+
                                 showRequests(data)
                             },
                             error: function(){
@@ -445,13 +447,31 @@ $(document).ready(function(e){
                     });
                 }
                 $("#notifications").html(`<a  id="followers"><i class="bell icon"  style="color:white"></i></a>`);
+
                 $("#followers").click(function () {
                     customAjax({
                         url: 'http://localhost:80/user-service/getAllFollowers/' + email,
                         method: 'GET',
                         success: function(data){
-                            console.log(data)
-                            showFollowers(data)
+                          //saljem poziv da dobavim sve lajkove
+                            customAjax({
+                                url: 'http://localhost:80/post-service/getAllLikesByEmail/' + email,
+                                method: 'GET',
+                                success: function (datas) {
+                                       customAjax({
+                                            url: 'http://localhost:80/post-service/getAllCommentsByEmail/' + email,
+                                            method: 'GET',
+                                            success: function (dataC) {
+                                               console.log(dataC)
+                                                 showFollowers(data, datas, dataC)
+                                            },
+                                            error: function () {
+                                            }
+                                        });
+                                },
+                                error: function () {
+                                }
+                            });
                         },
                         error: function(){
                         }
@@ -1287,8 +1307,10 @@ let showRequests = function(user) {
 
 }
 
-let showFollowers = function(user) {
+let showFollowers = function(user, like, comments) {
     var json = JSON.parse(user);
+    var jsonLike = JSON.parse(like);
+    var jsonComment = JSON.parse(comments);
     console.log(json)
     var pomocna ="";
     pomocna +=`<div style="margin-top: 50px" ><div class="ui celled list">`;
@@ -1315,6 +1337,39 @@ let showFollowers = function(user) {
 
 
     }
+
+    for( i in jsonLike) {
+        
+            pomocna += `<div class="item">
+            <div class="content">
+            <div class="header">` +jsonLike[i].username + `
+                 <div class="metadata">
+                <span class="date">`+ jsonLike[i].CreatedAt.split("T")[0]+`</span>
+            </div>
+            </div> 
+            <div class="description"> Liked your post.
+            </div>
+           
+            <div id="error` + jsonLike[i].username + `" style="color:red"></div>
+            </div>
+        </div>
+            `;
+        }
+        for( i in jsonComment) {
+        
+            pomocna += `<div class="item">
+            <div class="content">
+            <div class="header">` +jsonComment[i].email + `
+                 <div class="metadata">
+                <span class="date">`+ jsonComment[i].CreatedAt.split("T")[0]+`</span>
+            </div>
+            </div> 
+            <div class="description"> Left comment `+ jsonComment[i].text+ ` on your post.
+            </div>
+            </div>
+        </div>
+            `;
+        }
     pomocna+=`</div></div>`;
     $("#showData").html(pomocna);
 
@@ -1351,6 +1406,27 @@ let showFollowers = function(user) {
     })
 
 
+}
+
+
+let showLikes = function(like) {
+    var json = JSON.parse(like);
+    var pomocnaL ="";
+    pomocna +=`<div style="margin-top: 50px" ><div class="ui celled list">`;
+    for( i in json) {
+       
+        pomocna += `<div class="item">
+        <div class="content">
+        <div class="header">` +json[i].username + `</div> 
+        <div class="description"> Liked your post.
+        </div>
+        <div id="error` + json[i].username + `" style="color:red"></div>
+        </div>
+    </div>
+        `;
+    }
+    pomocna+=`</div></div>`;
+    $("#showData").html(pomocna);
 }
 
 var pomocna
@@ -1646,14 +1722,13 @@ function validateUsername(name) {
 }
 
 function showComments(data){
-    console.log('MIWIIIIIIIIIIIIIIIIIIIIIIIIIIIIC')
         result = ''
        for( i in data){
         result += `<div class="comment">
                                         <div class="content">
                                             <a class="author">`+ data[i].email+`</a>
-                                            <div class="metadata">
-                                                <span class="date">`+ data[i].CreatedAt.split("T")[0]+`</span>
+                                            <div class="meta">
+                                                <span >`+ data[i].CreatedAt.split("T")[0]+`</span>
                                             </div>
                                             <div class="text">
                                                `+ data[i].text+`

@@ -174,6 +174,9 @@ func InitializeRoute(handler *handler.PostHandler) {
 	router.HandleFunc("/getImageByImageID/{imageID}", IsAuthorized(handler.GetImageByImageID)).Methods("GET")
 	router.HandleFunc("/liked/{postID}/{userWhoLiked}", IsAuthorized(handler.Liked)).Methods("POST")
 	router.HandleFunc("/getAllLikedPostsByEmail/{email}", IsAuthorized(handler.GetAllLikedPostsByEmail)).Methods("GET")
+	router.HandleFunc("/getAllLikesByEmail/{email}", IsAuthorized(handler.GetAllLikesByEmail)).Methods("GET")
+	router.HandleFunc("/getAllCommentsByEmail/{email}", IsAuthorized(handler.GetAllCommentsByEmail)).Methods("GET")
+	//
 	router.HandleFunc("/reportPost", IsAuthorized(handler.CreateSpam)).Methods("POST")
 	router.HandleFunc("/saveComment", handler.SaveComment).Methods("POST")
 	router.HandleFunc("/getAllCommentsByPostsID/{postID}", handler.GetAllCommentsByPostsID).Methods("GET")

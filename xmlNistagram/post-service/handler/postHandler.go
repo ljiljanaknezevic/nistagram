@@ -337,3 +337,49 @@ func contains(s []model.Post, e model.Post) bool {
 	}
 	return false
 }
+
+func (handler *PostHandler) GetAllLikesByEmail(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	email := vars["email"]
+
+	var posts []model.Post
+	posts = handler.Service.GetAllPosts()
+
+	var newLikes []model.Like
+	for _, post := range posts {
+		if strings.Compare(post.Email, email) == 0 {
+			for _, element := range post.Likes {
+				newLikes = append(newLikes, element)
+
+			}
+		}
+	}
+
+	w.WriteHeader(http.StatusOK)
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(newLikes)
+}
+
+func (handler *PostHandler) GetAllCommentsByEmail(w http.ResponseWriter, r *http.Request) {
+	vars := mux.Vars(r)
+	email := vars["email"]
+
+	var posts []model.Post
+	posts = handler.Service.GetAllPosts()
+
+	var newLikes []model.Comment
+	for _, post := range posts {
+		if strings.Compare(post.Email, email) == 0 {
+			var s string = strconv.FormatUint(uint64(post.ID), 10)
+			comments := handler.Service.GetAllCommentsByPostsID(s)
+			for _, com := range comments {
+
+				newLikes = append(newLikes, com)
+			}
+		}
+	}
+
+	w.WriteHeader(http.StatusOK)
+	w.Header().Set("Content-Type", "application/json")
+	json.NewEncoder(w).Encode(newLikes)
+}
